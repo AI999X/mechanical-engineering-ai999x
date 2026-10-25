@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "mechanical-engineering-ai999x: an offline, verified mechanical engineering solver"
+authors:
+  - family-names: Farabi
+    given-names: Ibnul Jaif
+    affiliation: AI999X
+version: 1.0.0
+license: Apache-2.0
+url: "https://huggingface.co/AI999X/mechanical-engineering-ai999x"
+repository-code: "https://huggingface.co/AI999X/mechanical-engineering-ai999x"
+keywords:
+  - mechanical engineering
+  - mechanical_engineering
+  - statics
+  - strength of materials
+  - beam deflection
+  - section properties
+  - torsion
+  - buckling
+  - fatigue
+  - rainflow
+  - machine design
+  - gears
