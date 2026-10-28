@@ -457,6 +457,10 @@ $$
 - **Assumes:** $0  \leq  x_i  \leq  L$; $P_i > 0$ (downward); x and P of equal length
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Shear-force and bending-moment diagrams of a simply supported beam of span 8 m with point loads 10, 20 kN at x = 2, 5 m, drawn from the reactions the package returned (RA = 15 kN, RB = 15 kN); marked: the maximum moment it returned, x = 5 m, M = 45 kN·m](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/simply-supported-beam-point-loads-beam.svg)
+
+*Shear-force and bending-moment diagrams of a simply supported beam of span 8 m with point loads 10, 20 kN at x = 2, 5 m, drawn from the reactions the package returned (RA = 15 kN, RB = 15 kN); marked: the maximum moment it returned, x = 5 m, M = 45 kN·m.*
+
 ```python
 mechanical_engineering_ai999x.solve('simply_supported_beam_point_loads', L=8.0, x='2, 5', P='10, 20')
 # -> RA = 15, RB = 15, M_max = 45, x_Mmax = 5, V_max = 15   (SOLVED)
@@ -504,6 +508,10 @@ $$
 - **Method:** $M = Pa$, deflection under the load $Pa^{3}/(3EI)$, slope there $Pa^{2}/(2EI)$, tip deflection $Pa^{2}$(3L - a)/(6EI)
 - **Assumes:** $0 < a  \leq  L$; Euler-Bernoulli beam, small deflections
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Deflected shape of a cantilever (L = 2 m, E = 2](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/cantilever-point-load-beam.svg)
+
+*Deflected shape of a cantilever (L = 2 m, E = 2.0000e+11 Pa, I = 8.0000e-06 m⁴) under a tip load P = 5000 N: the deflection at each of 40 positions x is the tip deflection the package returns for the load placed at x (Maxwell's reciprocal theorem). Marked: x = 2 m, tip deflection = 8.33333 mm (downward); the wall and beam depth are drawn for orientation.*
 
 ```python
 mechanical_engineering_ai999x.solve('cantilever_point_load', L=2.0, P=5000.0, E=200000000000.0, I=8e-06)
@@ -1551,6 +1559,10 @@ $$
 - **Assumes:** plane stress $(sigma_z = 0)$; tension positive
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Mohr's circle for σx = 50 MPa, σy = -10 MPa, τxy = 40 MPa: the normal and shear stress on planes rotated by 0–180° (73 states computed by the package's stress transformation) trace the circle; the principal stresses it returned are σ1 = 70 MPa and σ2 = -30 MPa at θp = 26](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/principal-stresses-2d-mohr.svg)
+
+*Mohr's circle for σx = 50 MPa, σy = -10 MPa, τxy = 40 MPa: the normal and shear stress on planes rotated by 0–180° (73 states computed by the package's stress transformation) trace the circle; the principal stresses it returned are σ1 = 70 MPa and σ2 = -30 MPa at θp = 26.5651°; marked: centre σ = 20 MPa, τmax = 50 MPa.*
+
 ```python
 mechanical_engineering_ai999x.solve('principal_stresses_2d', sx=50000000.0, sy=-10000000.0, txy=40000000.0)
 # -> s1_MPa = 70, s2_MPa = -30, tau_max_inplane_MPa = 50, theta_p_deg = 26.5651, tau_abs_max_MPa = 50, von_mises_MPa = 88.8819   (SOLVED)
@@ -2219,6 +2231,10 @@ $$
 - **Method:** 1/n = sa/Se + sm/Sut; sigma_ar = sa/(1 - sm/Sut); $n_y = Sy/(sa + sm)$
 - **Assumes:** $sm  \geq  0$ (compressive means not covered); sm < Sut; proportional loading (the load line through the origin)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Fatigue failure envelopes for Se = 250 MPa, Sut = 700 MPa, Sy = 500 MPa: each point is the stress state at which the package's safety factor along a load line equals 1 (47 load lines per criterion)](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/goodman-fatigue-safety-factor-fatigue.svg)
+
+*Fatigue failure envelopes for Se = 250 MPa, Sut = 700 MPa, Sy = 500 MPa: each point is the stress state at which the package's safety factor along a load line equals 1 (47 load lines per criterion). Marked: the operating point σm = 80 MPa, σa = 120 MPa, Goodman safety factor n = 1.68269.*
 
 ```python
 mechanical_engineering_ai999x.solve('goodman_fatigue_safety_factor', sa=120000000.0, sm=80000000.0, Se=250000000.0, Sut=700000000.0, Sy=500000000.0)
@@ -3194,6 +3210,10 @@ $$
 - **Method:** $X = F_{0}/sqrt$((k - m $w^{2})^{2} + (c$ w)^2), phi = atan2(c w, k - m w^2)
 - **Assumes:** steady state (transient decayed); not undamped resonance
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Steady-state magnification of a forced spring–mass–damper (m = 10 kg, k = 4000 N/m, natural frequency 20 rad/s) for four damping coefficients, 120 forcing frequencies each computed by the package; marked: ω = 20 rad/s, c = 40 N·s/m, magnification = 5](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/forced-vibration-amplitude-response.svg)
+
+*Steady-state magnification of a forced spring–mass–damper (m = 10 kg, k = 4000 N/m, natural frequency 20 rad/s) for four damping coefficients, 120 forcing frequencies each computed by the package; marked: ω = 20 rad/s, c = 40 N·s/m, magnification = 5.*
 
 ```python
 mechanical_engineering_ai999x.solve('forced_vibration_amplitude', m=10.0, c=40.0, k=4000.0, F0=100.0, omega=20.0)

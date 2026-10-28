@@ -4,7 +4,7 @@
 
 **[Install](https://pypi.org/project/mechanical-engineering-ai999x/)** · **[Capability guide](https://huggingface.co/AI999X/mechanical-engineering-ai999x/tree/main/docs)** · **[Evaluation](https://huggingface.co/AI999X/mechanical-engineering-ai999x/tree/main/evaluation)** · **[AI999X on Hugging Face](https://huggingface.co/AI999X)** · **[Website](https://ai999x.com)** · **[Support: Buy Me a Coffee](https://buymeacoffee.com/ibnuljaiffarabi)**
 
-License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.0.0
+License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.0.1
 
 Field: **Engineering** · Tasks: Question Answering, Token Classification, Text Classification, Sentence Similarity, Feature Extraction
 
@@ -27,7 +27,7 @@ mechanical-engineering-ai999x is an offline, deterministic Python solver that an
 
 | Property | Value |
 |---|---|
-| Package | `mechanical-engineering-ai999x` 1.0.0 (import `mechanical_engineering_ai999x`) |
+| Package | `mechanical-engineering-ai999x` 1.0.1 (import `mechanical_engineering_ai999x`) |
 | Type | Deterministic neuro-symbolic mechanical engineering engine (rule-based reading + certified symbolic capabilities) |
 | Capabilities | 90 certified procedures |
 | Knowledge pack | version 1.0.1 |
@@ -61,7 +61,18 @@ mechanical_engineering.ask("Who created you?").message
 # -> mechanical-engineering-ai999x was created and engineered by Ibnul Jaif Farabi at AI999X.
 ```
 
-Command line: `mechanical-engineering-ai999x "<question>"`, `mechanical-engineering-ai999x --capabilities`. The outputs above were produced by running this exact code on mechanical-engineering-ai999x 1.0.0.
+Command line: `mechanical-engineering-ai999x "<question>"`, `mechanical-engineering-ai999x --capabilities`. The outputs above were produced by running this exact code on mechanical-engineering-ai999x 1.0.1.
+
+## Find the right capability, and draw it
+
+`mechanical_engineering.search()` finds which certified capability a question is about — across **every** AI999X model, so a question for another model points you to it. It runs **[ai999x-encoder](https://huggingface.co/AI999X/ai999x-encoder)**, AI999X's own capability encoder (4.7M parameters, a 4.9 MB ONNX model, offline; the root `model.safetensors` of this repository): `pip install "mechanical-engineering-ai999x[search]"`. `ask(question, suggest=True)` adds the same pointers to a question it does not answer; an answer itself never changes.
+
+```python
+import mechanical_engineering_ai999x as mechanical_engineering
+
+mechanical_engineering.search("Solve x^2 - 5x + 6 = 0", k=2)
+# -> Roots of a quadratic equation (math-foundations-ai999x, 0.63); Roots of a cubic equation (math-foundations-ai999x, 0.59)
+```
 
 ## How every answer is verified
 
@@ -71,6 +82,116 @@ Command line: `mechanical-engineering-ai999x "<question>"`, `mechanical-engineer
 4. **Checking** — dimensions, substitution back into the defining equation, and agreement between independent readings; any disagreement becomes a refusal, never a number.
 
 Capabilities are certified before they ship: each must reproduce hand-worked reference cases, reject a deliberately wrong variant (a control), and leave every benchmark answer unchanged.
+
+## Worked examples
+
+Each question was put to `mechanical-engineering-ai999x`; the answer is the one it returned, with the steps it took.
+
+**Simply supported beam with a point load** · _Beams_
+
+> Simply supported beam with point load: L = 6 m, P = 20 kN, a = 2 m, E = 200 GPa, I = 8e-5 m^4
+
+→ **RA = 13333.33333 N, RB = 6666.666667 N, M_max = 26666.66667 N*m, V_max = 13333.33333 N, deflection_at_load_mm = 4.444444444, max_deflection_mm = 4.838498257, x_max = 2.734013676 m**
+
+<details><summary>Steps</summary>
+
+- Simply supported beam with a point load: L = 6 m, P = 20 kN, a = 2 m, E = 200 GPa, I = 8e-05 m^4 → RA = 13333.33333 N, RB = 6666.666667 N, M_max = 26666.66667 N*m, V_max = 13333.33333 N, deflection_at_load_mm = 4.444444444 N*m, max_deflection_mm = 4.838498257 N*m, x_max = 2.734013676 m
+
+</details>
+
+**Principal stresses and maximum shear (Mohr's circle, plane stress)** · _Stress analysis_
+
+> Principal stresses: sx = 50 MPa, sy = -10 MPa, txy = 40 MPa
+
+→ **s1_MPa = 70, s2_MPa = -30, tau_max_inplane_MPa = 50, theta_p_deg = 26.56505118, tau_abs_max_MPa = 50, von_mises_MPa = 88.88194417**
+
+<details><summary>Steps</summary>
+
+- Principal stresses and maximum shear (Mohr's circle, plane stress): sx = 50 MPa, sy = -10 MPa, txy = 40 MPa → s1_MPa = 70, s2_MPa = -30, tau_max_inplane_MPa = 50, theta_p_deg = 26.56505118, tau_abs_max_MPa = 50, von_mises_MPa = 88.88194417
+
+</details>
+
+**Fatigue safety factor by the modified Goodman criterion** · _Fatigue_
+
+> Goodman safety factor: sa = 120 MPa, sm = 80 MPa, Se = 250 MPa, Sut = 700 MPa
+
+→ **n_fatigue = 1.682692308, sigma_ar_MPa = 135.483871**
+
+<details><summary>Steps</summary>
+
+- Fatigue safety factor by the modified Goodman criterion: sa = 120 MPa, sm = 80 MPa, Se = 250 MPa, Sut = 700 MPa → n_fatigue = 1.682692308, sigma_ar_MPa = 135.483871
+
+</details>
+
+**Rainflow cycle counting of a load history (ASTM E1049)** · _Fatigue_
+
+> Rainflow counting: history = [0, 5, -3, 4, -2, 6, -4, 1, 0]
+
+→ **ranges = [10, 9, 8, 6, 5, 1], counts = [0.5, 0.5, 0.5, 1, 1, 0.5], total_cycles = 4, max_range = 10**
+
+<details><summary>Steps</summary>
+
+- Rainflow cycle counting of a load history (ASTM E1049): history = [0, 5, -3, 4, -2, 6, -4, 1, 0] → ranges = [10, 9, 8, 6, 5, 1], counts = [0.5, 0.5, 0.5, 1, 1, 0.5], total_cycles = 4, max_range = 10
+
+</details>
+
+**Euler buckling load of a column with given end conditions** · _Columns_
+
+`m.solve("euler_buckling", E="200 GPa", I="8e-6 m^4", L="4 m", ends="fixed-pinned")`
+
+→ **P_cr = 2019072.856 N, P_cr_kN = 2019.072856, K = 0.6991556596, Le = 2.796622639 m**
+
+<details><summary>Steps</summary>
+
+- Euler buckling load of a column with given end conditions: E = 200 GPa, I = 8e-06 m^4, L = 4 m, ends = fixed-pinned → P_cr = 2019072.856 N, P_cr_kN = 2019.072856 N, K = 0.6991556596 N, Le = 2.796622639 m
+
+</details>
+
+**Safety factors of a brittle material (maximum normal stress, Coulomb-Mohr, modified Mohr)** · _Failure theories_
+
+> Brittle failure: sA = 90 MPa, sB = -50 MPa, Sut = 210 MPa, Suc = 750 MPa
+
+→ **n_max_normal = 2.333333333, n_coulomb_mohr = 2.019230769, n_modified_mohr = 2.333333333**
+
+<details><summary>Steps</summary>
+
+- Safety factors of a brittle material (maximum normal stress, Coulomb-Mohr, modified Mohr): sA = 90 MPa, sB = -50 MPa, Sut = 210 MPa, Suc = 750 MPa → n_max_normal = 2.333333333, n_coulomb_mohr = 2.019230769, n_modified_mohr = 2.333333333
+
+</details>
+
+## Figures
+
+Every point was computed by `mechanical-engineering-ai999x`.
+
+**Mohr's circle of a plane stress state**
+
+![Mohr's circle of a plane stress state — computed by mechanical-engineering-ai999x](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/principal-stresses-2d-mohr.svg)
+
+_Mohr's circle for σx = 50 MPa, σy = -10 MPa, τxy = 40 MPa: the normal and shear stress on planes rotated by 0–180° (73 states computed by the package's stress transformation) trace the circle; the principal stresses it returned are σ1 = 70 MPa and σ2 = -30 MPa at θp = 26.5651°; marked: centre σ = 20 MPa, τmax = 50 MPa._
+
+**Shear and bending-moment diagrams of a beam**
+
+![Shear and bending-moment diagrams of a beam — computed by mechanical-engineering-ai999x](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/simply-supported-beam-point-loads-beam.svg)
+
+_Shear-force and bending-moment diagrams of a simply supported beam of span 8 m with point loads 10, 20 kN at x = 2, 5 m, drawn from the reactions the package returned (RA = 15 kN, RB = 15 kN); marked: the maximum moment it returned, x = 5 m, M = 45 kN·m._
+
+**A cantilever's deflected shape under a tip load**
+
+![A cantilever's deflected shape under a tip load — computed by mechanical-engineering-ai999x](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/cantilever-point-load-beam.svg)
+
+_Deflected shape of a cantilever (L = 2 m, E = 2.0000e+11 Pa, I = 8.0000e-06 m⁴) under a tip load P = 5000 N: the deflection at each of 40 positions x is the tip deflection the package returns for the load placed at x (Maxwell's reciprocal theorem). Marked: x = 2 m, tip deflection = 8.33333 mm (downward); the wall and beam depth are drawn for orientation._
+
+**Fatigue diagram: Goodman, Gerber and Soderberg envelopes**
+
+![Fatigue diagram: Goodman, Gerber and Soderberg envelopes — computed by mechanical-engineering-ai999x](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/goodman-fatigue-safety-factor-fatigue.svg)
+
+_Fatigue failure envelopes for Se = 250 MPa, Sut = 700 MPa, Sy = 500 MPa: each point is the stress state at which the package's safety factor along a load line equals 1 (47 load lines per criterion). Marked: the operating point σm = 80 MPa, σa = 120 MPa, Goodman safety factor n = 1.68269._
+
+**Forced vibration: resonance curves for four dampings**
+
+![Forced vibration: resonance curves for four dampings — computed by mechanical-engineering-ai999x](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/forced-vibration-amplitude-response.svg)
+
+_Steady-state magnification of a forced spring–mass–damper (m = 10 kg, k = 4000 N/m, natural frequency 20 rad/s) for four damping coefficients, 120 forcing frequencies each computed by the package; marked: ω = 20 rad/s, c = 40 N·s/m, magnification = 5._
 
 ## Capabilities
 
@@ -95,10 +216,10 @@ Capabilities are certified before they ship: each must reproduce hand-worked ref
 ## Citation
 
 ```bibtex
-@software{mechanical_engineering_ai999x_1_0_0,
+@software{mechanical_engineering_ai999x_1_0_1,
   title  = {mechanical-engineering-ai999x: an offline, verified mechanical engineering solver},
   author = {Farabi, Ibnul Jaif}, organization = {AI999X},
-  year   = {2026}, version = {1.0.0},
+  year   = {2026}, version = {1.0.1},
   url    = {https://huggingface.co/AI999X/mechanical-engineering-ai999x}
 }
 ```
