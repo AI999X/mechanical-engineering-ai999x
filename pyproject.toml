@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mechanical-engineering-ai999x"
-version = "1.0.2"
+version = "1.0.3"
 description = "Offline mechanical engineering solver: statics, stress and strain, beams and frames, section properties, torsion, columns, fatigue, machine elements, vibrations and structural analysis, with steps, LaTeX and honest refusals"
 readme = "README.md"
 requires-python = ">=3.10"

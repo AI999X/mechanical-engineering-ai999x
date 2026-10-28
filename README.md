@@ -4,7 +4,7 @@
 
 **[Install](https://pypi.org/project/mechanical-engineering-ai999x/)** · **[Capability guide](https://huggingface.co/AI999X/mechanical-engineering-ai999x/tree/main/docs)** · **[Evaluation](https://huggingface.co/AI999X/mechanical-engineering-ai999x/tree/main/evaluation)** · **[AI999X on Hugging Face](https://huggingface.co/AI999X)** · **[Website](https://ai999x.com)** · **[Support: Buy Me a Coffee](https://buymeacoffee.com/ibnuljaiffarabi)**
 
-License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.0.2
+License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.0.3
 
 Field: **Engineering** · Tasks: Question Answering, Token Classification, Text Classification, Sentence Similarity, Feature Extraction
 
@@ -27,7 +27,7 @@ mechanical-engineering-ai999x is an offline, deterministic Python solver that an
 
 | Property | Value |
 |---|---|
-| Package | `mechanical-engineering-ai999x` 1.0.2 (import `mechanical_engineering_ai999x`) |
+| Package | `mechanical-engineering-ai999x` 1.0.3 (import `mechanical_engineering_ai999x`) |
 | Type | Deterministic neuro-symbolic mechanical engineering engine (rule-based reading + certified symbolic capabilities) |
 | Capabilities | 90 certified procedures |
 | Knowledge pack | version 1.0.1 |
@@ -61,7 +61,7 @@ mechanical_engineering.ask("Who created you?").message
 # -> mechanical-engineering-ai999x was created and engineered by Ibnul Jaif Farabi at AI999X.
 ```
 
-Command line: `mechanical-engineering-ai999x "<question>"`, `mechanical-engineering-ai999x --capabilities`. The outputs above were produced by running this exact code on mechanical-engineering-ai999x 1.0.2.
+Command line: `mechanical-engineering-ai999x "<question>"`, `mechanical-engineering-ai999x --capabilities`. The outputs above were produced by running this exact code on mechanical-engineering-ai999x 1.0.3.
 
 ## Find the right capability, and draw it
 
@@ -216,10 +216,10 @@ _Steady-state magnification of a forced spring–mass–damper (m = 10 kg, k = 4
 ## Citation
 
 ```bibtex
-@software{mechanical_engineering_ai999x_1_0_2,
+@software{mechanical_engineering_ai999x_1_0_3,
   title  = {mechanical-engineering-ai999x: an offline, verified mechanical engineering solver},
   author = {Farabi, Ibnul Jaif}, organization = {AI999X},
-  year   = {2026}, version = {1.0.2},
+  year   = {2026}, version = {1.0.3},
   url    = {https://huggingface.co/AI999X/mechanical-engineering-ai999x}
 }
 ```
