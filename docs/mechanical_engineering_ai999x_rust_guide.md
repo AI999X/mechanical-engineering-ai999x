@@ -1,4 +1,4 @@
-# mechanical-engineering: the Mechanical Engineering program — user guide
+# mechanical-engineering: the Mechanical Engineering program, user guide
 
 **mechanical-engineering-ai999x 1.1.0**, Rust build: command line, desktop app and browser. **Creator / engineer:** Ibnul Jaif Farabi · **Company:** AI999X · support@ai999x.com
 
@@ -17,63 +17,63 @@ Mechanical Engineering covers statics, stress and strain, beams and frames, sect
 
 ## 1. Get it
 
-Version 1.4.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS; the newest version is always under https://downloads.ai999x.com/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/
+Version 1.5.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS; the newest version is always under https://downloads.ai999x.com/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/
 
 | what | system | download |
 |---|---|---|
-| Desktop app: Mechanical Engineering | Windows x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-mechanical-engineering-1.4.0-windows-x86_64.zip |
-| Desktop app: Mechanical Engineering | Linux x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-mechanical-engineering-1.4.0-linux-x86_64.tar.gz |
-| Desktop app: all models | Windows x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-windows-x86_64.zip |
-| Desktop app: all models | Linux x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz |
-| Command line | Windows x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-windows-x86_64.zip |
-| Command line | Linux x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz |
+| Desktop app: Mechanical Engineering | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-mechanical-engineering-1.5.0-windows-x86_64.zip |
+| Desktop app: Mechanical Engineering | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-mechanical-engineering-1.5.0-linux-x86_64.tar.gz |
+| Desktop app: all models | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-windows-x86_64.zip |
+| Desktop app: all models | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz |
+| Command line | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-windows-x86_64.zip |
+| Command line | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz |
 
 ### Desktop app
 
-Mechanical Engineering in its own app: search, questions in words, input forms, live figures and explanations. Windows: Download ai999x-mechanical-engineering-1.4.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-mechanical-engineering.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
+Mechanical Engineering in its own app: search, questions in words, input forms, live figures and explanations. Windows: Download ai999x-mechanical-engineering-1.5.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-mechanical-engineering.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-mechanical-engineering-1.4.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-mechanical-engineering-1.5.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-mechanical-engineering-1.4.0-linux-x86_64.tar.gz
-./ai999x-mechanical-engineering-1.4.0-linux-x86_64/ai999x-mechanical-engineering
+tar xzf ai999x-mechanical-engineering-1.5.0-linux-x86_64.tar.gz
+./ai999x-mechanical-engineering-1.5.0-linux-x86_64/ai999x-mechanical-engineering
 ```
 
-It opens on this model: type a question or pick a capability, fill in the form and press Compute. The AI999X desktop app with every model works the same way (choose the model first). Windows: Download ai999x-1.4.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
+It opens on this model: type a question or pick a capability, fill in the form and press Compute. The AI999X desktop app with every model works the same way (choose the model first). Windows: Download ai999x-1.5.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-1.4.0-linux-x86_64.tar.gz
-./ai999x-1.4.0-linux-x86_64/ai999x
+tar xzf ai999x-1.5.0-linux-x86_64.tar.gz
+./ai999x-1.5.0-linux-x86_64/ai999x
 ```
 
-### Command line — Linux
+### Command line: Linux
 
 The bundle holds one program per model; `mechanical-engineering` is this one. The checksum line should print OK.
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-mkdir -p ~/.local/share && tar xzf ai999x-cli-1.4.0-linux-x86_64.tar.gz -C ~/.local/share
-echo 'export PATH="$HOME/.local/share/ai999x-cli-1.4.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
+mkdir -p ~/.local/share && tar xzf ai999x-cli-1.5.0-linux-x86_64.tar.gz -C ~/.local/share
+echo 'export PATH="$HOME/.local/share/ai999x-cli-1.5.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
 mechanical-engineering --version
 ```
 
-### Command line — Windows (PowerShell)
+### Command line: Windows (PowerShell)
 
 The fourth line should print True.
 
 ```powershell
-$F = "ai999x-cli-1.4.0-windows-x86_64.zip"
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.4.0/$F" -OutFile $F
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS" -OutFile SHA256SUMS
+$F = "ai999x-cli-1.5.0-windows-x86_64.zip"
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/$F" -OutFile $F
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS" -OutFile SHA256SUMS
 (Get-FileHash $F -Algorithm SHA256).Hash.ToLower() -eq ((Select-String -SimpleMatch $F SHA256SUMS).Line -split ' ')[0]
 Expand-Archive $F -DestinationPath "$env:LOCALAPPDATA\AI999X" -Force
-$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.4.0-windows-x86_64"; $env:Path += ";$D"
+$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.5.0-windows-x86_64"; $env:Path += ";$D"
 [Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path", "User") + ";$D", "User")
 mechanical-engineering --version
 ```
@@ -96,7 +96,7 @@ Prints the model, its version and that this is the Rust build.
 
 ```shell
 $ mechanical-engineering --version
-mechanical-engineering-ai999x 1.0.3 (Rust build, ax-engine 0.1.0)
+mechanical-engineering-ai999x 1.5.0 (Rust build, ax-engine 1.5.0)
 ```
 
 ### 2.2 Ask in words
@@ -218,35 +218,7 @@ $ mechanical-engineering solve simply_supported_beam_point_load "L=6 m" "P=20 kN
 NEEDS_INPUT: simply_supported_beam_point_load needs I (second moment of area of the section). Example: solve('simply_supported_beam_point_load', L='6 m', P='20000 N', a='2 m', E='2e+11 Pa', I='8e-05 m^4').
 ```
 
-### 2.9 Draw the figures
-
-The live figures for your own inputs, written as SVG files into the folder given with --out (here the current folder); open them in any browser. Without --out the SVG text comes back as JSON.
-
-```shell
-$ mechanical-engineering figures simply_supported_beam_point_load "L=6 m" "P=20 kN" "a=2 m" "E=200 GPa" "I=8e-05 m^4" --out .
-[
-  {
-    "slug": "simply-supported-beam-point-load-beam",
-    "title": "Simply supported beam with a point load",
-    "caption": "Simply supported beam, span L = 6 m, point load P = 20 kN at a = 2 m, drawn to scale with its shear-force and bending-moment diagrams, derived by statics from the reactions the model returned. Marked: RA = 13.33 kN, RB = 6.667 kN, Mmax = 26.67 kN·m, maximum deflection 4.838 mm. In SI units: M_max = 2.667e+04 N*m. Your inputs: L = 6 m, P = 20 kN, a = 2 m, E = 200 GPa, I = 8e-05 m^4.",
-    "file": ".\\simply-supported-beam-point-load-beam.svg"
-  },
-  {
-    "slug": "simply-supported-beam-point-load-live-1",
-    "title": "Maximum bending moment (under the load) as span varies",
-    "caption": "Maximum bending moment (under the load) as L runs from 2.175 to 10.5 m, every other input as you entered it (38 solutions). Marked: your L = 6 m gives M_max = 2.667e+04. Your inputs: L = 6 m, P = 20 kN, a = 2 m, E = 200 GPa, I = 8e-05 m^4.",
-    "file": ".\\simply-supported-beam-point-load-live-1.svg"
-  },
-  {
-    "slug": "simply-supported-beam-point-load-live-2",
-    "title": "Maximum bending moment (under the load) as distance of the load from the left support A varies",
-    "caption": "Maximum bending moment (under the load) as a runs from 0.5 to 3.5 m, every other input as you entered it (29 solutions). Marked: your a = 2 m gives M_max = 2.667e+04. Your inputs: L = 6 m, P = 20 kN, a = 2 m, E = 200 GPa, I = 8e-05 m^4.",
-    "file": ".\\simply-supported-beam-point-load-live-2.svg"
-  }
-]
-```
-
-### 2.10 Many questions at once
+### 2.9 Many questions at once
 
 One JSON request per line in, one JSON answer per line out, in order: for scripts, notebooks and agents (the program starts once). In PowerShell: Get-Content cases.jsonl | mechanical-engineering batch
 
@@ -319,30 +291,6 @@ answers = [json.loads(line) for line in out.splitlines()]
 
 `mechanical-engineering figures <capability> name=value ... --out DIR` draws the live figures for those inputs and writes each as an SVG file into DIR (an existing folder); without `--out` the SVG text comes back as JSON. The desktop app and the model page draw the same figures as soon as you press Compute.
 
-```shell
-$ mechanical-engineering figures simply_supported_beam_point_load "L=6 m" "P=20 kN" "a=2 m" "E=200 GPa" "I=8e-05 m^4" --out .
-[
-  {
-    "slug": "simply-supported-beam-point-load-beam",
-    "title": "Simply supported beam with a point load",
-    "caption": "Simply supported beam, span L = 6 m, point load P = 20 kN at a = 2 m, drawn to scale with its shear-force and bending-moment diagrams, derived by statics from the reactions the model returned. Marked: RA = 13.33 kN, RB = 6.667 kN, Mmax = 26.67 kN·m, maximum deflection 4.838 mm. In SI units: M_max = 2.667e+04 N*m. Your inputs: L = 6 m, P = 20 kN, a = 2 m, E = 200 GPa, I = 8e-05 m^4.",
-    "file": ".\\simply-supported-beam-point-load-beam.svg"
-  },
-  {
-    "slug": "simply-supported-beam-point-load-live-1",
-    "title": "Maximum bending moment (under the load) as span varies",
-    "caption": "Maximum bending moment (under the load) as L runs from 2.175 to 10.5 m, every other input as you entered it (38 solutions). Marked: your L = 6 m gives M_max = 2.667e+04. Your inputs: L = 6 m, P = 20 kN, a = 2 m, E = 200 GPa, I = 8e-05 m^4.",
-    "file": ".\\simply-supported-beam-point-load-live-1.svg"
-  },
-  {
-    "slug": "simply-supported-beam-point-load-live-2",
-    "title": "Maximum bending moment (under the load) as distance of the load from the left support A varies",
-    "caption": "Maximum bending moment (under the load) as a runs from 0.5 to 3.5 m, every other input as you entered it (29 solutions). Marked: your a = 2 m gives M_max = 2.667e+04. Your inputs: L = 6 m, P = 20 kN, a = 2 m, E = 200 GPa, I = 8e-05 m^4.",
-    "file": ".\\simply-supported-beam-point-load-live-2.svg"
-  }
-]
-```
-
 ## 7. In a web page or Node.js: WebAssembly
 
 The same model is a WebAssembly module, `mechanical_engineering_ai999x.wasm` (https://www.ai999x.com/compute/rust/mechanical_engineering_ai999x.wasm), with a small loader, `ax-wasm.js` (https://www.ai999x.com/compute/rust/ax-wasm.js). It runs in a browser, a Web Worker or Node.js, with no server.
@@ -366,7 +314,7 @@ By topic. For each: what it does, what it needs and gives, when it applies, and 
 
 <a id="cantilever_point_load"></a>
 
-#### Cantilever with a point load — `cantilever_point_load`
+#### Cantilever with a point load: `cantilever_point_load`
 
 Reaction, fixed-end moment, deflection under the load, tip deflection and tip slope of a cantilever carrying one point load at distance a from the fixed end (default: at the free end).
 
@@ -383,9 +331,9 @@ $$
 | `a` | in | distance of the load from the fixed end (default L: at the free end) (optional) | m |
 | `R` | out | vertical reaction at the fixed end | N |
 | `M_fixed` | out | hogging moment at the fixed end | N*m |
-| `deflection_at_load_mm` | out | deflection under the load in mm | — |
-| `tip_deflection_mm` | out | deflection of the free end in mm | — |
-| `tip_slope_deg` | out | slope at the free end in degrees | — |
+| `deflection_at_load_mm` | out | deflection under the load in mm | - |
+| `tip_deflection_mm` | out | deflection of the free end in mm | - |
+| `tip_slope_deg` | out | slope at the free end in degrees | - |
 
 **Applies when:** 0 < a <= L; Euler-Bernoulli beam, small deflections.
 
@@ -408,7 +356,7 @@ tip_slope_deg = 0.358098622
 
 <a id="cantilever_triangular_load"></a>
 
-#### Cantilever with a triangular (linearly varying) load — `cantilever_triangular_load`
+#### Cantilever with a triangular (linearly varying) load, `cantilever_triangular_load`
 
 Reaction, fixed-end moment, tip deflection and tip slope of a cantilever whose load falls linearly from w at the fixed end to zero at the free end.
 
@@ -424,8 +372,8 @@ $$
 | `I` | in | second moment of area | m^4 |
 | `R` | out | vertical reaction at the fixed end | N |
 | `M_fixed` | out | hogging moment at the fixed end | N*m |
-| `tip_deflection_mm` | out | deflection of the free end in mm | — |
-| `tip_slope_deg` | out | slope at the free end in degrees | — |
+| `tip_deflection_mm` | out | deflection of the free end in mm | - |
+| `tip_slope_deg` | out | slope at the free end in degrees | - |
 
 **Applies when:** L, w, E, I > 0; maximum intensity at the fixed end; Euler-Bernoulli beam.
 
@@ -447,7 +395,7 @@ tip_slope_deg = 0.09668662793
 
 <a id="cantilever_udl"></a>
 
-#### Cantilever with a uniformly distributed load — `cantilever_udl`
+#### Cantilever with a uniformly distributed load, `cantilever_udl`
 
 Reaction, fixed-end moment, tip deflection and tip slope of a cantilever under a uniform load over its whole length.
 
@@ -463,8 +411,8 @@ $$
 | `I` | in | second moment of area | m^4 |
 | `R` | out | vertical reaction at the fixed end | N |
 | `M_fixed` | out | hogging moment at the fixed end | N*m |
-| `tip_deflection_mm` | out | deflection of the free end in mm | — |
-| `tip_slope_deg` | out | slope at the free end in degrees | — |
+| `tip_deflection_mm` | out | deflection of the free end in mm | - |
+| `tip_slope_deg` | out | slope at the free end in degrees | - |
 
 **Applies when:** L, w, E, I > 0; Euler-Bernoulli beam, small deflections.
 
@@ -486,7 +434,7 @@ tip_slope_deg = 0.2578310078
 
 <a id="fixed_fixed_beam_point_load"></a>
 
-#### Fixed-fixed (built-in) beam with a point load — `fixed_fixed_beam_point_load`
+#### Fixed-fixed (built-in) beam with a point load, `fixed_fixed_beam_point_load`
 
 Reactions, fixed-end moments, the moment under the load and the deflection under the load of a beam built in at both ends carrying one point load.
 
@@ -506,7 +454,7 @@ $$
 | `MA` | out | hogging moment at A | N*m |
 | `MB` | out | hogging moment at B | N*m |
 | `M_load` | out | sagging moment under the load | N*m |
-| `deflection_at_load_mm` | out | deflection under the load in mm | — |
+| `deflection_at_load_mm` | out | deflection under the load in mm | - |
 
 **Applies when:** 0 < a < L; both ends fully fixed.
 
@@ -531,7 +479,7 @@ deflection_at_load_mm = 2.37037037
 
 <a id="fixed_fixed_beam_udl"></a>
 
-#### Fixed-fixed (built-in) beam with a uniformly distributed load — `fixed_fixed_beam_udl`
+#### Fixed-fixed (built-in) beam with a uniformly distributed load, `fixed_fixed_beam_udl`
 
 Reactions, fixed-end (hogging) moments, midspan (sagging) moment and maximum deflection of a beam built in at both ends under a uniform load.
 
@@ -549,7 +497,7 @@ $$
 | `RB` | out | reaction at B | N |
 | `M_end` | out | hogging moment at each fixed end | N*m |
 | `M_mid` | out | sagging moment at midspan | N*m |
-| `max_deflection_mm` | out | maximum (midspan) deflection in mm | — |
+| `max_deflection_mm` | out | maximum (midspan) deflection in mm | - |
 
 **Applies when:** L, w, E, I > 0; both ends fully fixed against rotation and deflection.
 
@@ -572,7 +520,7 @@ max_deflection_mm = 3.375
 
 <a id="propped_cantilever_point_load"></a>
 
-#### Propped cantilever with a point load — `propped_cantilever_point_load`
+#### Propped cantilever with a point load: `propped_cantilever_point_load`
 
 Reactions, fixed-end moment, moment under the load and deflection under the load of a beam fixed at A and simply supported at B with one point load.
 
@@ -591,7 +539,7 @@ $$
 | `RB` | out | reaction at the prop B | N |
 | `MA` | out | hogging moment at A | N*m |
 | `M_load` | out | sagging moment under the load | N*m |
-| `deflection_at_load_mm` | out | deflection under the load in mm | — |
+| `deflection_at_load_mm` | out | deflection under the load in mm | - |
 
 **Applies when:** 0 < a < L; A fully fixed, B a simple support.
 
@@ -615,7 +563,7 @@ deflection_at_load_mm = 2.333333333
 
 <a id="propped_cantilever_udl"></a>
 
-#### Propped cantilever with a uniformly distributed load — `propped_cantilever_udl`
+#### Propped cantilever with a uniformly distributed load, `propped_cantilever_udl`
 
 Reactions, fixed-end moment, maximum span moment and its position, and the maximum deflection with its position, for a beam fixed at A and simply supported at B under a uniform load.
 
@@ -634,7 +582,7 @@ $$
 | `MA` | out | hogging moment at A | N*m |
 | `M_span` | out | largest sagging moment in the span | N*m |
 | `x_M_span` | out | its position from A | m |
-| `max_deflection_mm` | out | maximum deflection in mm | — |
+| `max_deflection_mm` | out | maximum deflection in mm | - |
 | `x_max` | out | position of the maximum deflection from A | m |
 
 **Applies when:** L, w, E, I > 0; A fully fixed, B a simple support.
@@ -660,7 +608,7 @@ x_max = 4.627718677 m
 
 <a id="simply_supported_beam_point_load"></a>
 
-#### Simply supported beam with a point load — `simply_supported_beam_point_load`
+#### Simply supported beam with a point load: `simply_supported_beam_point_load`
 
 Reactions, maximum bending moment and shear, deflection under the load and the maximum deflection with its position, for a simply supported beam carrying one point load.
 
@@ -679,8 +627,8 @@ $$
 | `RB` | out | reaction at the right support B | N |
 | `M_max` | out | maximum bending moment (under the load) | N*m |
 | `V_max` | out | maximum shear force | N |
-| `deflection_at_load_mm` | out | deflection under the load in mm | — |
-| `max_deflection_mm` | out | maximum deflection in mm | — |
+| `deflection_at_load_mm` | out | deflection under the load in mm | - |
+| `max_deflection_mm` | out | maximum deflection in mm | - |
 | `x_max` | out | position of the maximum deflection from A | m |
 
 **Applies when:** 0 < a < L; Euler-Bernoulli beam, linear elastic, prismatic.
@@ -707,7 +655,7 @@ x_max = 2.734013676 m
 
 <a id="simply_supported_beam_udl"></a>
 
-#### Simply supported beam with a uniformly distributed load — `simply_supported_beam_udl`
+#### Simply supported beam with a uniformly distributed load, `simply_supported_beam_udl`
 
 Reactions, maximum bending moment and shear, maximum (midspan) deflection and end slope of a simply supported beam under a uniform load over its whole span.
 
@@ -725,8 +673,8 @@ $$
 | `RB` | out | reaction at B | N |
 | `M_max` | out | maximum bending moment (midspan) | N*m |
 | `V_max` | out | maximum shear force (at the supports) | N |
-| `max_deflection_mm` | out | maximum deflection (midspan) in mm | — |
-| `end_slope_deg` | out | slope at the supports in degrees | — |
+| `max_deflection_mm` | out | maximum deflection (midspan) in mm | - |
+| `end_slope_deg` | out | slope at the supports in degrees | - |
 
 **Applies when:** L, w, E, I > 0; Euler-Bernoulli beam, small deflections.
 
@@ -750,7 +698,7 @@ end_slope_deg = 0.3730193979
 
 <a id="simply_supported_beam_point_loads"></a>
 
-#### Simply supported beam with several point loads — `simply_supported_beam_point_loads`
+#### Simply supported beam with several point loads, `simply_supported_beam_point_loads`
 
 Support reactions, the maximum bending moment and its position, and the maximum shear for a simply supported beam carrying several downward point loads.
 
@@ -761,13 +709,13 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `L` | in | span | m |
-| `x` | in | load positions from the left support A, in m (a list) | — |
-| `P` | in | point loads in kN, downward (a list, same order as x) | — |
-| `RA` | out | reaction at A in kN | — |
-| `RB` | out | reaction at B in kN | — |
-| `M_max` | out | maximum bending moment in kN*m | — |
-| `x_Mmax` | out | position of the maximum moment from A, in m (the first one if several are equal) | — |
-| `V_max` | out | maximum shear force in kN | — |
+| `x` | in | load positions from the left support A, in m (a list) | - |
+| `P` | in | point loads in kN, downward (a list, same order as x) | - |
+| `RA` | out | reaction at A in kN | - |
+| `RB` | out | reaction at B in kN | - |
+| `M_max` | out | maximum bending moment in kN*m | - |
+| `x_Mmax` | out | position of the maximum moment from A, in m (the first one if several are equal) | - |
+| `V_max` | out | maximum shear force in kN | - |
 
 **Applies when:** 0 <= x_i <= L; P_i > 0 (downward); x and P of equal length.
 
@@ -789,7 +737,7 @@ V_max = 15
 
 <a id="johnson_column"></a>
 
-#### Critical stress of an intermediate column (Johnson parabola / Euler) — `johnson_column`
+#### Critical stress of an intermediate column (Johnson parabola / Euler), `johnson_column`
 
 The critical stress of a column by the Johnson parabola below the transition slenderness and by Euler above it, with the transition slenderness and (with the area) the critical load.
 
@@ -803,13 +751,13 @@ $$
 | `E` | in | Young's modulus | Pa |
 | `L` | in | column length | m |
 | `r` | in | least radius of gyration | m |
-| `ends` | in | end conditions (theoretical K) | — |
+| `ends` | in | end conditions (theoretical K) | - |
 | `A` | in | cross-sectional area (optional: gives the load) (optional) | m^2 |
-| `slenderness` | out | slenderness ratio K L / r | — |
-| `transition_slenderness` | out | transition slenderness C_c = sqrt(2 pi^2 E / Sy) | — |
-| `regime` | out | Johnson or Euler | — |
-| `sigma_cr_MPa` | out | critical stress, MPa | — |
-| `P_cr_kN` | out | critical load in kN (with A) | — |
+| `slenderness` | out | slenderness ratio K L / r | - |
+| `transition_slenderness` | out | transition slenderness C_c = sqrt(2 pi^2 E / Sy) | - |
+| `regime` | out | Johnson or Euler | - |
+| `sigma_cr_MPa` | out | critical stress, MPa | - |
+| `P_cr_kN` | out | critical load in kN (with A) | - |
 
 **Applies when:** centric load; theoretical effective length factors.
 
@@ -832,7 +780,7 @@ sigma_cr_MPa = 205.4740892
 
 <a id="secant_column"></a>
 
-#### Eccentrically loaded column (secant formula) — `secant_column`
+#### Eccentrically loaded column (secant formula), `secant_column`
 
 The maximum compressive stress, midspan deflection and largest bending moment of a pinned column under a load with equal end eccentricities.
 
@@ -849,10 +797,10 @@ $$
 | `I` | in | second moment of area in the bending plane | m^4 |
 | `c` | in | distance from the centroid to the extreme fibre | m |
 | `E` | in | Young's modulus | Pa |
-| `sigma_max_MPa` | out | maximum compressive stress (magnitude), MPa | — |
-| `deflection_mm` | out | midspan lateral deflection, mm | — |
+| `sigma_max_MPa` | out | maximum compressive stress (magnitude), MPa | - |
+| `deflection_mm` | out | midspan lateral deflection, mm | - |
 | `M_max` | out | largest bending moment P (e + deflection) | N*m |
-| `P_over_Pcr` | out | P / P_Euler | — |
+| `P_over_Pcr` | out | P / P_Euler | - |
 
 **Applies when:** pinned ends, equal eccentricities on the same side; P below the Euler load; elastic.
 
@@ -877,7 +825,7 @@ P_over_Pcr = 0.07599088773
 
 <a id="euler_buckling"></a>
 
-#### Euler buckling load of a column with given end conditions — `euler_buckling`
+#### Euler buckling load of a column with given end conditions, `euler_buckling`
 
 The critical (Euler) buckling load of an ideal elastic column, its effective length factor and length, and with the area also the critical stress and slenderness ratio.
 
@@ -890,14 +838,14 @@ $$
 | `E` | in | Young's modulus | Pa |
 | `I` | in | least second moment of area | m^4 |
 | `L` | in | column length | m |
-| `ends` | in | end conditions: pinned-pinned, fixed-free, fixed-fixed or fixed-pinned | — |
+| `ends` | in | end conditions: pinned-pinned, fixed-free, fixed-fixed or fixed-pinned | - |
 | `A` | in | cross-sectional area (optional: gives the stress and slenderness) (optional) | m^2 |
 | `P_cr` | out | critical buckling load | N |
-| `P_cr_kN` | out | critical load in kN | — |
-| `K` | out | effective length factor (theoretical) | — |
+| `P_cr_kN` | out | critical load in kN | - |
+| `K` | out | effective length factor (theoretical) | - |
 | `Le` | out | effective length K L | m |
-| `sigma_cr_MPa` | out | critical stress P_cr/A, MPa (with A) | — |
-| `slenderness` | out | slenderness ratio K L / r (with A) | — |
+| `sigma_cr_MPa` | out | critical stress P_cr/A, MPa (with A) | - |
+| `slenderness` | out | slenderness ratio K L / r (with A) | - |
 
 **Applies when:** ideal straight elastic column, centric load; theoretical K: 1, 2, 0.5, 0.6992 (fixed-pinned, from tan x = x); valid only below the proportional limit.
 
@@ -921,7 +869,7 @@ In the worked example, E = 200 GPa, I = 8e-06 m^4, L = 4 m, ends = pinned-pinned
 
 <a id="brittle_failure_mohr"></a>
 
-#### Safety factors of a brittle material (maximum normal stress, Coulomb-Mohr, modified Mohr) — `brittle_failure_mohr`
+#### Safety factors of a brittle material (maximum normal stress, Coulomb-Mohr, modified Mohr), `brittle_failure_mohr`
 
 Factors of safety of a brittle material under plane stress by the maximum-normal-stress, brittle Coulomb-Mohr and modified-Mohr criteria (proportional loading).
 
@@ -935,9 +883,9 @@ $$
 | `sB` | in | second in-plane principal stress | Pa |
 | `Sut` | in | ultimate tensile strength | Pa |
 | `Suc` | in | ultimate compressive strength (positive number) | Pa |
-| `n_max_normal` | out | safety factor, maximum normal stress theory | — |
-| `n_coulomb_mohr` | out | safety factor, brittle Coulomb-Mohr | — |
-| `n_modified_mohr` | out | safety factor, modified Mohr | — |
+| `n_max_normal` | out | safety factor, maximum normal stress theory | - |
+| `n_coulomb_mohr` | out | safety factor, brittle Coulomb-Mohr | - |
+| `n_modified_mohr` | out | safety factor, modified Mohr | - |
 
 **Applies when:** plane stress (third principal stress zero); Sut, Suc > 0 (Suc given as a magnitude); proportional loading.
 
@@ -958,7 +906,7 @@ n_modified_mohr = 2.333333333
 
 <a id="yield_criteria_safety_factor"></a>
 
-#### Von Mises and Tresca equivalent stresses and safety factors — `yield_criteria_safety_factor`
+#### Von Mises and Tresca equivalent stresses and safety factors, `yield_criteria_safety_factor`
 
 Equivalent stresses by the distortion-energy (von Mises) and maximum-shear (Tresca) criteria and the corresponding factors of safety against yielding.
 
@@ -975,10 +923,10 @@ $$
 | `txy` | in | tau_xy (default 0) (optional) | Pa |
 | `tyz` | in | tau_yz (default 0) (optional) | Pa |
 | `tzx` | in | tau_zx (default 0) (optional) | Pa |
-| `von_mises_MPa` | out | von Mises stress, MPa | — |
-| `tresca_MPa` | out | Tresca equivalent stress (s1 - s3), MPa | — |
-| `n_von_mises` | out | safety factor by distortion energy | — |
-| `n_tresca` | out | safety factor by maximum shear | — |
+| `von_mises_MPa` | out | von Mises stress, MPa | - |
+| `tresca_MPa` | out | Tresca equivalent stress (s1 - s3), MPa | - |
+| `n_von_mises` | out | safety factor by distortion energy | - |
+| `n_tresca` | out | safety factor by maximum shear | - |
 
 **Applies when:** Sy > 0; not a purely hydrostatic stress; ductile, isotropic material.
 
@@ -1002,7 +950,7 @@ n_tresca = 1.75
 
 <a id="marin_endurance_limit"></a>
 
-#### Endurance limit with the Marin factors — `marin_endurance_limit`
+#### Endurance limit with the Marin factors: `marin_endurance_limit`
 
 The corrected endurance limit Se = ka kb kc kd ke kf Se' of a steel part from its tensile strength, surface finish, size, loading and reliability (Se' = 0.5 Sut up to 1400 MPa, else 700 MPa).
 
@@ -1013,18 +961,18 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `Sut` | in | ultimate tensile strength | Pa |
-| `surface` | in | surface finish (ground, machined, cold-drawn, hot-rolled, as-forged) | — |
-| `load` | in | loading (bending, axial, torsion) | — |
+| `surface` | in | surface finish (ground, machined, cold-drawn, hot-rolled, as-forged) | - |
+| `load` | in | loading (bending, axial, torsion) | - |
 | `d` | in | diameter (needed for bending and torsion, 2.79-254 mm) (optional) | m |
-| `R` | in | reliability (default 0.5; written as 0.99 or 99%) (optional) | — |
-| `kd` | in | temperature factor (default 1) (optional) | — |
-| `kf` | in | miscellaneous-effects factor (default 1) (optional) | — |
-| `ka` | out | surface factor a Sut^b | — |
-| `kb` | out | size factor | — |
-| `kc` | out | load factor | — |
-| `ke` | out | reliability factor 1 - 0.08 z_a | — |
-| `Se_prime_MPa` | out | uncorrected endurance limit, MPa | — |
-| `Se_MPa` | out | corrected endurance limit, MPa | — |
+| `R` | in | reliability (default 0.5; written as 0.99 or 99%) (optional) | - |
+| `kd` | in | temperature factor (default 1) (optional) | - |
+| `kf` | in | miscellaneous-effects factor (default 1) (optional) | - |
+| `ka` | out | surface factor a Sut^b | - |
+| `kb` | out | size factor | - |
+| `kc` | out | load factor | - |
+| `ke` | out | reliability factor 1 - 0.08 z_a | - |
+| `Se_prime_MPa` | out | uncorrected endurance limit, MPa | - |
+| `Se_MPa` | out | corrected endurance limit, MPa | - |
 | `Se` | out | corrected endurance limit | Pa |
 
 **Applies when:** steels (Se' = 0.5 Sut, at most 700 MPa); size factor for 2.79 <= d <= 254 mm (rotating round sections); 0.5 <= R < 1.
@@ -1051,7 +999,7 @@ Se = 191707072.7 Pa
 
 <a id="rainflow_fatigue_damage"></a>
 
-#### Fatigue damage of a stress history (rainflow counting + Miner's rule) — `rainflow_fatigue_damage`
+#### Fatigue damage of a stress history (rainflow counting + Miner's rule), `rainflow_fatigue_damage`
 
 The Miner damage of one pass of a stress history: rainflow cycles (ASTM, half cycles) on a single-slope S-N curve N = Nc (Sc/S)^m, and the passes to failure.
 
@@ -1061,13 +1009,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `history` | in | the stress history in MPa, point by point (a list) | — |
-| `Sc` | in | reference stress range at Nc cycles, MPa | — |
-| `m` | in | S-N slope | — |
-| `Nc` | in | cycles at Sc (default 2e6) (optional) | — |
-| `damage` | out | damage of one pass of the history | — |
-| `repeats_to_failure` | out | passes until D = 1 | — |
-| `cycles` | out | cycles counted per pass | — |
+| `history` | in | the stress history in MPa, point by point (a list) | - |
+| `Sc` | in | reference stress range at Nc cycles, MPa | - |
+| `m` | in | S-N slope | - |
+| `Nc` | in | cycles at Sc (default 2e6) (optional) | - |
+| `damage` | out | damage of one pass of the history | - |
+| `repeats_to_failure` | out | passes until D = 1 | - |
+| `cycles` | out | cycles counted per pass | - |
 
 **Applies when:** ASTM E1049-85 rainflow counting, half cycles weighted 0.5; no mean-stress correction; single-slope S-N curve, no endurance limit.
 
@@ -1086,7 +1034,7 @@ cycles = 1
 
 <a id="eurocode_fatigue_damage"></a>
 
-#### Fatigue damage on the trilinear (Eurocode 3) S-N curve — `eurocode_fatigue_damage`
+#### Fatigue damage on the trilinear (Eurocode 3) S-N curve, `eurocode_fatigue_damage`
 
 The Miner damage of stress-range blocks on the trilinear S-N curve of a detail category (slope 3 to 5e6 cycles, slope 5 to 1e8, cut-off below), with the constant-amplitude and cut-off limits.
 
@@ -1096,13 +1044,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `ranges` | in | stress ranges in MPa (a list) | — |
-| `counts` | in | cycles of each range (a list) | — |
-| `dsc` | in | detail category: stress range at 2e6 cycles, MPa | — |
-| `damage` | out | Miner damage sum | — |
-| `delta_sigma_D` | out | constant-amplitude fatigue limit (5e6 cycles), MPa | — |
-| `delta_sigma_L` | out | cut-off limit (1e8 cycles), MPa | — |
-| `repeats_to_failure` | out | repeats of the spectrum until D = 1 | — |
+| `ranges` | in | stress ranges in MPa (a list) | - |
+| `counts` | in | cycles of each range (a list) | - |
+| `dsc` | in | detail category: stress range at 2e6 cycles, MPa | - |
+| `damage` | out | Miner damage sum | - |
+| `delta_sigma_D` | out | constant-amplitude fatigue limit (5e6 cycles), MPa | - |
+| `delta_sigma_L` | out | cut-off limit (1e8 cycles), MPa | - |
+| `repeats_to_failure` | out | repeats of the spectrum until D = 1 | - |
 
 **Applies when:** partial safety factors not applied (gamma_Mf = gamma_Ff = 1); at least one range above the cut-off.
 
@@ -1121,7 +1069,7 @@ repeats_to_failure = 2
 
 <a id="sn_fatigue_life"></a>
 
-#### Fatigue life from the S-N line (10^3 to 10^6 cycles) — `sn_fatigue_life`
+#### Fatigue life from the S-N line (10^3 to 10^6 cycles), `sn_fatigue_life`
 
 Cycles to failure of a fully reversed amplitude on the straight log-log S-N line through f*Sut at 10^3 cycles and Se at 10^6 cycles, with the line's constants a and b.
 
@@ -1133,12 +1081,12 @@ $$
 |---|---|---|---|
 | `Sut` | in | ultimate tensile strength | Pa |
 | `Se` | in | endurance limit | Pa |
-| `f` | in | fatigue strength fraction at 10^3 cycles (e.g. 0.9) | — |
+| `f` | in | fatigue strength fraction at 10^3 cycles (e.g. 0.9) | - |
 | `sa` | in | fully reversed stress amplitude | Pa |
-| `a_MPa` | out | S-N constant a, MPa | — |
-| `b` | out | S-N exponent b | — |
-| `N` | out | cycles to failure | — |
-| `log10_N` | out | log10 of the cycles to failure | — |
+| `a_MPa` | out | S-N constant a, MPa | - |
+| `b` | out | S-N exponent b | - |
+| `N` | out | cycles to failure | - |
+| `log10_N` | out | log10 of the cycles to failure | - |
 
 **Applies when:** Se < sa < f Sut; 0 < f < 1; fully reversed loading.
 
@@ -1160,7 +1108,7 @@ log10_N = 4.739671771
 
 <a id="fatigue_life_mean_stress_correction"></a>
 
-#### Fatigue life with a mean-stress correction (Morrow, Goodman, SWT, Walker) and Basquin's law — `fatigue_life_mean_stress_correction`
+#### Fatigue life with a mean-stress correction (Morrow, Goodman, SWT, Walker) and Basquin's law, `fatigue_life_mean_stress_correction`
 
 The equivalent fully reversed stress amplitude of a cycle with a mean stress, by a chosen correction, and the cycles to failure from Basquin's law sigma_ar = sf' (2N)^b.
 
@@ -1173,12 +1121,12 @@ $$
 | `sa` | in | stress amplitude | Pa |
 | `sm` | in | mean stress | Pa |
 | `sf` | in | fatigue strength coefficient sf' (Morrow and Goodman use it as the strength) | Pa |
-| `b` | in | fatigue strength exponent (negative) | — |
-| `method` | in | mean-stress correction | — |
-| `gamma` | in | Walker exponent (walker only) (optional) | — |
-| `sigma_ar_MPa` | out | equivalent fully reversed amplitude, MPa | — |
-| `Nf` | out | cycles to failure | — |
-| `log10_Nf` | out | log10 of the cycles to failure | — |
+| `b` | in | fatigue strength exponent (negative) | - |
+| `method` | in | mean-stress correction | - |
+| `gamma` | in | Walker exponent (walker only) (optional) | - |
+| `sigma_ar_MPa` | out | equivalent fully reversed amplitude, MPa | - |
+| `Nf` | out | cycles to failure | - |
+| `log10_Nf` | out | log10 of the cycles to failure | - |
 
 **Applies when:** -0.2 < b < 0; Morrow/Goodman: sm < sf'; SWT/Walker: sigma_max > 0; goodman here uses sf' as the strength (Morrow form).
 
@@ -1200,7 +1148,7 @@ log10_Nf = 5.694421371
 
 <a id="asme_elliptic_fatigue_safety_factor"></a>
 
-#### Fatigue safety factor by the ASME-elliptic criterion — `asme_elliptic_fatigue_safety_factor`
+#### Fatigue safety factor by the ASME-elliptic criterion, `asme_elliptic_fatigue_safety_factor`
 
 The fatigue factor of safety along a proportional load line by the ASME ellipse (sa/Se)^2 + (sm/Sy)^2 = 1, and the equivalent fully reversed amplitude.
 
@@ -1214,8 +1162,8 @@ $$
 | `sm` | in | mean stress (>= 0) | Pa |
 | `Se` | in | fully corrected endurance limit | Pa |
 | `Sy` | in | yield strength | Pa |
-| `n_fatigue` | out | fatigue safety factor (ASME-elliptic, proportional loading) | — |
-| `sigma_ar_MPa` | out | equivalent fully reversed amplitude sa/sqrt(1 - (sm/Sy)^2), MPa | — |
+| `n_fatigue` | out | fatigue safety factor (ASME-elliptic, proportional loading) | - |
+| `sigma_ar_MPa` | out | equivalent fully reversed amplitude sa/sqrt(1 - (sm/Sy)^2), MPa | - |
 
 **Applies when:** sm >= 0; sm < Sy; proportional loading.
 
@@ -1235,7 +1183,7 @@ sigma_ar_MPa = 100.9009191
 
 <a id="gerber_fatigue_safety_factor"></a>
 
-#### Fatigue safety factor by the Gerber criterion — `gerber_fatigue_safety_factor`
+#### Fatigue safety factor by the Gerber criterion, `gerber_fatigue_safety_factor`
 
 The fatigue factor of safety along a proportional load line by the Gerber parabola sa/Se + (sm/Sut)^2 = 1, and the equivalent fully reversed amplitude.
 
@@ -1249,8 +1197,8 @@ $$
 | `sm` | in | mean stress (>= 0) | Pa |
 | `Se` | in | fully corrected endurance limit | Pa |
 | `Sut` | in | ultimate tensile strength | Pa |
-| `n_fatigue` | out | fatigue safety factor (Gerber, proportional loading) | — |
-| `sigma_ar_MPa` | out | equivalent fully reversed amplitude sa/(1 - (sm/Sut)^2), MPa | — |
+| `n_fatigue` | out | fatigue safety factor (Gerber, proportional loading) | - |
+| `sigma_ar_MPa` | out | equivalent fully reversed amplitude sa/(1 - (sm/Sut)^2), MPa | - |
 
 **Applies when:** sm >= 0 (compressive means not covered); sm < Sut; proportional loading.
 
@@ -1270,7 +1218,7 @@ sigma_ar_MPa = 121.5880893
 
 <a id="goodman_fatigue_safety_factor"></a>
 
-#### Fatigue safety factor by the modified Goodman criterion — `goodman_fatigue_safety_factor`
+#### Fatigue safety factor by the modified Goodman criterion, `goodman_fatigue_safety_factor`
 
 The fatigue factor of safety along a proportional load line by the modified Goodman line, the equivalent fully reversed amplitude, and (with Sy) Langer's first-cycle yield factor.
 
@@ -1285,9 +1233,9 @@ $$
 | `Se` | in | fully corrected endurance limit | Pa |
 | `Sut` | in | ultimate tensile strength | Pa |
 | `Sy` | in | yield strength (optional: first-cycle yield check) (optional) | Pa |
-| `n_fatigue` | out | fatigue safety factor (Goodman, proportional loading) | — |
-| `sigma_ar_MPa` | out | equivalent fully reversed amplitude sa/(1 - sm/Sut), MPa | — |
-| `n_yield` | out | Langer first-cycle yield factor Sy/(sa + sm) (with Sy) | — |
+| `n_fatigue` | out | fatigue safety factor (Goodman, proportional loading) | - |
+| `sigma_ar_MPa` | out | equivalent fully reversed amplitude sa/(1 - sm/Sut), MPa | - |
+| `n_yield` | out | Langer first-cycle yield factor Sy/(sa + sm) (with Sy) | - |
 
 **Applies when:** sm >= 0 (compressive means not covered); sm < Sut; proportional loading (the load line through the origin).
 
@@ -1307,7 +1255,7 @@ In the worked example, sa = 120 MPa, sm = 80 MPa, Se = 250 MPa, Sut = 700 MPa go
 
 <a id="soderberg_fatigue_safety_factor"></a>
 
-#### Fatigue safety factor by the Soderberg criterion — `soderberg_fatigue_safety_factor`
+#### Fatigue safety factor by the Soderberg criterion, `soderberg_fatigue_safety_factor`
 
 The conservative Soderberg fatigue factor of safety (the line from Se to the yield strength) along a proportional load line, and the equivalent amplitude.
 
@@ -1321,8 +1269,8 @@ $$
 | `sm` | in | mean stress (>= 0) | Pa |
 | `Se` | in | fully corrected endurance limit | Pa |
 | `Sy` | in | yield strength | Pa |
-| `n_fatigue` | out | fatigue safety factor (Soderberg) | — |
-| `sigma_ar_MPa` | out | equivalent fully reversed amplitude sa/(1 - sm/Sy), MPa | — |
+| `n_fatigue` | out | fatigue safety factor (Soderberg) | - |
+| `sigma_ar_MPa` | out | equivalent fully reversed amplitude sa/(1 - sm/Sy), MPa | - |
 
 **Applies when:** sm >= 0; sm < Sy; proportional loading.
 
@@ -1342,7 +1290,7 @@ sigma_ar_MPa = 115.3846154
 
 <a id="sn_fatigue_strength"></a>
 
-#### Fatigue strength at a given number of cycles (S-N line) — `sn_fatigue_strength`
+#### Fatigue strength at a given number of cycles (S-N line), `sn_fatigue_strength`
 
 The fully reversed fatigue strength at N cycles (10^3 to 10^6) on the straight log-log S-N line through f*Sut at 10^3 and Se at 10^6 cycles.
 
@@ -1354,9 +1302,9 @@ $$
 |---|---|---|---|
 | `Sut` | in | ultimate tensile strength | Pa |
 | `Se` | in | endurance limit | Pa |
-| `f` | in | fatigue strength fraction at 10^3 cycles | — |
-| `N` | in | number of cycles (10^3 to 10^6) | — |
-| `Sf_MPa` | out | fatigue strength at N cycles, MPa | — |
+| `f` | in | fatigue strength fraction at 10^3 cycles | - |
+| `N` | in | number of cycles (10^3 to 10^6) | - |
+| `Sf_MPa` | out | fatigue strength at N cycles, MPa | - |
 
 **Applies when:** 10^3 <= N <= 10^6; 0 < f < 1, f Sut > Se.
 
@@ -1375,7 +1323,7 @@ Sf_MPa = 300
 
 <a id="miner_damage_sn_curve"></a>
 
-#### Miner's rule damage with a single-slope S-N curve — `miner_damage_sn_curve`
+#### Miner's rule damage with a single-slope S-N curve, `miner_damage_sn_curve`
 
 The Palmgren-Miner damage sum of stress-range blocks on an S-N curve N = Nc (Sc/S)^m, and how many repeats of the spectrum the part survives.
 
@@ -1385,13 +1333,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `ranges` | in | stress ranges in MPa (a list) | — |
-| `counts` | in | number of cycles of each range (a list) | — |
-| `Sc` | in | reference stress range of the curve at Nc cycles, MPa | — |
-| `m` | in | S-N slope (e.g. 3 for welded details) | — |
-| `Nc` | in | cycles at Sc (default 2e6) (optional) | — |
-| `damage` | out | Miner damage sum D | — |
-| `repeats_to_failure` | out | repeats of the spectrum until D = 1 | — |
+| `ranges` | in | stress ranges in MPa (a list) | - |
+| `counts` | in | number of cycles of each range (a list) | - |
+| `Sc` | in | reference stress range of the curve at Nc cycles, MPa | - |
+| `m` | in | S-N slope (e.g. 3 for welded details) | - |
+| `Nc` | in | cycles at Sc (default 2e6) (optional) | - |
+| `damage` | out | Miner damage sum D | - |
+| `repeats_to_failure` | out | repeats of the spectrum until D = 1 | - |
 
 **Applies when:** linear damage accumulation (Palmgren-Miner); a single-slope curve without endurance limit.
 
@@ -1409,7 +1357,7 @@ repeats_to_failure = 2
 
 <a id="rainflow_counting"></a>
 
-#### Rainflow cycle counting of a load history (ASTM E1049) — `rainflow_counting`
+#### Rainflow cycle counting of a load history (ASTM E1049), `rainflow_counting`
 
 The cycles in a load or stress history by rainflow counting (three-point method, half cycles for the residue), as distinct ranges with their counts.
 
@@ -1419,11 +1367,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `history` | in | the load or stress history, point by point (a list; any one unit) | — |
-| `ranges` | out | distinct ranges, largest first (in the history's unit) | — |
-| `counts` | out | cycles of each range (half cycles count 0.5) | — |
-| `total_cycles` | out | total number of cycles | — |
-| `max_range` | out | largest range | — |
+| `history` | in | the load or stress history, point by point (a list; any one unit) | - |
+| `ranges` | out | distinct ranges, largest first (in the history's unit) | - |
+| `counts` | out | cycles of each range (half cycles count 0.5) | - |
+| `total_cycles` | out | total number of cycles | - |
+| `max_range` | out | largest range | - |
 
 **Applies when:** at least 3 points, not constant; ASTM E1049-85: the first and last points are reversals, the residue counts as half cycles; ranges equal to 12 significant digits are merged.
 
@@ -1441,7 +1389,7 @@ max_range = 10
 
 <a id="shaft_diameter_de_goodman"></a>
 
-#### Shaft diameter for a design factor (DE-Goodman) — `shaft_diameter_de_goodman`
+#### Shaft diameter for a design factor (DE-Goodman), `shaft_diameter_de_goodman`
 
 The smallest solid-shaft diameter giving a required fatigue design factor under alternating and mean bending and torsion (distortion-energy Goodman).
 
@@ -1451,16 +1399,16 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `n` | in | required fatigue design factor (>= 1) | — |
+| `n` | in | required fatigue design factor (>= 1) | - |
 | `Ma` | in | alternating bending moment | N*m |
 | `Mm` | in | mean bending moment | N*m |
 | `Ta` | in | alternating torque | N*m |
 | `Tm` | in | mean torque | N*m |
-| `Kf` | in | fatigue stress-concentration factor, bending | — |
-| `Kfs` | in | fatigue stress-concentration factor, torsion | — |
+| `Kf` | in | fatigue stress-concentration factor, bending | - |
+| `Kfs` | in | fatigue stress-concentration factor, torsion | - |
 | `Se` | in | fully corrected endurance limit | Pa |
 | `Sut` | in | ultimate tensile strength | Pa |
-| `d_mm` | out | required diameter, mm | — |
+| `d_mm` | out | required diameter, mm | - |
 
 **Applies when:** solid round shaft; the stress-concentration factors for the final size are assumed known; n >= 1.
 
@@ -1484,7 +1432,7 @@ d_mm = 28.69494213
 
 <a id="shaft_fatigue_safety_factor"></a>
 
-#### Shaft fatigue safety factor (DE-Goodman) — `shaft_fatigue_safety_factor`
+#### Shaft fatigue safety factor (DE-Goodman): `shaft_fatigue_safety_factor`
 
 The fatigue factor of safety of a rotating solid shaft under alternating and mean bending and torsion by the distortion-energy Goodman criterion, with the von Mises stresses and (with Sy) the first-cycle yield factor.
 
@@ -1499,15 +1447,15 @@ $$
 | `Mm` | in | mean bending moment | N*m |
 | `Ta` | in | alternating torque | N*m |
 | `Tm` | in | mean torque | N*m |
-| `Kf` | in | fatigue stress-concentration factor, bending | — |
-| `Kfs` | in | fatigue stress-concentration factor, torsion | — |
+| `Kf` | in | fatigue stress-concentration factor, bending | - |
+| `Kfs` | in | fatigue stress-concentration factor, torsion | - |
 | `Se` | in | fully corrected endurance limit | Pa |
 | `Sut` | in | ultimate tensile strength | Pa |
 | `Sy` | in | yield strength (optional) (optional) | Pa |
-| `n_fatigue` | out | fatigue safety factor (DE-Goodman) | — |
-| `sigma_a_vm_MPa` | out | alternating von Mises stress, MPa | — |
-| `sigma_m_vm_MPa` | out | mean von Mises stress, MPa | — |
-| `n_yield` | out | first-cycle yield factor (with Sy) | — |
+| `n_fatigue` | out | fatigue safety factor (DE-Goodman) | - |
+| `sigma_a_vm_MPa` | out | alternating von Mises stress, MPa | - |
+| `sigma_m_vm_MPa` | out | mean von Mises stress, MPa | - |
+| `n_yield` | out | first-cycle yield factor (with Sy) | - |
 
 **Applies when:** solid round shaft, no axial load; Kf, Kfs >= 1; an alternating moment or torque present.
 
@@ -1535,7 +1483,7 @@ In the worked example, d = 40 mm, Ma = 150 N*m, Mm = 0 N*m, Ta = 0 N*m, Tm = 200
 
 <a id="belt_friction_capstan"></a>
 
-#### Belt or rope friction on a drum (capstan equation) — `belt_friction_capstan`
+#### Belt or rope friction on a drum (capstan equation), `belt_friction_capstan`
 
 The largest tight-side tension a flat belt, rope or V-belt can hold for a given slack-side tension, friction coefficient and wrap angle.
 
@@ -1546,11 +1494,11 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `T2` | in | slack-side tension | N |
-| `mu` | in | coefficient of friction | — |
+| `mu` | in | coefficient of friction | - |
 | `theta` | in | angle of wrap | rad |
 | `beta` | in | included groove angle of a V-belt (optional; flat belt when absent) (optional) | rad |
 | `T1` | out | tight-side tension at impending slip | N |
-| `ratio` | out | tension ratio T1/T2 | — |
+| `ratio` | out | tension ratio T1/T2 | - |
 | `friction_force` | out | net friction force T1 - T2 | N |
 
 **Applies when:** impending slip, no centrifugal effect; mu > 0, wrap > 0.
@@ -1571,7 +1519,7 @@ friction_force = 313.266479 N
 
 <a id="bolt_preload_torque"></a>
 
-#### Bolt tightening torque and preload (T = K F d) — `bolt_preload_torque`
+#### Bolt tightening torque and preload (T = K F d), `bolt_preload_torque`
 
 The tightening torque T = K F d that produces a bolt preload F with nut factor K and nominal diameter d, or the preload produced by a torque.
 
@@ -1581,13 +1529,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `K` | in | nut (torque) factor (about 0.2 for unlubricated steel) | — |
+| `K` | in | nut (torque) factor (about 0.2 for unlubricated steel) | - |
 | `d` | in | nominal bolt diameter | m |
 | `F` | in | preload (give F or T) (optional) | N |
 | `T` | in | tightening torque (give F or T) (optional) | N*m |
 | `T` | out | tightening torque | N*m |
 | `F` | out | bolt preload | N |
-| `F_kN` | out | bolt preload, kN | — |
+| `F_kN` | out | bolt preload, kN | - |
 
 **Applies when:** 0.05 <= K <= 0.5; exactly one of F and T.
 
@@ -1607,7 +1555,7 @@ F_kN = 25
 
 <a id="eccentric_bolt_group"></a>
 
-#### Eccentrically loaded bolt group (elastic method) — `eccentric_bolt_group`
+#### Eccentrically loaded bolt group (elastic method), `eccentric_bolt_group`
 
 The direct shear per bolt, the largest resultant bolt force and which bolt carries it, for a group of identical bolts under a vertical load applied with a horizontal eccentricity.
 
@@ -1617,13 +1565,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `bolts` | in | bolt positions, one row 'x y' per bolt, in mm | — |
+| `bolts` | in | bolt positions, one row 'x y' per bolt, in mm | - |
 | `P` | in | vertical load (downward) | N |
 | `e` | in | horizontal distance of the load line from the bolt-group centroid (positive to the right) | m |
-| `direct_kN` | out | direct shear per bolt, kN | — |
-| `max_bolt_force_kN` | out | largest resultant bolt force, kN | — |
-| `critical_bolt` | out | number of the most loaded bolt (1-based, the first if several are equal) | — |
-| `polar_sum_mm2` | out | sum of r^2 about the centroid, mm^2 | — |
+| `direct_kN` | out | direct shear per bolt, kN | - |
+| `max_bolt_force_kN` | out | largest resultant bolt force, kN | - |
+| `critical_bolt` | out | number of the most loaded bolt (1-based, the first if several are equal) | - |
+| `polar_sum_mm2` | out | sum of r^2 about the centroid, mm^2 | - |
 
 **Applies when:** identical bolts, rigid plate, elastic method; 2 to 40 bolts, not all at one point.
 
@@ -1643,7 +1591,7 @@ polar_sum_mm2 = 20000
 
 <a id="four_bar_linkage_position"></a>
 
-#### Four-bar linkage position analysis — `four_bar_linkage_position`
+#### Four-bar linkage position analysis: `four_bar_linkage_position`
 
 The coupler and output-rocker angles and the transmission angle of a four-bar linkage at a given crank angle, on the open or the crossed branch.
 
@@ -1658,10 +1606,10 @@ $$
 | `c` | in | output rocker length | m |
 | `d` | in | ground link length | m |
 | `theta2` | in | crank angle from the ground link | rad |
-| `branch` | in | assembly branch | — |
-| `theta3_deg` | out | coupler angle, degrees in [-180, 180) | — |
-| `theta4_deg` | out | output rocker angle, degrees in [-180, 180) | — |
-| `transmission_angle_deg` | out | transmission angle (acute), degrees | — |
+| `branch` | in | assembly branch | - |
+| `theta3_deg` | out | coupler angle, degrees in [-180, 180) | - |
+| `theta4_deg` | out | output rocker angle, degrees in [-180, 180) | - |
+| `transmission_angle_deg` | out | transmission angle (acute), degrees | - |
 
 **Applies when:** ground pivots at (0, 0) and (d, 0); open branch: the rocker pivot lies to the right of the directed coupler; refused when the linkage cannot close.
 
@@ -1684,7 +1632,7 @@ transmission_angle_deg = 28.44882656
 
 <a id="helical_compression_spring"></a>
 
-#### Helical compression spring: rate, deflection and shear stress — `helical_compression_spring`
+#### Helical compression spring: rate, deflection and shear stress, `helical_compression_spring`
 
 The spring index, rate, deflection under a load and the wire shear stress (torsion alone, and with the direct-shear factor Ks = 1 + 0.5/C) of a round-wire helical spring.
 
@@ -1696,14 +1644,14 @@ $$
 |---|---|---|---|
 | `d` | in | wire diameter | m |
 | `D` | in | mean coil diameter | m |
-| `Na` | in | number of active coils | — |
+| `Na` | in | number of active coils | - |
 | `G` | in | shear modulus of the wire | Pa |
 | `F` | in | axial load | N |
-| `index` | out | spring index C = D/d | — |
+| `index` | out | spring index C = D/d | - |
 | `k` | out | spring rate | N/m |
-| `deflection_mm` | out | deflection under F, mm | — |
-| `tau_torsion_MPa` | out | torsional shear stress 8FD/(pi d^3), MPa | — |
-| `tau_Ks_MPa` | out | shear stress with the direct-shear factor Ks, MPa | — |
+| `deflection_mm` | out | deflection under F, mm | - |
+| `tau_torsion_MPa` | out | torsional shear stress 8FD/(pi d^3), MPa | - |
+| `tau_Ks_MPa` | out | shear stress with the direct-shear factor Ks, MPa | - |
 
 **Applies when:** C > 2; close-coiled (small helix angle); curvature (Wahl) correction not included.
 
@@ -1727,7 +1675,7 @@ tau_Ks_MPa = 240.5008029
 
 <a id="lewis_gear_bending_stress"></a>
 
-#### Lewis bending stress of a gear tooth — `lewis_gear_bending_stress`
+#### Lewis bending stress of a gear tooth: `lewis_gear_bending_stress`
 
 The bending stress at the root of a spur-gear tooth by the Lewis equation sigma = Kv Wt/(F m Y) (SI, module m, form factor Y based on the module).
 
@@ -1740,10 +1688,10 @@ $$
 | `Wt` | in | transmitted (tangential) load | N |
 | `F` | in | face width | m |
 | `m` | in | module | m |
-| `Y` | in | Lewis form factor (from the tooth count and pressure angle, based on the module) | — |
-| `Kv` | in | velocity (dynamic) factor, default 1 (optional) | — |
+| `Y` | in | Lewis form factor (from the tooth count and pressure angle, based on the module) | - |
+| `Kv` | in | velocity (dynamic) factor, default 1 (optional) | - |
 | `sigma` | out | tooth bending stress | Pa |
-| `sigma_MPa` | out | tooth bending stress, MPa | — |
+| `sigma_MPa` | out | tooth bending stress, MPa | - |
 
 **Applies when:** Wt, F, m > 0; 0 < Y <= 1; Kv >= 1; load at the tip, one tooth in contact.
 
@@ -1763,7 +1711,7 @@ In the worked example, Wt = 2.5 kN, F = 40 mm, m = 4 mm, Y = 0.322 go through th
 
 <a id="belt_drive_power"></a>
 
-#### Power of a belt drive with centrifugal tension — `belt_drive_power`
+#### Power of a belt drive with centrifugal tension, `belt_drive_power`
 
 The centrifugal tension, slack-side tension and transmitted power of a flat or V-belt running at the allowable tight-side tension and impending slip.
 
@@ -1776,13 +1724,13 @@ $$
 | `T1` | in | allowable tight-side tension | N |
 | `m` | in | belt mass per unit length | kg/m |
 | `v` | in | belt speed | m/s |
-| `mu` | in | coefficient of friction | — |
+| `mu` | in | coefficient of friction | - |
 | `theta` | in | wrap angle on the smaller pulley | rad |
 | `beta` | in | included groove angle for a V-belt (optional) (optional) | rad |
 | `Tc` | out | centrifugal tension m v^2 | N |
 | `T2` | out | slack-side tension | N |
 | `P` | out | transmitted power | W |
-| `P_kW` | out | transmitted power in kW | — |
+| `P_kW` | out | transmitted power in kW | - |
 
 **Applies when:** impending slip on the smaller pulley; m v^2 < T1.
 
@@ -1805,7 +1753,7 @@ P_kW = 11.80026668
 
 <a id="power_screw_torque"></a>
 
-#### Power screw: raising and lowering torque, efficiency, self-locking — `power_screw_torque`
+#### Power screw: raising and lowering torque, efficiency, self-locking, `power_screw_torque`
 
 The torque to raise and to lower a load with a square or Acme power screw (thread and collar friction), the raising efficiency and whether the screw is self-locking.
 
@@ -1818,14 +1766,14 @@ $$
 | `F` | in | axial load | N |
 | `dm` | in | mean thread diameter | m |
 | `l` | in | lead | m |
-| `f` | in | thread friction coefficient | — |
+| `f` | in | thread friction coefficient | - |
 | `alpha` | in | thread half-angle (0 for square, 14.5 deg for Acme; default 0) (optional) | rad |
-| `fc` | in | collar friction coefficient (default 0) (optional) | — |
+| `fc` | in | collar friction coefficient (default 0) (optional) | - |
 | `dc` | in | collar mean diameter (needed with fc) (optional) | m |
 | `T_raise` | out | torque to raise the load | N*m |
 | `T_lower` | out | torque to lower the load (negative: the load lowers itself) | N*m |
-| `efficiency` | out | efficiency when raising | — |
-| `self_locking` | out | yes if the thread alone holds the load | — |
+| `efficiency` | out | efficiency when raising | - |
+| `self_locking` | out | yes if the thread alone holds the load | - |
 
 **Applies when:** alpha < 45 degrees; thread friction taken as f/cos(alpha); single thrust collar.
 
@@ -1849,7 +1797,7 @@ self_locking = no
 
 <a id="bearing_catalog_rating"></a>
 
-#### Required catalogue rating of a rolling bearing — `bearing_catalog_rating`
+#### Required catalogue rating of a rolling bearing, `bearing_catalog_rating`
 
 The basic dynamic load rating C10 a ball or roller bearing needs for a design load, life and speed at a required reliability (three-parameter Weibull, application factor).
 
@@ -1862,16 +1810,16 @@ $$
 | `FD` | in | design (equivalent radial) load | N |
 | `LD` | in | design life (hours) | s |
 | `n` | in | speed (rpm) | rad/s |
-| `R` | in | required reliability | — |
-| `kind` | in | ball (a = 3) or roller (a = 10/3) | — |
-| `af` | in | application (load) factor (default 1) (optional) | — |
-| `LR` | in | rating life of the catalogue, revolutions (default 1e6) (optional) | — |
-| `x0` | in | Weibull guaranteed life multiple (default 0.02) (optional) | — |
-| `theta` | in | Weibull characteristic life multiple (default 4.459) (optional) | — |
-| `b` | in | Weibull shape (default 1.483) (optional) | — |
+| `R` | in | required reliability | - |
+| `kind` | in | ball (a = 3) or roller (a = 10/3) | - |
+| `af` | in | application (load) factor (default 1) (optional) | - |
+| `LR` | in | rating life of the catalogue, revolutions (default 1e6) (optional) | - |
+| `x0` | in | Weibull guaranteed life multiple (default 0.02) (optional) | - |
+| `theta` | in | Weibull characteristic life multiple (default 4.459) (optional) | - |
+| `b` | in | Weibull shape (default 1.483) (optional) | - |
 | `C10` | out | required catalogue rating | N |
-| `C10_kN` | out | required rating in kN | — |
-| `design_life_multiple` | out | design life as a multiple of LR | — |
+| `C10_kN` | out | required rating in kN | - |
+| `design_life_multiple` | out | design life as a multiple of LR | - |
 
 **Applies when:** 0 < R < 1; Weibull defaults x0 = 0.02, theta = 4.459, b = 1.483 and LR = 1e6 revolutions unless given.
 
@@ -1894,7 +1842,7 @@ design_life_multiple = 900
 
 <a id="bearing_life_reliability"></a>
 
-#### Rolling-bearing life at a given reliability — `bearing_life_reliability`
+#### Rolling-bearing life at a given reliability, `bearing_life_reliability`
 
 The rating (L10) life of a ball or roller bearing from its catalogue rating and load, and the life at another reliability from the three-parameter Weibull distribution, in revolutions and hours.
 
@@ -1907,17 +1855,17 @@ $$
 | `C` | in | catalogue (basic dynamic) load rating | N |
 | `F` | in | equivalent radial load | N |
 | `n` | in | speed (rpm) | rad/s |
-| `R` | in | required reliability (e.g. 0.95 or 95%) | — |
-| `kind` | in | ball (a = 3) or roller (a = 10/3) bearing | — |
-| `LR` | in | rating life of the catalogue, revolutions (default 1e6) (optional) | — |
-| `x0` | in | Weibull guaranteed life multiple (default 0.02) (optional) | — |
-| `theta` | in | Weibull characteristic life multiple (default 4.459) (optional) | — |
-| `b` | in | Weibull shape (default 1.483) (optional) | — |
-| `L10_rev` | out | rating life (90 % reliability), revolutions | — |
-| `L10_hours` | out | rating life in hours | — |
-| `life_multiple` | out | life at R as a multiple of the rating life | — |
-| `L_rev` | out | life at reliability R, revolutions | — |
-| `L_hours` | out | life at reliability R, hours | — |
+| `R` | in | required reliability (e.g. 0.95 or 95%) | - |
+| `kind` | in | ball (a = 3) or roller (a = 10/3) bearing | - |
+| `LR` | in | rating life of the catalogue, revolutions (default 1e6) (optional) | - |
+| `x0` | in | Weibull guaranteed life multiple (default 0.02) (optional) | - |
+| `theta` | in | Weibull characteristic life multiple (default 4.459) (optional) | - |
+| `b` | in | Weibull shape (default 1.483) (optional) | - |
+| `L10_rev` | out | rating life (90 % reliability), revolutions | - |
+| `L10_hours` | out | rating life in hours | - |
+| `life_multiple` | out | life at R as a multiple of the rating life | - |
+| `L_rev` | out | life at reliability R, revolutions | - |
+| `L_hours` | out | life at reliability R, hours | - |
 
 **Applies when:** 0 < R < 1; Weibull parameters of the catalogue (defaults: x0 = 0.02, theta = 4.459, b = 1.483); constant load and speed.
 
@@ -1941,7 +1889,7 @@ L_hours = 2901.826203
 
 <a id="slider_crank_kinematics"></a>
 
-#### Slider-crank mechanism: slider position, velocity and acceleration — `slider_crank_kinematics`
+#### Slider-crank mechanism: slider position, velocity and acceleration, `slider_crank_kinematics`
 
 The slider position, velocity and acceleration and the connecting-rod angle of an in-line slider-crank mechanism at a crank angle, the crank turning at constant speed.
 
@@ -1958,7 +1906,7 @@ $$
 | `x` | out | distance of the slider pin from the crank centre | m |
 | `v` | out | slider velocity (positive away from the crank) | m/s |
 | `a` | out | slider acceleration | m/s^2 |
-| `rod_angle_deg` | out | connecting-rod angle to the line of stroke, degrees | — |
+| `rod_angle_deg` | out | connecting-rod angle to the line of stroke, degrees | - |
 
 **Applies when:** in-line (zero offset); l > r; constant crank speed.
 
@@ -1980,7 +1928,7 @@ rod_angle_deg = 0
 
 <a id="planetary_gear_train"></a>
 
-#### Speeds of a simple planetary (epicyclic) gear train — `planetary_gear_train`
+#### Speeds of a simple planetary (epicyclic) gear train, `planetary_gear_train`
 
 The third speed of a sun-planet-ring-carrier train from the other two (any member may be held: speed 0), with the planets' absolute speed and tooth number.
 
@@ -1990,16 +1938,16 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `Ns` | in | teeth on the sun | — |
-| `Nr` | in | teeth on the ring (internal gear) | — |
+| `Ns` | in | teeth on the sun | - |
+| `Nr` | in | teeth on the ring (internal gear) | - |
 | `ws` | in | sun speed (signed; rpm or rad/s) (optional) | rad/s |
 | `wr` | in | ring speed (signed) (optional) | rad/s |
 | `wc` | in | carrier (arm) speed (signed) (optional) | rad/s |
-| `ws_rpm` | out | sun speed, rpm | — |
-| `wr_rpm` | out | ring speed, rpm | — |
-| `wc_rpm` | out | carrier speed, rpm | — |
-| `wp_rpm` | out | absolute speed of each planet, rpm | — |
-| `Np` | out | teeth on each planet | — |
+| `ws_rpm` | out | sun speed, rpm | - |
+| `wr_rpm` | out | ring speed, rpm | - |
+| `wc_rpm` | out | carrier speed, rpm | - |
+| `wp_rpm` | out | absolute speed of each planet, rpm | - |
+| `Np` | out | teeth on each planet | - |
 
 **Applies when:** exactly two of the three speeds given; Nr > Ns, Nr - Ns even; same sign convention for every speed.
 
@@ -2020,7 +1968,7 @@ Np = 30
 
 <a id="spur_gear_contact_ratio"></a>
 
-#### Spur gear mesh geometry and contact ratio — `spur_gear_contact_ratio`
+#### Spur gear mesh geometry and contact ratio: `spur_gear_contact_ratio`
 
 Pitch diameters, centre distance, length of the path of contact, base pitch and contact ratio of a pair of standard full-depth spur gears.
 
@@ -2030,16 +1978,16 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `N1` | in | teeth on the pinion | — |
-| `N2` | in | teeth on the gear | — |
+| `N1` | in | teeth on the pinion | - |
+| `N2` | in | teeth on the gear | - |
 | `m` | in | module (e.g. 4 mm) | m |
 | `phi` | in | pressure angle | rad |
-| `d1_mm` | out | pinion pitch diameter, mm | — |
-| `d2_mm` | out | gear pitch diameter, mm | — |
-| `C_mm` | out | centre distance, mm | — |
-| `Z_mm` | out | length of the path of contact, mm | — |
-| `pb_mm` | out | base pitch, mm | — |
-| `contact_ratio` | out | contact ratio Z / p_b | — |
+| `d1_mm` | out | pinion pitch diameter, mm | - |
+| `d2_mm` | out | gear pitch diameter, mm | - |
+| `C_mm` | out | centre distance, mm | - |
+| `Z_mm` | out | length of the path of contact, mm | - |
+| `pb_mm` | out | base pitch, mm | - |
+| `contact_ratio` | out | contact ratio Z / p_b | - |
 
 **Applies when:** standard full-depth teeth: addendum = 1 module; standard centre distance; no interference (refused otherwise); 10 <= pressure angle <= 30 degrees.
 
@@ -2061,7 +2009,7 @@ contact_ratio = 1.655755794
 
 <a id="disc_clutch_torque"></a>
 
-#### Torque capacity of a disc clutch or brake — `disc_clutch_torque`
+#### Torque capacity of a disc clutch or brake: `disc_clutch_torque`
 
 The friction torque and the largest contact pressure of a plate (disc) clutch or brake with an annular friction face, by the uniform-wear or uniform-pressure assumption.
 
@@ -2072,13 +2020,13 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `F` | in | axial actuating force | N |
-| `f` | in | coefficient of friction | — |
+| `f` | in | coefficient of friction | - |
 | `D` | in | outer diameter of the friction face | m |
 | `d` | in | inner diameter of the friction face | m |
-| `model` | in | uniform wear (worn-in) or uniform pressure (new) | — |
-| `pairs` | in | number of friction-surface pairs (default 1) (optional) | — |
+| `model` | in | uniform wear (worn-in) or uniform pressure (new) | - |
+| `pairs` | in | number of friction-surface pairs (default 1) (optional) | - |
 | `T` | out | torque capacity | N*m |
-| `p_max_MPa` | out | largest contact pressure, MPa | — |
+| `p_max_MPa` | out | largest contact pressure, MPa | - |
 
 **Applies when:** d < D; the same force on every pair.
 
@@ -2099,7 +2047,7 @@ p_max_MPa = 0.2546479089
 
 <a id="wahl_factor"></a>
 
-#### Wahl curvature factor of a helical spring — `wahl_factor`
+#### Wahl curvature factor of a helical spring: `wahl_factor`
 
 The Wahl stress-correction factor K_W = (4C - 1)/(4C - 4) + 0.615/C of a round-wire helical spring (with the Bergstrasser and direct-shear factors), and with a load the corrected maximum shear stress.
 
@@ -2112,11 +2060,11 @@ $$
 | `d` | in | wire diameter | m |
 | `D` | in | mean coil diameter | m |
 | `F` | in | axial load (optional) (optional) | N |
-| `index` | out | spring index C = D/d | — |
-| `K_wahl` | out | Wahl factor | — |
-| `K_bergstrasser` | out | Bergstrasser factor (4C + 2)/(4C - 3) | — |
-| `K_s` | out | direct-shear factor 1 + 0.5/C | — |
-| `tau_MPa` | out | maximum shear stress K_W 8FD/(pi d^3), MPa (with F) | — |
+| `index` | out | spring index C = D/d | - |
+| `K_wahl` | out | Wahl factor | - |
+| `K_bergstrasser` | out | Bergstrasser factor (4C + 2)/(4C - 3) | - |
+| `K_s` | out | direct-shear factor 1 + 0.5/C | - |
+| `tau_MPa` | out | maximum shear stress K_W 8FD/(pi d^3), MPa (with F) | - |
 
 **Applies when:** C = D/d > 2; round wire, close-coiled.
 
@@ -2138,7 +2086,7 @@ In the worked example, d = 3 mm, D = 24 mm go through the equation above and giv
 
 <a id="shrink_fit_pressure"></a>
 
-#### Shrink (press) fit: interface pressure and hoop stresses — `shrink_fit_pressure`
+#### Shrink (press) fit: interface pressure and hoop stresses, `shrink_fit_pressure`
 
 The contact pressure of an interference fit between a hub and a solid or hollow shaft of the same material, and the hoop stresses it causes at the interface.
 
@@ -2153,9 +2101,9 @@ $$
 | `ro` | in | outer radius of the hub | m |
 | `E` | in | Young's modulus (both parts) | Pa |
 | `ri` | in | bore radius of a hollow shaft (default 0: solid) (optional) | m |
-| `p_MPa` | out | interface pressure, MPa | — |
-| `hub_hoop_MPa` | out | hoop stress in the hub at the interface, MPa | — |
-| `shaft_hoop_MPa` | out | hoop stress in the shaft at the interface, MPa | — |
+| `p_MPa` | out | interface pressure, MPa | - |
+| `hub_hoop_MPa` | out | hoop stress in the hub at the interface, MPa | - |
+| `shaft_hoop_MPa` | out | hoop stress in the shaft at the interface, MPa | - |
 
 **Applies when:** ri < R < ro; both parts of the same material; plane stress, elastic, long hub.
 
@@ -2176,7 +2124,7 @@ shaft_hoop_MPa = -62.1
 
 <a id="rotating_disk_stresses"></a>
 
-#### Stresses in a rotating disk (solid or with a central hole) — `rotating_disk_stresses`
+#### Stresses in a rotating disk (solid or with a central hole), `rotating_disk_stresses`
 
 The largest hoop and radial stresses, the radius of the largest radial stress and the hoop stress at the rim of a thin disk of uniform thickness spinning at constant speed.
 
@@ -2188,13 +2136,13 @@ $$
 |---|---|---|---|
 | `rho` | in | density | kg/m^3 |
 | `omega` | in | angular speed (rpm or rad/s) | rad/s |
-| `nu` | in | Poisson's ratio | — |
+| `nu` | in | Poisson's ratio | - |
 | `ro` | in | outer radius | m |
 | `ri` | in | radius of the central hole (default 0: solid) (optional) | m |
-| `hoop_max_MPa` | out | largest hoop stress (at the bore, or the centre of a solid disk), MPa | — |
-| `radial_max_MPa` | out | largest radial stress, MPa | — |
+| `hoop_max_MPa` | out | largest hoop stress (at the bore, or the centre of a solid disk), MPa | - |
+| `radial_max_MPa` | out | largest radial stress, MPa | - |
 | `r_radial_max` | out | radius of the largest radial stress (sqrt(ri ro); 0 for a solid disk) | m |
-| `hoop_rim_MPa` | out | hoop stress at the outer rim, MPa | — |
+| `hoop_rim_MPa` | out | hoop stress at the outer rim, MPa | - |
 
 **Applies when:** thin disk of uniform thickness, plane stress; free inner and outer edges; 0 <= nu < 0.5.
 
@@ -2217,7 +2165,7 @@ hoop_rim_MPa = 10.00777886
 
 <a id="thick_walled_cylinder"></a>
 
-#### Thick-walled cylinder under pressure (Lame equations) — `thick_walled_cylinder`
+#### Thick-walled cylinder under pressure (Lame equations), `thick_walled_cylinder`
 
 Radial and hoop stresses at a radius, the hoop stresses at both surfaces, the maximum shear at the bore and the closed-end axial stress of a thick cylinder under internal and external pressure.
 
@@ -2232,12 +2180,12 @@ $$
 | `a` | in | inner radius | m |
 | `b` | in | outer radius | m |
 | `r` | in | radius at which to evaluate (default: the bore, r = a) (optional) | m |
-| `sr_MPa` | out | radial stress at r, MPa | — |
-| `st_MPa` | out | hoop stress at r, MPa | — |
-| `st_inner_MPa` | out | hoop stress at the bore, MPa | — |
-| `st_outer_MPa` | out | hoop stress at the outer surface, MPa | — |
-| `tau_max_inner_MPa` | out | maximum shear stress at the bore, MPa | — |
-| `sz_closed_MPa` | out | axial stress with closed ends, MPa | — |
+| `sr_MPa` | out | radial stress at r, MPa | - |
+| `st_MPa` | out | hoop stress at r, MPa | - |
+| `st_inner_MPa` | out | hoop stress at the bore, MPa | - |
+| `st_outer_MPa` | out | hoop stress at the outer surface, MPa | - |
+| `tau_max_inner_MPa` | out | maximum shear stress at the bore, MPa | - |
+| `sz_closed_MPa` | out | axial stress with closed ends, MPa | - |
 
 **Applies when:** a < b; pressures >= 0, not both zero; a <= r <= b; linear elastic.
 
@@ -2261,7 +2209,7 @@ sz_closed_MPa = 33.33333333
 
 <a id="thin_walled_pressure_vessel"></a>
 
-#### Thin-walled pressure vessel stresses (cylinder or sphere) — `thin_walled_pressure_vessel`
+#### Thin-walled pressure vessel stresses (cylinder or sphere), `thin_walled_pressure_vessel`
 
 Hoop and longitudinal stresses and the in-plane and absolute maximum shear stresses in the wall of a thin cylindrical or spherical pressure vessel.
 
@@ -2274,11 +2222,11 @@ $$
 | `p` | in | internal gauge pressure | Pa |
 | `r` | in | inner radius | m |
 | `t` | in | wall thickness | m |
-| `shape` | in | vessel shape | — |
-| `hoop_MPa` | out | hoop (circumferential) stress, MPa | — |
-| `longitudinal_MPa` | out | longitudinal (axial) stress, MPa | — |
-| `tau_inplane_MPa` | out | maximum in-plane shear stress, MPa | — |
-| `tau_abs_MPa` | out | absolute maximum shear stress at the outer surface, MPa | — |
+| `shape` | in | vessel shape | - |
+| `hoop_MPa` | out | hoop (circumferential) stress, MPa | - |
+| `longitudinal_MPa` | out | longitudinal (axial) stress, MPa | - |
+| `tau_inplane_MPa` | out | maximum in-plane shear stress, MPa | - |
+| `tau_abs_MPa` | out | absolute maximum shear stress at the outer surface, MPa | - |
 
 **Applies when:** r/t >= 10 (thin wall); closed ends, internal pressure only; r is the inner radius.
 
@@ -2302,7 +2250,7 @@ tau_abs_MPa = 50
 
 <a id="composite_section_properties"></a>
 
-#### Composite section of rectangles (parallel-axis theorem) — `composite_section_properties`
+#### Composite section of rectangles (parallel-axis theorem), `composite_section_properties`
 
 Area, centroid, centroidal second moments, product of inertia and principal second moments of a section built from non-overlapping rectangles.
 
@@ -2312,15 +2260,15 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `rects` | in | one row per rectangle: width b, height h, centre x, centre y, all in mm | — |
-| `A` | out | area in mm^2 | — |
-| `x_bar` | out | centroid x in mm | — |
-| `y_bar` | out | centroid y in mm | — |
-| `Ix` | out | centroidal second moment about x in mm^4 | — |
-| `Iy` | out | centroidal second moment about y in mm^4 | — |
-| `Ixy` | out | centroidal product of inertia in mm^4 | — |
-| `I1` | out | major principal second moment in mm^4 | — |
-| `I2` | out | minor principal second moment in mm^4 | — |
+| `rects` | in | one row per rectangle: width b, height h, centre x, centre y, all in mm | - |
+| `A` | out | area in mm^2 | - |
+| `x_bar` | out | centroid x in mm | - |
+| `y_bar` | out | centroid y in mm | - |
+| `Ix` | out | centroidal second moment about x in mm^4 | - |
+| `Iy` | out | centroidal second moment about y in mm^4 | - |
+| `Ixy` | out | centroidal product of inertia in mm^4 | - |
+| `I1` | out | major principal second moment in mm^4 | - |
+| `I2` | out | minor principal second moment in mm^4 | - |
 
 **Applies when:** rectangles do not overlap (touching is allowed); 1 to 20 rectangles, all dimensions in mm.
 
@@ -2342,7 +2290,7 @@ I2 = 13533333.33
 
 <a id="channel_section_properties"></a>
 
-#### Section properties of a channel (C) section — `channel_section_properties`
+#### Section properties of a channel (C) section, `channel_section_properties`
 
 Area, centroid distance from the back of the web, second moments, section moduli and radii of gyration of a channel with square corners.
 
@@ -2389,7 +2337,7 @@ ry = 0.02507035441 m
 
 <a id="hollow_circular_section_properties"></a>
 
-#### Section properties of a hollow circle (tube) — `hollow_circular_section_properties`
+#### Section properties of a hollow circle (tube), `hollow_circular_section_properties`
 
 Area, second moment of area, polar moment, elastic and plastic section moduli and radius of gyration of a circular tube.
 
@@ -2428,7 +2376,7 @@ r = 0.01802775638 m
 
 <a id="hollow_rectangular_section_properties"></a>
 
-#### Section properties of a hollow rectangle (box) — `hollow_rectangular_section_properties`
+#### Section properties of a hollow rectangle (box), `hollow_rectangular_section_properties`
 
 Area, second moments, elastic section moduli, radii of gyration and the plastic modulus about x of a rectangular hollow section of uniform wall thickness.
 
@@ -2473,7 +2421,7 @@ Zpx = 0.000352 m^3
 
 <a id="polygon_section_properties"></a>
 
-#### Section properties of a polygonal section — `polygon_section_properties`
+#### Section properties of a polygonal section: `polygon_section_properties`
 
 Area, centroid, centroidal second moments, product of inertia and principal second moments of any simple polygon given by its vertices.
 
@@ -2483,15 +2431,15 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `vertices` | in | vertices in order (either sense), one row 'x y' per vertex, in mm | — |
-| `A` | out | area in mm^2 | — |
-| `x_bar` | out | centroid x in mm | — |
-| `y_bar` | out | centroid y in mm | — |
-| `Ix` | out | centroidal second moment about x in mm^4 | — |
-| `Iy` | out | centroidal second moment about y in mm^4 | — |
-| `Ixy` | out | centroidal product of inertia in mm^4 | — |
-| `I1` | out | major principal second moment in mm^4 | — |
-| `I2` | out | minor principal second moment in mm^4 | — |
+| `vertices` | in | vertices in order (either sense), one row 'x y' per vertex, in mm | - |
+| `A` | out | area in mm^2 | - |
+| `x_bar` | out | centroid x in mm | - |
+| `y_bar` | out | centroid y in mm | - |
+| `Ix` | out | centroidal second moment about x in mm^4 | - |
+| `Iy` | out | centroidal second moment about y in mm^4 | - |
+| `Ixy` | out | centroidal product of inertia in mm^4 | - |
+| `I1` | out | major principal second moment in mm^4 | - |
+| `I2` | out | minor principal second moment in mm^4 | - |
 
 **Applies when:** 3 to 60 distinct vertices; a simple polygon (edges do not cross); no holes.
 
@@ -2513,7 +2461,7 @@ I2 = 16666666.67
 
 <a id="circular_section_properties"></a>
 
-#### Section properties of a solid circle — `circular_section_properties`
+#### Section properties of a solid circle: `circular_section_properties`
 
 Area, second moment of area, polar moment, elastic and plastic section moduli and radius of gyration of a solid circular section.
 
@@ -2550,7 +2498,7 @@ r = 0.0125 m
 
 <a id="rectangular_section_properties"></a>
 
-#### Section properties of a solid rectangle — `rectangular_section_properties`
+#### Section properties of a solid rectangle: `rectangular_section_properties`
 
 Area, second moments of area, elastic section moduli, radii of gyration and polar moment of a solid rectangle b wide and h deep.
 
@@ -2593,7 +2541,7 @@ J_polar = 8.333333333e-05 m^4
 
 <a id="i_section_properties"></a>
 
-#### Section properties of a symmetric I-section — `i_section_properties`
+#### Section properties of a symmetric I-section, `i_section_properties`
 
 Area, second moments, elastic and plastic section moduli, radii of gyration and the shape factor of a doubly symmetric I-section (flanges b x tf, web tw, overall depth h, no fillets).
 
@@ -2616,7 +2564,7 @@ $$
 | `ry` | out | radius of gyration about y | m |
 | `Zpx` | out | plastic section modulus about x | m^3 |
 | `Zpy` | out | plastic section modulus about y | m^3 |
-| `shape_factor_x` | out | shape factor Zpx / Zx | — |
+| `shape_factor_x` | out | shape factor Zpx / Zx | - |
 
 **Applies when:** 2 tf < h; tw < b; no root fillets.
 
@@ -2644,7 +2592,7 @@ In the worked example, b = 150 mm, h = 300 mm, tf = 12 mm, tw = 8 mm go through 
 
 <a id="t_section_properties"></a>
 
-#### Section properties of a T-section — `t_section_properties`
+#### Section properties of a T-section: `t_section_properties`
 
 Area, centroid height, second moments, top and bottom section moduli and radii of gyration of a T-section (flange on top).
 
@@ -2691,7 +2639,7 @@ In the worked example, bf = 120 mm, tf = 20 mm, h = 150 mm, tw = 15 mm go throug
 
 <a id="angle_section_properties"></a>
 
-#### Section properties of an angle (L) section, with principal axes — `angle_section_properties`
+#### Section properties of an angle (L) section, with principal axes, `angle_section_properties`
 
 Area, centroid, centroidal second moments and product of inertia, principal second moments, the principal angle and the least radius of gyration of an equal or unequal angle.
 
@@ -2712,7 +2660,7 @@ $$
 | `Ixy` | out | centroidal product of inertia (integral of x y dA) | m^4 |
 | `I1` | out | major principal second moment | m^4 |
 | `I2` | out | minor principal second moment | m^4 |
-| `principal_angle_deg` | out | angle of the major principal axis from x, degrees, in (-90, 90] | — |
+| `principal_angle_deg` | out | angle of the major principal axis from x, degrees, in (-90, 90] | - |
 | `r_min` | out | least radius of gyration | m |
 
 **Applies when:** t < b and t < h; square corners, no root radius.
@@ -2742,7 +2690,7 @@ r_min = 0.01965832335 m
 
 <a id="moment_of_a_force"></a>
 
-#### Moment of a force about a point (2D) — `moment_of_a_force`
+#### Moment of a force about a point (2D): `moment_of_a_force`
 
 The moment of a force (Fx, Fy) applied at (x, y) about the point (x0, y0), counterclockwise positive, and the perpendicular distance to its line of action.
 
@@ -2779,7 +2727,7 @@ d = 1.341640786 m
 
 <a id="resultant_of_concurrent_forces"></a>
 
-#### Resultant of concurrent coplanar forces — `resultant_of_concurrent_forces`
+#### Resultant of concurrent coplanar forces: `resultant_of_concurrent_forces`
 
 The magnitude, components and direction of the resultant of forces acting through one point in a plane.
 
@@ -2789,12 +2737,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `F` | in | force magnitudes in N (a list) | — |
-| `theta` | in | direction of each force in degrees, counterclockwise from +x (a list) | — |
+| `F` | in | force magnitudes in N (a list) | - |
+| `theta` | in | direction of each force in degrees, counterclockwise from +x (a list) | - |
 | `R` | out | magnitude of the resultant | N |
 | `Rx` | out | x component of the resultant | N |
 | `Ry` | out | y component of the resultant | N |
-| `direction_deg` | out | direction of the resultant in degrees, counterclockwise from +x, in (-180, 180] | — |
+| `direction_deg` | out | direction of the resultant in degrees, counterclockwise from +x, in (-180, 180] | - |
 
 **Applies when:** F and theta have the same length; magnitudes >= 0, at least one > 0; a zero resultant is reported with direction 0.
 
@@ -2812,7 +2760,7 @@ direction_deg = 53.13010235
 
 <a id="two_cable_equilibrium"></a>
 
-#### Tensions in two cables holding a weight — `two_cable_equilibrium`
+#### Tensions in two cables holding a weight: `two_cable_equilibrium`
 
 The tensions in two cables, one rising to the left at angle alpha and one rising to the right at angle beta above the horizontal, that hold a weight W at rest.
 
@@ -2847,7 +2795,7 @@ T2 = 448.2877361 N
 
 <a id="combined_axial_and_bending_stress"></a>
 
-#### Combined axial force and biaxial bending of a rectangular section — `combined_axial_and_bending_stress`
+#### Combined axial force and biaxial bending of a rectangular section, `combined_axial_and_bending_stress`
 
 Normal stresses at the four corners of a rectangular section carrying an axial force and bending moments about both axes, with the extreme values.
 
@@ -2862,10 +2810,10 @@ $$
 | `N` | in | axial force (tension positive) | N |
 | `Mx` | in | moment about x (positive: tension at +y) | N*m |
 | `My` | in | moment about y (positive: tension at +x) | N*m |
-| `sigma_corners_MPa` | out | stresses at the corners (+x,+y), (-x,+y), (-x,-y), (+x,-y), MPa | — |
-| `sigma_max_MPa` | out | largest (most tensile) stress, MPa | — |
-| `sigma_min_MPa` | out | smallest (most compressive) stress, MPa | — |
-| `sigma_axial_MPa` | out | uniform axial part N/A, MPa | — |
+| `sigma_corners_MPa` | out | stresses at the corners (+x,+y), (-x,+y), (-x,-y), (+x,-y), MPa | - |
+| `sigma_max_MPa` | out | largest (most tensile) stress, MPa | - |
+| `sigma_min_MPa` | out | smallest (most compressive) stress, MPa | - |
+| `sigma_axial_MPa` | out | uniform axial part N/A, MPa | - |
 
 **Applies when:** linear elastic, plane sections; moments about the centroidal axes.
 
@@ -2888,7 +2836,7 @@ sigma_axial_MPa = -2.5
 
 <a id="plane_stress_transformation"></a>
 
-#### Plane stress transformation to rotated axes — `plane_stress_transformation`
+#### Plane stress transformation to rotated axes, `plane_stress_transformation`
 
 The normal and shear stresses on axes rotated counterclockwise by theta from x, for a plane state of stress.
 
@@ -2902,9 +2850,9 @@ $$
 | `sy` | in | normal stress sigma_y | Pa |
 | `txy` | in | shear stress tau_xy | Pa |
 | `theta` | in | rotation of the axes, counterclockwise from x | rad |
-| `sx_t_MPa` | out | sigma_x' in MPa | — |
-| `sy_t_MPa` | out | sigma_y' in MPa | — |
-| `txy_t_MPa` | out | tau_x'y' in MPa | — |
+| `sx_t_MPa` | out | sigma_x' in MPa | - |
+| `sy_t_MPa` | out | sigma_y' in MPa | - |
+| `txy_t_MPa` | out | tau_x'y' in MPa | - |
 
 **Applies when:** plane stress; tension positive, theta counterclockwise.
 
@@ -2925,7 +2873,7 @@ txy_t_MPa = -39.46152423
 
 <a id="principal_stresses_2d"></a>
 
-#### Principal stresses and maximum shear (Mohr's circle, plane stress) — `principal_stresses_2d`
+#### Principal stresses and maximum shear (Mohr's circle, plane stress), `principal_stresses_2d`
 
 Principal stresses, their direction, the maximum in-plane and absolute shear stresses and the von Mises stress of a plane state of stress.
 
@@ -2938,12 +2886,12 @@ $$
 | `sx` | in | normal stress sigma_x | Pa |
 | `sy` | in | normal stress sigma_y | Pa |
 | `txy` | in | shear stress tau_xy | Pa |
-| `s1_MPa` | out | larger in-plane principal stress, MPa | — |
-| `s2_MPa` | out | smaller in-plane principal stress, MPa | — |
-| `tau_max_inplane_MPa` | out | maximum in-plane shear stress (radius of Mohr's circle), MPa | — |
-| `theta_p_deg` | out | angle from x to the sigma_1 direction, degrees in (-90, 90] (0 when the circle is a point) | — |
-| `tau_abs_max_MPa` | out | absolute maximum shear stress including sigma_z = 0, MPa | — |
-| `von_mises_MPa` | out | von Mises equivalent stress, MPa | — |
+| `s1_MPa` | out | larger in-plane principal stress, MPa | - |
+| `s2_MPa` | out | smaller in-plane principal stress, MPa | - |
+| `tau_max_inplane_MPa` | out | maximum in-plane shear stress (radius of Mohr's circle), MPa | - |
+| `theta_p_deg` | out | angle from x to the sigma_1 direction, degrees in (-90, 90] (0 when the circle is a point) | - |
+| `tau_abs_max_MPa` | out | absolute maximum shear stress including sigma_z = 0, MPa | - |
+| `von_mises_MPa` | out | von Mises equivalent stress, MPa | - |
 
 **Applies when:** plane stress (sigma_z = 0); tension positive.
 
@@ -2966,7 +2914,7 @@ von_mises_MPa = 88.88194417
 
 <a id="principal_stresses_3d"></a>
 
-#### Principal stresses of a three-dimensional stress state — `principal_stresses_3d`
+#### Principal stresses of a three-dimensional stress state, `principal_stresses_3d`
 
 The three principal stresses, the absolute maximum shear, von Mises, hydrostatic and octahedral shear stresses of a general 3D state of stress.
 
@@ -2982,13 +2930,13 @@ $$
 | `txy` | in | tau_xy | Pa |
 | `tyz` | in | tau_yz | Pa |
 | `tzx` | in | tau_zx | Pa |
-| `s1_MPa` | out | largest principal stress, MPa | — |
-| `s2_MPa` | out | intermediate principal stress, MPa | — |
-| `s3_MPa` | out | smallest principal stress, MPa | — |
-| `tau_max_MPa` | out | absolute maximum shear stress (s1 - s3)/2, MPa | — |
-| `von_mises_MPa` | out | von Mises stress, MPa | — |
-| `hydrostatic_MPa` | out | mean (hydrostatic) stress, MPa | — |
-| `tau_oct_MPa` | out | octahedral shear stress, MPa | — |
+| `s1_MPa` | out | largest principal stress, MPa | - |
+| `s2_MPa` | out | intermediate principal stress, MPa | - |
+| `s3_MPa` | out | smallest principal stress, MPa | - |
+| `tau_max_MPa` | out | absolute maximum shear stress (s1 - s3)/2, MPa | - |
+| `von_mises_MPa` | out | von Mises stress, MPa | - |
+| `hydrostatic_MPa` | out | mean (hydrostatic) stress, MPa | - |
+| `tau_oct_MPa` | out | octahedral shear stress, MPa | - |
 
 **Applies when:** symmetric stress tensor; tension positive.
 
@@ -3015,7 +2963,7 @@ tau_oct_MPa = 47.14045208
 
 <a id="strain_rosette"></a>
 
-#### Strain rosette: strains, principal strains and principal stresses — `strain_rosette`
+#### Strain rosette: strains, principal strains and principal stresses, `strain_rosette`
 
 From the readings of a three-gauge rosette (rectangular 0/45/90 or delta 0/60/120 degrees): the strain components, the principal strains and their direction, and the principal stresses (plane stress).
 
@@ -3025,20 +2973,20 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `ea` | in | strain of gauge a (at 0 degrees), microstrain | — |
-| `eb` | in | strain of gauge b (45 or 60 degrees), microstrain | — |
-| `ec` | in | strain of gauge c (90 or 120 degrees), microstrain | — |
+| `ea` | in | strain of gauge a (at 0 degrees), microstrain | - |
+| `eb` | in | strain of gauge b (45 or 60 degrees), microstrain | - |
+| `ec` | in | strain of gauge c (90 or 120 degrees), microstrain | - |
 | `E` | in | Young's modulus | Pa |
-| `nu` | in | Poisson's ratio | — |
-| `layout` | in | rosette layout: rectangular (0/45/90) or delta (0/60/120) | — |
-| `ex` | out | strain eps_x, microstrain | — |
-| `ey` | out | strain eps_y, microstrain | — |
-| `gxy` | out | shear strain gamma_xy, microstrain | — |
-| `e1` | out | larger principal strain, microstrain | — |
-| `e2` | out | smaller principal strain, microstrain | — |
-| `theta_p_deg` | out | angle from gauge a to the eps_1 direction, degrees in (-90, 90] | — |
-| `s1_MPa` | out | larger principal stress, MPa | — |
-| `s2_MPa` | out | smaller principal stress, MPa | — |
+| `nu` | in | Poisson's ratio | - |
+| `layout` | in | rosette layout: rectangular (0/45/90) or delta (0/60/120) | - |
+| `ex` | out | strain eps_x, microstrain | - |
+| `ey` | out | strain eps_y, microstrain | - |
+| `gxy` | out | shear strain gamma_xy, microstrain | - |
+| `e1` | out | larger principal strain, microstrain | - |
+| `e2` | out | smaller principal strain, microstrain | - |
+| `theta_p_deg` | out | angle from gauge a to the eps_1 direction, degrees in (-90, 90] | - |
+| `s1_MPa` | out | larger principal stress, MPa | - |
+| `s2_MPa` | out | smaller principal stress, MPa | - |
 
 **Applies when:** gauge angles measured counterclockwise from gauge a; plane stress, linear elastic isotropic; 0 <= nu < 0.5.
 
@@ -3068,7 +3016,7 @@ s2_MPa = -1.996333257
 
 <a id="bar_fixed_at_both_ends"></a>
 
-#### Bar fixed at both ends with an axial load at a step — `bar_fixed_at_both_ends`
+#### Bar fixed at both ends with an axial load at a step, `bar_fixed_at_both_ends`
 
 Reactions, stresses in both parts and the displacement of the loaded joint of a two-part bar held between two rigid supports, loaded axially at the joint.
 
@@ -3087,9 +3035,9 @@ $$
 | `E2` | in | modulus of part 2 | Pa |
 | `RA` | out | reaction at A | N |
 | `RB` | out | reaction at B | N |
-| `stress1_MPa` | out | stress in part 1 in MPa (tension positive) | — |
-| `stress2_MPa` | out | stress in part 2 in MPa (compression negative) | — |
-| `displacement_mm` | out | displacement of the joint in mm | — |
+| `stress1_MPa` | out | stress in part 1 in MPa (tension positive) | - |
+| `stress2_MPa` | out | stress in part 2 in MPa (compression negative) | - |
+| `displacement_mm` | out | displacement of the joint in mm | - |
 
 **Applies when:** rigid supports, no gap; linear elastic, no buckling of the compressed part.
 
@@ -3115,7 +3063,7 @@ displacement_mm = 0.12
 
 <a id="generalized_hookes_law"></a>
 
-#### Generalized Hooke's law: strains from a 3D stress state — `generalized_hookes_law`
+#### Generalized Hooke's law: strains from a 3D stress state, `generalized_hookes_law`
 
 The six strain components and the volumetric strain of an isotropic linear-elastic material under a general three-dimensional stress state.
 
@@ -3132,14 +3080,14 @@ $$
 | `tyz` | in | tau_yz | Pa |
 | `tzx` | in | tau_zx | Pa |
 | `E` | in | Young's modulus | Pa |
-| `nu` | in | Poisson's ratio | — |
-| `ex` | out | eps_x, microstrain | — |
-| `ey` | out | eps_y, microstrain | — |
-| `ez` | out | eps_z, microstrain | — |
-| `gxy` | out | gamma_xy, microstrain | — |
-| `gyz` | out | gamma_yz, microstrain | — |
-| `gzx` | out | gamma_zx, microstrain | — |
-| `volumetric` | out | volumetric strain eps_x + eps_y + eps_z, microstrain | — |
+| `nu` | in | Poisson's ratio | - |
+| `ex` | out | eps_x, microstrain | - |
+| `ey` | out | eps_y, microstrain | - |
+| `ez` | out | eps_z, microstrain | - |
+| `gxy` | out | gamma_xy, microstrain | - |
+| `gyz` | out | gamma_yz, microstrain | - |
+| `gzx` | out | gamma_zx, microstrain | - |
+| `volumetric` | out | volumetric strain eps_x + eps_y + eps_z, microstrain | - |
 
 **Applies when:** isotropic, linear elastic; -1 < nu < 0.5; small strains.
 
@@ -3168,7 +3116,7 @@ volumetric = 300
 
 <a id="axial_bar_segments"></a>
 
-#### Stepped bar under axial loads at its joints — `axial_bar_segments`
+#### Stepped bar under axial loads at its joints, `axial_bar_segments`
 
 Internal axial force, normal stress of every segment and the total elongation of a bar fixed at its left end, made of segments in series, with axial loads at the joints.
 
@@ -3178,14 +3126,14 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `lengths` | in | segment lengths in mm, from the fixed end (a list) | — |
-| `areas` | in | segment cross-sectional areas in mm^2 (a list) | — |
-| `loads` | in | axial load at the far end of each segment in kN, positive pulling away from the support (a list) | — |
+| `lengths` | in | segment lengths in mm, from the fixed end (a list) | - |
+| `areas` | in | segment cross-sectional areas in mm^2 (a list) | - |
+| `loads` | in | axial load at the far end of each segment in kN, positive pulling away from the support (a list) | - |
 | `E` | in | Young's modulus (all segments) | Pa |
-| `elongation_mm` | out | total elongation of the bar in mm (negative = shortening) | — |
-| `N_kN` | out | internal axial force of each segment in kN (tension positive) | — |
-| `stress_MPa` | out | normal stress of each segment in MPa | — |
-| `max_abs_stress_MPa` | out | largest stress magnitude in MPa | — |
+| `elongation_mm` | out | total elongation of the bar in mm (negative = shortening) | - |
+| `N_kN` | out | internal axial force of each segment in kN (tension positive) | - |
+| `stress_MPa` | out | normal stress of each segment in MPa | - |
+| `max_abs_stress_MPa` | out | largest stress magnitude in MPa | - |
 
 **Applies when:** equal-length lists; left end fixed, right end free; linear elastic, no buckling.
 
@@ -3206,7 +3154,7 @@ max_abs_stress_MPa = 150
 
 <a id="continuous_beam_three_moment"></a>
 
-#### Continuous beam under uniform loads (three-moment equation) — `continuous_beam_three_moment`
+#### Continuous beam under uniform loads (three-moment equation), `continuous_beam_three_moment`
 
 The bending moments over the supports and the support reactions of a continuous beam of equal stiffness over 2 to 6 simply supported spans, each with its own uniform load.
 
@@ -3216,10 +3164,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `spans` | in | span lengths in m, left to right (a list) | — |
-| `w` | in | uniform load on each span in kN/m (a list) | — |
-| `support_moments_kNm` | out | bending moment at each support in kN*m, end supports first and last (hogging negative) | — |
-| `reactions_kN` | out | reaction at each support in kN | — |
+| `spans` | in | span lengths in m, left to right (a list) | - |
+| `w` | in | uniform load on each span in kN/m (a list) | - |
+| `support_moments_kNm` | out | bending moment at each support in kN*m, end supports first and last (hogging negative) | - |
+| `reactions_kN` | out | reaction at each support in kN | - |
 
 **Applies when:** constant EI along the beam; simple supports, no settlement; end supports carry no moment.
 
@@ -3235,7 +3183,7 @@ reactions_kN = [22.5,75.0,22.5]
 
 <a id="truss_member_forces"></a>
 
-#### Member forces of a plane truss (method of joints) — `truss_member_forces`
+#### Member forces of a plane truss (method of joints), `truss_member_forces`
 
 The axial force in every member and the support reactions of a statically determinate plane pin-jointed truss on a pin and a roller, under joint loads.
 
@@ -3245,17 +3193,17 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `nodes` | in | node coordinates, one row 'x y' per node in m (node 1 is the first row) | — |
-| `members` | in | members as pairs of node numbers, e.g. 1-2, 2-3 | — |
-| `pin` | in | node number of the pin support | — |
-| `roller` | in | node number of the roller support (vertical reaction) | — |
-| `loads` | in | joint loads, one row 'node Fx Fy' in kN (up and right positive) | — |
-| `forces_kN` | out | member forces in kN in the order given (tension positive) | — |
-| `pin_Rx_kN` | out | horizontal reaction at the pin, kN | — |
-| `pin_Ry_kN` | out | vertical reaction at the pin, kN | — |
-| `roller_Ry_kN` | out | vertical reaction at the roller, kN | — |
-| `max_tension_kN` | out | largest tension, kN | — |
-| `max_compression_kN` | out | largest compression (magnitude), kN | — |
+| `nodes` | in | node coordinates, one row 'x y' per node in m (node 1 is the first row) | - |
+| `members` | in | members as pairs of node numbers, e.g. 1-2, 2-3 | - |
+| `pin` | in | node number of the pin support | - |
+| `roller` | in | node number of the roller support (vertical reaction) | - |
+| `loads` | in | joint loads, one row 'node Fx Fy' in kN (up and right positive) | - |
+| `forces_kN` | out | member forces in kN in the order given (tension positive) | - |
+| `pin_Rx_kN` | out | horizontal reaction at the pin, kN | - |
+| `pin_Ry_kN` | out | vertical reaction at the pin, kN | - |
+| `roller_Ry_kN` | out | vertical reaction at the roller, kN | - |
+| `max_tension_kN` | out | largest tension, kN | - |
+| `max_compression_kN` | out | largest compression (magnitude), kN | - |
 
 **Applies when:** pin-jointed, loads at the joints; statically determinate: members + 3 = 2 x nodes, geometrically stable; roller on a horizontal surface.
 
@@ -3277,7 +3225,7 @@ max_compression_kN = 6.009252126
 
 <a id="stepped_shaft_twist"></a>
 
-#### Angle of twist of a stepped shaft — `stepped_shaft_twist`
+#### Angle of twist of a stepped shaft: `stepped_shaft_twist`
 
 Total angle of twist and the largest shear stress of a shaft made of solid circular segments in series carrying one torque.
 
@@ -3288,12 +3236,12 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `T` | in | torque carried by every segment | N*m |
-| `lengths` | in | segment lengths in mm (a list) | — |
-| `diameters` | in | segment diameters in mm (a list, same order) | — |
+| `lengths` | in | segment lengths in mm (a list) | - |
+| `diameters` | in | segment diameters in mm (a list, same order) | - |
 | `G` | in | shear modulus | Pa |
 | `twist_rad` | out | total angle of twist | rad |
-| `twist_deg` | out | total angle of twist in degrees | — |
-| `tau_max_MPa` | out | largest shear stress (smallest segment) in MPa | — |
+| `twist_deg` | out | total angle of twist in degrees | - |
+| `tau_max_MPa` | out | largest shear stress (smallest segment) in MPa | - |
 
 **Applies when:** equal-length lists; the same torque in every segment; stress concentrations at the steps not included.
 
@@ -3312,7 +3260,7 @@ tau_max_MPa = 94.31404035
 
 <a id="statically_indeterminate_shaft"></a>
 
-#### Shaft fixed at both ends with a torque between them — `statically_indeterminate_shaft`
+#### Shaft fixed at both ends with a torque between them, `statically_indeterminate_shaft`
 
 The reaction torques at both fixed ends, the shear stress in each part and the rotation at the loaded section of a shaft built in at both ends.
 
@@ -3330,9 +3278,9 @@ $$
 | `G` | in | shear modulus | Pa |
 | `TA` | out | reaction torque at A | N*m |
 | `TB` | out | reaction torque at B | N*m |
-| `tau1_MPa` | out | maximum shear stress in part 1, MPa | — |
-| `tau2_MPa` | out | maximum shear stress in part 2, MPa | — |
-| `twist_at_load_deg` | out | rotation of the loaded section in degrees | — |
+| `tau1_MPa` | out | maximum shear stress in part 1, MPa | - |
+| `tau2_MPa` | out | maximum shear stress in part 2, MPa | - |
+| `twist_at_load_deg` | out | rotation of the loaded section in degrees | - |
 
 **Applies when:** both ends fully fixed; solid circular parts of one material.
 
@@ -3357,7 +3305,7 @@ twist_at_load_deg = 0.4377075133
 
 <a id="shaft_power_transmission"></a>
 
-#### Torque and minimum diameter of a power-transmission shaft — `shaft_power_transmission`
+#### Torque and minimum diameter of a power-transmission shaft, `shaft_power_transmission`
 
 The torque a solid shaft transmits at a given power and speed, and the smallest diameter that keeps the torsional shear stress within an allowable value.
 
@@ -3371,8 +3319,8 @@ $$
 | `n` | in | rotational speed (rpm or rad/s) | rad/s |
 | `tau_allow` | in | allowable shear stress | Pa |
 | `T` | out | transmitted torque | N*m |
-| `d_min_mm` | out | minimum solid-shaft diameter in mm | — |
-| `frequency_Hz` | out | rotational frequency in Hz | — |
+| `d_min_mm` | out | minimum solid-shaft diameter in mm | - |
+| `frequency_Hz` | out | rotational frequency in Hz | - |
 
 **Applies when:** P, n, tau_allow > 0; pure torsion (no bending), solid circular shaft.
 
@@ -3392,7 +3340,7 @@ frequency_Hz = 25
 
 <a id="hollow_shaft_torsion"></a>
 
-#### Torsion of a hollow circular shaft — `hollow_shaft_torsion`
+#### Torsion of a hollow circular shaft: `hollow_shaft_torsion`
 
 Shear stresses at the outer and inner surfaces, polar moment and angle of twist of a hollow circular shaft under a torque.
 
@@ -3407,10 +3355,10 @@ $$
 | `d` | in | inner diameter | m |
 | `L` | in | length | m |
 | `G` | in | shear modulus | Pa |
-| `tau_max_MPa` | out | maximum shear stress (outer surface) in MPa | — |
-| `tau_inner_MPa` | out | shear stress at the inner surface in MPa (0 for a solid shaft) | — |
+| `tau_max_MPa` | out | maximum shear stress (outer surface) in MPa | - |
+| `tau_inner_MPa` | out | shear stress at the inner surface in MPa (0 for a solid shaft) | - |
 | `twist_rad` | out | angle of twist | rad |
-| `twist_deg` | out | angle of twist in degrees | — |
+| `twist_deg` | out | angle of twist in degrees | - |
 | `J` | out | polar second moment of area | m^4 |
 
 **Applies when:** D > d > 0; linear elastic.
@@ -3435,7 +3383,7 @@ J = 1.021017612e-06 m^4
 
 <a id="solid_shaft_torsion"></a>
 
-#### Torsion of a solid circular shaft — `solid_shaft_torsion`
+#### Torsion of a solid circular shaft: `solid_shaft_torsion`
 
 Maximum shear stress, polar moment and angle of twist of a solid circular shaft under a torque.
 
@@ -3449,10 +3397,10 @@ $$
 | `d` | in | diameter | m |
 | `L` | in | length | m |
 | `G` | in | shear modulus | Pa |
-| `tau_max_MPa` | out | maximum shear stress (outer surface) in MPa | — |
-| `tau_inner_MPa` | out | shear stress at the inner surface in MPa (0 for a solid shaft) | — |
+| `tau_max_MPa` | out | maximum shear stress (outer surface) in MPa | - |
+| `tau_inner_MPa` | out | shear stress at the inner surface in MPa (0 for a solid shaft) | - |
 | `twist_rad` | out | angle of twist | rad |
-| `twist_deg` | out | angle of twist in degrees | — |
+| `twist_deg` | out | angle of twist in degrees | - |
 | `J` | out | polar second moment of area | m^4 |
 
 **Applies when:** T, d, L, G > 0; linear elastic, circular section, uniform torque.
@@ -3478,7 +3426,7 @@ J = 6.135923152e-07 m^4
 
 <a id="shaft_whirling_speeds"></a>
 
-#### All critical (whirling) speeds of a shaft with several disks — `shaft_whirling_speeds`
+#### All critical (whirling) speeds of a shaft with several disks, `shaft_whirling_speeds`
 
 The exact critical speeds of a simply supported massless shaft carrying point-mass disks, from the eigenvalues of its flexibility matrix.
 
@@ -3488,13 +3436,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `masses` | in | disk masses in kg (a list) | — |
-| `positions` | in | disk positions from the left bearing, in m (a list) | — |
+| `masses` | in | disk masses in kg (a list) | - |
+| `positions` | in | disk positions from the left bearing, in m (a list) | - |
 | `L` | in | bearing span | m |
 | `E` | in | Young's modulus | Pa |
 | `I` | in | second moment of area of the shaft | m^4 |
-| `omega` | out | critical speeds in rad/s, ascending | — |
-| `N_rpm` | out | critical speeds in rpm | — |
+| `omega` | out | critical speeds in rad/s, ascending | - |
+| `N_rpm` | out | critical speeds in rpm | - |
 
 **Applies when:** simply supported uniform massless shaft, point-mass disks (no rotary inertia or gyroscopics); distinct positions.
 
@@ -3513,7 +3461,7 @@ N_rpm = [1871.27232296]
 
 <a id="shaft_critical_speed_single_disk"></a>
 
-#### Critical speed of a shaft carrying one disk — `shaft_critical_speed_single_disk`
+#### Critical speed of a shaft carrying one disk, `shaft_critical_speed_single_disk`
 
 The lateral stiffness at the disk, the first critical (whirling) speed and the static deflection of a simply supported massless shaft carrying one disk.
 
@@ -3530,8 +3478,8 @@ $$
 | `a` | in | distance of the disk from the left bearing | m |
 | `k` | out | lateral stiffness of the shaft at the disk | N/m |
 | `omega_cr` | out | critical speed | rad/s |
-| `N_cr_rpm` | out | critical speed in rpm | — |
-| `static_deflection_mm` | out | static deflection under the disk's weight, mm | — |
+| `N_cr_rpm` | out | critical speed in rpm | - |
+| `static_deflection_mm` | out | static deflection under the disk's weight, mm | - |
 
 **Applies when:** simple (short) bearings, uniform massless shaft; gyroscopic effects neglected; 0 < a < L.
 
@@ -3554,7 +3502,7 @@ static_deflection_mm = 0.2553815104
 
 <a id="damped_sdof_parameters"></a>
 
-#### Damping ratio, damped frequency and logarithmic decrement — `damped_sdof_parameters`
+#### Damping ratio, damped frequency and logarithmic decrement, `damped_sdof_parameters`
 
 The natural frequency, damping ratio, critical damping, damped natural frequency and logarithmic decrement of a viscously damped spring-mass system, and whether it is under- or overdamped.
 
@@ -3568,12 +3516,12 @@ $$
 | `c` | in | viscous damping coefficient (N*s/m) | kg/s |
 | `k` | in | stiffness | N/m |
 | `omega_n` | out | undamped natural frequency | rad/s |
-| `zeta` | out | damping ratio c/c_c | — |
+| `zeta` | out | damping ratio c/c_c | - |
 | `omega_d` | out | damped natural frequency (0 if not underdamped) | rad/s |
 | `f_d` | out | damped natural frequency in Hz | Hz |
 | `c_critical` | out | critical damping 2 sqrt(k m) | kg/s |
-| `log_decrement` | out | logarithmic decrement (0 if not underdamped) | — |
-| `regime` | out | underdamped, critically damped or overdamped | — |
+| `log_decrement` | out | logarithmic decrement (0 if not underdamped) | - |
+| `regime` | out | underdamped, critically damped or overdamped | - |
 
 **Applies when:** m, k > 0, c >= 0; linear viscous damping.
 
@@ -3597,7 +3545,7 @@ regime = underdamped
 
 <a id="dunkerley_critical_speed"></a>
 
-#### First critical speed of a shaft with several disks (Dunkerley) — `dunkerley_critical_speed`
+#### First critical speed of a shaft with several disks (Dunkerley), `dunkerley_critical_speed`
 
 Dunkerley's lower-bound estimate of the first critical speed of a simply supported massless shaft carrying several disks.
 
@@ -3607,13 +3555,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `masses` | in | disk masses in kg (a list) | — |
-| `positions` | in | disk positions from the left bearing, in m (a list) | — |
+| `masses` | in | disk masses in kg (a list) | - |
+| `positions` | in | disk positions from the left bearing, in m (a list) | - |
 | `L` | in | bearing span | m |
 | `E` | in | Young's modulus | Pa |
 | `I` | in | second moment of area of the shaft | m^4 |
 | `omega_cr` | out | first critical speed (Dunkerley, a lower bound) | rad/s |
-| `N_cr_rpm` | out | critical speed in rpm | — |
+| `N_cr_rpm` | out | critical speed in rpm | - |
 
 **Applies when:** simply supported uniform massless shaft; disks at distinct positions inside the span.
 
@@ -3632,7 +3580,7 @@ N_cr_rpm = 1871.272323
 
 <a id="rayleigh_critical_speed"></a>
 
-#### First critical speed of a shaft with several disks (Rayleigh) — `rayleigh_critical_speed`
+#### First critical speed of a shaft with several disks (Rayleigh), `rayleigh_critical_speed`
 
 Rayleigh's estimate of the first critical speed of a simply supported massless shaft carrying several disks, from the static deflections under the disks' weights.
 
@@ -3642,14 +3590,14 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `masses` | in | disk masses in kg (a list) | — |
-| `positions` | in | disk positions from the left bearing, in m (a list) | — |
+| `masses` | in | disk masses in kg (a list) | - |
+| `positions` | in | disk positions from the left bearing, in m (a list) | - |
 | `L` | in | bearing span | m |
 | `E` | in | Young's modulus | Pa |
 | `I` | in | second moment of area of the shaft | m^4 |
 | `omega_cr` | out | first critical speed (Rayleigh, an upper bound) | rad/s |
-| `N_cr_rpm` | out | critical speed in rpm | — |
-| `deflections_mm` | out | static deflection at each disk, mm | — |
+| `N_cr_rpm` | out | critical speed in rpm | - |
+| `deflections_mm` | out | static deflection at each disk, mm | - |
 
 **Applies when:** simply supported uniform massless shaft; disks at distinct positions inside the span; g = 9.80665 m/s^2.
 
@@ -3669,7 +3617,7 @@ deflections_mm = [0.255381510417]
 
 <a id="vibration_transmissibility"></a>
 
-#### Force (or base-motion) transmissibility of a vibration isolator — `vibration_transmissibility`
+#### Force (or base-motion) transmissibility of a vibration isolator, `vibration_transmissibility`
 
 The ratio of transmitted to applied force amplitude (equally, of mass to base displacement amplitude) for a damped isolator at a frequency ratio, and the isolation achieved.
 
@@ -3679,10 +3627,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `zeta` | in | damping ratio | — |
-| `r` | in | frequency ratio omega/omega_n | — |
-| `TR` | out | transmissibility | — |
-| `isolation_percent` | out | isolation (1 - TR) in percent (0 when TR >= 1) | — |
+| `zeta` | in | damping ratio | - |
+| `r` | in | frequency ratio omega/omega_n | - |
+| `TR` | out | transmissibility | - |
+| `isolation_percent` | out | isolation (1 - TR) in percent (0 when TR >= 1) | - |
 
 **Applies when:** zeta >= 0, r > 0; not undamped resonance (r = 1 with zeta = 0).
 
@@ -3700,7 +3648,7 @@ isolation_percent = 66.66666667
 
 <a id="sdof_free_response"></a>
 
-#### Free vibration response of a damped spring-mass system — `sdof_free_response`
+#### Free vibration response of a damped spring-mass system, `sdof_free_response`
 
 The displacement and velocity at time t of a damped single-degree-of-freedom system released from an initial displacement and velocity (under-, critically or overdamped).
 
@@ -3717,7 +3665,7 @@ $$
 | `v0` | in | initial velocity | m/s |
 | `t` | in | time | s |
 | `x` | out | displacement at t | m |
-| `x_mm` | out | displacement at t in mm | — |
+| `x_mm` | out | displacement at t in mm | - |
 | `v` | out | velocity at t | m/s |
 
 **Applies when:** linear viscous damping; no external force; zeta within 1e-9 of 1 is treated as critical.
@@ -3741,7 +3689,7 @@ v = -0.03678794412 m/s
 
 <a id="mdof_spring_mass_chain"></a>
 
-#### Natural frequencies and first mode of a spring-mass chain — `mdof_spring_mass_chain`
+#### Natural frequencies and first mode of a spring-mass chain, `mdof_spring_mass_chain`
 
 All natural frequencies and the first mode shape of a chain of masses joined by springs, fixed to a wall at the left end (and optionally at the right end).
 
@@ -3751,12 +3699,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `masses` | in | masses in kg, left to right (a list) | — |
-| `springs` | in | spring stiffnesses in N/m, the wall spring first (a list) | — |
-| `ends` | in | fixed-free (n springs) or fixed-fixed (n + 1 springs) | — |
-| `omega` | out | natural circular frequencies in rad/s, ascending | — |
-| `f_Hz` | out | natural frequencies in Hz | — |
-| `mode1` | out | first mode shape, largest entry +1 | — |
+| `masses` | in | masses in kg, left to right (a list) | - |
+| `springs` | in | spring stiffnesses in N/m, the wall spring first (a list) | - |
+| `ends` | in | fixed-free (n springs) or fixed-fixed (n + 1 springs) | - |
+| `omega` | out | natural circular frequencies in rad/s, ascending | - |
+| `f_Hz` | out | natural frequencies in Hz | - |
+| `mode1` | out | first mode shape, largest entry +1 | - |
 
 **Applies when:** 1 to 12 masses; linear springs, no damping; springs: n (fixed-free) or n + 1 (fixed-fixed).
 
@@ -3774,7 +3722,7 @@ mode1 = [0.5,1.0]
 
 <a id="beam_natural_frequency"></a>
 
-#### Natural frequencies of a uniform beam (Euler-Bernoulli) — `beam_natural_frequency`
+#### Natural frequencies of a uniform beam (Euler-Bernoulli), `beam_natural_frequency`
 
 The n-th bending natural frequency of a uniform Euler-Bernoulli beam with simply supported, cantilever, fixed-fixed, fixed-pinned or free-free ends.
 
@@ -3789,9 +3737,9 @@ $$
 | `rho` | in | density | kg/m^3 |
 | `A` | in | cross-sectional area | m^2 |
 | `L` | in | length | m |
-| `ends` | in | end conditions | — |
-| `n` | in | mode number (default 1; free-free counts the elastic modes) (optional) | — |
-| `beta_L` | out | eigenvalue beta L | — |
+| `ends` | in | end conditions | - |
+| `n` | in | mode number (default 1; free-free counts the elastic modes) (optional) | - |
+| `beta_L` | out | eigenvalue beta L | - |
 | `omega` | out | natural circular frequency | rad/s |
 | `f` | out | natural frequency | Hz |
 
@@ -3816,7 +3764,7 @@ f = 6.268159733 Hz
 
 <a id="sdof_natural_frequency"></a>
 
-#### Natural frequency of a spring-mass system — `sdof_natural_frequency`
+#### Natural frequency of a spring-mass system: `sdof_natural_frequency`
 
 The natural circular frequency, frequency, period and static deflection (under gravity) of an undamped single-degree-of-freedom spring-mass system.
 
@@ -3831,7 +3779,7 @@ $$
 | `omega_n` | out | natural circular frequency | rad/s |
 | `f_n` | out | natural frequency | Hz |
 | `period` | out | period | s |
-| `static_deflection_mm` | out | static deflection m g/k in mm (g = 9.80665 m/s^2) | — |
+| `static_deflection_mm` | out | static deflection m g/k in mm (g = 9.80665 m/s^2) | - |
 
 **Applies when:** m, k > 0; linear spring, no damping.
 
@@ -3851,7 +3799,7 @@ static_deflection_mm = 24.516625
 
 <a id="forced_vibration_amplitude"></a>
 
-#### Steady-state response to a harmonic force — `forced_vibration_amplitude`
+#### Steady-state response to a harmonic force: `forced_vibration_amplitude`
 
 The steady-state amplitude, phase lag and dynamic magnification factor of a damped spring-mass system driven by a harmonic force F0 cos(omega t).
 
@@ -3867,10 +3815,10 @@ $$
 | `F0` | in | force amplitude | N |
 | `omega` | in | forcing frequency (rad/s or rpm) | rad/s |
 | `X` | out | steady-state amplitude | m |
-| `X_mm` | out | amplitude in mm | — |
-| `phase_deg` | out | phase lag of the displacement behind the force, degrees (0 to 180) | — |
-| `magnification` | out | dynamic magnification X k/F0 | — |
-| `r` | out | frequency ratio omega/omega_n | — |
+| `X_mm` | out | amplitude in mm | - |
+| `phase_deg` | out | phase lag of the displacement behind the force, degrees (0 to 180) | - |
+| `magnification` | out | dynamic magnification X k/F0 | - |
+| `r` | out | frequency ratio omega/omega_n | - |
 
 **Applies when:** steady state (transient decayed); not undamped resonance.
 
@@ -3894,7 +3842,7 @@ r = 1
 
 <a id="vibration_isolator_design"></a>
 
-#### Stiffness of an undamped isolator for a target transmissibility — `vibration_isolator_design`
+#### Stiffness of an undamped isolator for a target transmissibility, `vibration_isolator_design`
 
 The mount stiffness, natural frequency, frequency ratio and static deflection an undamped isolator needs so that a machine running at omega transmits only a fraction TR of its force.
 
@@ -3906,11 +3854,11 @@ $$
 |---|---|---|---|
 | `m` | in | isolated mass | kg |
 | `omega` | in | forcing frequency (rad/s or rpm) | rad/s |
-| `TR` | in | target transmissibility (0 < TR < 1, e.g. 0.1 or 10%) | — |
+| `TR` | in | target transmissibility (0 < TR < 1, e.g. 0.1 or 10%) | - |
 | `k` | out | required total stiffness | N/m |
 | `f_n` | out | natural frequency of the mounted system | Hz |
-| `r` | out | frequency ratio omega/omega_n | — |
-| `static_deflection_mm` | out | static deflection of the mounts, mm | — |
+| `r` | out | frequency ratio omega/omega_n | - |
+| `static_deflection_mm` | out | static deflection of the mounts, mm | - |
 
 **Applies when:** undamped isolator; 0 < TR < 1 (isolation region r > sqrt(2)).
 
@@ -3931,7 +3879,7 @@ static_deflection_mm = 4.371934096
 
 <a id="two_rotor_torsional_vibration"></a>
 
-#### Torsional natural frequency of a two-rotor system — `two_rotor_torsional_vibration`
+#### Torsional natural frequency of a two-rotor system, `two_rotor_torsional_vibration`
 
 The torsional natural frequency of two rotors joined by an elastic shaft, the ratio of their vibration amplitudes and (with the shaft length) where the node lies.
 
@@ -3947,7 +3895,7 @@ $$
 | `L` | in | shaft length (optional: gives the node position) (optional) | m |
 | `omega` | out | torsional natural frequency | rad/s |
 | `f` | out | natural frequency in Hz | Hz |
-| `amplitude_ratio` | out | amplitude of rotor 2 / rotor 1 (negative: opposite phase) | — |
+| `amplitude_ratio` | out | amplitude of rotor 2 / rotor 1 (negative: opposite phase) | - |
 | `node_from_rotor1` | out | distance of the node from rotor 1 (with L) | m |
 
 **Applies when:** shaft inertia neglected; free-free system (no fixed end).
@@ -3970,7 +3918,7 @@ node_from_rotor1 = 0.9 m
 
 <a id="rotating_unbalance_response"></a>
 
-#### Vibration due to rotating unbalance — `rotating_unbalance_response`
+#### Vibration due to rotating unbalance: `rotating_unbalance_response`
 
 The steady-state amplitude of a machine on springs and dampers excited by a rotating unbalance, the unbalance force and the force transmitted to the foundation.
 
@@ -3987,7 +3935,7 @@ $$
 | `c` | in | damping coefficient | kg/s |
 | `omega` | in | rotational speed | rad/s |
 | `X` | out | amplitude of the machine | m |
-| `X_mm` | out | amplitude in mm | — |
+| `X_mm` | out | amplitude in mm | - |
 | `F_transmitted` | out | force amplitude transmitted to the foundation | N |
 | `F_unbalance` | out | rotating unbalance force mu e omega^2 | N |
 
@@ -4011,4 +3959,4 @@ F_unbalance = 250 N
 
 **What the worked example means:** This calculation determines the vibration response of a machine with rotating unbalance. Given the total mass, unbalanced mass, eccentricity, stiffness, damping, and rotational speed, it computes the resulting displacement amplitude and the dynamic force passed to the support structure. The output shows that for the current operating conditions, the machine vibrates with an amplitude of 0.000416667 m, which corresponds to 0.416667 when converted to millimeters. The rotating unbalance generates a centrifugal force of 250 N, and the isolation system transmits a force of 166.667 N to the foundation.
 
-Questions and reports: support@ai999x.com. AI999X — The Future Is Self-Improving.
+Questions and reports: support@ai999x.com. AI999X, The Future Is Self-Improving.

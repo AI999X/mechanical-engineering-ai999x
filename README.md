@@ -1,16 +1,16 @@
-# mechanical-engineering-ai999x — offline, verified mechanical engineering solver with step-by-step answers
+# mechanical-engineering-ai999x: offline, verified mechanical engineering solver with step-by-step answers
 
 [![tests](https://github.com/AI999X/mechanical-engineering-ai999x/actions/workflows/ci.yml/badge.svg)](https://github.com/AI999X/mechanical-engineering-ai999x/actions/workflows/ci.yml) [![PyPI](https://img.shields.io/pypi/v/mechanical-engineering-ai999x)](https://pypi.org/project/mechanical-engineering-ai999x/) [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97-Hugging%20Face-yellow)](https://huggingface.co/AI999X/mechanical-engineering-ai999x)
 
 **[Desktop app & command line](https://www.ai999x.com/desktop-cli/)** · **[Compute in your browser](https://www.ai999x.com/models/mechanical-engineering-ai999x/#try)** · **[Install (Python)](https://pypi.org/project/mechanical-engineering-ai999x/)** · **[Guides](https://huggingface.co/AI999X/mechanical-engineering-ai999x/tree/main/docs)** · **[Evaluation](https://huggingface.co/AI999X/mechanical-engineering-ai999x/tree/main/evaluation)** · **[AI999X on Hugging Face](https://huggingface.co/AI999X)** · **[Website](https://ai999x.com)** · **[Support: Buy Me a Coffee](https://buymeacoffee.com/ibnuljaiffarabi)**
 
-License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.1.0
+License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.5.0
 
-Field: **Engineering** · Tasks: Question Answering, Token Classification, Text Classification, Sentence Similarity, Feature Extraction
+Field: **Engineering** · Tasks: Question Answering
 
-mechanical-engineering-ai999x is an offline, deterministic Python solver that answers mechanical engineering questions with verified results from 90 certified capabilities, gives 312 documented answers identically on Windows and Linux, and refuses rather than guesses when an answer cannot be verified.
+mechanical-engineering-ai999x is an offline, deterministic mechanical engineering solver written in Rust: a desktop app, a command-line program, a browser module and a Python package. It answers mechanical engineering questions with verified results from 90 certified capabilities, gives 312 documented answers identically on Windows and Linux, and refuses rather than guesses when an answer cannot be verified.
 
-**mechanical-engineering-ai999x** is a compact, deterministic mechanical engineering engine for Python. It reads a question in plain English (or a typed call), picks a certified mechanical engineering capability, computes the answer exactly, checks it, and returns the result with its steps, units, LaTeX and assumptions — or an honest refusal that says what is missing. It runs fully offline on any CPU, needs no GPU, no API key and no internet, and is built to give **zero wrong answers**: when it is not sure, it refuses instead of guessing.
+**mechanical-engineering-ai999x** reads a question in plain English (or a typed call), picks a certified mechanical engineering capability, computes the answer exactly, checks it, and returns the result with its steps, units, LaTeX and assumptions, or a refusal that says what is missing. It runs fully offline on any CPU, needs no GPU, no API key and no internet, and is built to give **zero wrong answers**: when it is not sure, it refuses instead of guessing.
 
 [![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-support%20development-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/ibnuljaiffarabi) ![License](https://img.shields.io/badge/license-Apache--2.0-blue) ![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13%20%7C%203.14-blue) ![Offline](https://img.shields.io/badge/runs-offline%20on%20CPU-green) ![Rust](https://img.shields.io/badge/Rust-Windows%20%7C%20Linux%20%7C%20WebAssembly-orange)
 
@@ -20,13 +20,13 @@ mechanical-engineering-ai999x is an offline, deterministic Python solver that an
 
 | Way to run it | For | Get it |
 |---|---|---|
-| **AI999X Mechanical Engineering desktop app** 1.4.0 | Windows, Linux — this model in its own app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-mechanical-engineering-1.4.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-mechanical-engineering-1.4.0-linux-x86_64.tar.gz) |
-| **AI999X desktop app** 1.4.0 | Windows, Linux — every AI999X model in one app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz) |
-| **Command line** (`mechanical-engineering`) | Windows, Linux — one program per model, offline, no Python | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz) |
-| **In your browser** | any device — nothing to install | [Compute on the model page](https://www.ai999x.com/models/mechanical-engineering-ai999x/#try) |
+| **AI999X Mechanical Engineering desktop app** 1.5.0 | Windows, Linux. This model in its own app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-mechanical-engineering-1.5.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-mechanical-engineering-1.5.0-linux-x86_64.tar.gz) |
+| **AI999X desktop app** 1.5.0 | Windows, Linux. Every AI999X model in one app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz) |
+| **Command line** (`mechanical-engineering`) | Windows, Linux. One program per model, offline, no Python | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz) |
+| **In your browser** | any device. Nothing to install | [Compute on the model page](https://www.ai999x.com/models/mechanical-engineering-ai999x/#try) |
 | **Python** | Python 3.10+ | `pip install mechanical-engineering-ai999x` |
 
-Checksums: [SHA256SUMS](https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS) · every version: [https://downloads.ai999x.com/desktop/latest/](https://downloads.ai999x.com/desktop/latest/) · install guide: [desktop & command line](https://www.ai999x.com/desktop-cli/)
+Checksums: [SHA256SUMS](https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS) · every version: [https://downloads.ai999x.com/desktop/latest/](https://downloads.ai999x.com/desktop/latest/) · install guide: [desktop & command line](https://www.ai999x.com/desktop-cli/)
 
 ## Quick start
 
@@ -37,11 +37,11 @@ Download **AI999X Mechanical Engineering** for your system (above), unpack it an
 Linux, from a terminal:
 
 ```bash
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-mechanical-engineering-1.4.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-mechanical-engineering-1.5.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-mechanical-engineering-1.4.0-linux-x86_64.tar.gz
-./ai999x-mechanical-engineering-1.4.0-linux-x86_64/ai999x-mechanical-engineering
+tar xzf ai999x-mechanical-engineering-1.5.0-linux-x86_64.tar.gz
+./ai999x-mechanical-engineering-1.5.0-linux-x86_64/ai999x-mechanical-engineering
 ```
 
 ### Command line
@@ -49,30 +49,30 @@ tar xzf ai999x-mechanical-engineering-1.4.0-linux-x86_64.tar.gz
 Linux:
 
 ```bash
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-mkdir -p ~/.local/share && tar xzf ai999x-cli-1.4.0-linux-x86_64.tar.gz -C ~/.local/share
-echo 'export PATH="$HOME/.local/share/ai999x-cli-1.4.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
+mkdir -p ~/.local/share && tar xzf ai999x-cli-1.5.0-linux-x86_64.tar.gz -C ~/.local/share
+echo 'export PATH="$HOME/.local/share/ai999x-cli-1.5.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
 mechanical-engineering --version
 ```
 
 Windows (PowerShell):
 
 ```powershell
-$F = "ai999x-cli-1.4.0-windows-x86_64.zip"
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.4.0/$F" -OutFile $F
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS" -OutFile SHA256SUMS
+$F = "ai999x-cli-1.5.0-windows-x86_64.zip"
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/$F" -OutFile $F
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS" -OutFile SHA256SUMS
 (Get-FileHash $F -Algorithm SHA256).Hash.ToLower() -eq ((Select-String -SimpleMatch $F SHA256SUMS).Line -split ' ')[0]
 Expand-Archive $F -DestinationPath "$env:LOCALAPPDATA\AI999X" -Force
-$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.4.0-windows-x86_64"; $env:Path += ";$D"
+$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.5.0-windows-x86_64"; $env:Path += ";$D"
 [Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path", "User") + ";$D", "User")
 mechanical-engineering --version
 ```
 
 Every command below was run as shown; the text under it is what the program printed.
 
-**Ask in words** — Write the question as you would say it: the program reads the quantities and their units, picks the capability and answers.
+**Ask in words**: Write the question as you would say it: the program reads the quantities and their units, picks the capability and answers.
 
 ```console
 $ mechanical-engineering ask "Simply supported beam with point load: L = 6 m, P = 20 kN, a = 2 m, E = 200 GPa, I = 8e-5 m^4"
@@ -93,7 +93,7 @@ x_max = 2.734013676 m
   assumes: 0 < a < L; Euler-Bernoulli beam, linear elastic, prismatic
 ```
 
-**What a capability needs** — The equation or method, every input and output with its SI unit. Read this before solve: it tells you the input names.
+**What a capability needs**: The equation or method, every input and output with its SI unit. Read this before solve: it tells you the input names.
 
 ```console
 $ mechanical-engineering info simply_supported_beam_point_load
@@ -113,7 +113,7 @@ Simply supported beam with a point load
   out  x_max    position of the maximum deflection from A [m]
 ```
 
-**Solve** — Inputs as name=value, each with any unit of the right kind. The answer lists every output, the method used, each input converted to SI, and the conditions the answer assumes.
+**Solve**: Inputs as name=value, each with any unit of the right kind. The answer lists every output, the method used, each input converted to SI, and the conditions the answer assumes.
 
 ```console
 $ mechanical-engineering solve simply_supported_beam_point_load "L=6 m" "P=20 kN" "a=2 m" "E=200 GPa" "I=8e-05 m^4"
@@ -133,7 +133,7 @@ x_max = 2.734013676 m
   assumes: 0 < a < L; Euler-Bernoulli beam, linear elastic, prismatic
 ```
 
-**Many questions at once** — One JSON request per line in, one JSON answer per line out, in order: for scripts, notebooks and agents (the program starts once). In PowerShell: Get-Content cases.jsonl | mechanical-engineering batch
+**Many questions at once**: One JSON request per line in, one JSON answer per line out, in order: for scripts, notebooks and agents (the program starts once). In PowerShell: Get-Content cases.jsonl | mechanical-engineering batch
 
 `cases.jsonl`:
 
@@ -302,18 +302,18 @@ _What this means:_ This calculation determines the structural response of a beam
 
 ## Documentation
 
-- **Rust user guide** — the command line, every capability with a command and what it printed: [PDF](https://huggingface.co/AI999X/mechanical-engineering-ai999x/blob/main/docs/mechanical_engineering_ai999x_rust_guide.pdf) · [Markdown](https://huggingface.co/AI999X/mechanical-engineering-ai999x/blob/main/docs/mechanical_engineering_ai999x_rust_guide.md)
-- **Python guide** — every capability with a Python example: [PDF](https://huggingface.co/AI999X/mechanical-engineering-ai999x/blob/main/docs/mechanical_engineering_ai999x_capabilities.pdf) · [Markdown](https://huggingface.co/AI999X/mechanical-engineering-ai999x/blob/main/docs/mechanical_engineering_ai999x_capabilities.md)
-- **Desktop app & command line** — downloads, install, ask and search, figures, offline use, checksums: https://www.ai999x.com/desktop-cli/
-- **Model page** — compute in your browser, every capability explained: https://www.ai999x.com/models/mechanical-engineering-ai999x/
+- **Rust user guide**: the command line, every capability with a command and what it printed: [PDF](https://huggingface.co/AI999X/mechanical-engineering-ai999x/blob/main/docs/mechanical_engineering_ai999x_rust_guide.pdf) · [Markdown](https://huggingface.co/AI999X/mechanical-engineering-ai999x/blob/main/docs/mechanical_engineering_ai999x_rust_guide.md)
+- **Python guide**: every capability with a Python example: [PDF](https://huggingface.co/AI999X/mechanical-engineering-ai999x/blob/main/docs/mechanical_engineering_ai999x_capabilities.pdf) · [Markdown](https://huggingface.co/AI999X/mechanical-engineering-ai999x/blob/main/docs/mechanical_engineering_ai999x_capabilities.md)
+- **Desktop app & command line**: downloads, install, ask and search, figures, offline use, checksums: https://www.ai999x.com/desktop-cli/
+- **Model page**: compute in your browser, every capability explained: https://www.ai999x.com/models/mechanical-engineering-ai999x/
 
 ## Highlights
 
 - **Verified, not generated.** Every answer is computed by a certified mechanical engineering capability and checked (substituted back, dimension-checked or compared with an independent computation) before it is returned.
-- **Zero wrong answers by design.** Seven explicit outcomes — SOLVED, NEEDS_INPUT, AMBIGUOUS, INVALID_INPUT, OUT_OF_SCOPE, UNRECOGNIZED_FORMAT, INTERNAL_ERROR — never a silent guess. Every one of its 312 documented answers is reproduced exactly on every tested platform.
+- **Zero wrong answers by design.** Seven explicit outcomes (SOLVED, NEEDS_INPUT, AMBIGUOUS, INVALID_INPUT, OUT_OF_SCOPE, UNRECOGNIZED_FORMAT, INTERNAL_ERROR), never a silent guess. Every one of its 312 documented answers is reproduced exactly on every tested platform.
 - **Plain-English questions and a guaranteed typed interface.** `ask()` reads documented question forms; `solve(capability_id, **inputs)` always solves a supported task with valid inputs.
 - **Explains itself.** Steps, formulas in LaTeX, units, assumptions and the model used, ready for notebooks, tutoring apps and homework checkers.
-- **Native and in the browser.** Every capability also computes natively in Rust: the desktop app and the `mechanical-engineering` command line for Windows and Linux, and WebAssembly on the model page — no Python, no network.
+- **Native and in the browser.** Every capability also computes natively in Rust: the desktop app and the `mechanical-engineering` command line for Windows and Linux, and WebAssembly on the model page, no Python, no network.
 - **Small and portable.** Pure Python (sympy, mpmath); identical answers on Windows and Linux (Python 3.10, 3.11, 3.12, 3.13, 3.14).
 - **Coverage:** statics, beams and section properties, stress and strain, torsion, columns, fatigue, machine elements, vibrations and structural analysis.
 
@@ -321,7 +321,7 @@ _What this means:_ This calculation determines the structural response of a beam
 
 | Property | Value |
 |---|---|
-| Package | `mechanical-engineering-ai999x` 1.1.0 (import `mechanical_engineering_ai999x`) |
+| Package | `mechanical-engineering-ai999x` 1.5.0 (import `mechanical_engineering_ai999x`) |
 | Type | Deterministic neuro-symbolic mechanical engineering engine (rule-based reading + certified symbolic capabilities) |
 | Capabilities | 90 certified procedures |
 | Knowledge pack | version 1.0.1 |
@@ -355,25 +355,14 @@ mechanical_engineering.ask("Who created you?").message
 # -> mechanical-engineering-ai999x was created and engineered by Ibnul Jaif Farabi at AI999X.
 ```
 
-The Python package also installs a Python command, `mechanical-engineering-ai999x "<question>"`; for the native program use `mechanical-engineering` (above). The outputs above were produced by running this exact code on mechanical-engineering-ai999x 1.1.0.
-
-## Find the right capability, and draw it
-
-`mechanical_engineering.search()` finds which certified capability a question is about — across **every** AI999X model, so a question for another model points you to it. It runs **[ai999x-encoder](https://huggingface.co/AI999X/ai999x-encoder)**, AI999X's own capability encoder (4.7M parameters, a 4.9 MB ONNX model, offline; the root `model.safetensors` of this repository): `pip install "mechanical-engineering-ai999x[search]"`. `ask(question, suggest=True)` adds the same pointers to a question it does not answer; an answer itself never changes.
-
-```python
-import mechanical_engineering_ai999x as mechanical_engineering
-
-mechanical_engineering.search("Solve x^2 - 5x + 6 = 0", k=2)
-# -> Roots of a quadratic equation (math-foundations-ai999x, 0.63); Roots of a cubic equation (math-foundations-ai999x, 0.59)
-```
+The Python package also installs a Python command, `mechanical-engineering-ai999x "<question>"`; for the native program use `mechanical-engineering` (above). The outputs above were produced by running this exact code on mechanical-engineering-ai999x 1.5.0.
 
 ## How every answer is verified
 
-1. **Reading** — the question is turned into typed quantities (value, unit, kind, role) and one asked quantity; every stated number must be used or the question is refused.
-2. **Planning** — only certified capabilities may answer; a capability applies only under the conditions the wording states (for example a pendulum, a liquid at rest, boiling).
-3. **Computing** — exact symbolic or high-precision numeric evaluation.
-4. **Checking** — dimensions, substitution back into the defining equation, and agreement between independent readings; any disagreement becomes a refusal, never a number.
+1. **Reading**: the question is turned into typed quantities (value, unit, kind, role) and one asked quantity; every stated number must be used or the question is refused.
+2. **Planning**: only certified capabilities may answer; a capability applies only under the conditions the wording states (for example a pendulum, a liquid at rest, boiling).
+3. **Computing**: exact symbolic or high-precision numeric evaluation.
+4. **Checking**: dimensions, substitution back into the defining equation, and agreement between independent readings; any disagreement becomes a refusal, never a number.
 
 Capabilities are certified before they ship: each must reproduce hand-worked reference cases, reject a deliberately wrong variant (a control), and leave every benchmark answer unchanged.
 
@@ -459,31 +448,31 @@ Every point was computed by `mechanical-engineering-ai999x`.
 
 **Mohr's circle of a plane stress state**
 
-![Mohr's circle of a plane stress state — computed by mechanical-engineering-ai999x](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/principal-stresses-2d-mohr.svg)
+![Mohr's circle of a plane stress state, computed by mechanical-engineering-ai999x](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/principal-stresses-2d-mohr.svg)
 
 _Mohr's circle for σx = 50 MPa, σy = -10 MPa, τxy = 40 MPa: the normal and shear stress on planes rotated by 0–180° (73 states computed by the package's stress transformation) trace the circle; the principal stresses it returned are σ1 = 70 MPa and σ2 = -30 MPa at θp = 26.5651°; marked: centre σ = 20 MPa, τmax = 50 MPa._
 
 **Shear and bending-moment diagrams of a beam**
 
-![Shear and bending-moment diagrams of a beam — computed by mechanical-engineering-ai999x](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/simply-supported-beam-point-loads-beam.svg)
+![Shear and bending-moment diagrams of a beam, computed by mechanical-engineering-ai999x](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/simply-supported-beam-point-loads-beam.svg)
 
 _Shear-force and bending-moment diagrams of a simply supported beam of span 8 m with point loads 10, 20 kN at x = 2, 5 m, drawn from the reactions the package returned (RA = 15 kN, RB = 15 kN); marked: the maximum moment it returned, x = 5 m, M = 45 kN·m._
 
 **A cantilever's deflected shape under a tip load**
 
-![A cantilever's deflected shape under a tip load — computed by mechanical-engineering-ai999x](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/cantilever-point-load-beam.svg)
+![A cantilever's deflected shape under a tip load, computed by mechanical-engineering-ai999x](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/cantilever-point-load-beam.svg)
 
 _Deflected shape of a cantilever (L = 2 m, E = 2.0000e+11 Pa, I = 8.0000e-06 m⁴) under a tip load P = 5000 N: the deflection at each of 40 positions x is the tip deflection the package returns for the load placed at x (Maxwell's reciprocal theorem). Marked: x = 2 m, tip deflection = 8.33333 mm (downward); the wall and beam depth are drawn for orientation._
 
 **Fatigue diagram: Goodman, Gerber and Soderberg envelopes**
 
-![Fatigue diagram: Goodman, Gerber and Soderberg envelopes — computed by mechanical-engineering-ai999x](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/goodman-fatigue-safety-factor-fatigue.svg)
+![Fatigue diagram: Goodman, Gerber and Soderberg envelopes, computed by mechanical-engineering-ai999x](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/goodman-fatigue-safety-factor-fatigue.svg)
 
 _Fatigue failure envelopes for Se = 250 MPa, Sut = 700 MPa, Sy = 500 MPa: each point is the stress state at which the package's safety factor along a load line equals 1 (47 load lines per criterion). Marked: the operating point σm = 80 MPa, σa = 120 MPa, Goodman safety factor n = 1.68269._
 
 **Forced vibration: resonance curves for four dampings**
 
-![Forced vibration: resonance curves for four dampings — computed by mechanical-engineering-ai999x](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/forced-vibration-amplitude-response.svg)
+![Forced vibration: resonance curves for four dampings, computed by mechanical-engineering-ai999x](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/forced-vibration-amplitude-response.svg)
 
 _Steady-state magnification of a forced spring–mass–damper (m = 10 kg, k = 4000 N/m, natural frequency 20 rad/s) for four damping coefficients, 120 forcing frequencies each computed by the package; marked: ω = 20 rad/s, c = 40 N·s/m, magnification = 5._
 
@@ -498,22 +487,22 @@ _Steady-state magnification of a forced spring–mass–damper (m = 10 kg, k = 4
 ## Out of scope
 
 - Open-ended explanation, essay writing or tutoring dialogue: it is a solver, not a chatbot.
-- Questions outside its certified mechanical engineering capabilities, and any question whose stated numbers it cannot all use — it refuses with the reason instead.
+- Questions outside its certified mechanical engineering capabilities, and any question whose stated numbers it cannot all use: it refuses with the reason instead.
 - High-stakes engineering, medical or legal decisions without independent review.
 
 ## Limitations
 
 - It answers what its certified capabilities cover (statics, beams and section properties, stress and strain, torsion, columns, fatigue, machine elements, vibrations and structural analysis); anything else is refused with a reason.
-- `ask()` reads documented question forms and common phrasings; unusual wording may be refused — use `solve()` for guaranteed results.
+- `ask()` reads documented question forms and common phrasings; unusual wording may be refused; use `solve()` for guaranteed results.
 - Results are as correct as the certified relations and their stated conditions; a certified relation is a checked model, not a claim about every physical situation.
 
 ## Citation
 
 ```bibtex
-@software{mechanical_engineering_ai999x_1_1_0,
+@software{mechanical_engineering_ai999x_1_5_0,
   title  = {mechanical-engineering-ai999x: an offline, verified mechanical engineering solver},
   author = {Farabi, Ibnul Jaif}, organization = {AI999X},
-  year   = {2026}, version = {1.1.0},
+  year   = {2026}, version = {1.5.0},
   url    = {https://huggingface.co/AI999X/mechanical-engineering-ai999x}
 }
 ```
@@ -530,4 +519,15 @@ Created and engineered by **Ibnul Jaif Farabi** · **[AI999X](https://huggingfac
 
 ## Source and releases
 
-This repository holds the installable source of each release, exactly as published on [PyPI](https://pypi.org/project/mechanical-engineering-ai999x/) (`pip install .` builds it). Releases are tagged `v<version>`; the wheel is attached to each [GitHub release](https://github.com/AI999X/mechanical-engineering-ai999x/releases). The optional ONNX models (formula graphs and, where measured, a decision model) are on [Hugging Face](https://huggingface.co/AI999X/mechanical-engineering-ai999x/tree/main/onnx).
+This repository holds the installable source of each release, exactly as published on [PyPI](https://pypi.org/project/mechanical-engineering-ai999x/) (`pip install .` builds it). Releases are tagged `v1.5.0`; the [GitHub release](https://github.com/AI999X/mechanical-engineering-ai999x/releases/tag/v1.5.0) carries the wheel, the desktop app and the command-line program for Windows and Linux, and their checksums.
+
+## Build the program from source
+
+`rust/` holds the Rust source of the `mechanical-engineering` command-line program and browser module: the AI999X engine (`rust/ax-engine`), this model (`rust/mechanical-engineering`) and its data (`rust/models/mechanical_engineering/pack.json`). With Rust 1.80 or later:
+
+```bash
+cd rust
+cargo build --release -p mechanical-engineering-ai999x
+./target/release/mechanical-engineering --help
+cargo test -p mechanical-engineering-ai999x
+```

@@ -205,7 +205,7 @@ Call `solve("<id>", **inputs)` with plain numbers; the result's `values` holds e
 
 <a id="resultant_of_concurrent_forces"></a>
 
-### Resultant of concurrent coplanar forces — `resultant_of_concurrent_forces`
+### Resultant of concurrent coplanar forces: `resultant_of_concurrent_forces`
 
 The magnitude, components and direction of the resultant of forces acting through one point in a plane.
 
@@ -253,7 +253,7 @@ mechanical_engineering_ai999x.solve('resultant_of_concurrent_forces', F='10, 10'
 
 <a id="two_cable_equilibrium"></a>
 
-### Tensions in two cables holding a weight — `two_cable_equilibrium`
+### Tensions in two cables holding a weight: `two_cable_equilibrium`
 
 The tensions in two cables, one rising to the left at angle alpha and one rising to the right at angle beta above the horizontal, that hold a weight W at rest.
 
@@ -304,7 +304,7 @@ mechanical_engineering_ai999x.solve('two_cable_equilibrium', W=100.0, alpha=0.78
 
 <a id="moment_of_a_force"></a>
 
-### Moment of a force about a point (2D) — `moment_of_a_force`
+### Moment of a force about a point (2D): `moment_of_a_force`
 
 The moment of a force (Fx, Fy) applied at (x, y) about the point (x0, y0), counterclockwise positive, and the perpendicular distance to its line of action.
 
@@ -358,7 +358,7 @@ mechanical_engineering_ai999x.solve('moment_of_a_force', Fx=0.0, Fy=-50.0, x=3.0
 
 <a id="simply_supported_beam_point_load"></a>
 
-### Simply supported beam with a point load — `simply_supported_beam_point_load`
+### Simply supported beam with a point load: `simply_supported_beam_point_load`
 
 Reactions, maximum bending moment and shear, deflection under the load and the maximum deflection with its position, for a simply supported beam carrying one point load.
 
@@ -416,7 +416,7 @@ mechanical_engineering_ai999x.solve('simply_supported_beam_point_load', L=4.0, P
 
 <a id="simply_supported_beam_udl"></a>
 
-### Simply supported beam with a uniformly distributed load — `simply_supported_beam_udl`
+### Simply supported beam with a uniformly distributed load, `simply_supported_beam_udl`
 
 Reactions, maximum bending moment and shear, maximum (midspan) deflection and end slope of a simply supported beam under a uniform load over its whole span.
 
@@ -467,7 +467,7 @@ mechanical_engineering_ai999x.solve('simply_supported_beam_udl', L=5.0, w=10000.
 
 <a id="simply_supported_beam_point_loads"></a>
 
-### Simply supported beam with several point loads — `simply_supported_beam_point_loads`
+### Simply supported beam with several point loads, `simply_supported_beam_point_loads`
 
 Support reactions, the maximum bending moment and its position, and the maximum shear for a simply supported beam carrying several downward point loads.
 
@@ -525,7 +525,7 @@ mechanical_engineering_ai999x.solve('simply_supported_beam_point_loads', L=6.0, 
 
 <a id="cantilever_point_load"></a>
 
-### Cantilever with a point load — `cantilever_point_load`
+### Cantilever with a point load: `cantilever_point_load`
 
 Reaction, fixed-end moment, deflection under the load, tip deflection and tip slope of a cantilever carrying one point load at distance a from the fixed end (default: at the free end).
 
@@ -585,7 +585,7 @@ mechanical_engineering_ai999x.solve('cantilever_point_load', L=3.0, P=4000.0, a=
 
 <a id="cantilever_udl"></a>
 
-### Cantilever with a uniformly distributed load — `cantilever_udl`
+### Cantilever with a uniformly distributed load, `cantilever_udl`
 
 Reaction, fixed-end moment, tip deflection and tip slope of a cantilever under a uniform load over its whole length.
 
@@ -633,7 +633,7 @@ mechanical_engineering_ai999x.solve('cantilever_udl', L=3.0, w=2000.0, E=2000000
 
 <a id="cantilever_triangular_load"></a>
 
-### Cantilever with a triangular (linearly varying) load — `cantilever_triangular_load`
+### Cantilever with a triangular (linearly varying) load, `cantilever_triangular_load`
 
 Reaction, fixed-end moment, tip deflection and tip slope of a cantilever whose load falls linearly from w at the fixed end to zero at the free end.
 
@@ -681,7 +681,7 @@ mechanical_engineering_ai999x.solve('cantilever_triangular_load', L=3.0, w=6000.
 
 <a id="fixed_fixed_beam_udl"></a>
 
-### Fixed-fixed (built-in) beam with a uniformly distributed load — `fixed_fixed_beam_udl`
+### Fixed-fixed (built-in) beam with a uniformly distributed load, `fixed_fixed_beam_udl`
 
 Reactions, fixed-end (hogging) moments, midspan (sagging) moment and maximum deflection of a beam built in at both ends under a uniform load.
 
@@ -730,7 +730,7 @@ mechanical_engineering_ai999x.solve('fixed_fixed_beam_udl', L=6.0, w=12000.0, E=
 
 <a id="fixed_fixed_beam_point_load"></a>
 
-### Fixed-fixed (built-in) beam with a point load — `fixed_fixed_beam_point_load`
+### Fixed-fixed (built-in) beam with a point load, `fixed_fixed_beam_point_load`
 
 Reactions, fixed-end moments, the moment under the load and the deflection under the load of a beam built in at both ends carrying one point load.
 
@@ -781,7 +781,7 @@ mechanical_engineering_ai999x.solve('fixed_fixed_beam_point_load', L=6.0, P=3000
 
 <a id="propped_cantilever_udl"></a>
 
-### Propped cantilever with a uniformly distributed load — `propped_cantilever_udl`
+### Propped cantilever with a uniformly distributed load, `propped_cantilever_udl`
 
 Reactions, fixed-end moment, maximum span moment and its position, and the maximum deflection with its position, for a beam fixed at A and simply supported at B under a uniform load.
 
@@ -831,7 +831,7 @@ mechanical_engineering_ai999x.solve('propped_cantilever_udl', L=8.0, w=10000.0, 
 
 <a id="propped_cantilever_point_load"></a>
 
-### Propped cantilever with a point load — `propped_cantilever_point_load`
+### Propped cantilever with a point load: `propped_cantilever_point_load`
 
 Reactions, fixed-end moment, moment under the load and deflection under the load of a beam fixed at A and simply supported at B with one point load.
 
@@ -880,7 +880,7 @@ mechanical_engineering_ai999x.solve('propped_cantilever_point_load', L=4.0, P=16
 
 <a id="rectangular_section_properties"></a>
 
-### Section properties of a solid rectangle — `rectangular_section_properties`
+### Section properties of a solid rectangle: `rectangular_section_properties`
 
 Area, second moments of area, elastic section moduli, radii of gyration and polar moment of a solid rectangle b wide and h deep.
 
@@ -930,7 +930,7 @@ mechanical_engineering_ai999x.solve('rectangular_section_properties', b=0.1, h=0
 
 <a id="circular_section_properties"></a>
 
-### Section properties of a solid circle — `circular_section_properties`
+### Section properties of a solid circle: `circular_section_properties`
 
 Area, second moment of area, polar moment, elastic and plastic section moduli and radius of gyration of a solid circular section.
 
@@ -976,7 +976,7 @@ mechanical_engineering_ai999x.solve('circular_section_properties', d=0.05)
 
 <a id="hollow_circular_section_properties"></a>
 
-### Section properties of a hollow circle (tube) — `hollow_circular_section_properties`
+### Section properties of a hollow circle (tube), `hollow_circular_section_properties`
 
 Area, second moment of area, polar moment, elastic and plastic section moduli and radius of gyration of a circular tube.
 
@@ -1024,7 +1024,7 @@ mechanical_engineering_ai999x.solve('hollow_circular_section_properties', D=0.06
 
 <a id="hollow_rectangular_section_properties"></a>
 
-### Section properties of a hollow rectangle (box) — `hollow_rectangular_section_properties`
+### Section properties of a hollow rectangle (box), `hollow_rectangular_section_properties`
 
 Area, second moments, elastic section moduli, radii of gyration and the plastic modulus about x of a rectangular hollow section of uniform wall thickness.
 
@@ -1075,7 +1075,7 @@ mechanical_engineering_ai999x.solve('hollow_rectangular_section_properties', B=0
 
 <a id="i_section_properties"></a>
 
-### Section properties of a symmetric I-section — `i_section_properties`
+### Section properties of a symmetric I-section, `i_section_properties`
 
 Area, second moments, elastic and plastic section moduli, radii of gyration and the shape factor of a doubly symmetric I-section (flanges b x tf, web tw, overall depth h, no fillets).
 
@@ -1129,7 +1129,7 @@ mechanical_engineering_ai999x.solve('i_section_properties', b=0.15, h=0.3, tf=0.
 
 <a id="t_section_properties"></a>
 
-### Section properties of a T-section — `t_section_properties`
+### Section properties of a T-section: `t_section_properties`
 
 Area, centroid height, second moments, top and bottom section moduli and radii of gyration of a T-section (flange on top).
 
@@ -1181,7 +1181,7 @@ mechanical_engineering_ai999x.solve('t_section_properties', bf=0.12, tf=0.02, h=
 
 <a id="channel_section_properties"></a>
 
-### Section properties of a channel (C) section — `channel_section_properties`
+### Section properties of a channel (C) section, `channel_section_properties`
 
 Area, centroid distance from the back of the web, second moments, section moduli and radii of gyration of a channel with square corners.
 
@@ -1232,7 +1232,7 @@ mechanical_engineering_ai999x.solve('channel_section_properties', b=0.08, h=0.2,
 
 <a id="angle_section_properties"></a>
 
-### Section properties of an angle (L) section, with principal axes — `angle_section_properties`
+### Section properties of an angle (L) section, with principal axes, `angle_section_properties`
 
 Area, centroid, centroidal second moments and product of inertia, principal second moments, the principal angle and the least radius of gyration of an equal or unequal angle.
 
@@ -1285,7 +1285,7 @@ mechanical_engineering_ai999x.solve('angle_section_properties', b=0.1, h=0.1, t=
 
 <a id="composite_section_properties"></a>
 
-### Composite section of rectangles (parallel-axis theorem) — `composite_section_properties`
+### Composite section of rectangles (parallel-axis theorem), `composite_section_properties`
 
 Area, centroid, centroidal second moments, product of inertia and principal second moments of a section built from non-overlapping rectangles.
 
@@ -1330,7 +1330,7 @@ mechanical_engineering_ai999x.solve('composite_section_properties', rects='200 2
 
 <a id="polygon_section_properties"></a>
 
-### Section properties of a polygonal section — `polygon_section_properties`
+### Section properties of a polygonal section: `polygon_section_properties`
 
 Area, centroid, centroidal second moments, product of inertia and principal second moments of any simple polygon given by its vertices.
 
@@ -1380,7 +1380,7 @@ mechanical_engineering_ai999x.solve('polygon_section_properties', vertices='0 0;
 
 <a id="solid_shaft_torsion"></a>
 
-### Torsion of a solid circular shaft — `solid_shaft_torsion`
+### Torsion of a solid circular shaft: `solid_shaft_torsion`
 
 Maximum shear stress, polar moment and angle of twist of a solid circular shaft under a torque.
 
@@ -1429,7 +1429,7 @@ mechanical_engineering_ai999x.solve('solid_shaft_torsion', T=1200.0, d=0.05, L=1
 
 <a id="hollow_shaft_torsion"></a>
 
-### Torsion of a hollow circular shaft — `hollow_shaft_torsion`
+### Torsion of a hollow circular shaft: `hollow_shaft_torsion`
 
 Shear stresses at the outer and inner surfaces, polar moment and angle of twist of a hollow circular shaft under a torque.
 
@@ -1479,7 +1479,7 @@ mechanical_engineering_ai999x.solve('hollow_shaft_torsion', T=2000.0, D=0.06, d=
 
 <a id="shaft_power_transmission"></a>
 
-### Torque and minimum diameter of a power-transmission shaft — `shaft_power_transmission`
+### Torque and minimum diameter of a power-transmission shaft, `shaft_power_transmission`
 
 The torque a solid shaft transmits at a given power and speed, and the smallest diameter that keeps the torsional shear stress within an allowable value.
 
@@ -1521,7 +1521,7 @@ mechanical_engineering_ai999x.solve('shaft_power_transmission', P=50000.0, n=157
 
 <a id="stepped_shaft_twist"></a>
 
-### Angle of twist of a stepped shaft — `stepped_shaft_twist`
+### Angle of twist of a stepped shaft: `stepped_shaft_twist`
 
 Total angle of twist and the largest shear stress of a shaft made of solid circular segments in series carrying one torque.
 
@@ -1568,7 +1568,7 @@ mechanical_engineering_ai999x.solve('stepped_shaft_twist', T=500.0, lengths='400
 
 <a id="statically_indeterminate_shaft"></a>
 
-### Shaft fixed at both ends with a torque between them — `statically_indeterminate_shaft`
+### Shaft fixed at both ends with a torque between them, `statically_indeterminate_shaft`
 
 The reaction torques at both fixed ends, the shear stress in each part and the rotation at the loaded section of a shaft built in at both ends.
 
@@ -1618,7 +1618,7 @@ mechanical_engineering_ai999x.solve('statically_indeterminate_shaft', T0=1000.0,
 
 <a id="axial_bar_segments"></a>
 
-### Stepped bar under axial loads at its joints — `axial_bar_segments`
+### Stepped bar under axial loads at its joints, `axial_bar_segments`
 
 Internal axial force, normal stress of every segment and the total elongation of a bar fixed at its left end, made of segments in series, with axial loads at the joints.
 
@@ -1666,7 +1666,7 @@ mechanical_engineering_ai999x.solve('axial_bar_segments', lengths='300, 500', ar
 
 <a id="bar_fixed_at_both_ends"></a>
 
-### Bar fixed at both ends with an axial load at a step — `bar_fixed_at_both_ends`
+### Bar fixed at both ends with an axial load at a step, `bar_fixed_at_both_ends`
 
 Reactions, stresses in both parts and the displacement of the loaded joint of a two-part bar held between two rigid supports, loaded axially at the joint.
 
@@ -1717,7 +1717,7 @@ mechanical_engineering_ai999x.solve('bar_fixed_at_both_ends', P=60000.0, L1=0.4,
 
 <a id="plane_stress_transformation"></a>
 
-### Plane stress transformation to rotated axes — `plane_stress_transformation`
+### Plane stress transformation to rotated axes, `plane_stress_transformation`
 
 The normal and shear stresses on axes rotated counterclockwise by theta from x, for a plane state of stress.
 
@@ -1764,7 +1764,7 @@ mechanical_engineering_ai999x.solve('plane_stress_transformation', sx=80000000.0
 
 <a id="principal_stresses_2d"></a>
 
-### Principal stresses and maximum shear (Mohr's circle, plane stress) — `principal_stresses_2d`
+### Principal stresses and maximum shear (Mohr's circle, plane stress), `principal_stresses_2d`
 
 Principal stresses, their direction, the maximum in-plane and absolute shear stresses and the von Mises stress of a plane state of stress.
 
@@ -1822,7 +1822,7 @@ mechanical_engineering_ai999x.solve('principal_stresses_2d', sx=100000000.0, sy=
 
 <a id="principal_stresses_3d"></a>
 
-### Principal stresses of a three-dimensional stress state — `principal_stresses_3d`
+### Principal stresses of a three-dimensional stress state, `principal_stresses_3d`
 
 The three principal stresses, the absolute maximum shear, von Mises, hydrostatic and octahedral shear stresses of a general 3D state of stress.
 
@@ -1880,7 +1880,7 @@ mechanical_engineering_ai999x.solve('principal_stresses_3d', sx=0.0, sy=0.0, sz=
 
 <a id="yield_criteria_safety_factor"></a>
 
-### Von Mises and Tresca equivalent stresses and safety factors — `yield_criteria_safety_factor`
+### Von Mises and Tresca equivalent stresses and safety factors, `yield_criteria_safety_factor`
 
 Equivalent stresses by the distortion-energy (von Mises) and maximum-shear (Tresca) criteria and the corresponding factors of safety against yielding.
 
@@ -1931,7 +1931,7 @@ mechanical_engineering_ai999x.solve('yield_criteria_safety_factor', Sy=350000000
 
 <a id="brittle_failure_mohr"></a>
 
-### Safety factors of a brittle material (maximum normal stress, Coulomb-Mohr, modified Mohr) — `brittle_failure_mohr`
+### Safety factors of a brittle material (maximum normal stress, Coulomb-Mohr, modified Mohr), `brittle_failure_mohr`
 
 Factors of safety of a brittle material under plane stress by the maximum-normal-stress, brittle Coulomb-Mohr and modified-Mohr criteria (proportional loading).
 
@@ -1983,7 +1983,7 @@ mechanical_engineering_ai999x.solve('brittle_failure_mohr', sA=50000000.0, sB=-3
 
 <a id="strain_rosette"></a>
 
-### Strain rosette: strains, principal strains and principal stresses — `strain_rosette`
+### Strain rosette: strains, principal strains and principal stresses, `strain_rosette`
 
 From the readings of a three-gauge rosette (rectangular $0/45/90$ or delta $0/60/120$ degrees): the strain components, the principal strains and their direction, and the principal stresses (plane stress).
 
@@ -2037,7 +2037,7 @@ mechanical_engineering_ai999x.solve('strain_rosette', ea=400.0, eb=300.0, ec=-10
 
 <a id="generalized_hookes_law"></a>
 
-### Generalized Hooke's law: strains from a 3D stress state — `generalized_hookes_law`
+### Generalized Hooke's law: strains from a 3D stress state, `generalized_hookes_law`
 
 The six strain components and the volumetric strain of an isotropic linear-elastic material under a general three-dimensional stress state.
 
@@ -2088,7 +2088,7 @@ mechanical_engineering_ai999x.solve('generalized_hookes_law', sx=100000000.0, sy
 
 <a id="thin_walled_pressure_vessel"></a>
 
-### Thin-walled pressure vessel stresses (cylinder or sphere) — `thin_walled_pressure_vessel`
+### Thin-walled pressure vessel stresses (cylinder or sphere), `thin_walled_pressure_vessel`
 
 Hoop and longitudinal stresses and the in-plane and absolute maximum shear stresses in the wall of a thin cylindrical or spherical pressure vessel.
 
@@ -2141,7 +2141,7 @@ mechanical_engineering_ai999x.solve('thin_walled_pressure_vessel', p=2000000.0, 
 
 <a id="thick_walled_cylinder"></a>
 
-### Thick-walled cylinder under pressure (Lame equations) — `thick_walled_cylinder`
+### Thick-walled cylinder under pressure (Lame equations), `thick_walled_cylinder`
 
 Radial and hoop stresses at a radius, the hoop stresses at both surfaces, the maximum shear at the bore and the closed-end axial stress of a thick cylinder under internal and external pressure.
 
@@ -2192,7 +2192,7 @@ mechanical_engineering_ai999x.solve('thick_walled_cylinder', pi=100000000.0, po=
 
 <a id="shrink_fit_pressure"></a>
 
-### Shrink (press) fit: interface pressure and hoop stresses — `shrink_fit_pressure`
+### Shrink (press) fit: interface pressure and hoop stresses, `shrink_fit_pressure`
 
 The contact pressure of an interference fit between a hub and a solid or hollow shaft of the same material, and the hoop stresses it causes at the interface.
 
@@ -2236,7 +2236,7 @@ mechanical_engineering_ai999x.solve('shrink_fit_pressure', delta=2e-05, R=0.025,
 
 <a id="rotating_disk_stresses"></a>
 
-### Stresses in a rotating disk (solid or with a central hole) — `rotating_disk_stresses`
+### Stresses in a rotating disk (solid or with a central hole), `rotating_disk_stresses`
 
 The largest hoop and radial stresses, the radius of the largest radial stress and the hoop stress at the rim of a thin disk of uniform thickness spinning at constant speed.
 
@@ -2286,7 +2286,7 @@ mechanical_engineering_ai999x.solve('rotating_disk_stresses', rho=7800.0, omega=
 
 <a id="euler_buckling"></a>
 
-### Euler buckling load of a column with given end conditions — `euler_buckling`
+### Euler buckling load of a column with given end conditions, `euler_buckling`
 
 The critical (Euler) buckling load of an ideal elastic column, its effective length factor and length, and with the area also the critical stress and slenderness ratio.
 
@@ -2343,7 +2343,7 @@ mechanical_engineering_ai999x.solve('euler_buckling', E=200000000000.0, I=8e-06,
 
 <a id="johnson_column"></a>
 
-### Critical stress of an intermediate column (Johnson parabola / Euler) — `johnson_column`
+### Critical stress of an intermediate column (Johnson parabola / Euler), `johnson_column`
 
 The critical stress of a column by the Johnson parabola below the transition slenderness and by Euler above it, with the transition slenderness and (with the area) the critical load.
 
@@ -2378,7 +2378,7 @@ $$
 
 ![Johnson or Euler (regime) over Sy (yield strength) from 2](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/johnson-column-decision)
 
-*Johnson or Euler (regime) over Sy (yield strength) from 2.5000e+07 Pa to 2.5000e+09 Pa and E (Young's modulus) from 2.0000e+10 Pa to 2.0000e+12 Pa (logarithmic axes): each of the 31 × 21 cells is one run of mechanical-engineering-ai999x, coloured by the verdict it returned — Euler: 200 cells, Johnson: 451 cells. Other inputs as in the worked example: L = 1.5 m, r = 0.02 m, ends = pinned-pinned. Marked: the worked example, Sy = 2.5000e+08 Pa, E = 2.0000e+11 Pa → Johnson.*
+*Johnson or Euler (regime) over Sy (yield strength) from 2.5000e+07 Pa to 2.5000e+09 Pa and E (Young's modulus) from 2.0000e+10 Pa to 2.0000e+12 Pa (logarithmic axes): each of the 31 × 21 cells is one run of mechanical-engineering-ai999x, coloured by the verdict it returned, Euler: 200 cells, Johnson: 451 cells. Other inputs as in the worked example: L = 1.5 m, r = 0.02 m, ends = pinned-pinned. Marked: the worked example, Sy = 2.5000e+08 Pa, E = 2.0000e+11 Pa → Johnson.*
 
 ```python
 mechanical_engineering_ai999x.solve('johnson_column', Sy=250000000.0, E=200000000000.0, L=1.5, r=0.02, ends='pinned-pinned')
@@ -2399,7 +2399,7 @@ mechanical_engineering_ai999x.solve('johnson_column', Sy=250000000.0, E=20000000
 
 <a id="secant_column"></a>
 
-### Eccentrically loaded column (secant formula) — `secant_column`
+### Eccentrically loaded column (secant formula), `secant_column`
 
 The maximum compressive stress, midspan deflection and largest bending moment of a pinned column under a load with equal end eccentricities.
 
@@ -2450,7 +2450,7 @@ mechanical_engineering_ai999x.solve('secant_column', P=200000.0, e=0.01, L=3.0, 
 
 <a id="combined_axial_and_bending_stress"></a>
 
-### Combined axial force and biaxial bending of a rectangular section — `combined_axial_and_bending_stress`
+### Combined axial force and biaxial bending of a rectangular section, `combined_axial_and_bending_stress`
 
 Normal stresses at the four corners of a rectangular section carrying an axial force and bending moments about both axes, with the extreme values.
 
@@ -2499,7 +2499,7 @@ mechanical_engineering_ai999x.solve('combined_axial_and_bending_stress', b=0.1, 
 
 <a id="eccentric_bolt_group"></a>
 
-### Eccentrically loaded bolt group (elastic method) — `eccentric_bolt_group`
+### Eccentrically loaded bolt group (elastic method), `eccentric_bolt_group`
 
 The direct shear per bolt, the largest resultant bolt force and which bolt carries it, for a group of identical bolts under a vertical load applied with a horizontal eccentricity.
 
@@ -2546,7 +2546,7 @@ mechanical_engineering_ai999x.solve('eccentric_bolt_group', bolts='0 0; 0 100; 1
 
 <a id="goodman_fatigue_safety_factor"></a>
 
-### Fatigue safety factor by the modified Goodman criterion — `goodman_fatigue_safety_factor`
+### Fatigue safety factor by the modified Goodman criterion, `goodman_fatigue_safety_factor`
 
 The fatigue factor of safety along a proportional load line by the modified Goodman line, the equivalent fully reversed amplitude, and (with Sy) Langer's first-cycle yield factor.
 
@@ -2598,7 +2598,7 @@ mechanical_engineering_ai999x.solve('goodman_fatigue_safety_factor', sa=12000000
 
 <a id="soderberg_fatigue_safety_factor"></a>
 
-### Fatigue safety factor by the Soderberg criterion — `soderberg_fatigue_safety_factor`
+### Fatigue safety factor by the Soderberg criterion, `soderberg_fatigue_safety_factor`
 
 The conservative Soderberg fatigue factor of safety (the line from Se to the yield strength) along a proportional load line, and the equivalent amplitude.
 
@@ -2644,7 +2644,7 @@ mechanical_engineering_ai999x.solve('soderberg_fatigue_safety_factor', sa=100000
 
 <a id="fatigue_life_mean_stress_correction"></a>
 
-### Fatigue life with a mean-stress correction (Morrow, Goodman, SWT, Walker) and Basquin's law — `fatigue_life_mean_stress_correction`
+### Fatigue life with a mean-stress correction (Morrow, Goodman, SWT, Walker) and Basquin's law, `fatigue_life_mean_stress_correction`
 
 The equivalent fully reversed stress amplitude of a cycle with a mean stress, by a chosen correction, and the cycles to failure from Basquin's law $sigma_ar = sf$' $(2N)^{b.}$
 
@@ -2694,7 +2694,7 @@ mechanical_engineering_ai999x.solve('fatigue_life_mean_stress_correction', sa=30
 
 <a id="sn_fatigue_life"></a>
 
-### Fatigue life from the S-N line (10^3 to 10^6 cycles) — `sn_fatigue_life`
+### Fatigue life from the S-N line (10^3 to 10^6 cycles), `sn_fatigue_life`
 
 Cycles to failure of a fully reversed amplitude on the straight log-log S-N line through f*Sut at $10^{3}$ cycles and Se at $10^{6}$ cycles, with the line's constants a and b.
 
@@ -2742,7 +2742,7 @@ mechanical_engineering_ai999x.solve('sn_fatigue_life', Sut=700000000.0, Se=30000
 
 <a id="sn_fatigue_strength"></a>
 
-### Fatigue strength at a given number of cycles (S-N line) — `sn_fatigue_strength`
+### Fatigue strength at a given number of cycles (S-N line), `sn_fatigue_strength`
 
 The fully reversed fatigue strength at N cycles (10^3 to 10^6) on the straight log-log S-N line through f*Sut at $10^{3}$ and Se at $10^{6}$ cycles.
 
@@ -2788,7 +2788,7 @@ mechanical_engineering_ai999x.solve('sn_fatigue_strength', Sut=700000000.0, Se=3
 
 <a id="miner_damage_sn_curve"></a>
 
-### Miner's rule damage with a single-slope S-N curve — `miner_damage_sn_curve`
+### Miner's rule damage with a single-slope S-N curve, `miner_damage_sn_curve`
 
 The Palmgren-Miner damage sum of stress-range blocks on an S-N curve $N = Nc$ $(Sc/S)^{m}$, and how many repeats of the spectrum the part survives.
 
@@ -2831,7 +2831,7 @@ mechanical_engineering_ai999x.solve('miner_damage_sn_curve', ranges='90', counts
 
 <a id="eurocode_fatigue_damage"></a>
 
-### Fatigue damage on the trilinear (Eurocode 3) S-N curve — `eurocode_fatigue_damage`
+### Fatigue damage on the trilinear (Eurocode 3) S-N curve, `eurocode_fatigue_damage`
 
 The Miner damage of stress-range blocks on the trilinear S-N curve of a detail category (slope 3 to 5e6 cycles, slope 5 to 1e8, cut-off below), with the constant-amplitude and cut-off limits.
 
@@ -2874,7 +2874,7 @@ mechanical_engineering_ai999x.solve('eurocode_fatigue_damage', ranges='90', coun
 
 <a id="rainflow_counting"></a>
 
-### Rainflow cycle counting of a load history (ASTM E1049) — `rainflow_counting`
+### Rainflow cycle counting of a load history (ASTM E1049), `rainflow_counting`
 
 The cycles in a load or stress history by rainflow counting (three-point method, half cycles for the residue), as distinct ranges with their counts.
 
@@ -2915,7 +2915,7 @@ mechanical_engineering_ai999x.solve('rainflow_counting', history='0, 5, -3, 4, -
 
 <a id="rainflow_fatigue_damage"></a>
 
-### Fatigue damage of a stress history (rainflow counting + Miner's rule) — `rainflow_fatigue_damage`
+### Fatigue damage of a stress history (rainflow counting + Miner's rule), `rainflow_fatigue_damage`
 
 The Miner damage of one pass of a stress history: rainflow cycles (ASTM, half cycles) on a single-slope S-N curve $N = Nc$ $(Sc/S)^{m}$, and the passes to failure.
 
@@ -2958,7 +2958,7 @@ mechanical_engineering_ai999x.solve('rainflow_fatigue_damage', history='0, 90, 0
 
 <a id="shaft_fatigue_safety_factor"></a>
 
-### Shaft fatigue safety factor (DE-Goodman) — `shaft_fatigue_safety_factor`
+### Shaft fatigue safety factor (DE-Goodman): `shaft_fatigue_safety_factor`
 
 The fatigue factor of safety of a rotating solid shaft under alternating and mean bending and torsion by the distortion-energy Goodman criterion, with the von Mises stresses and (with Sy) the first-cycle yield factor.
 
@@ -3008,7 +3008,7 @@ mechanical_engineering_ai999x.solve('shaft_fatigue_safety_factor', d=0.04, Ma=15
 
 <a id="shaft_diameter_de_goodman"></a>
 
-### Shaft diameter for a design factor (DE-Goodman) — `shaft_diameter_de_goodman`
+### Shaft diameter for a design factor (DE-Goodman), `shaft_diameter_de_goodman`
 
 The smallest solid-shaft diameter giving a required fatigue design factor under alternating and mean bending and torsion (distortion-energy Goodman).
 
@@ -3054,7 +3054,7 @@ mechanical_engineering_ai999x.solve('shaft_diameter_de_goodman', n=1.5, Ma=150.0
 
 <a id="belt_friction_capstan"></a>
 
-### Belt or rope friction on a drum (capstan equation) — `belt_friction_capstan`
+### Belt or rope friction on a drum (capstan equation), `belt_friction_capstan`
 
 The largest tight-side tension a flat belt, rope or V-belt can hold for a given slack-side tension, friction coefficient and wrap angle.
 
@@ -3106,7 +3106,7 @@ mechanical_engineering_ai999x.solve('belt_friction_capstan', T2=200.0, mu=0.3, t
 
 <a id="belt_drive_power"></a>
 
-### Power of a belt drive with centrifugal tension — `belt_drive_power`
+### Power of a belt drive with centrifugal tension, `belt_drive_power`
 
 The centrifugal tension, slack-side tension and transmitted power of a flat or V-belt running at the allowable tight-side tension and impending slip.
 
@@ -3156,7 +3156,7 @@ mechanical_engineering_ai999x.solve('belt_drive_power', T1=1200.0, m=0.4, v=20.0
 
 <a id="power_screw_torque"></a>
 
-### Power screw: raising and lowering torque, efficiency, self-locking — `power_screw_torque`
+### Power screw: raising and lowering torque, efficiency, self-locking, `power_screw_torque`
 
 The torque to raise and to lower a load with a square or Acme power screw (thread and collar friction), the raising efficiency and whether the screw is self-locking.
 
@@ -3187,7 +3187,7 @@ $$
 
 ![yes if the thread alone holds the load (self_locking) over dm (mean thread diameter) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/power-screw-torque-decision)
 
-*yes if the thread alone holds the load (self_locking) over dm (mean thread diameter) from 0.003 m to 0.3 m and l (lead) from 0.0012 m to 0.12 m (logarithmic axes): each of the 31 × 21 cells is one run of mechanical-engineering-ai999x, coloured by the verdict it returned — no: 389 cells, yes: 261 cells; blank cells: inputs the capability refuses. Other inputs as in the worked example: F = 6400.0 N, f = 0.08, fc = 0.08, dc = 0.04 m. Marked: the worked example, dm = 0.03 m, l = 0.012 m → no.*
+*yes if the thread alone holds the load (self_locking) over dm (mean thread diameter) from 0.003 m to 0.3 m and l (lead) from 0.0012 m to 0.12 m (logarithmic axes): each of the 31 × 21 cells is one run of mechanical-engineering-ai999x, coloured by the verdict it returned, no: 389 cells, yes: 261 cells; blank cells: inputs the capability refuses. Other inputs as in the worked example: F = 6400.0 N, f = 0.08, fc = 0.08, dc = 0.04 m. Marked: the worked example, dm = 0.03 m, l = 0.012 m → no.*
 
 ![T_raise (torque to raise the load) against l (lead) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/power-screw-torque-curve)
 
@@ -3207,7 +3207,7 @@ mechanical_engineering_ai999x.solve('power_screw_torque', F=6400.0, dm=0.03, l=0
 
 <a id="disc_clutch_torque"></a>
 
-### Torque capacity of a disc clutch or brake — `disc_clutch_torque`
+### Torque capacity of a disc clutch or brake: `disc_clutch_torque`
 
 The friction torque and the largest contact pressure of a plate (disc) clutch or brake with an annular friction face, by the uniform-wear or uniform-pressure assumption.
 
@@ -3257,7 +3257,7 @@ mechanical_engineering_ai999x.solve('disc_clutch_torque', F=4000.0, f=0.3, D=0.2
 
 <a id="planetary_gear_train"></a>
 
-### Speeds of a simple planetary (epicyclic) gear train — `planetary_gear_train`
+### Speeds of a simple planetary (epicyclic) gear train, `planetary_gear_train`
 
 The third speed of a sun-planet-ring-carrier train from the other two (any member may be held: speed 0), with the planets' absolute speed and tooth number.
 
@@ -3285,9 +3285,9 @@ $$
 - **Assumes:** exactly two of the three speeds given; $Nr > Ns$, Nr - Ns even; same sign convention for every speed
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![A simple planetary train with a 20-tooth sun and an 80-tooth ring (pitch circles to scale; the carrier arms in green; three planets drawn — their number does not change the speeds)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/planetary-gear-train-gears)
+![A simple planetary train with a 20-tooth sun and an 80-tooth ring (pitch circles to scale; the carrier arms in green; three planets drawn, their number does not change the speeds)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/planetary-gear-train-gears)
 
-*A simple planetary train with a 20-tooth sun and an 80-tooth ring (pitch circles to scale; the carrier arms in green; three planets drawn — their number does not change the speeds). Given: sun 125.664 rad/s, ring 0 rad/s. Marked: the returned speeds sun 1200 rpm, ring 0 rpm, carrier 240 rpm, planet -400 rpm (absolute) and the planet tooth number 30.*
+*A simple planetary train with a 20-tooth sun and an 80-tooth ring (pitch circles to scale; the carrier arms in green; three planets drawn, their number does not change the speeds). Given: sun 125.664 rad/s, ring 0 rad/s. Marked: the returned speeds sun 1200 rpm, ring 0 rpm, carrier 240 rpm, planet -400 rpm (absolute) and the planet tooth number 30.*
 
 ![wc_rpm (carrier speed, rpm) against Ns (teeth on the sun) from 1 to 40](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/planetary-gear-train-curve)
 
@@ -3313,7 +3313,7 @@ mechanical_engineering_ai999x.solve('planetary_gear_train', Ns=20, Nr=80, wc=10.
 
 <a id="spur_gear_contact_ratio"></a>
 
-### Spur gear mesh geometry and contact ratio — `spur_gear_contact_ratio`
+### Spur gear mesh geometry and contact ratio: `spur_gear_contact_ratio`
 
 Pitch diameters, centre distance, length of the path of contact, base pitch and contact ratio of a pair of standard full-depth spur gears.
 
@@ -3363,7 +3363,7 @@ mechanical_engineering_ai999x.solve('spur_gear_contact_ratio', N1=20, N2=50, m=0
 
 <a id="bearing_life_reliability"></a>
 
-### Rolling-bearing life at a given reliability — `bearing_life_reliability`
+### Rolling-bearing life at a given reliability, `bearing_life_reliability`
 
 The rating (L10) life of a ball or roller bearing from its catalogue rating and load, and the life at another reliability from the three-parameter Weibull distribution, in revolutions and hours.
 
@@ -3414,7 +3414,7 @@ mechanical_engineering_ai999x.solve('bearing_life_reliability', C=30000.0, F=400
 
 <a id="bearing_catalog_rating"></a>
 
-### Required catalogue rating of a rolling bearing — `bearing_catalog_rating`
+### Required catalogue rating of a rolling bearing, `bearing_catalog_rating`
 
 The basic dynamic load rating C10 a ball or roller bearing needs for a design load, life and speed at a required reliability (three-parameter Weibull, application factor).
 
@@ -3462,7 +3462,7 @@ mechanical_engineering_ai999x.solve('bearing_catalog_rating', FD=1800.0, LD=1080
 
 <a id="helical_compression_spring"></a>
 
-### Helical compression spring: rate, deflection and shear stress — `helical_compression_spring`
+### Helical compression spring: rate, deflection and shear stress, `helical_compression_spring`
 
 The spring index, rate, deflection under a load and the wire shear stress (torsion alone, and with the direct-shear factor Ks = 1 + 0.5/C) of a round-wire helical spring.
 
@@ -3508,7 +3508,7 @@ mechanical_engineering_ai999x.solve('helical_compression_spring', d=0.003, D=0.0
 
 <a id="sdof_natural_frequency"></a>
 
-### Natural frequency of a spring-mass system — `sdof_natural_frequency`
+### Natural frequency of a spring-mass system: `sdof_natural_frequency`
 
 The natural circular frequency, frequency, period and static deflection (under gravity) of an undamped single-degree-of-freedom spring-mass system.
 
@@ -3555,7 +3555,7 @@ mechanical_engineering_ai999x.solve('sdof_natural_frequency', m=20.0, k=8000.0)
 
 <a id="damped_sdof_parameters"></a>
 
-### Damping ratio, damped frequency and logarithmic decrement — `damped_sdof_parameters`
+### Damping ratio, damped frequency and logarithmic decrement, `damped_sdof_parameters`
 
 The natural frequency, damping ratio, critical damping, damped natural frequency and logarithmic decrement of a viscously damped spring-mass system, and whether it is under- or overdamped.
 
@@ -3587,9 +3587,9 @@ $$
 
 *A damped single-degree-of-freedom system m = 10 kg, c = 40 N·s/m, k = 4000 N/m and its free decay from x0 = 10 mm (an initial displacement chosen for the drawing; 201 instants computed by the package's free-response capability). Marked: the returned ωn = 20 rad/s, ζ = 0.1, ωd = 19.8997 rad/s, logarithmic decrement 0.631484, critical damping 400 N·s/m, regime: underdamped.*
 
-![underdamped, critically damped or overdamped (regime) over c (viscous damping coefficient (N*s/m)) from 4 kg/s to 400 kg/s and m (mass) from 1 kg to 100 kg (logarithmic axes): each of the 31 × 21 cells is one run of mechanical-engineering-ai999x, coloured by the verdict it returned — critically damped: 1 cells, overdamped: 46 cells, underdamped: 604 cells](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/damped-sdof-parameters-decision)
+![underdamped, critically damped or overdamped (regime) over c (viscous damping coefficient (N*s/m)) from 4 kg/s to 400 kg/s and m (mass) from 1 kg to 100 kg (logarithmic axes): each of the 31 × 21 cells is one run of mechanical-engineering-ai999x, coloured by the verdict it returned, critically damped: 1 cells, overdamped: 46 cells, underdamped: 604 cells](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/damped-sdof-parameters-decision)
 
-*underdamped, critically damped or overdamped (regime) over c (viscous damping coefficient (N*s/m)) from 4 kg/s to 400 kg/s and m (mass) from 1 kg to 100 kg (logarithmic axes): each of the 31 × 21 cells is one run of mechanical-engineering-ai999x, coloured by the verdict it returned — critically damped: 1 cells, overdamped: 46 cells, underdamped: 604 cells. Other inputs as in the worked example: k = 4000.0 N/m. Marked: the worked example, c = 40 kg/s, m = 10 kg → underdamped.*
+*underdamped, critically damped or overdamped (regime) over c (viscous damping coefficient (N*s/m)) from 4 kg/s to 400 kg/s and m (mass) from 1 kg to 100 kg (logarithmic axes): each of the 31 × 21 cells is one run of mechanical-engineering-ai999x, coloured by the verdict it returned, critically damped: 1 cells, overdamped: 46 cells, underdamped: 604 cells. Other inputs as in the worked example: k = 4000.0 N/m. Marked: the worked example, c = 40 kg/s, m = 10 kg → underdamped.*
 
 ```python
 mechanical_engineering_ai999x.solve('damped_sdof_parameters', m=10.0, c=40.0, k=4000.0)
@@ -3605,7 +3605,7 @@ mechanical_engineering_ai999x.solve('damped_sdof_parameters', m=10.0, c=40.0, k=
 
 <a id="sdof_free_response"></a>
 
-### Free vibration response of a damped spring-mass system — `sdof_free_response`
+### Free vibration response of a damped spring-mass system, `sdof_free_response`
 
 The displacement and velocity at time t of a damped single-degree-of-freedom system released from an initial displacement and velocity (under-, critically or overdamped).
 
@@ -3659,7 +3659,7 @@ mechanical_engineering_ai999x.solve('sdof_free_response', m=1.0, c=20.0, k=100.0
 
 <a id="forced_vibration_amplitude"></a>
 
-### Steady-state response to a harmonic force — `forced_vibration_amplitude`
+### Steady-state response to a harmonic force: `forced_vibration_amplitude`
 
 The steady-state amplitude, phase lag and dynamic magnification factor of a damped spring-mass system driven by a harmonic force F0 cos(omega t).
 
@@ -3709,7 +3709,7 @@ mechanical_engineering_ai999x.solve('forced_vibration_amplitude', m=10.0, c=40.0
 
 <a id="vibration_transmissibility"></a>
 
-### Force (or base-motion) transmissibility of a vibration isolator — `vibration_transmissibility`
+### Force (or base-motion) transmissibility of a vibration isolator, `vibration_transmissibility`
 
 The ratio of transmitted to applied force amplitude (equally, of mass to base displacement amplitude) for a damped isolator at a frequency ratio, and the isolation achieved.
 
@@ -3754,7 +3754,7 @@ mechanical_engineering_ai999x.solve('vibration_transmissibility', zeta=0.1, r=1.
 
 <a id="rotating_unbalance_response"></a>
 
-### Vibration due to rotating unbalance — `rotating_unbalance_response`
+### Vibration due to rotating unbalance: `rotating_unbalance_response`
 
 The steady-state amplitude of a machine on springs and dampers excited by a rotating unbalance, the unbalance force and the force transmitted to the foundation.
 
@@ -3800,7 +3800,7 @@ mechanical_engineering_ai999x.solve('rotating_unbalance_response', M=100.0, mu=0
 
 <a id="vibration_isolator_design"></a>
 
-### Stiffness of an undamped isolator for a target transmissibility — `vibration_isolator_design`
+### Stiffness of an undamped isolator for a target transmissibility, `vibration_isolator_design`
 
 The mount stiffness, natural frequency, frequency ratio and static deflection an undamped isolator needs so that a machine running at omega transmits only a fraction TR of its force.
 
@@ -3844,7 +3844,7 @@ mechanical_engineering_ai999x.solve('vibration_isolator_design', m=200.0, omega=
 
 <a id="two_rotor_torsional_vibration"></a>
 
-### Torsional natural frequency of a two-rotor system — `two_rotor_torsional_vibration`
+### Torsional natural frequency of a two-rotor system, `two_rotor_torsional_vibration`
 
 The torsional natural frequency of two rotors joined by an elastic shaft, the ratio of their vibration amplitudes and (with the shaft length) where the node lies.
 
@@ -3892,7 +3892,7 @@ mechanical_engineering_ai999x.solve('two_rotor_torsional_vibration', J1=2.0, J2=
 
 <a id="mdof_spring_mass_chain"></a>
 
-### Natural frequencies and first mode of a spring-mass chain — `mdof_spring_mass_chain`
+### Natural frequencies and first mode of a spring-mass chain, `mdof_spring_mass_chain`
 
 All natural frequencies and the first mode shape of a chain of masses joined by springs, fixed to a wall at the left end (and optionally at the right end).
 
@@ -3939,7 +3939,7 @@ mechanical_engineering_ai999x.solve('mdof_spring_mass_chain', masses='1, 1', spr
 
 <a id="shaft_critical_speed_single_disk"></a>
 
-### Critical speed of a shaft carrying one disk — `shaft_critical_speed_single_disk`
+### Critical speed of a shaft carrying one disk, `shaft_critical_speed_single_disk`
 
 The lateral stiffness at the disk, the first critical (whirling) speed and the static deflection of a simply supported massless shaft carrying one disk.
 
@@ -3988,7 +3988,7 @@ mechanical_engineering_ai999x.solve('shaft_critical_speed_single_disk', m=50.0, 
 
 <a id="rayleigh_critical_speed"></a>
 
-### First critical speed of a shaft with several disks (Rayleigh) — `rayleigh_critical_speed`
+### First critical speed of a shaft with several disks (Rayleigh), `rayleigh_critical_speed`
 
 Rayleigh's estimate of the first critical speed of a simply supported massless shaft carrying several disks, from the static deflections under the disks' weights.
 
@@ -4036,7 +4036,7 @@ mechanical_engineering_ai999x.solve('rayleigh_critical_speed', masses='50', posi
 
 <a id="dunkerley_critical_speed"></a>
 
-### First critical speed of a shaft with several disks (Dunkerley) — `dunkerley_critical_speed`
+### First critical speed of a shaft with several disks (Dunkerley), `dunkerley_critical_speed`
 
 Dunkerley's lower-bound estimate of the first critical speed of a simply supported massless shaft carrying several disks.
 
@@ -4082,7 +4082,7 @@ mechanical_engineering_ai999x.solve('dunkerley_critical_speed', masses='50', pos
 
 <a id="shaft_whirling_speeds"></a>
 
-### All critical (whirling) speeds of a shaft with several disks — `shaft_whirling_speeds`
+### All critical (whirling) speeds of a shaft with several disks, `shaft_whirling_speeds`
 
 The exact critical speeds of a simply supported massless shaft carrying point-mass disks, from the eigenvalues of its flexibility matrix.
 
@@ -4124,7 +4124,7 @@ mechanical_engineering_ai999x.solve('shaft_whirling_speeds', masses='50', positi
 
 <a id="beam_natural_frequency"></a>
 
-### Natural frequencies of a uniform beam (Euler-Bernoulli) — `beam_natural_frequency`
+### Natural frequencies of a uniform beam (Euler-Bernoulli), `beam_natural_frequency`
 
 The n-th bending natural frequency of a uniform Euler-Bernoulli beam with simply supported, cantilever, fixed-fixed, fixed-pinned or free-free ends.
 
@@ -4175,7 +4175,7 @@ mechanical_engineering_ai999x.solve('beam_natural_frequency', E=200000000000.0, 
 
 <a id="truss_member_forces"></a>
 
-### Member forces of a plane truss (method of joints) — `truss_member_forces`
+### Member forces of a plane truss (method of joints), `truss_member_forces`
 
 The axial force in every member and the support reactions of a statically determinate plane pin-jointed truss on a pin and a roller, under joint loads.
 
@@ -4222,7 +4222,7 @@ mechanical_engineering_ai999x.solve('truss_member_forces', nodes='0 0; 4 0; 2 3'
 
 <a id="continuous_beam_three_moment"></a>
 
-### Continuous beam under uniform loads (three-moment equation) — `continuous_beam_three_moment`
+### Continuous beam under uniform loads (three-moment equation), `continuous_beam_three_moment`
 
 The bending moments over the supports and the support reactions of a continuous beam of equal stiffness over 2 to 6 simply supported spans, each with its own uniform load.
 
@@ -4262,7 +4262,7 @@ mechanical_engineering_ai999x.solve('continuous_beam_three_moment', spans='6, 6'
 
 <a id="slider_crank_kinematics"></a>
 
-### Slider-crank mechanism: slider position, velocity and acceleration — `slider_crank_kinematics`
+### Slider-crank mechanism: slider position, velocity and acceleration, `slider_crank_kinematics`
 
 The slider position, velocity and acceleration and the connecting-rod angle of an in-line slider-crank mechanism at a crank angle, the crank turning at constant speed.
 
@@ -4310,7 +4310,7 @@ mechanical_engineering_ai999x.solve('slider_crank_kinematics', r=0.05, l=0.2, th
 
 <a id="four_bar_linkage_position"></a>
 
-### Four-bar linkage position analysis — `four_bar_linkage_position`
+### Four-bar linkage position analysis: `four_bar_linkage_position`
 
 The coupler and output-rocker angles and the transmission angle of a four-bar linkage at a given crank angle, on the open or the crossed branch.
 
@@ -4364,7 +4364,7 @@ mechanical_engineering_ai999x.solve('four_bar_linkage_position', a=2.0, b=7.0, c
 
 <a id="gerber_fatigue_safety_factor"></a>
 
-### Fatigue safety factor by the Gerber criterion — `gerber_fatigue_safety_factor`
+### Fatigue safety factor by the Gerber criterion, `gerber_fatigue_safety_factor`
 
 The fatigue factor of safety along a proportional load line by the Gerber parabola sa/Se + (sm/Sut)^2 = 1, and the equivalent fully reversed amplitude.
 
@@ -4416,7 +4416,7 @@ mechanical_engineering_ai999x.solve('gerber_fatigue_safety_factor', sa=100000000
 
 <a id="asme_elliptic_fatigue_safety_factor"></a>
 
-### Fatigue safety factor by the ASME-elliptic criterion — `asme_elliptic_fatigue_safety_factor`
+### Fatigue safety factor by the ASME-elliptic criterion, `asme_elliptic_fatigue_safety_factor`
 
 The fatigue factor of safety along a proportional load line by the ASME ellipse $(sa/Se)^{2} + (sm/Sy)^{2} = 1$, and the equivalent fully reversed amplitude.
 
@@ -4468,7 +4468,7 @@ mechanical_engineering_ai999x.solve('asme_elliptic_fatigue_safety_factor', sa=30
 
 <a id="lewis_gear_bending_stress"></a>
 
-### Lewis bending stress of a gear tooth — `lewis_gear_bending_stress`
+### Lewis bending stress of a gear tooth: `lewis_gear_bending_stress`
 
 The bending stress at the root of a spur-gear tooth by the Lewis equation $\sigma = Kv$ Wt/(F m Y) (SI, module m, form factor Y based on the module).
 
@@ -4517,7 +4517,7 @@ mechanical_engineering_ai999x.solve('lewis_gear_bending_stress', Wt=1000.0, F=0.
 
 <a id="wahl_factor"></a>
 
-### Wahl curvature factor of a helical spring — `wahl_factor`
+### Wahl curvature factor of a helical spring: `wahl_factor`
 
 The Wahl stress-correction factor $K_W = (4C - 1)/(4C - 4) + 0.615/C$ of a round-wire helical spring (with the Bergstrasser and direct-shear factors), and with a load the corrected maximum shear stress.
 
@@ -4571,7 +4571,7 @@ mechanical_engineering_ai999x.solve('wahl_factor', d=0.002, D=0.012, F=50.0)
 
 <a id="marin_endurance_limit"></a>
 
-### Endurance limit with the Marin factors — `marin_endurance_limit`
+### Endurance limit with the Marin factors: `marin_endurance_limit`
 
 The corrected endurance limit $Se = ka$ kb kc kd ke kf Se' of a steel part from its tensile strength, surface finish, size, loading and reliability (Se' = 0.5 Sut up to 1400 MPa, else 700 MPa).
 
@@ -4628,7 +4628,7 @@ mechanical_engineering_ai999x.solve('marin_endurance_limit', Sut=1600000000.0, s
 
 <a id="bolt_preload_torque"></a>
 
-### Bolt tightening torque and preload (T = K F d) — `bolt_preload_torque`
+### Bolt tightening torque and preload (T = K F d), `bolt_preload_torque`
 
 The tightening torque $T = K$ F d that produces a bolt preload F with nut factor K and nominal diameter d, or the preload produced by a torque.
 
