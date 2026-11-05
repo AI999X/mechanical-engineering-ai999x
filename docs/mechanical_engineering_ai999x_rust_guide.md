@@ -1,6 +1,6 @@
 # mechanical-engineering: the Mechanical Engineering program — user guide
 
-**mechanical-engineering-ai999x 1.0.3**, Rust build: command line, desktop app and browser. **Creator / engineer:** Ibnul Jaif Farabi · **Company:** AI999X · support@ai999x.com
+**mechanical-engineering-ai999x 1.1.0**, Rust build: command line, desktop app and browser. **Creator / engineer:** Ibnul Jaif Farabi · **Company:** AI999X · support@ai999x.com
 
 Mechanical Engineering covers statics, stress and strain, beams and frames, section properties, torsion, columns, fatigue, machine elements, vibrations and structural analysis. This guide is about `mechanical-engineering`, the model as a self-contained program for Windows and Linux: 90 capabilities in 13 topics, answered on your own computer with no network, no Python and nothing else to install. The same compiled model runs in the AI999X desktop app and in the browser on the model's page (https://www.ai999x.com/models/mechanical-engineering-ai999x/); the Python package (`pip install mechanical-engineering-ai999x`) has its own guide. Every command output printed here is what the program printed.
 
