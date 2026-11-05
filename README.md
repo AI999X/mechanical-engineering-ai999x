@@ -2,7 +2,7 @@
 
 [![tests](https://github.com/AI999X/mechanical-engineering-ai999x/actions/workflows/ci.yml/badge.svg)](https://github.com/AI999X/mechanical-engineering-ai999x/actions/workflows/ci.yml) [![PyPI](https://img.shields.io/pypi/v/mechanical-engineering-ai999x)](https://pypi.org/project/mechanical-engineering-ai999x/) [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97-Hugging%20Face-yellow)](https://huggingface.co/AI999X/mechanical-engineering-ai999x)
 
-**[Install](https://pypi.org/project/mechanical-engineering-ai999x/)** · **[Capability guide](https://huggingface.co/AI999X/mechanical-engineering-ai999x/tree/main/docs)** · **[Evaluation](https://huggingface.co/AI999X/mechanical-engineering-ai999x/tree/main/evaluation)** · **[AI999X on Hugging Face](https://huggingface.co/AI999X)** · **[Website](https://ai999x.com)** · **[Support: Buy Me a Coffee](https://buymeacoffee.com/ibnuljaiffarabi)**
+**[Desktop app & command line](https://www.ai999x.com/desktop-cli/)** · **[Compute in your browser](https://www.ai999x.com/models/mechanical-engineering-ai999x/#try)** · **[Install (Python)](https://pypi.org/project/mechanical-engineering-ai999x/)** · **[Guides](https://huggingface.co/AI999X/mechanical-engineering-ai999x/tree/main/docs)** · **[Evaluation](https://huggingface.co/AI999X/mechanical-engineering-ai999x/tree/main/evaluation)** · **[AI999X on Hugging Face](https://huggingface.co/AI999X)** · **[Website](https://ai999x.com)** · **[Support: Buy Me a Coffee](https://buymeacoffee.com/ibnuljaiffarabi)**
 
 License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.0.3
 
@@ -12,7 +12,333 @@ mechanical-engineering-ai999x is an offline, deterministic Python solver that an
 
 **mechanical-engineering-ai999x** is a compact, deterministic mechanical engineering engine for Python. It reads a question in plain English (or a typed call), picks a certified mechanical engineering capability, computes the answer exactly, checks it, and returns the result with its steps, units, LaTeX and assumptions — or an honest refusal that says what is missing. It runs fully offline on any CPU, needs no GPU, no API key and no internet, and is built to give **zero wrong answers**: when it is not sure, it refuses instead of guessing.
 
-[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-support%20development-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/ibnuljaiffarabi) ![License](https://img.shields.io/badge/license-Apache--2.0-blue) ![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13%20%7C%203.14-blue) ![Offline](https://img.shields.io/badge/runs-offline%20on%20CPU-green)
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-support%20development-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/ibnuljaiffarabi) ![License](https://img.shields.io/badge/license-Apache--2.0-blue) ![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13%20%7C%203.14-blue) ![Offline](https://img.shields.io/badge/runs-offline%20on%20CPU-green) ![Rust](https://img.shields.io/badge/Rust-Windows%20%7C%20Linux%20%7C%20WebAssembly-orange)
+
+**Run it your way.** mechanical-engineering-ai999x comes as the AI999X desktop app and as the command-line program `mechanical-engineering` for Windows and Linux, runs in your browser as WebAssembly, and installs as a Python package. The desktop app, the command line and the browser run the same compiled Rust program on your own device: offline, no Python needed.
+
+## Get it
+
+| Way to run it | For | Get it |
+|---|---|---|
+| **AI999X Mechanical Engineering desktop app** 1.2.0 | Windows, Linux — this model in its own app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-mechanical-engineering-1.2.0-windows-x86_64.zip) · [Linux (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-mechanical-engineering-1.2.0-linux-x86_64.tar.gz) |
+| **AI999X desktop app** 1.2.0 | Windows, Linux — every AI999X model in one app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-1.2.0-windows-x86_64.zip) · [Linux (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-1.2.0-linux-x86_64.tar.gz) |
+| **Command line** (`mechanical-engineering`) | Windows, Linux — one program per model, offline, no Python | [Windows (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-windows-x86_64.zip) · [Linux (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-linux-x86_64.tar.gz) |
+| **In your browser** | any device — nothing to install | [Compute on the model page](https://www.ai999x.com/models/mechanical-engineering-ai999x/#try) |
+| **Python** | Python 3.10+ | `pip install mechanical-engineering-ai999x` |
+
+Checksums: [SHA256SUMS](https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS) · every version: [https://www.ai999x.com/downloads/desktop/latest/](https://www.ai999x.com/downloads/desktop/latest/) · install guide: [desktop & command line](https://www.ai999x.com/desktop-cli/)
+
+## Rust versions
+
+Mechanical Engineering also comes as native programs compiled from Rust, version 1.2.0 of the AI999X desktop app and command line: they run offline on your computer and need no Python. Each file is in this repository's `rust/` folder, on the [GitHub release v1.0.3](https://github.com/AI999X/mechanical-engineering-ai999x/releases/tag/v1.0.3) and on the website.
+
+| Program | System | File | Size | Download | Use |
+|---|---|---|---|---|---|
+| Desktop app (Mechanical Engineering) | Windows x86-64 | `ai999x-mechanical-engineering-1.2.0-windows-x86_64.zip` | 7.6 MB | [Hub](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/rust/ai999x-mechanical-engineering-1.2.0-windows-x86_64.zip) · [GitHub](https://github.com/AI999X/mechanical-engineering-ai999x/releases/download/v1.0.3/ai999x-mechanical-engineering-1.2.0-windows-x86_64.zip) · [website](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-mechanical-engineering-1.2.0-windows-x86_64.zip) | unzip, then double-click `ai999x-mechanical-engineering.exe` (no installer) |
+| Desktop app (Mechanical Engineering) | Linux x86-64 | `ai999x-mechanical-engineering-1.2.0-linux-x86_64.tar.gz` | 8.5 MB | [Hub](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/rust/ai999x-mechanical-engineering-1.2.0-linux-x86_64.tar.gz) · [GitHub](https://github.com/AI999X/mechanical-engineering-ai999x/releases/download/v1.0.3/ai999x-mechanical-engineering-1.2.0-linux-x86_64.tar.gz) · [website](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-mechanical-engineering-1.2.0-linux-x86_64.tar.gz) | extract, then run `./ai999x-mechanical-engineering` (X11 or Wayland desktop) |
+| Command line (`mechanical-engineering`) | Windows x86-64 | `ai999x-mechanical-engineering-cli-1.2.0-windows-x86_64.zip` | 3.2 MB | [Hub](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/rust/ai999x-mechanical-engineering-cli-1.2.0-windows-x86_64.zip) · [GitHub](https://github.com/AI999X/mechanical-engineering-ai999x/releases/download/v1.0.3/ai999x-mechanical-engineering-cli-1.2.0-windows-x86_64.zip) · [website (all models)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-windows-x86_64.zip) | unzip, then `mechanical-engineering.exe ask "<question>"` or `mechanical-engineering.exe solve <capability> name=value` |
+| Command line (`mechanical-engineering`) | Linux x86-64 | `ai999x-mechanical-engineering-cli-1.2.0-linux-x86_64.tar.gz` | 3.2 MB | [Hub](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/rust/ai999x-mechanical-engineering-cli-1.2.0-linux-x86_64.tar.gz) · [GitHub](https://github.com/AI999X/mechanical-engineering-ai999x/releases/download/v1.0.3/ai999x-mechanical-engineering-cli-1.2.0-linux-x86_64.tar.gz) · [website (all models)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-linux-x86_64.tar.gz) | extract, then `./mechanical-engineering ask "<question>"` or `./mechanical-engineering solve <capability> name=value` |
+
+The command-line archive holds `mechanical-engineering` with a README of its commands and examples, the licence and the notice. Checksums: [`rust/SHA256SUMS`](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/rust/SHA256SUMS) (`sha256sum -c SHA256SUMS`).
+
+## Quick start
+
+### Desktop app
+
+Download **AI999X Mechanical Engineering** for your system (above), unpack it and start it; type a question in words or pick a capability, fill in the form and press Compute. Figures and an explanation of the answer appear beside it. The AI999X desktop app has the same, with Mechanical Engineering among all AI999X models.
+
+Linux, from a terminal:
+
+```bash
+curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-mechanical-engineering-1.2.0-linux-x86_64.tar.gz
+curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS
+sha256sum -c --ignore-missing SHA256SUMS
+tar xzf ai999x-mechanical-engineering-1.2.0-linux-x86_64.tar.gz
+./ai999x-mechanical-engineering-1.2.0-linux-x86_64/ai999x-mechanical-engineering
+```
+
+### Command line
+
+Linux:
+
+```bash
+curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-linux-x86_64.tar.gz
+curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS
+sha256sum -c --ignore-missing SHA256SUMS
+mkdir -p ~/.local/share && tar xzf ai999x-cli-1.2.0-linux-x86_64.tar.gz -C ~/.local/share
+echo 'export PATH="$HOME/.local/share/ai999x-cli-1.2.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
+mechanical-engineering --version
+```
+
+Windows (PowerShell):
+
+```powershell
+$F = "ai999x-cli-1.2.0-windows-x86_64.zip"
+Invoke-WebRequest "https://www.ai999x.com/downloads/desktop/1.2.0/$F" -OutFile $F
+Invoke-WebRequest "https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS" -OutFile SHA256SUMS
+(Get-FileHash $F -Algorithm SHA256).Hash.ToLower() -eq ((Select-String -SimpleMatch $F SHA256SUMS).Line -split ' ')[0]
+Expand-Archive $F -DestinationPath "$env:LOCALAPPDATA\AI999X" -Force
+$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.2.0-windows-x86_64"; $env:Path += ";$D"
+[Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path", "User") + ";$D", "User")
+mechanical-engineering --version
+```
+
+Every command below was run as shown; the text under it is what the program printed.
+
+**Ask in words** — Write the question as you would say it: the program reads the quantities and their units, picks the capability and answers.
+
+```console
+$ mechanical-engineering ask "Simply supported beam with point load: L = 6 m, P = 20 kN, a = 2 m, E = 200 GPa, I = 8e-5 m^4"
+Read as: Simply supported beam with a point load
+RA = 13333.33333 N
+RB = 6666.666667 N
+M_max = 26666.66667 N*m
+V_max = 13333.33333 N
+deflection_at_load_mm = 4.444444444
+max_deflection_mm = 4.838498257
+x_max = 2.734013676 m
+  by: Simply supported beam with a point load  (RA = Pb/L, RB = Pa/L, M_max = Pab/L, deflection under the load Pa^2b^2/(3EIL), maximum deflection Pb(L^2-b^2)^(3/2)/(9 sqrt(3) EIL) at x = sqrt((L^2-b^2)/3) (a >= b; mirrored otherwise))
+  E = 2e+11 Pa
+  I = 8e-05 m^4
+  L = 6 m
+  P = 20000 N
+  a = 2 m
+  assumes: 0 < a < L; Euler-Bernoulli beam, linear elastic, prismatic
+```
+
+**What a capability needs** — The equation or method, every input and output with its SI unit. Read this before solve: it tells you the input names.
+
+```console
+$ mechanical-engineering info simply_supported_beam_point_load
+Simply supported beam with a point load
+  RA = Pb/L, RB = Pa/L, M_max = Pab/L, deflection under the load Pa^2b^2/(3EIL), maximum deflection Pb(L^2-b^2)^(3/2)/(9 sqrt(3) EIL) at x = sqrt((L^2-b^2)/3) (a >= b; mirrored otherwise)
+  in   L        span [m]
+  in   P        point load (downward) [N]
+  in   a        distance of the load from the left support A [m]
+  in   E        Young's modulus [Pa]
+  in   I        second moment of area of the section [m^4]
+  out  RA       reaction at the left support A [N]
+  out  RB       reaction at the right support B [N]
+  out  M_max    maximum bending moment (under the load) [N*m]
+  out  V_max    maximum shear force [N]
+  out  deflection_at_load_mm deflection under the load in mm []
+  out  max_deflection_mm maximum deflection in mm []
+  out  x_max    position of the maximum deflection from A [m]
+```
+
+**Solve** — Inputs as name=value, each with any unit of the right kind. The answer lists every output, the method used, each input converted to SI, and the conditions the answer assumes.
+
+```console
+$ mechanical-engineering solve simply_supported_beam_point_load "L=6 m" "P=20 kN" "a=2 m" "E=200 GPa" "I=8e-05 m^4"
+RA = 13333.33333 N
+RB = 6666.666667 N
+M_max = 26666.66667 N*m
+V_max = 13333.33333 N
+deflection_at_load_mm = 4.444444444
+max_deflection_mm = 4.838498257
+x_max = 2.734013676 m
+  by: Simply supported beam with a point load  (RA = Pb/L, RB = Pa/L, M_max = Pab/L, deflection under the load Pa^2b^2/(3EIL), maximum deflection Pb(L^2-b^2)^(3/2)/(9 sqrt(3) EIL) at x = sqrt((L^2-b^2)/3) (a >= b; mirrored otherwise))
+  L = 6 m
+  P = 20000 N
+  a = 2 m
+  E = 2e+11 Pa
+  I = 8e-05 m^4
+  assumes: 0 < a < L; Euler-Bernoulli beam, linear elastic, prismatic
+```
+
+**Draw the figures** — The live figures for your own inputs, written as SVG files into the folder given with --out (here the current folder); open them in any browser. Without --out the SVG text comes back as JSON.
+
+```console
+$ mechanical-engineering figures simply_supported_beam_point_load "L=6 m" "P=20 kN" "a=2 m" "E=200 GPa" "I=8e-05 m^4" --out .
+[
+  {
+    "slug": "simply-supported-beam-point-load-live-1",
+    "title": "Maximum bending moment (under the load) as span varies",
+    "caption": "Maximum bending moment (under the load) as L runs from 2.175 to 10.5 m, every other input as you entered it (38 solutions). Marked: your L = 6 m gives M_max = 2.667e+04. Your inputs: L = 6 m, P = 20 kN, a = 2 m, E = 200 GPa, I = 8e-05 m^4.",
+    "file": "./simply-supported-beam-point-load-live-1.svg"
+  },
+  {
+    "slug": "simply-supported-beam-point-load-live-2",
+    "title": "Maximum bending moment (under the load) as distance of the load from the left support A varies",
+    "caption": "Maximum bending moment (under the load) as a runs from 0.5 to 3.5 m, every other input as you entered it (29 solutions). Marked: your a = 2 m gives M_max = 2.667e+04. Your inputs: L = 6 m, P = 20 kN, a = 2 m, E = 200 GPa, I = 8e-05 m^4.",
+    "file": "./simply-supported-beam-point-load-live-2.svg"
+  }
+]
+```
+
+**Many questions at once** — One JSON request per line in, one JSON answer per line out, in order: for scripts, notebooks and agents (the program starts once). In PowerShell: Get-Content cases.jsonl | mechanical-engineering batch
+
+`cases.jsonl`:
+
+```json
+{"key": "simply_supported_beam_point_load", "inputs": {"L": "6 m", "P": "20 kN", "a": "2 m", "E": "200 GPa", "I": "8e-05 m^4"}}
+{"key": "principal_stresses_2d", "inputs": {"sx": "50 MPa", "sy": "-10 MPa", "txy": "40 MPa"}}
+```
+
+```console
+$ mechanical-engineering batch < cases.jsonl
+{"outcome":"SOLVED","message":"","value":26666.6666667,"unit":"N*m","solved_for":"M_max","si":[["L",6.0],["P",20000.0],["a",2.0],["E",200000000000.0],["I",0.00008]],"values":[["RA",13333.3333333,"N"],["RB",6666.66666667,"N"],["M_max",26666.6666667,"N*m"],["V_max",13333.3333333,"N"],["deflection_at_load_mm",4.44444444444,""],["max_deflection_mm",4.83849825735,""],["x_max",2.73401367629,"m"]],"target":"M_max","phrase":"reaction at the left support A","assumptions":["0 < a < L","Euler-Bernoulli beam, linear elastic, prismatic"],"name":"Simply supported beam with a point load","equation":"RA = Pb/L, RB = Pa/L, M_max = Pab/L, deflection under the load Pa^2b^2/(3EIL), maximum deflection Pb(L^2-b^2)^(3/2)/(9 sqrt(3) EIL) at x = sqrt((L^2-b^2)/3) (a >= b; mirrored otherwise)"}
+{"outcome":"SOLVED","message":"","value":70.0,"unit":"","solved_for":"s1_MPa","si":[["sx",50000000.0],["sy",-10000000.0],["txy",40000000.0]],"values":[["s1_MPa",70.0,""],["s2_MPa",-30.0,""],["tau_max_inplane_MPa",50.0,""],["theta_p_deg",26.5650511771,""],["tau_abs_max_MPa",50.0,""],["von_mises_MPa",88.8819441732,""]],"target":"s1_MPa","phrase":"larger in-plane principal stress, MPa","assumptions":["plane stress (sigma_z = 0)","tension positive"],"name":"Principal stresses and maximum shear (Mohr's circle, plane stress)","equation":"sigma_1,2 = (sx + sy)/2 +- R, R = sqrt(((sx - sy)/2)^2 + txy^2); tan 2theta_p = 2 txy/(sx - sy); tau_abs = max(s1 - s2, |s1|, |s2|)/2"}
+```
+
+### In your browser
+
+Open [Mechanical Engineering on ai999x.com](https://www.ai999x.com/models/mechanical-engineering-ai999x/#try), choose a capability and press **Compute**: the model runs on your own device as WebAssembly; nothing is sent anywhere. Change any input (any unit of the right kind) and the answer, its explanation and the figures follow.
+
+In your own page: `mechanical_engineering_ai999x.wasm` and the loader `ax-wasm.js` (https://www.ai999x.com/compute/rust/ax-wasm.js).
+
+### Python
+
+```bash
+pip install mechanical-engineering-ai999x
+```
+
+## Worked examples in every form
+
+The same worked example from the command line, from Python and in the browser. Each command-line output is what the program printed.
+
+### Cantilever with a point load
+
+Reaction, fixed-end moment, deflection under the load, tip deflection and tip slope of a cantilever carrying one point load at distance a from the fixed end (default: at the free end).
+
+Command line:
+
+```console
+$ mechanical-engineering solve cantilever_point_load "L=2 m" "P=5 kN" "E=200 GPa" "I=8e-06 m^4"
+R = 5000 N
+M_fixed = 10000 N*m
+deflection_at_load_mm = 8.333333333
+tip_deflection_mm = 8.333333333
+tip_slope_deg = 0.358098622
+  by: Cantilever with a point load  (M = Pa, deflection under the load Pa^3/(3EI), slope there Pa^2/(2EI), tip deflection Pa^2(3L - a)/(6EI))
+  L = 2 m
+  P = 5000 N
+  E = 2e+11 Pa
+  I = 8e-06 m^4
+  assumes: 0 < a <= L; Euler-Bernoulli beam, small deflections
+```
+
+Python:
+
+```python
+import mechanical_engineering_ai999x as m
+
+a = m.solve("cantilever_point_load", L="2 m", P="5 kN", E="200 GPa", I="8e-06 m^4")
+print(a.values or (a.value, a.unit))
+```
+
+Browser: [open this capability on the model page](https://www.ai999x.com/models/mechanical-engineering-ai999x/#cap-cantilever_point_load) and press **Compute in your browser**.
+
+_What this means:_ The cantilever deflects 8.33333 under the load and 8.33333 at the tip, with a slope of 0.358099.
+
+### Cantilever with a triangular (linearly varying) load
+
+Reaction, fixed-end moment, tip deflection and tip slope of a cantilever whose load falls linearly from w at the fixed end to zero at the free end.
+
+Command line:
+
+```console
+$ mechanical-engineering solve cantilever_triangular_load "L=3 m" "w=6 kN/m" "E=200 GPa" "I=2e-05 m^4"
+R = 9000 N
+M_fixed = 9000 N*m
+tip_deflection_mm = 4.05
+tip_slope_deg = 0.09668662793
+  by: Cantilever with a triangular (linearly varying) load  (R = wL/2, M = wL^2/6, delta_tip = wL^4/(30EI), theta_tip = wL^3/(24EI))
+  L = 3 m
+  w = 6000 N/m
+  E = 2e+11 Pa
+  I = 2e-05 m^4
+  assumes: L, w, E, I > 0; maximum intensity at the fixed end; Euler-Bernoulli beam
+```
+
+Python:
+
+```python
+import mechanical_engineering_ai999x as m
+
+a = m.solve("cantilever_triangular_load", L="3 m", w="6 kN/m", E="200 GPa", I="2e-05 m^4")
+print(a.values or (a.value, a.unit))
+```
+
+Browser: [open this capability on the model page](https://www.ai999x.com/models/mechanical-engineering-ai999x/#cap-cantilever_triangular_load) and press **Compute in your browser**.
+
+_What this means:_ This calculation determines the structural response of a cantilever beam subjected to a triangular load that decreases linearly from maximum intensity at the fixed support to zero at the free end. Using the input values for length, load intensity, Young's modulus, and second moment of area, it computes the vertical reaction force, the hogging bending moment at the fixed end, and the displacement and rotation at the tip. The resulting fixed-end moment is 9000 N*m, while the free end deflects by 4.05 and rotates through an angle of 0.0966866. These outputs are essential for verifying that the beam meets design requirements for strength and serviceability.
+
+### Cantilever with a uniformly distributed load
+
+Reaction, fixed-end moment, tip deflection and tip slope of a cantilever under a uniform load over its whole length.
+
+Command line:
+
+```console
+$ mechanical-engineering solve cantilever_udl "L=3 m" "w=2 kN/m" "E=200 GPa" "I=1e-05 m^4"
+R = 6000 N
+M_fixed = 9000 N*m
+tip_deflection_mm = 10.125
+tip_slope_deg = 0.2578310078
+  by: Cantilever with a uniformly distributed load  (R = wL, M = wL^2/2, delta_tip = wL^4/(8EI), theta_tip = wL^3/(6EI))
+  L = 3 m
+  w = 2000 N/m
+  E = 2e+11 Pa
+  I = 1e-05 m^4
+  assumes: L, w, E, I > 0; Euler-Bernoulli beam, small deflections
+```
+
+Python:
+
+```python
+import mechanical_engineering_ai999x as m
+
+a = m.solve("cantilever_udl", L="3 m", w="2 kN/m", E="200 GPa", I="1e-05 m^4")
+print(a.values or (a.value, a.unit))
+```
+
+Browser: [open this capability on the model page](https://www.ai999x.com/models/mechanical-engineering-ai999x/#cap-cantilever_udl) and press **Compute in your browser**.
+
+_What this means:_ This calculation determines the structural response of a cantilever beam subjected to a uniform load across its entire length. Given a length of 3 m, a load intensity of 2 kN/m, a Young's modulus of 200 GPa, and a second moment of area of 1e-05 m^4, the model computes the vertical reaction at the support as 6000 N, the hogging moment at the fixed end as 9000 N*m, the downward deflection at the free tip as 10.125, and the angular slope at the tip as 0.257831. These values indicate how much the beam resists bending and how far it displaces under the applied pressure.
+
+### Fixed-fixed (built-in) beam with a point load
+
+Reactions, fixed-end moments, the moment under the load and the deflection under the load of a beam built in at both ends carrying one point load.
+
+Command line:
+
+```console
+$ mechanical-engineering solve fixed_fixed_beam_point_load "L=6 m" "P=30 kN" "a=2 m" "E=200 GPa" "I=5e-05 m^4"
+RA = 22222.22222 N
+RB = 7777.777778 N
+MA = 26666.66667 N*m
+MB = 13333.33333 N*m
+M_load = 17777.77778 N*m
+deflection_at_load_mm = 2.37037037
+  by: Fixed-fixed (built-in) beam with a point load  (MA = Pab^2/L^2, MB = Pa^2b/L^2, RA = Pb^2(3a + b)/L^3, RB = Pa^2(a + 3b)/L^3, M_load = 2Pa^2b^2/L^3, delta_load = Pa^3b^3/(3EIL^3))
+  L = 6 m
+  P = 30000 N
+  a = 2 m
+  E = 2e+11 Pa
+  I = 5e-05 m^4
+  assumes: 0 < a < L; both ends fully fixed
+```
+
+Python:
+
+```python
+import mechanical_engineering_ai999x as m
+
+a = m.solve("fixed_fixed_beam_point_load", L="6 m", P="30 kN", a="2 m", E="200 GPa", I="5e-05 m^4")
+print(a.values or (a.value, a.unit))
+```
+
+Browser: [open this capability on the model page](https://www.ai999x.com/models/mechanical-engineering-ai999x/#cap-fixed_fixed_beam_point_load) and press **Compute in your browser**.
+
+_What this means:_ This calculation determines the structural response of a beam built in at both ends with a single point load. Using the span, load magnitude, and position, it computes the reactions and internal moments. The resulting hogging moment at support A is 26666.7 N*m, while the sagging moment directly beneath the applied force is 17777.8 N*m. The vertical displacement at the load point is found to be 2.37037, reflecting the stiffness provided by the material and cross-section.
+
+## Documentation
+
+- **Rust user guide** — the command line, every capability with a command and what it printed: [PDF](https://huggingface.co/AI999X/mechanical-engineering-ai999x/blob/main/docs/mechanical_engineering_ai999x_rust_guide.pdf) · [Markdown](https://huggingface.co/AI999X/mechanical-engineering-ai999x/blob/main/docs/mechanical_engineering_ai999x_rust_guide.md)
+- **Python guide** — every capability with a Python example: [PDF](https://huggingface.co/AI999X/mechanical-engineering-ai999x/blob/main/docs/mechanical_engineering_ai999x_capabilities.pdf) · [Markdown](https://huggingface.co/AI999X/mechanical-engineering-ai999x/blob/main/docs/mechanical_engineering_ai999x_capabilities.md)
+- **Desktop app & command line** — downloads, install, ask and search, figures, offline use, checksums: https://www.ai999x.com/desktop-cli/
+- **Model page** — compute in your browser, every capability explained: https://www.ai999x.com/models/mechanical-engineering-ai999x/
 
 ## Highlights
 
@@ -20,6 +346,7 @@ mechanical-engineering-ai999x is an offline, deterministic Python solver that an
 - **Zero wrong answers by design.** Seven explicit outcomes — SOLVED, NEEDS_INPUT, AMBIGUOUS, INVALID_INPUT, OUT_OF_SCOPE, UNRECOGNIZED_FORMAT, INTERNAL_ERROR — never a silent guess. Every one of its 312 documented answers is reproduced exactly on every tested platform.
 - **Plain-English questions and a guaranteed typed interface.** `ask()` reads documented question forms; `solve(capability_id, **inputs)` always solves a supported task with valid inputs.
 - **Explains itself.** Steps, formulas in LaTeX, units, assumptions and the model used, ready for notebooks, tutoring apps and homework checkers.
+- **Native and in the browser.** Every capability also computes natively in Rust: the desktop app and the `mechanical-engineering` command line for Windows and Linux, and WebAssembly on the model page — no Python, no network.
 - **Small and portable.** Pure Python (sympy, mpmath); identical answers on Windows and Linux (Python 3.10, 3.11, 3.12, 3.13, 3.14).
 - **Coverage:** statics, beams and section properties, stress and strain, torsion, columns, fatigue, machine elements, vibrations and structural analysis.
 
@@ -38,7 +365,7 @@ mechanical-engineering-ai999x is an offline, deterministic Python solver that an
 | Creator / engineer | Ibnul Jaif Farabi |
 | Organization | AI999X |
 
-## Quickstart
+## Python quick start
 
 ```bash
 pip install mechanical-engineering-ai999x
@@ -61,7 +388,7 @@ mechanical_engineering.ask("Who created you?").message
 # -> mechanical-engineering-ai999x was created and engineered by Ibnul Jaif Farabi at AI999X.
 ```
 
-Command line: `mechanical-engineering-ai999x "<question>"`, `mechanical-engineering-ai999x --capabilities`. The outputs above were produced by running this exact code on mechanical-engineering-ai999x 1.0.3.
+The Python package also installs a Python command, `mechanical-engineering-ai999x "<question>"`; for the native program use `mechanical-engineering` (above). The outputs above were produced by running this exact code on mechanical-engineering-ai999x 1.0.3.
 
 ## Find the right capability, and draw it
 
@@ -83,7 +410,7 @@ mechanical_engineering.search("Solve x^2 - 5x + 6 = 0", k=2)
 
 Capabilities are certified before they ship: each must reproduce hand-worked reference cases, reject a deliberately wrong variant (a control), and leave every benchmark answer unchanged.
 
-## Worked examples
+## Python worked examples, with their steps
 
 Each question was put to `mechanical-engineering-ai999x`; the answer is the one it returned, with the steps it took.
 
