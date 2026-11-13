@@ -35,7 +35,7 @@ result.show()
 | Machine elements / belts and band brakes | [Belt or rope friction on a drum (capstan equation)](#belt_friction_capstan), [Power of a belt drive with centrifugal tension](#belt_drive_power) |
 | Machine elements / bolted joints | [Eccentrically loaded bolt group (elastic method)](#eccentric_bolt_group), [Bolt tightening torque and preload (T = K F d)](#bolt_preload_torque) |
 | Machine elements / clutches and brakes | [Torque capacity of a disc clutch or brake](#disc_clutch_torque) |
-| Machine elements / gear trains | [Speeds of a simple planetary (epicyclic) gear train](#planetary_gear_train) |
+| Machine elements / gear trains | [Speeds of a simple planetary (epicyclic) gear train](#planetary_gear_train), [Simple and compound gear trains: ratio, output speed and torque](#gear_train_speed_ratio) |
 | Machine elements / gears | [Spur gear mesh geometry and contact ratio](#spur_gear_contact_ratio), [Lewis bending stress of a gear tooth](#lewis_gear_bending_stress) |
 | Machine elements / mechanisms | [Slider-crank mechanism: slider position, velocity and acceleration](#slider_crank_kinematics), [Four-bar linkage position analysis](#four_bar_linkage_position) |
 | Machine elements / power screws | [Power screw: raising and lowering torque, efficiency, self-locking](#power_screw_torque) |
@@ -50,15 +50,19 @@ result.show()
 | Section properties / standard shapes | [Section properties of a solid rectangle](#rectangular_section_properties), [Section properties of a solid circle](#circular_section_properties), [Section properties of a hollow circle (tube)](#hollow_circular_section_properties), [Section properties of a hollow rectangle (box)](#hollow_rectangular_section_properties), [Section properties of a symmetric I-section](#i_section_properties), [Section properties of a T-section](#t_section_properties), [Section properties of a channel (C) section](#channel_section_properties) |
 | Section properties / unsymmetric sections | [Section properties of an angle (L) section, with principal axes](#angle_section_properties) |
 | Statics / equilibrium of a particle | [Tensions in two cables holding a weight](#two_cable_equilibrium) |
-| Statics / force systems | [Resultant of concurrent coplanar forces](#resultant_of_concurrent_forces) |
-| Statics / moments | [Moment of a force about a point (2D)](#moment_of_a_force) |
+| Statics / force systems | [Resultant of concurrent coplanar forces](#resultant_of_concurrent_forces), [Equivalent force-couple system and single resultant of a force system](#force_system_resultant) |
+| Statics / moments | [Moment of a force about a point (2D)](#moment_of_a_force), [Moment of a force about a point and about an axis (3D)](#moment_of_force_3d) |
 | Stress analysis / combined loading | [Combined axial force and biaxial bending of a rectangular section](#combined_axial_and_bending_stress) |
 | Stress analysis / principal stresses | [Principal stresses and maximum shear (Mohr's circle, plane stress)](#principal_stresses_2d), [Principal stresses of a three-dimensional stress state](#principal_stresses_3d) |
 | Stress analysis / strain measurement | [Strain rosette: strains, principal strains and principal stresses](#strain_rosette) |
 | Stress analysis / stress transformation | [Plane stress transformation to rotated axes](#plane_stress_transformation) |
 | Stress and strain / axial loading | [Stepped bar under axial loads at its joints](#axial_bar_segments) |
+| Stress and strain / connections | [Direct shear and bearing stress in pins, bolts and rivets](#pin_shear_and_bearing_stress) |
 | Stress and strain / constitutive law | [Generalized Hooke's law: strains from a 3D stress state](#generalized_hookes_law) |
 | Stress and strain / statically indeterminate members | [Bar fixed at both ends with an axial load at a step](#bar_fixed_at_both_ends) |
+| Stress and strain / thermal stress | [Thermal stress and force in a restrained bar (with an optional gap)](#thermal_stress_restrained_bar) |
+| Stresses in beams / bending | [Bending stress at a point of a beam section (flexure formula)](#beam_bending_stress) |
+| Stresses in beams / shear | [Transverse shear stress at a point of a beam section (V Q / I b)](#beam_shear_stress) |
 | Structural analysis / continuous beams | [Continuous beam under uniform loads (three-moment equation)](#continuous_beam_three_moment) |
 | Structural analysis / trusses | [Member forces of a plane truss (method of joints)](#truss_member_forces) |
 | Torsion / circular shafts | [Torsion of a solid circular shaft](#solid_shaft_torsion), [Torsion of a hollow circular shaft](#hollow_shaft_torsion) |
@@ -202,6 +206,13 @@ Call `solve("<id>", **inputs)` with plain numbers; the result's `values` holds e
 | wahl_factor | Wahl curvature factor of a helical spring | d, D, F | index, K_wahl, K_bergstrasser, K_s, tau_MPa |
 | marin_endurance_limit | Endurance limit with the Marin factors | Sut, surface, load, d, R, kd, kf | ka, kb, kc, ke, Se_prime_MPa, Se_MPa, Se |
 | bolt_preload_torque | Bolt tightening torque and preload (T = K F d) | K, d, F, T | T, F, F_kN |
+| beam_bending_stress | Bending stress at a point of a beam section (flexure formula) | M, I, y, c | sigma, sigma_MPa, sigma_max_MPa, S |
+| beam_shear_stress | Transverse shear stress at a point of a beam section (V Q / I b) | V, Q, I, b | tau, tau_MPa, q, q_kN_per_m |
+| thermal_stress_restrained_bar | Thermal stress and force in a restrained bar (with an optional gap) | E, alpha, dT, L, A, gap | eps_thermal, eps_mech, sigma, sigma_MPa, free_expansion_mm, force, force_kN |
+| pin_shear_and_bearing_stress | Direct shear and bearing stress in pins, bolts and rivets | P, d, t, n_bolts, planes, tau_allow, sb_allow | A_mm2, tau, tau_MPa, sigma_b, sigma_b_MPa, n_shear, n_bearing |
+| gear_train_speed_ratio | Simple and compound gear trains: ratio, output speed and torque | drivers, driven, n_in, T_in, eta | velocity_ratio, train_value, n_out, n_out_rpm, meshes, T_out |
+| moment_of_force_3d | Moment of a force about a point and about an axis (3D) | r, F, O, axis | Mx, My, Mz, M, d, M_axis |
+| force_system_resultant | Equivalent force-couple system and single resultant of a force system | F, P, C, O | Rx, Ry, Rz, R, MOx, MOy, MOz, MO, result_type, axis_x, axis_y, axis_z, pitch, M_parallel, x_intercept, y_intercept |
 
 <a id="resultant_of_concurrent_forces"></a>
 
@@ -4675,3 +4686,419 @@ mechanical_engineering_ai999x.solve('bolt_preload_torque', K=0.2, d=0.012, T=60.
 | Bolt torque: K = 0.2, d = 12 mm, T = 60 N*m | SOLVED | T = 60 N*m, F = 25000 N, F_kN = 25 |
 | Bolt torque: K = 0.2, d = 12 mm, F = 25 kN, T = 60 N*m | INVALID_INPUT | Bolt tightening torque and preload (T = K F d): give exactly one of the preload F and the torque T. |
 | Bolt torque: K = 0.2, F = 25 kN | NEEDS_INPUT | bolt_preload_torque needs d (nominal bolt diameter). Example: solve('bolt_preload_torque', K=0.2, d='0.012 m', F='25000  |
+
+<a id="beam_bending_stress"></a>
+
+### Bending stress at a point of a beam section (flexure formula), `beam_bending_stress`
+
+The normal bending stress $\sigma = -M$ y/I at a distance y from the neutral axis of any section, and with the extreme-fibre distance c the largest stress |M| c/I and the elastic section modulus I/c.
+
+$$
+\sigma = -\frac{M\,y}{I},\quad \sigma_{\max} = \frac{|M|\,c}{I} = \frac{|M|}{S}
+$$
+
+| input | meaning | condition |
+|---|---|---|
+| `M` | bending moment at the section (positive sagging: compression at the top) |  |
+| `I` | second moment of area about the neutral (centroidal) axis |  |
+| `y` | distance of the point from the neutral axis (positive upward, negative below) |  |
+| `c` | distance from the neutral axis to the extreme fibre (optional) |  |
+
+| output | meaning |
+|---|---|
+| `sigma` | bending stress at the point (tension positive) |
+| `sigma_MPa` | bending stress at the point, MPa (tension positive) |
+| `sigma_max_MPa` | largest bending stress magnitude \|M\| c/I, MPa (with c) |
+| `S` | elastic section modulus I/c (with c) |
+
+- **Method:** $\sigma = -M$ y/I (sagging M compresses the fibres above the neutral axis); sigma_max = |M| c/I; $S = I/c$
+- **Assumes:** $I > 0$; $c > 0$ and |y| <= c when c is given; linear elastic, plane sections, bending about a principal centroidal axis
+- **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![sigma_MPa (bending stress at the point, MPa (tension positive)) against I (second moment of area about the neutral (centroidal) axis) from 8](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/beam-bending-stress-curve)
+
+*sigma_MPa (bending stress at the point, MPa (tension positive)) against I (second moment of area about the neutral (centroidal) axis) from 8.0000e-07 m^4 to 8.0000e-05 m^4 on a logarithmic axis. One curve for each value of M (bending moment at the section (positive sagging: compression at the top)): 10000 N*m, 5000 N*m, 20000 N*m. Other inputs as in the worked example: y = 0.1 m. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, I = 8.0000e-06 m^4, sigma_MPa = -125.*
+
+```python
+mechanical_engineering_ai999x.solve('beam_bending_stress', M=10000.0, I=8e-06, y=0.1)
+# -> sigma = -1.25e+08 Pa, sigma_MPa = -125   (SOLVED)
+```
+
+```python
+mechanical_engineering_ai999x.solve('beam_bending_stress', M=10000.0, I=8e-06, y=-0.1, c=0.15)
+# -> sigma = 1.25e+08 Pa, sigma_MPa = 125, sigma_max_MPa = 187.5, S = 5.33333e-05 m^3   (SOLVED)
+```
+
+```python
+mechanical_engineering_ai999x.solve('beam_bending_stress', M=-4000.0, I=2e-06, y=-0.05)
+# -> sigma = -1e+08 Pa, sigma_MPa = -100   (SOLVED)
+```
+
+**Questions in words (documented forms), as executed:**
+
+| question | outcome | result |
+|---|---|---|
+| Bending stress: M = 10 kN*m, I = 8e-6 m^4, y = 100 mm | SOLVED | sigma = -1.25e+08 Pa, sigma_MPa = -125 |
+| Bending stress: M = 10 kN*m, I = 8e-6 m^4, y = -100 mm, c = 150 mm | SOLVED | sigma = 1.25e+08 Pa, sigma_MPa = 125, sigma_max_MPa = 187.5, S = 5.33333e-05 m^3 |
+| Bending stress: M = 10 kN*m, I = 8e-6 m^4, y = 200 mm, c = 150 mm | INVALID_INPUT | Bending stress at a point of a beam section (flexure formula): the point must lie inside the section: \|y\| must not excee |
+| Bending stress: M = 10 kN*m, I = 8e-6 m^4 | NEEDS_INPUT | beam_bending_stress needs y (distance of the point from the neutral axis (positive upward, negative below)). Example: so |
+
+<a id="beam_shear_stress"></a>
+
+### Transverse shear stress at a point of a beam section (V Q / I b), `beam_shear_stress`
+
+The transverse (horizontal) shear stress $\tau = V$ Q/(I b) and the shear flow $q = V$ Q/I at a level of a beam section, from the shear force, the first moment Q of the area beyond that level about the neutral axis, the second moment I and the width b at that level.
+
+$$
+\tau = \frac{V\,Q}{I\,b},\quad q = \frac{V\,Q}{I},\quad Q = A'\bar{y}'
+$$
+
+| input | meaning | condition |
+|---|---|---|
+| `V` | shear force at the section |  |
+| `Q` | first moment about the neutral axis of the section area beyond the level considered $(m^{3})$ |  |
+| `I` | second moment of area of the whole section about the neutral axis |  |
+| `b` | width of the section at the level considered |  |
+
+| output | meaning |
+|---|---|
+| `tau` | transverse shear stress at the level (sign of V) |
+| `tau_MPa` | transverse shear stress, MPa |
+| `q` | shear flow V Q/I (N/m) |
+| `q_kN_per_m` | shear flow, kN/m |
+
+- **Method:** $q = V$ Q/I; $\tau = V$ Q/(I b) (Q = A' y' of the area beyond the level)
+- **Assumes:** $I > 0$, $b > 0$, $Q  \geq  0$; prismatic, linear elastic beam; shear stress uniform across the width b
+- **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![tau_MPa (transverse shear stress, MPa) against I (second moment of area of the whole section about the neutral axis) from 5](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/beam-shear-stress-curve)
+
+*tau_MPa (transverse shear stress, MPa) against I (second moment of area of the whole section about the neutral axis) from 5.0000e-05 m^4 to 0.00015 m^4. One curve for each value of V (shear force at the section): 30000 N, 15000 N, 60000 N. Other inputs as in the worked example: Q = 0.000375 m^3, b = 0.1 m. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, I = 0.0001 m^4, tau_MPa = 1.125.*
+
+```python
+mechanical_engineering_ai999x.solve('beam_shear_stress', V=30000.0, Q=0.000375, I=0.0001, b=0.1)
+# -> tau = 1.125e+06 Pa, tau_MPa = 1.125, q = 112500 N/m, q_kN_per_m = 112.5   (SOLVED)
+```
+
+```python
+mechanical_engineering_ai999x.solve('beam_shear_stress', V=20000.0, Q=0.001125, I=0.00022499999999999997, b=0.1)
+# -> tau = 1e+06 Pa, tau_MPa = 1, q = 100000 N/m, q_kN_per_m = 100   (SOLVED)
+```
+
+**Questions in words (documented forms), as executed:**
+
+| question | outcome | result |
+|---|---|---|
+| Beam shear stress: V = 30 kN, Q = 3.75e-4 m^3, I = 1e-4 m^4, b = 100 mm | SOLVED | tau = 1.125e+06 Pa, tau_MPa = 1.125, q = 112500 N/m, q_kN_per_m = 112.5 |
+| Beam shear stress: V = 30 kN, Q = 3.75e-4 m^3, I = 1e-4 m^4, b = -100 mm | INVALID_INPUT | Transverse shear stress at a point of a beam section (V Q / I b): I and the width b must be a positive number. |
+| Beam shear stress: V = 30 kN, Q = 3.75e-4 m^3, I = 1e-4 m^4 | NEEDS_INPUT | beam_shear_stress needs b (width of the section at the level considered). Example: solve('beam_shear_stress', V='30000 N |
+
+<a id="thermal_stress_restrained_bar"></a>
+
+### Thermal stress and force in a restrained bar (with an optional gap), `thermal_stress_restrained_bar`
+
+The thermal strain, free expansion, stress and wall force of a bar heated or cooled between rigid supports, fully restrained or with a clearance (gap) that the expansion must close first.
+
+$$
+\sigma = -E\,\frac{\alpha\,\Delta T\,L - \delta_{gap}}{L}\ \ (\alpha\Delta T L > \delta_{gap}),\quad F = \sigma A
+$$
+
+| input | meaning | condition |
+|---|---|---|
+| `E` | Young's modulus |  |
+| `alpha` | coefficient of linear thermal expansion |  |
+| `dT` | temperature change (positive = heating) |  |
+| `L` | bar length (needed with a gap) |  |
+| `A` | cross-sectional area (for the force) |  |
+| `gap` | clearance between the bar end and the support before heating (default 0) |  |
+
+| output | meaning |
+|---|---|
+| `eps_thermal` | free thermal strain alpha dT |
+| `eps_mech` | mechanical (stress-producing) strain |
+| `sigma` | stress in the bar (negative = compression) |
+| `sigma_MPa` | stress in the bar, MPa (negative = compression) |
+| `free_expansion_mm` | free expansion alpha dT L, mm (with L) |
+| `force` | axial force in the bar (negative = compression; with A) |
+| `force_kN` | axial force, kN (with A) |
+
+- **Method:** fully restrained: $\sigma = -E$ alpha dT; with a gap: $\sigma = -E$ (alpha dT L - gap)/L if alpha dT L > gap, else 0; $F = \sigma$ A
+- **Assumes:** E, $\alpha > 0$; gap >= 0; a gap needs L; rigid supports, linear elastic, no buckling; with a gap the bar touches only when heated enough to close it
+- **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![sigma_MPa (stress in the bar, MPa (negative = compression)) against E (Young's modulus) from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/thermal-stress-restrained-bar-curve)
+
+*sigma_MPa (stress in the bar, MPa (negative = compression)) against E (Young's modulus) from 1.0000e+11 Pa to 3.0000e+11 Pa. One curve for each value of alpha (coefficient of linear thermal expansion): 1.2000e-05 1/K, 6.0000e-06 1/K, 2.4000e-05 1/K. Other inputs as in the worked example: dT = 50.0 K, L = 2.0 m, A = 0.0005 m^2. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, E = 2.0000e+11 Pa, sigma_MPa = -120.*
+
+```python
+mechanical_engineering_ai999x.solve('thermal_stress_restrained_bar', E=200000000000.0, alpha=1.2e-05, dT=50.0, L=2.0, A=0.0005)
+# -> eps_thermal = 0.0006, eps_mech = -0.0006, sigma = -1.2e+08 Pa, sigma_MPa = -120, free_expansion_mm = 1.2, force = -60000 N, force_kN = -60   (SOLVED)
+```
+
+```python
+mechanical_engineering_ai999x.solve('thermal_stress_restrained_bar', E=200000000000.0, alpha=1.2e-05, dT=50.0, L=2.0, A=0.0005, gap=0.0005)
+# -> eps_thermal = 0.0006, eps_mech = -0.00035, sigma = -7e+07 Pa, sigma_MPa = -70, free_expansion_mm = 1.2, force = -35000 N, force_kN = -35   (SOLVED)
+```
+
+```python
+mechanical_engineering_ai999x.solve('thermal_stress_restrained_bar', E=200000000000.0, alpha=1.2e-05, dT=50.0, L=2.0, gap=0.0015)
+# -> eps_thermal = 0.0006, eps_mech = 0, sigma = 0 Pa, sigma_MPa = 0, free_expansion_mm = 1.2   (SOLVED)
+```
+
+**Questions in words (documented forms), as executed:**
+
+| question | outcome | result |
+|---|---|---|
+| Restrained bar thermal stress: E = 200 GPa, alpha = 12e-6 1/K, dT = 50 K, L = 2 m, A = 500 mm^2 | SOLVED | eps_thermal = 0.0006, eps_mech = -0.0006, sigma = -1.2e+08 Pa, sigma_MPa = -120, free_expansion_mm = 1.2, force = -60000 N, force_kN = -60 |
+| Restrained bar thermal stress: E = 200 GPa, alpha = 12e-6 1/K, dT = 50 K, L = 2 m, A = 500 mm^2, gap = 0.5 mm | SOLVED | eps_thermal = 0.0006, eps_mech = -0.00035, sigma = -7e+07 Pa, sigma_MPa = -70, free_expansion_mm = 1.2, force = -35000 N, force_kN = -35 |
+| Restrained bar thermal stress: E = 200 GPa, alpha = 12e-6 1/K, dT = 50 K, gap = 0.5 mm | INVALID_INPUT | Thermal stress and force in a restrained bar (with an optional gap): the bar length L is needed when a gap is given. |
+| Restrained bar thermal stress: E = 200 GPa, dT = 50 K | NEEDS_INPUT | thermal_stress_restrained_bar needs alpha (coefficient of linear thermal expansion). Example: solve('thermal_stress_rest |
+
+<a id="pin_shear_and_bearing_stress"></a>
+
+### Direct shear and bearing stress in pins, bolts and rivets, `pin_shear_and_bearing_stress`
+
+The average shear stress P/(n m pi d^2/4) in the bolts, pins or rivets of a joint (n fasteners, m shear planes each), the bearing stress P/(n d t) on the plate, and the safety factors against allowable stresses.
+
+$$
+\tau = \frac{P}{n\,m\,\pi d^2/4},\quad \sigma_b = \frac{P}{n\,d\,t}
+$$
+
+| input | meaning | condition |
+|---|---|---|
+| `P` | load carried by the joint |  |
+| `d` | fastener (pin, bolt, rivet) diameter |  |
+| `t` | thickness of the plate bearing on the fastener (optional; the critical plate) |  |
+| `n_bolts` | number of fasteners sharing the load (default 1) |  |
+| `planes` | shear planes per fastener: 1 single shear, 2 double shear (default 1) |  |
+| `tau_allow` | allowable (or failure) shear stress of the fastener (optional) |  |
+| `sb_allow` | allowable (or failure) bearing stress (optional; needs t) |  |
+
+| output | meaning |
+|---|---|
+| `A_mm2` | area of one fastener's cross-section, $mm^{2}$ |
+| `tau` | average shear stress in the fasteners |
+| `tau_MPa` | average shear stress, MPa |
+| `sigma_b` | bearing stress on the plate (with t) |
+| `sigma_b_MPa` | bearing stress, MPa (with t) |
+| `n_shear` | safety factor in shear (with tau_allow) |
+| `n_bearing` | safety factor in bearing (with t and sb_allow) |
+
+- **Method:** tau = P/(n m pi d^2/4); sigma_b = P/(n d t); safety factors = allowable/actual
+- **Assumes:** P, $d > 0$; whole numbers: 1 <= n_bolts <= 200, 1 <= planes <= 4; the load is shared equally (average stresses); a bearing allowable needs t
+- **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![tau_MPa (average shear stress, MPa) against d (fastener (pin, bolt, rivet) diameter) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/pin-shear-and-bearing-stress-curve)
+
+*tau_MPa (average shear stress, MPa) against d (fastener (pin, bolt, rivet) diameter) from 0.008 m to 0.024 m. One curve for each value of P (load carried by the joint): 20000 N, 10000 N, 40000 N. Other inputs as in the worked example: t = 0.01 m, planes = 2. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, d = 0.016 m, tau_MPa = 49.7359.*
+
+```python
+mechanical_engineering_ai999x.solve('pin_shear_and_bearing_stress', P=20000.0, d=0.016, t=0.01, planes=2)
+# -> A_mm2 = 201.062, tau = 4.97359e+07 Pa, tau_MPa = 49.7359, sigma_b = 1.25e+08 Pa, sigma_b_MPa = 125   (SOLVED)
+```
+
+```python
+mechanical_engineering_ai999x.solve('pin_shear_and_bearing_stress', P=20000.0, d=0.016, t=0.01, n_bolts=1, planes=2, tau_allow=100000000.0, sb_allow=250000000.0)
+# -> A_mm2 = 201.062, tau = 4.97359e+07 Pa, tau_MPa = 49.7359, n_shear = 2.01062, sigma_b = 1.25e+08 Pa, sigma_b_MPa = 125, n_bearing = 2   (SOLVED)
+```
+
+```python
+mechanical_engineering_ai999x.solve('pin_shear_and_bearing_stress', P=10000.0, d=0.01, n_bolts=4)
+# -> A_mm2 = 78.5398, tau = 3.1831e+07 Pa, tau_MPa = 31.831   (SOLVED)
+```
+
+**Questions in words (documented forms), as executed:**
+
+| question | outcome | result |
+|---|---|---|
+| Pin shear and bearing stress: P = 20 kN, d = 16 mm, t = 10 mm, planes = 2 | SOLVED | A_mm2 = 201.062, tau = 4.97359e+07 Pa, tau_MPa = 49.7359, sigma_b = 1.25e+08 Pa, sigma_b_MPa = 125 |
+| Rivet shear and bearing stress: P = 10 kN, d = 10 mm, n = 4 | SOLVED | A_mm2 = 78.5398, tau = 3.1831e+07 Pa, tau_MPa = 31.831 |
+| Bolt shear and bearing stress: P = 20 kN, d = 16 mm, planes = 2, sb_allow = 250 MPa | INVALID_INPUT | Direct shear and bearing stress in pins, bolts and rivets: the plate thickness t is needed for the bearing check. |
+| Bolt shear and bearing stress: P = 20 kN, t = 10 mm | NEEDS_INPUT | pin_shear_and_bearing_stress needs d (fastener (pin, bolt, rivet) diameter). Example: solve('pin_shear_and_bearing_stres |
+
+<a id="gear_train_speed_ratio"></a>
+
+### Simple and compound gear trains: ratio, output speed and torque, `gear_train_speed_ratio`
+
+The velocity ratio, signed train value, output speed (and its direction) and output torque of a train of external spur gears, simple (idlers included) or compound, from the driving and driven tooth counts of each mesh.
+
+$$
+e = \frac{n_{out}}{n_{in}} = (-1)^k\frac{\prod N_{driver}}{\prod N_{driven}},\quad T_{out} = \eta\,T_{in}\left|\frac{n_{in}}{n_{out}}\right|
+$$
+
+| input | meaning | condition |
+|---|---|---|
+| `drivers` | teeth on the driving gear of each mesh, from the input shaft (a list) |  |
+| `driven` | teeth on the driven gear of each mesh, in the same order (a list) |  |
+| `n_in` | input speed (rpm or rad/s) |  |
+| `T_in` | input torque (optional) |  |
+| `eta` | overall efficiency of the train (default 1; 0.95 or 95%) |  |
+
+| output | meaning |
+|---|---|
+| `velocity_ratio` | velocity ratio n_in/\|n_out\| = product of driven teeth / product of driving teeth |
+| `train_value` | signed train value n_out/n_in (negative: opposite direction) |
+| `n_out` | output speed (signed, same sense as the input when positive) |
+| `n_out_rpm` | output speed, rpm (signed) |
+| `meshes` | number of meshes |
+| `T_out` | output torque eta T_in x velocity ratio (with T_in) |
+
+- **Method:** train value $e = (-1)^{k}$ (product of driving teeth)/(product of driven teeth); n_out = e n_in; T_out = eta T_in |n_in/n_out|
+- **Assumes:** equal-length lists of whole tooth counts >= 1; external spur gears only (each mesh reverses the direction); $n_in  \neq  0$; $0 < \eta  \leq  1$
+- **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![n_out_rpm (output speed, rpm (signed)) against n_in (input speed (rpm or rad/s)) from 62](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/gear-train-speed-ratio-curve)
+
+*n_out_rpm (output speed, rpm (signed)) against n_in (input speed (rpm or rad/s)) from 62.8319 rad/s to 188.496 rad/s. Other inputs as in the worked example: drivers = [20.0], driven = [60.0], T_in = 50.0 N*m. 31 points computed by mechanical-engineering-ai999x; marked: the worked example, n_in = 125.664 rad/s, n_out_rpm = -400.*
+
+```python
+mechanical_engineering_ai999x.solve('gear_train_speed_ratio', drivers=[20.0], driven=[60.0], n_in=125.66370614359171, T_in=50.0)
+# -> velocity_ratio = 3, train_value = -0.333333, n_out = -41.8879 rad/s, n_out_rpm = -400, meshes = 1, T_out = 150 N*m   (SOLVED)
+```
+
+```python
+mechanical_engineering_ai999x.solve('gear_train_speed_ratio', drivers='20, 15', driven='60, 45', n_in=157.07963267948963, T_in=20.0, eta=0.95)
+# -> velocity_ratio = 9, train_value = 0.111111, n_out = 17.4533 rad/s, n_out_rpm = 166.667, meshes = 2, T_out = 171 N*m   (SOLVED)
+```
+
+```python
+mechanical_engineering_ai999x.solve('gear_train_speed_ratio', drivers='20, 35', driven='35, 50', n_in=104.71975511965977)
+# -> velocity_ratio = 2.5, train_value = 0.4, n_out = 41.8879 rad/s, n_out_rpm = 400, meshes = 2   (SOLVED)
+```
+
+**Questions in words (documented forms), as executed:**
+
+| question | outcome | result |
+|---|---|---|
+| Gear train: drivers = [20], driven = [60], n_in = 1200 rpm, T_in = 50 N*m | SOLVED | velocity_ratio = 3, train_value = -0.333333, n_out = -41.8879 rad/s, n_out_rpm = -400, meshes = 1, T_out = 150 N*m |
+| Compound gear train: drivers = [20, 15], driven = [60, 45], n_in = 1500 rpm, T_in = 20 N*m, eta = 0.95 | SOLVED | velocity_ratio = 9, train_value = 0.111111, n_out = 17.4533 rad/s, n_out_rpm = 166.667, meshes = 2, T_out = 171 N*m |
+| Simple gear train: drivers = [20, 35], driven = [35, 50], n_in = 1000 rpm | SOLVED | velocity_ratio = 2.5, train_value = 0.4, n_out = 41.8879 rad/s, n_out_rpm = 400, meshes = 2 |
+| Gear train: drivers = [20, 15], driven = [60], n_in = 1500 rpm | INVALID_INPUT | Simple and compound gear trains: ratio, output speed and torque: give one driving and one driven tooth count per mesh (1 |
+| Gear train: drivers = [20], driven = [60] | NEEDS_INPUT | gear_train_speed_ratio needs n_in (input speed (rpm or rad/s)). Example: solve('gear_train_speed_ratio', drivers=[20.0], |
+
+<a id="moment_of_force_3d"></a>
+
+### Moment of a force about a point and about an axis (3D), `moment_of_force_3d`
+
+The moment vector r x F of a force F applied at a point r about a point O in three dimensions, its magnitude, the perpendicular distance from O to the line of action, and (with an axis direction) the moment about the axis through O.
+
+$$
+\mathbf M_O = (\mathbf r - \mathbf r_O)\times\mathbf F,\quad M_{axis} = \hat{\mathbf u}\cdot\mathbf M_O,\quad d = \frac{|\mathbf M_O|}{|\mathbf F|}
+$$
+
+| input | meaning | condition |
+|---|---|---|
+| `r` | point of application [x, y, z] in m |  |
+| `F` | force [Fx, Fy, Fz] in N |  |
+| `O` | moment centre [x, y, z] in m (default the origin; the axis passes through it) |  |
+| `axis` | direction of the axis [ux, uy, uz] (any length, not zero) |  |
+
+| output | meaning |
+|---|---|
+| `Mx` | x component of the moment about O |
+| `My` | y component of the moment about O |
+| `Mz` | z component of the moment about O |
+| `M` | magnitude of the moment about O |
+| `d` | perpendicular distance from O to the line of action |
+| `M_axis` | moment about the axis through O (right-hand rule about the axis direction), when the axis is given |
+
+- **Method:** $M_O = (r - O)$ x F; d = |M_O|/|F|; M_axis = u . M_O with u the unit axis direction
+- **Assumes:** three components per vector; the force is not zero; the axis direction is not zero
+- **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![M (magnitude of the moment about O) as value 3 of r (point of application [x, y, z] in m) moves from 0 to 4](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/moment-of-force-3d-sensitivity)
+
+*M (magnitude of the moment about O) as value 3 of r (point of application [x, y, z] in m) moves from 0 to 4.5, the other values as given ([2.0, 3.0, 0.0]); 41 runs of mechanical-engineering-ai999x. Other inputs: F = [10.0, -5.0, 20.0]. Marked: the worked example, r[3] = 0, M = 82.4621 N*m.*
+
+```python
+mechanical_engineering_ai999x.solve('moment_of_force_3d', r=[2.0, 3.0, 0.0], F=[10.0, -5.0, 20.0])
+# -> Mx = 60 N*m, My = -40 N*m, Mz = -40 N*m, M = 82.4621 N*m, d = 3.59894 m   (SOLVED)
+```
+
+```python
+mechanical_engineering_ai999x.solve('moment_of_force_3d', r=[3.0, 1.0, 2.0], F=[0.0, 100.0, 0.0], O=[1.0, 1.0, 1.0], axis=[1.0, 1.0, 0.0])
+# -> Mx = -100 N*m, My = 0 N*m, Mz = 200 N*m, M = 223.607 N*m, d = 2.23607 m, M_axis = -70.7107 N*m   (SOLVED)
+```
+
+```python
+mechanical_engineering_ai999x.solve('moment_of_force_3d', r=[2.0, 3.0, 0.0], F=[10.0, -5.0, 20.0], axis=[0.0, 0.0, 1.0])
+# -> Mx = 60 N*m, My = -40 N*m, Mz = -40 N*m, M = 82.4621 N*m, d = 3.59894 m, M_axis = -40 N*m   (SOLVED)
+```
+
+**Questions in words (documented forms), as executed:**
+
+| question | outcome | result |
+|---|---|---|
+| Moment of a force in 3D: r = [2, 3, 0], F = [10, -5, 20] | SOLVED | Mx = 60 N*m, My = -40 N*m, Mz = -40 N*m, M = 82.4621 N*m, d = 3.59894 m |
+| Moment of a force about an axis: r = [3, 1, 2], F = [0, 100, 0], O = [1, 1, 1], axis = [1, 1, 0] | SOLVED | Mx = -100 N*m, My = 0 N*m, Mz = 200 N*m, M = 223.607 N*m, d = 2.23607 m, M_axis = -70.7107 N*m |
+| Moment of a force in 3D: r = [2, 3, 0], F = [0, 0, 0] | INVALID_INPUT | Moment of a force about a point and about an axis (3D): the force must not be zero. |
+| Moment of a force in 3D: r = [2, 3], F = [10, -5, 20] | INVALID_INPUT | r: needs at least 3 entries, got 2. |
+| Moment of a force in 3D: r = [2, 3, 0] | NEEDS_INPUT | moment_of_force_3d needs F (force [Fx, Fy, Fz] in N). Example: solve('moment_of_force_3d', r=[2.0, 3.0, 0.0], F=[10.0, - |
+
+<a id="force_system_resultant"></a>
+
+### Equivalent force-couple system and single resultant of a force system, `force_system_resultant`
+
+The resultant force R and the couple M_O at a point O equivalent to a system of forces (at their points of application) and couples in 3D or in a plane; whether it reduces to a single force, a wrench, a couple or nothing; the central axis (line of action of the single resultant) through its point nearest O, the pitch, and for a planar system where that line crosses the x and y axes.
+
+$$
+\mathbf R = \sum\mathbf F_i,\quad \mathbf M_O = \sum(\mathbf r_i - \mathbf r_O)\times\mathbf F_i + \sum\mathbf C_j,\quad \mathbf r_{axis} = \mathbf r_O + \frac{\mathbf R\times\mathbf M_O}{|\mathbf R|^2}
+$$
+
+| input | meaning | condition |
+|---|---|---|
+| `F` | forces, one row [Fx Fy Fz] per force, in N |  |
+| `P` | points of application, one row [x y z] per force, in m |  |
+| `C` | couple moments, one row [Mx My Mz] per couple, in $N m$ (optional) |  |
+| `O` | reference point [x, y, z] in m (default the origin) |  |
+
+| output | meaning |
+|---|---|
+| `Rx` | x component of the resultant force |
+| `Ry` | y component of the resultant force |
+| `Rz` | z component of the resultant force |
+| `R` | magnitude of the resultant force |
+| `MOx` | x component of the couple at O |
+| `MOy` | y component of the couple at O |
+| `MOz` | z component of the couple at O |
+| `MO` | magnitude of the couple at O |
+| `result_type` | single force, wrench, couple or equilibrium |
+| `axis_x` | x of the central axis's point nearest O (line of action of a single resultant) |
+| `axis_y` | y of that point |
+| `axis_z` | z of that point |
+| `pitch` | pitch of the wrench R . M_O/\|R\|^2 (0 for a single force) |
+| `M_parallel` | couple component along R (0 for a single force) |
+| `x_intercept` | where the single resultant's line of action crosses the x axis (planar systems) |
+| `y_intercept` | where it crosses the y axis (planar systems) |
+
+- **Method:** R = sum F_i; M_O = sum (r_i - O) x F_i + sum C_j; central axis through O + (R x M_O)/|R|^2; pitch = R . M_O/|R|^2
+- **Assumes:** one point of application per force; three components per row; not every force and couple zero; single force when R . $M_O = 0$ to $1e-9$ of |R||M_O|
+- **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): F (input); P (input)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/force-system-resultant-matrix)
+
+*The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): F (input); P (input). Returned with them by mechanical-engineering-ai999x: Rx = 50 N, Ry = -300 N, Rz = 0 N, R = 304.138 N, MOx = 0 N*m, MOy = 0 N*m, MOz = -800 N*m, MO = 800 N*m, axis_x = 2.59459 m, axis_y = 0.432432 m, axis_z = 0 m, pitch = 0 m, M_parallel = 0 N*m, x_intercept = 2.66667 m, y_intercept = 16 m.*
+
+```python
+mechanical_engineering_ai999x.solve('force_system_resultant', F=[[0.0, -100.0, 0.0], [0.0, -200.0, 0.0], [50.0, 0.0, 0.0]], P=[[1.0, 0.0, 0.0], [3.0, 0.0, 0.0], [0.0, 2.0, 0.0]])
+# -> Rx = 50 N, Ry = -300 N, Rz = 0 N, R = 304.138 N, MOx = 0 N*m, MOy = 0 N*m, MOz = -800 N*m, MO = 800 N*m, result_type = single force, axis_x = 2.59459 m, axis_y = 0.432432 m, axis_z = 0 m, pitch = 0 m, M_parallel = 0 N*m, x_intercept = 2.66667 m, y_intercept = 16 m   (SOLVED)
+```
+
+```python
+mechanical_engineering_ai999x.solve('force_system_resultant', F=[[0.0, 0.0, 10.0], [10.0, 0.0, 0.0]], P=[[1.0, 0.0, 0.0], [0.0, 1.0, 0.0]], C=[[0.0, 0.0, 5.0]])
+# -> Rx = 10 N, Ry = 0 N, Rz = 10 N, R = 14.1421 N, MOx = 0 N*m, MOy = -10 N*m, MOz = -5 N*m, MO = 11.1803 N*m, result_type = wrench, axis_x = 0.5 m, axis_y = 0.25 m, axis_z = -0.5 m, pitch = -0.25 m, M_parallel = -3.53553 N*m   (SOLVED)
+```
+
+```python
+mechanical_engineering_ai999x.solve('force_system_resultant', F=[[100.0, 0.0, 0.0], [-100.0, 0.0, 0.0]], P=[[0.0, 1.0, 0.0], [0.0, 0.0, 0.0]])
+# -> Rx = 0 N, Ry = 0 N, Rz = 0 N, R = 0 N, MOx = 0 N*m, MOy = 0 N*m, MOz = -100 N*m, MO = 100 N*m, result_type = couple   (SOLVED)
+```
+
+**Questions in words (documented forms), as executed:**
+
+| question | outcome | result |
+|---|---|---|
+| Single resultant of a force system: F = [0 -100 0; 0 -200 0; 50 0 0], P = [1 0 0; 3 0 0; 0 2 0] | SOLVED | Rx = 50 N, Ry = -300 N, Rz = 0 N, R = 304.138 N, MOx = 0 N*m, MOy = 0 N*m, MOz = -800 N*m, MO = 800 N*m, result_type = single force, axis_x = 2.59459 m, axis_y = 0.432432 m, axis_z = 0 m, pitch = 0 m, M_parallel = 0 N*m, x_intercept = 2.66667 m, y_intercept = 16 m |
+| Force-couple system: F = [0 0 10; 10 0 0], P = [1 0 0; 0 1 0], C = [0 0 5] | SOLVED | Rx = 10 N, Ry = 0 N, Rz = 10 N, R = 14.1421 N, MOx = 0 N*m, MOy = -10 N*m, MOz = -5 N*m, MO = 11.1803 N*m, result_type = wrench, axis_x = 0.5 m, axis_y = 0.25 m, axis_z = -0.5 m, pitch = -0.25 m, M_parallel = -3.53553 N*m |
+| Force-couple system: F = [0 0 10; 10 0 0], P = [1 0 0], C = [0 0 5] | INVALID_INPUT | Equivalent force-couple system and single resultant of a force system: give one point of application (a row of P) for ev |
+| Force-couple system: F = [0 0 10; 10 0 0] | NEEDS_INPUT | force_system_resultant needs P (points of application, one row [x y z] per force, in m). Example: solve('force_system_re |

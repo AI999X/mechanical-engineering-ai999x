@@ -1,8 +1,8 @@
 # mechanical-engineering: the Mechanical Engineering program, user guide
 
-**mechanical-engineering-ai999x 1.1.0**, Rust build: command line, desktop app and browser. **Creator / engineer:** Ibnul Jaif Farabi · **Company:** AI999X · support@ai999x.com
+**mechanical-engineering-ai999x 1.6.0**, Rust build: command line, desktop app and browser. **Creator / engineer:** Ibnul Jaif Farabi · **Company:** AI999X · support@ai999x.com
 
-Mechanical Engineering covers statics, stress and strain, beams and frames, section properties, torsion, columns, fatigue, machine elements, vibrations and structural analysis. This guide is about `mechanical-engineering`, the model as a self-contained program for Windows and Linux: 90 capabilities in 13 topics, answered on your own computer with no network, no Python and nothing else to install. The same compiled model runs in the AI999X desktop app and in the browser on the model's page (https://www.ai999x.com/models/mechanical-engineering-ai999x/); the Python package (`pip install mechanical-engineering-ai999x`) has its own guide. Every command output printed here is what the program printed.
+Mechanical Engineering covers statics, stress and strain, beams and frames, section properties, torsion, columns, fatigue, machine elements, vibrations and structural analysis. This guide is about `mechanical-engineering`, the model as a self-contained program for Windows and Linux: 97 capabilities in 14 topics, answered on your own computer with no network, no Python and nothing else to install. The same compiled model runs in the AI999X desktop app and in the browser on the model's page (https://www.ai999x.com/models/mechanical-engineering-ai999x/); the Python package (`pip install mechanical-engineering-ai999x`) has its own guide. Every command output printed here is what the program printed.
 
 ## Contents
 
@@ -17,37 +17,37 @@ Mechanical Engineering covers statics, stress and strain, beams and frames, sect
 
 ## 1. Get it
 
-Version 1.5.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS; the newest version is always under https://downloads.ai999x.com/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/
+Version 1.6.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS; the newest version is always under https://downloads.ai999x.com/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/
 
 | what | system | download |
 |---|---|---|
-| Desktop app: Mechanical Engineering | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-mechanical-engineering-1.5.0-windows-x86_64.zip |
-| Desktop app: Mechanical Engineering | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-mechanical-engineering-1.5.0-linux-x86_64.tar.gz |
-| Desktop app: all models | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-windows-x86_64.zip |
-| Desktop app: all models | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz |
-| Command line | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-windows-x86_64.zip |
-| Command line | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz |
+| Desktop app: Mechanical Engineering | Windows x86-64 | https://downloads.ai999x.com/desktop/1.6.0/ai999x-mechanical-engineering-1.6.0-windows-x86_64.zip |
+| Desktop app: Mechanical Engineering | Linux x86-64 | https://downloads.ai999x.com/desktop/1.6.0/ai999x-mechanical-engineering-1.6.0-linux-x86_64.tar.gz |
+| Desktop app: all models | Windows x86-64 | https://downloads.ai999x.com/desktop/1.6.0/ai999x-1.6.0-windows-x86_64.zip |
+| Desktop app: all models | Linux x86-64 | https://downloads.ai999x.com/desktop/1.6.0/ai999x-1.6.0-linux-x86_64.tar.gz |
+| Command line | Windows x86-64 | https://downloads.ai999x.com/desktop/1.6.0/ai999x-cli-1.6.0-windows-x86_64.zip |
+| Command line | Linux x86-64 | https://downloads.ai999x.com/desktop/1.6.0/ai999x-cli-1.6.0-linux-x86_64.tar.gz |
 
 ### Desktop app
 
-Mechanical Engineering in its own app: search, questions in words, input forms, live figures and explanations. Windows: Download ai999x-mechanical-engineering-1.5.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-mechanical-engineering.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
+Mechanical Engineering in its own app: search, questions in words, input forms, live figures and explanations. Windows: Download ai999x-mechanical-engineering-1.6.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-mechanical-engineering.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-mechanical-engineering-1.5.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/ai999x-mechanical-engineering-1.6.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-mechanical-engineering-1.5.0-linux-x86_64.tar.gz
-./ai999x-mechanical-engineering-1.5.0-linux-x86_64/ai999x-mechanical-engineering
+tar xzf ai999x-mechanical-engineering-1.6.0-linux-x86_64.tar.gz
+./ai999x-mechanical-engineering-1.6.0-linux-x86_64/ai999x-mechanical-engineering
 ```
 
-It opens on this model: type a question or pick a capability, fill in the form and press Compute. The AI999X desktop app with every model works the same way (choose the model first). Windows: Download ai999x-1.5.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
+It opens on this model: type a question or pick a capability, fill in the form and press Compute. The AI999X desktop app with every model works the same way (choose the model first). Windows: Download ai999x-1.6.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/ai999x-1.6.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-1.5.0-linux-x86_64.tar.gz
-./ai999x-1.5.0-linux-x86_64/ai999x
+tar xzf ai999x-1.6.0-linux-x86_64.tar.gz
+./ai999x-1.6.0-linux-x86_64/ai999x
 ```
 
 ### Command line: Linux
@@ -55,11 +55,11 @@ tar xzf ai999x-1.5.0-linux-x86_64.tar.gz
 The bundle holds one program per model; `mechanical-engineering` is this one. The checksum line should print OK.
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/ai999x-cli-1.6.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-mkdir -p ~/.local/share && tar xzf ai999x-cli-1.5.0-linux-x86_64.tar.gz -C ~/.local/share
-echo 'export PATH="$HOME/.local/share/ai999x-cli-1.5.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
+mkdir -p ~/.local/share && tar xzf ai999x-cli-1.6.0-linux-x86_64.tar.gz -C ~/.local/share
+echo 'export PATH="$HOME/.local/share/ai999x-cli-1.6.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
 mechanical-engineering --version
 ```
 
@@ -68,12 +68,12 @@ mechanical-engineering --version
 The fourth line should print True.
 
 ```powershell
-$F = "ai999x-cli-1.5.0-windows-x86_64.zip"
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/$F" -OutFile $F
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS" -OutFile SHA256SUMS
+$F = "ai999x-cli-1.6.0-windows-x86_64.zip"
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.6.0/$F" -OutFile $F
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS" -OutFile SHA256SUMS
 (Get-FileHash $F -Algorithm SHA256).Hash.ToLower() -eq ((Select-String -SimpleMatch $F SHA256SUMS).Line -split ' ')[0]
 Expand-Archive $F -DestinationPath "$env:LOCALAPPDATA\AI999X" -Force
-$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.5.0-windows-x86_64"; $env:Path += ";$D"
+$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.6.0-windows-x86_64"; $env:Path += ";$D"
 [Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path", "User") + ";$D", "User")
 mechanical-engineering --version
 ```
@@ -96,7 +96,7 @@ Prints the model, its version and that this is the Rust build.
 
 ```shell
 $ mechanical-engineering --version
-mechanical-engineering-ai999x 1.5.0 (Rust build, ax-engine 1.5.0)
+mechanical-engineering-ai999x 1.6.0 (Rust build, ax-engine 1.6.0)
 ```
 
 ### 2.2 Ask in words
@@ -134,8 +134,8 @@ simply_supported_beam_udl            Simply supported beam with a uniformly dist
 fixed_fixed_beam_point_load          Fixed-fixed (built-in) beam with a point load  (beams / statically indeterminate beams)
 cantilever_point_load                Cantilever with a point load  (beams / cantilevers)
 propped_cantilever_point_load        Propped cantilever with a point load  (beams / statically indeterminate beams)
-continuous_beam_three_moment         Continuous beam under uniform loads (three-moment equation)  (structural analysis / continuous beams)
-axial_bar_segments                   Stepped bar under axial loads at its joints  (stress and strain / axial loading)
+beam_bending_stress                  Bending stress at a point of a beam section (flexure formula)  (stresses in beams / bending)
+beam_shear_stress                    Transverse shear stress at a point of a beam section (V Q / I b)  (stresses in beams / shear)
 … 12 more
 ```
 
@@ -149,11 +149,11 @@ angle_section_properties                 Section properties of an angle (L) sect
 asme_elliptic_fatigue_safety_factor      Fatigue safety factor by the ASME-elliptic criterion
 axial_bar_segments                       Stepped bar under axial loads at its joints
 bar_fixed_at_both_ends                   Bar fixed at both ends with an axial load at a step
+beam_bending_stress                      Bending stress at a point of a beam section (flexure formula)
 beam_natural_frequency                   Natural frequencies of a uniform beam (Euler-Bernoulli)
+beam_shear_stress                        Transverse shear stress at a point of a beam section (V Q / I b)
 bearing_catalog_rating                   Required catalogue rating of a rolling bearing
-bearing_life_reliability                 Rolling-bearing life at a given reliability
-belt_drive_power                         Power of a belt drive with centrifugal tension
-… 82 more
+… 89 more
 ```
 
 ### 2.5 What a capability needs
@@ -1479,7 +1479,7 @@ sigma_m_vm_MPa = 38.59302268
 
 In the worked example, d = 40 mm, Ma = 150 N*m, Mm = 0 N*m, Ta = 0 N*m, Tm = 200 N*m, Kf = 1.6, Kfs = 1.4, Se = 200 MPa, Sut = 700 MPa go through the equation above and give n_fatigue = 4.06307813, sigma_a_vm_MPa = 38.19718634, sigma_m_vm_MPa = 38.59302268. It applies only when solid round shaft, no axial load; Kf, Kfs >= 1; an alternating moment or torque present: outside that it says what is wrong instead of returning a number.
 
-### Machine elements (15)
+### Machine elements (16)
 
 <a id="belt_friction_capstan"></a>
 
@@ -1886,6 +1886,48 @@ L_hours = 2901.826203
 ```
 
 **What the worked example means:** This calculation determines the expected service life of a rolling bearing based on its dynamic load capacity and applied load. First, the basic rating life is computed as 4.21875e+08 revolutions, equivalent to 4687.5 hours at the operating speed. Then, using Weibull distribution parameters for the desired reliability of 0.95, the life is adjusted to 2.61164e+08 revolutions, or 2901.83 hours. The ratio between these lives is captured by the life multiple 0.619056, indicating how much shorter or longer the component lasts compared to the standard ninety percent reliability benchmark.
+
+<a id="gear_train_speed_ratio"></a>
+
+#### Simple and compound gear trains: ratio, output speed and torque, `gear_train_speed_ratio`
+
+The velocity ratio, signed train value, output speed (and its direction) and output torque of a train of external spur gears, simple (idlers included) or compound, from the driving and driven tooth counts of each mesh.
+
+$$
+e = \frac{n_{out}}{n_{in}} = (-1)^k\frac{\prod N_{driver}}{\prod N_{driven}},\quad T_{out} = \eta\,T_{in}\left|\frac{n_{in}}{n_{out}}\right|
+$$
+
+| symbol |  | meaning | SI unit |
+|---|---|---|---|
+| `drivers` | in | teeth on the driving gear of each mesh, from the input shaft (a list) | - |
+| `driven` | in | teeth on the driven gear of each mesh, in the same order (a list) | - |
+| `n_in` | in | input speed (rpm or rad/s) | rad/s |
+| `T_in` | in | input torque (optional) (optional) | N*m |
+| `eta` | in | overall efficiency of the train (default 1; 0.95 or 95%) (optional) | - |
+| `velocity_ratio` | out | velocity ratio n_in/\|n_out\| = product of driven teeth / product of driving teeth | - |
+| `train_value` | out | signed train value n_out/n_in (negative: opposite direction) | - |
+| `n_out` | out | output speed (signed, same sense as the input when positive) | rad/s |
+| `n_out_rpm` | out | output speed, rpm (signed) | - |
+| `meshes` | out | number of meshes | - |
+| `T_out` | out | output torque eta T_in x velocity ratio (with T_in) | N*m |
+
+**Applies when:** equal-length lists of whole tooth counts >= 1; external spur gears only (each mesh reverses the direction); n_in != 0; 0 < eta <= 1.
+
+```shell
+$ mechanical-engineering solve gear_train_speed_ratio "drivers=[20]" "driven=[60]" "n_in=1200 rpm" "T_in=50 N*m"
+velocity_ratio = 3
+train_value = -0.3333333333
+n_out = -41.88790205 rad/s
+n_out_rpm = -400
+meshes = 1
+T_out = 150 N*m
+  by: Simple and compound gear trains: ratio, output speed and torque  (train value e = (-1)^k (product of driving teeth)/(product of driven teeth); n_out = e n_in; T_out = eta T_in |n_in/n_out|)
+  n_in = 125.6637061 rad/s
+  T_in = 50 N*m
+  assumes: equal-length lists of whole tooth counts >= 1; external spur gears only (each mesh reverses the direction); n_in != 0; 0 < eta <= 1
+```
+
+In the worked example, drivers = [20], driven = [60], n_in = 1200 rpm, T_in = 50 N*m go through the equation above and give velocity_ratio = 3, train_value = -0.3333333333, n_out = -41.88790205 rad/s, n_out_rpm = -400. It applies only when equal-length lists of whole tooth counts >= 1; external spur gears only (each mesh reverses the direction); n_in != 0; 0 < eta <= 1: outside that it says what is wrong instead of returning a number.
 
 <a id="slider_crank_kinematics"></a>
 
@@ -2686,7 +2728,66 @@ r_min = 0.01965832335 m
 
 **What the worked example means:** This calculation determines the geometric properties of an angle section defined by leg lengths 100 mm and 100 mm with thickness 10 mm. It computes the total area 0.0019 m^2 and locates the centroid relative to the outer edges at distances 0.0286842 m and 0.0286842 m. Using these values, it derives the second moments of area about the horizontal and vertical axes (1.80004e-06 m^4 and 1.80004e-06 m^4) and the product of inertia -1.06579e-06 m^4. From these, the major and minor principal moments of inertia (2.86583e-06 m^4 and 7.34254e-07 m^4) are found, along with the orientation of the major principal axis given by 45 degrees. The least radius of gyration, a key indicator for buckling resistance, is reported as 0.0196583 m.
 
-### Statics (3)
+### Statics (5)
+
+<a id="force_system_resultant"></a>
+
+#### Equivalent force-couple system and single resultant of a force system, `force_system_resultant`
+
+The resultant force R and the couple M_O at a point O equivalent to a system of forces (at their points of application) and couples in 3D or in a plane; whether it reduces to a single force, a wrench, a couple or nothing; the central axis (line of action of the single resultant) through its point nearest O, the pitch, and for a planar system where that line crosses the x and y axes.
+
+$$
+\mathbf R = \sum\mathbf F_i,\quad \mathbf M_O = \sum(\mathbf r_i - \mathbf r_O)\times\mathbf F_i + \sum\mathbf C_j,\quad \mathbf r_{axis} = \mathbf r_O + \frac{\mathbf R\times\mathbf M_O}{|\mathbf R|^2}
+$$
+
+| symbol |  | meaning | SI unit |
+|---|---|---|---|
+| `F` | in | forces, one row [Fx Fy Fz] per force, in N | - |
+| `P` | in | points of application, one row [x y z] per force, in m | - |
+| `C` | in | couple moments, one row [Mx My Mz] per couple, in N*m (optional) (optional) | - |
+| `O` | in | reference point [x, y, z] in m (default the origin) (optional) | - |
+| `Rx` | out | x component of the resultant force | N |
+| `Ry` | out | y component of the resultant force | N |
+| `Rz` | out | z component of the resultant force | N |
+| `R` | out | magnitude of the resultant force | N |
+| `MOx` | out | x component of the couple at O | N*m |
+| `MOy` | out | y component of the couple at O | N*m |
+| `MOz` | out | z component of the couple at O | N*m |
+| `MO` | out | magnitude of the couple at O | N*m |
+| `result_type` | out | single force, wrench, couple or equilibrium | - |
+| `axis_x` | out | x of the central axis's point nearest O (line of action of a single resultant) | m |
+| `axis_y` | out | y of that point | m |
+| `axis_z` | out | z of that point | m |
+| `pitch` | out | pitch of the wrench R . M_O/\|R\|^2 (0 for a single force) | m |
+| `M_parallel` | out | couple component along R (0 for a single force) | N*m |
+| `x_intercept` | out | where the single resultant's line of action crosses the x axis (planar systems) | m |
+| `y_intercept` | out | where it crosses the y axis (planar systems) | m |
+
+**Applies when:** one point of application per force; three components per row; not every force and couple zero; single force when R . M_O = 0 to 1e-9 of |R||M_O|.
+
+```shell
+$ mechanical-engineering solve force_system_resultant "F=[[0, -100, 0], [0, -200, 0], [50, 0, 0]]" "P=[[1, 0, 0], [3, 0, 0], [0, 2, 0]]"
+Rx = 50 N
+Ry = -300 N
+Rz = 0 N
+R = 304.1381265 N
+MOx = 0 N*m
+MOy = 0 N*m
+MOz = -800 N*m
+MO = 800 N*m
+result_type = single force
+axis_x = 2.594594595 m
+axis_y = 0.4324324324 m
+axis_z = 0 m
+pitch = 0 m
+M_parallel = 0 N*m
+x_intercept = 2.666666667 m
+y_intercept = 16 m
+  by: Equivalent force-couple system and single resultant of a force system  (R = sum F_i; M_O = sum (r_i - O) x F_i + sum C_j; central axis through O + (R x M_O)/|R|^2; pitch = R . M_O/|R|^2)
+  assumes: one point of application per force; three components per row; not every force and couple zero; single force when R . M_O = 0 to 1e-9 of |R||M_O|
+```
+
+In the worked example, F = [0 -100 0; 0 -200 0; 50 0 0], P = [1 0 0; 3 0 0; 0 2 0] go through the equation above and give Rx = 50 N, Ry = -300 N, Rz = 0 N, R = 304.1381265 N. It applies only when one point of application per force; three components per row; not every force and couple zero; single force when R . M_O = 0 to 1e-9 of |R||M_O|: outside that it says what is wrong instead of returning a number.
 
 <a id="moment_of_a_force"></a>
 
@@ -2724,6 +2825,44 @@ d = 1.341640786 m
 ```
 
 **What the worked example means:** The moment is 300 N*m and the perpendicular distance is 1.34164 m.
+
+<a id="moment_of_force_3d"></a>
+
+#### Moment of a force about a point and about an axis (3D), `moment_of_force_3d`
+
+The moment vector r x F of a force F applied at a point r about a point O in three dimensions, its magnitude, the perpendicular distance from O to the line of action, and (with an axis direction) the moment about the axis through O.
+
+$$
+\mathbf M_O = (\mathbf r - \mathbf r_O)\times\mathbf F,\quad M_{axis} = \hat{\mathbf u}\cdot\mathbf M_O,\quad d = \frac{|\mathbf M_O|}{|\mathbf F|}
+$$
+
+| symbol |  | meaning | SI unit |
+|---|---|---|---|
+| `r` | in | point of application [x, y, z] in m | - |
+| `F` | in | force [Fx, Fy, Fz] in N | - |
+| `O` | in | moment centre [x, y, z] in m (default the origin; the axis passes through it) (optional) | - |
+| `axis` | in | direction of the axis [ux, uy, uz] (any length, not zero) (optional) | - |
+| `Mx` | out | x component of the moment about O | N*m |
+| `My` | out | y component of the moment about O | N*m |
+| `Mz` | out | z component of the moment about O | N*m |
+| `M` | out | magnitude of the moment about O | N*m |
+| `d` | out | perpendicular distance from O to the line of action | m |
+| `M_axis` | out | moment about the axis through O (right-hand rule about the axis direction), when the axis is given | N*m |
+
+**Applies when:** three components per vector; the force is not zero; the axis direction is not zero.
+
+```shell
+$ mechanical-engineering solve moment_of_force_3d "r=[2, 3, 0]" "F=[10, -5, 20]"
+Mx = 60 N*m
+My = -40 N*m
+Mz = -40 N*m
+M = 82.46211251 N*m
+d = 3.598941643 m
+  by: Moment of a force about a point and about an axis (3D)  (M_O = (r - O) x F; d = |M_O|/|F|; M_axis = u . M_O with u the unit axis direction)
+  assumes: three components per vector; the force is not zero; the axis direction is not zero
+```
+
+In the worked example, r = [2, 3, 0], F = [10, -5, 20] go through the equation above and give Mx = 60 N*m, My = -40 N*m, Mz = -40 N*m, M = 82.46211251 N*m. It applies only when three components per vector; the force is not zero; the axis direction is not zero: outside that it says what is wrong instead of returning a number.
 
 <a id="resultant_of_concurrent_forces"></a>
 
@@ -3012,7 +3151,7 @@ s2_MPa = -1.996333257
 
 **What the worked example means:** This calculation converts the measured surface strains from the three-gauge rosette into the state of strain at the point. Using the specific layout geometry, it determines the normal and shear strain components, which are then used to find the principal strains and their orientation. Finally, applying Hooke's law for plane stress, these strains are converted into principal stresses. The resulting larger principal strain is 441.548 microstrain, oriented at 15.4819 degrees from gauge a, corresponding to a principal stress of 87.7106 MPa.
 
-### Stress and strain (3)
+### Stress and strain (5)
 
 <a id="bar_fixed_at_both_ends"></a>
 
@@ -3060,6 +3199,51 @@ displacement_mm = 0.12
 ```
 
 **What the worked example means:** This calculation determines the internal forces in a two-part bar fixed between rigid supports and loaded axially at the junction. By enforcing compatibility, the stiffness of each segment dictates how the applied load 60 kN is shared. The resulting reaction at support A is 30000 N, while the stress in the first segment is 60. The total displacement of the joint relative to its original position is 0.12, reflecting the combined elongation or contraction of both parts under equilibrium.
+
+<a id="pin_shear_and_bearing_stress"></a>
+
+#### Direct shear and bearing stress in pins, bolts and rivets, `pin_shear_and_bearing_stress`
+
+The average shear stress P/(n m pi d^2/4) in the bolts, pins or rivets of a joint (n fasteners, m shear planes each), the bearing stress P/(n d t) on the plate, and the safety factors against allowable stresses.
+
+$$
+\tau = \frac{P}{n\,m\,\pi d^2/4},\quad \sigma_b = \frac{P}{n\,d\,t}
+$$
+
+| symbol |  | meaning | SI unit |
+|---|---|---|---|
+| `P` | in | load carried by the joint | N |
+| `d` | in | fastener (pin, bolt, rivet) diameter | m |
+| `t` | in | thickness of the plate bearing on the fastener (optional; the critical plate) (optional) | m |
+| `n_bolts` | in | number of fasteners sharing the load (default 1) (optional) | - |
+| `planes` | in | shear planes per fastener: 1 single shear, 2 double shear (default 1) (optional) | - |
+| `tau_allow` | in | allowable (or failure) shear stress of the fastener (optional) (optional) | Pa |
+| `sb_allow` | in | allowable (or failure) bearing stress (optional; needs t) (optional) | Pa |
+| `A_mm2` | out | area of one fastener's cross-section, mm^2 | - |
+| `tau` | out | average shear stress in the fasteners | Pa |
+| `tau_MPa` | out | average shear stress, MPa | - |
+| `sigma_b` | out | bearing stress on the plate (with t) | Pa |
+| `sigma_b_MPa` | out | bearing stress, MPa (with t) | - |
+| `n_shear` | out | safety factor in shear (with tau_allow) | - |
+| `n_bearing` | out | safety factor in bearing (with t and sb_allow) | - |
+
+**Applies when:** P, d > 0; whole numbers: 1 <= n_bolts <= 200, 1 <= planes <= 4; the load is shared equally (average stresses); a bearing allowable needs t.
+
+```shell
+$ mechanical-engineering solve pin_shear_and_bearing_stress "P=20 kN" "d=16 mm" "t=10 mm" planes=2
+A_mm2 = 201.0619298
+tau = 49735919.72 Pa
+tau_MPa = 49.73591972
+sigma_b = 125000000 Pa
+sigma_b_MPa = 125
+  by: Direct shear and bearing stress in pins, bolts and rivets  (tau = P/(n m pi d^2/4); sigma_b = P/(n d t); safety factors = allowable/actual)
+  P = 20000 N
+  d = 0.016 m
+  t = 0.01 m
+  assumes: P, d > 0; whole numbers: 1 <= n_bolts <= 200, 1 <= planes <= 4; the load is shared equally (average stresses); a bearing allowable needs t
+```
+
+In the worked example, P = 20 kN, d = 16 mm, t = 10 mm, planes = 2 go through the equation above and give A_mm2 = 201.0619298, tau = 49735919.72 Pa, tau_MPa = 49.73591972, sigma_b = 125000000 Pa. It applies only when P, d > 0; whole numbers: 1 <= n_bolts <= 200, 1 <= planes <= 4; the load is shared equally (average stresses); a bearing allowable needs t: outside that it says what is wrong instead of returning a number.
 
 <a id="generalized_hookes_law"></a>
 
@@ -3149,6 +3333,131 @@ max_abs_stress_MPa = 150
 ```
 
 **What the worked example means:** This calculation determines the total deformation and internal forces for a stepped bar fixed at one end. Using segment lengths, areas, and joint loads, it computes the axial force in each section as [10, 30] and the corresponding normal stress as [25, 150]. The resulting total elongation is 0.4125, while the highest magnitude stress observed is 150. These values indicate how much the structure stretches or shortens under the applied tension or compression.
+
+<a id="thermal_stress_restrained_bar"></a>
+
+#### Thermal stress and force in a restrained bar (with an optional gap), `thermal_stress_restrained_bar`
+
+The thermal strain, free expansion, stress and wall force of a bar heated or cooled between rigid supports, fully restrained or with a clearance (gap) that the expansion must close first.
+
+$$
+\sigma = -E\,\frac{\alpha\,\Delta T\,L - \delta_{gap}}{L}\ \ (\alpha\Delta T L > \delta_{gap}),\quad F = \sigma A
+$$
+
+| symbol |  | meaning | SI unit |
+|---|---|---|---|
+| `E` | in | Young's modulus | Pa |
+| `alpha` | in | coefficient of linear thermal expansion | 1/K |
+| `dT` | in | temperature change (positive = heating) | K |
+| `L` | in | bar length (needed with a gap) (optional) | m |
+| `A` | in | cross-sectional area (for the force) (optional) | m^2 |
+| `gap` | in | clearance between the bar end and the support before heating (default 0) (optional) | m |
+| `eps_thermal` | out | free thermal strain alpha dT | - |
+| `eps_mech` | out | mechanical (stress-producing) strain | - |
+| `sigma` | out | stress in the bar (negative = compression) | Pa |
+| `sigma_MPa` | out | stress in the bar, MPa (negative = compression) | - |
+| `free_expansion_mm` | out | free expansion alpha dT L, mm (with L) | - |
+| `force` | out | axial force in the bar (negative = compression; with A) | N |
+| `force_kN` | out | axial force, kN (with A) | - |
+
+**Applies when:** E, alpha > 0; gap >= 0; a gap needs L; rigid supports, linear elastic, no buckling; with a gap the bar touches only when heated enough to close it.
+
+```shell
+$ mechanical-engineering solve thermal_stress_restrained_bar "E=200 GPa" "alpha=1.2e-05 1/K" "dT=50 K" "L=2 m" "A=500 mm^2"
+eps_thermal = 0.0006
+eps_mech = -0.0006
+sigma = -120000000 Pa
+sigma_MPa = -120
+free_expansion_mm = 1.2
+force = -60000 N
+force_kN = -60
+  by: Thermal stress and force in a restrained bar (with an optional gap)  (fully restrained: sigma = -E alpha dT; with a gap: sigma = -E (alpha dT L - gap)/L if alpha dT L > gap, else 0; F = sigma A)
+  E = 2e+11 Pa
+  alpha = 1.2e-05 1/K
+  dT = 50 K
+  L = 2 m
+  A = 0.0005 m^2
+  assumes: E, alpha > 0; gap >= 0; a gap needs L; rigid supports, linear elastic, no buckling; with a gap the bar touches only when heated enough to close it
+```
+
+In the worked example, E = 200 GPa, alpha = 1.2e-05 1/K, dT = 50 K, L = 2 m, A = 500 mm^2 go through the equation above and give eps_thermal = 0.0006, eps_mech = -0.0006, sigma = -120000000 Pa, sigma_MPa = -120. It applies only when E, alpha > 0; gap >= 0; a gap needs L; rigid supports, linear elastic, no buckling; with a gap the bar touches only when heated enough to close it: outside that it says what is wrong instead of returning a number.
+
+### Stresses in beams (2)
+
+<a id="beam_bending_stress"></a>
+
+#### Bending stress at a point of a beam section (flexure formula), `beam_bending_stress`
+
+The normal bending stress sigma = -M y/I at a distance y from the neutral axis of any section, and with the extreme-fibre distance c the largest stress |M| c/I and the elastic section modulus I/c.
+
+$$
+\sigma = -\frac{M\,y}{I},\quad \sigma_{\max} = \frac{|M|\,c}{I} = \frac{|M|}{S}
+$$
+
+| symbol |  | meaning | SI unit |
+|---|---|---|---|
+| `M` | in | bending moment at the section (positive sagging: compression at the top) | N*m |
+| `I` | in | second moment of area about the neutral (centroidal) axis | m^4 |
+| `y` | in | distance of the point from the neutral axis (positive upward, negative below) | m |
+| `c` | in | distance from the neutral axis to the extreme fibre (optional) (optional) | m |
+| `sigma` | out | bending stress at the point (tension positive) | Pa |
+| `sigma_MPa` | out | bending stress at the point, MPa (tension positive) | - |
+| `sigma_max_MPa` | out | largest bending stress magnitude \|M\| c/I, MPa (with c) | - |
+| `S` | out | elastic section modulus I/c (with c) | m^3 |
+
+**Applies when:** I > 0; c > 0 and |y| <= c when c is given; linear elastic, plane sections, bending about a principal centroidal axis.
+
+```shell
+$ mechanical-engineering solve beam_bending_stress "M=10 kN*m" "I=8e-06 m^4" "y=100 mm"
+sigma = -125000000 Pa
+sigma_MPa = -125
+  by: Bending stress at a point of a beam section (flexure formula)  (sigma = -M y/I (sagging M compresses the fibres above the neutral axis); sigma_max = |M| c/I; S = I/c)
+  M = 10000 N*m
+  I = 8e-06 m^4
+  y = 0.1 m
+  assumes: I > 0; c > 0 and |y| <= c when c is given; linear elastic, plane sections, bending about a principal centroidal axis
+```
+
+In the worked example, M = 10 kN*m, I = 8e-06 m^4, y = 100 mm go through the equation above and give sigma = -125000000 Pa, sigma_MPa = -125. It applies only when I > 0; c > 0 and |y| <= c when c is given; linear elastic, plane sections, bending about a principal centroidal axis: outside that it says what is wrong instead of returning a number.
+
+<a id="beam_shear_stress"></a>
+
+#### Transverse shear stress at a point of a beam section (V Q / I b), `beam_shear_stress`
+
+The transverse (horizontal) shear stress tau = V Q/(I b) and the shear flow q = V Q/I at a level of a beam section, from the shear force, the first moment Q of the area beyond that level about the neutral axis, the second moment I and the width b at that level.
+
+$$
+\tau = \frac{V\,Q}{I\,b},\quad q = \frac{V\,Q}{I},\quad Q = A'\bar{y}'
+$$
+
+| symbol |  | meaning | SI unit |
+|---|---|---|---|
+| `V` | in | shear force at the section | N |
+| `Q` | in | first moment about the neutral axis of the section area beyond the level considered (m^3) | m^3 |
+| `I` | in | second moment of area of the whole section about the neutral axis | m^4 |
+| `b` | in | width of the section at the level considered | m |
+| `tau` | out | transverse shear stress at the level (sign of V) | Pa |
+| `tau_MPa` | out | transverse shear stress, MPa | - |
+| `q` | out | shear flow V Q/I (N/m) | N/m |
+| `q_kN_per_m` | out | shear flow, kN/m | - |
+
+**Applies when:** I > 0, b > 0, Q >= 0; prismatic, linear elastic beam; shear stress uniform across the width b.
+
+```shell
+$ mechanical-engineering solve beam_shear_stress "V=30 kN" "Q=0.000375 m^3" "I=0.0001 m^4" "b=100 mm"
+tau = 1125000 Pa
+tau_MPa = 1.125
+q = 112500 N/m
+q_kN_per_m = 112.5
+  by: Transverse shear stress at a point of a beam section (V Q / I b)  (q = V Q/I; tau = V Q/(I b) (Q = A' y' of the area beyond the level))
+  V = 30000 N
+  Q = 0.000375 m^3
+  I = 0.0001 m^4
+  b = 0.1 m
+  assumes: I > 0, b > 0, Q >= 0; prismatic, linear elastic beam; shear stress uniform across the width b
+```
+
+In the worked example, V = 30 kN, Q = 0.000375 m^3, I = 0.0001 m^4, b = 100 mm go through the equation above and give tau = 1125000 Pa, tau_MPa = 1.125, q = 112500 N/m, q_kN_per_m = 112.5. It applies only when I > 0, b > 0, Q >= 0; prismatic, linear elastic beam; shear stress uniform across the width b: outside that it says what is wrong instead of returning a number.
 
 ### Structural analysis (2)
 

@@ -89,9 +89,16 @@
   "lewis_gear_bending_stress",
   "wahl_factor",
   "marin_endurance_limit",
-  "bolt_preload_torque"
+  "bolt_preload_torque",
+  "beam_bending_stress",
+  "beam_shear_stress",
+  "thermal_stress_restrained_bar",
+  "pin_shear_and_bearing_stress",
+  "gear_train_speed_ratio",
+  "moment_of_force_3d",
+  "force_system_resultant"
  ],
- "generated": "2026-10-24",
+ "generated": "2026-11-13",
  "tool": "tools/certify_procedures.py",
  "report": "release/procedure_certification.json",
  "weak_references": {

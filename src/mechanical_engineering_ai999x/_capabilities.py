@@ -15,7 +15,7 @@ def _bind(product) -> None:
     _P = product
 
 
-CapabilityId = Literal["angle_section_properties", "asme_elliptic_fatigue_safety_factor", "axial_bar_segments", "bar_fixed_at_both_ends", "beam_natural_frequency", "bearing_catalog_rating", "bearing_life_reliability", "belt_drive_power", "belt_friction_capstan", "bolt_preload_torque", "brittle_failure_mohr", "cantilever_point_load", "cantilever_triangular_load", "cantilever_udl", "channel_section_properties", "circular_section_properties", "combined_axial_and_bending_stress", "composite_section_properties", "continuous_beam_three_moment", "damped_sdof_parameters", "disc_clutch_torque", "dunkerley_critical_speed", "eccentric_bolt_group", "euler_buckling", "eurocode_fatigue_damage", "fatigue_life_mean_stress_correction", "fixed_fixed_beam_point_load", "fixed_fixed_beam_udl", "forced_vibration_amplitude", "four_bar_linkage_position", "generalized_hookes_law", "gerber_fatigue_safety_factor", "goodman_fatigue_safety_factor", "helical_compression_spring", "hollow_circular_section_properties", "hollow_rectangular_section_properties", "hollow_shaft_torsion", "i_section_properties", "johnson_column", "lewis_gear_bending_stress", "marin_endurance_limit", "mdof_spring_mass_chain", "miner_damage_sn_curve", "moment_of_a_force", "plane_stress_transformation", "planetary_gear_train", "polygon_section_properties", "power_screw_torque", "principal_stresses_2d", "principal_stresses_3d", "propped_cantilever_point_load", "propped_cantilever_udl", "rainflow_counting", "rainflow_fatigue_damage", "rayleigh_critical_speed", "rectangular_section_properties", "resultant_of_concurrent_forces", "rotating_disk_stresses", "rotating_unbalance_response", "sdof_free_response", "sdof_natural_frequency", "secant_column", "shaft_critical_speed_single_disk", "shaft_diameter_de_goodman", "shaft_fatigue_safety_factor", "shaft_power_transmission", "shaft_whirling_speeds", "shrink_fit_pressure", "simply_supported_beam_point_load", "simply_supported_beam_point_loads", "simply_supported_beam_udl", "slider_crank_kinematics", "sn_fatigue_life", "sn_fatigue_strength", "soderberg_fatigue_safety_factor", "solid_shaft_torsion", "spur_gear_contact_ratio", "statically_indeterminate_shaft", "stepped_shaft_twist", "strain_rosette", "t_section_properties", "thick_walled_cylinder", "thin_walled_pressure_vessel", "truss_member_forces", "two_cable_equilibrium", "two_rotor_torsional_vibration", "vibration_isolator_design", "vibration_transmissibility", "wahl_factor", "yield_criteria_safety_factor"]
+CapabilityId = Literal["angle_section_properties", "asme_elliptic_fatigue_safety_factor", "axial_bar_segments", "bar_fixed_at_both_ends", "beam_bending_stress", "beam_natural_frequency", "beam_shear_stress", "bearing_catalog_rating", "bearing_life_reliability", "belt_drive_power", "belt_friction_capstan", "bolt_preload_torque", "brittle_failure_mohr", "cantilever_point_load", "cantilever_triangular_load", "cantilever_udl", "channel_section_properties", "circular_section_properties", "combined_axial_and_bending_stress", "composite_section_properties", "continuous_beam_three_moment", "damped_sdof_parameters", "disc_clutch_torque", "dunkerley_critical_speed", "eccentric_bolt_group", "euler_buckling", "eurocode_fatigue_damage", "fatigue_life_mean_stress_correction", "fixed_fixed_beam_point_load", "fixed_fixed_beam_udl", "force_system_resultant", "forced_vibration_amplitude", "four_bar_linkage_position", "gear_train_speed_ratio", "generalized_hookes_law", "gerber_fatigue_safety_factor", "goodman_fatigue_safety_factor", "helical_compression_spring", "hollow_circular_section_properties", "hollow_rectangular_section_properties", "hollow_shaft_torsion", "i_section_properties", "johnson_column", "lewis_gear_bending_stress", "marin_endurance_limit", "mdof_spring_mass_chain", "miner_damage_sn_curve", "moment_of_a_force", "moment_of_force_3d", "pin_shear_and_bearing_stress", "plane_stress_transformation", "planetary_gear_train", "polygon_section_properties", "power_screw_torque", "principal_stresses_2d", "principal_stresses_3d", "propped_cantilever_point_load", "propped_cantilever_udl", "rainflow_counting", "rainflow_fatigue_damage", "rayleigh_critical_speed", "rectangular_section_properties", "resultant_of_concurrent_forces", "rotating_disk_stresses", "rotating_unbalance_response", "sdof_free_response", "sdof_natural_frequency", "secant_column", "shaft_critical_speed_single_disk", "shaft_diameter_de_goodman", "shaft_fatigue_safety_factor", "shaft_power_transmission", "shaft_whirling_speeds", "shrink_fit_pressure", "simply_supported_beam_point_load", "simply_supported_beam_point_loads", "simply_supported_beam_udl", "slider_crank_kinematics", "sn_fatigue_life", "sn_fatigue_strength", "soderberg_fatigue_safety_factor", "solid_shaft_torsion", "spur_gear_contact_ratio", "statically_indeterminate_shaft", "stepped_shaft_twist", "strain_rosette", "t_section_properties", "thermal_stress_restrained_bar", "thick_walled_cylinder", "thin_walled_pressure_vessel", "truss_member_forces", "two_cable_equilibrium", "two_rotor_torsional_vibration", "vibration_isolator_design", "vibration_transmissibility", "wahl_factor", "yield_criteria_safety_factor"]
 
 
 def solve(find: CapabilityId | str, given: dict | None = None, conditions=(), *, target: str | None = None, **inputs):
@@ -88,6 +88,20 @@ def bar_fixed_at_both_ends(P=None, L1=None, A1=None, E1=None, L2=None, A2=None, 
     given = {k: v for k, v in dict(P=P, L1=L1, A1=A1, E1=E1, L2=L2, A2=A2, E2=E2).items() if v is not None}
     return _P.solve("bar_fixed_at_both_ends", **given)
 
+def beam_bending_stress(M=None, I=None, y=None, c=None):
+    """Bending stress at a point of a beam section (flexure formula). The normal bending stress sigma = -M y/I at a distance y from the neutral axis of any section, and with the extreme-fibre distance c the largest stress |M| c/I and the elastic section modulus I/c.
+    Formula: \\sigma = -\\frac{M\\,y}{I},\\quad \\sigma_{\\max} = \\frac{|M|\\,c}{I} = \\frac{|M|}{S}
+    Inputs:
+        M: bending moment at the section (positive sagging: compression at the top)
+        I: second moment of area about the neutral (centroidal) axis
+        y: distance of the point from the neutral axis (positive upward, negative below)
+        c: distance from the neutral axis to the extreme fibre (optional) (optional)
+    Outputs: sigma (bending stress at the point (tension positive)), sigma_MPa (bending stress at the point, MPa (tension positive)), sigma_max_MPa (largest bending stress magnitude |M| c/I, MPa (with c)), S (elastic section modulus I/c (with c))
+    See also: help("beam_bending_stress")
+    """
+    given = {k: v for k, v in dict(M=M, I=I, y=y, c=c).items() if v is not None}
+    return _P.solve("beam_bending_stress", **given)
+
 def beam_natural_frequency(E=None, I=None, rho=None, A=None, L=None, ends=None, n=None):
     """Natural frequencies of a uniform beam (Euler-Bernoulli). The n-th bending natural frequency of a uniform Euler-Bernoulli beam with simply supported, cantilever, fixed-fixed, fixed-pinned or free-free ends.
     Formula: \\omega_n = (\\beta_nL)^2\\sqrt{\\frac{EI}{\\rho AL^4}},\\quad \\cos\\beta L\\cosh\\beta L = -1\\ \\text{(cantilever)}
@@ -104,6 +118,20 @@ def beam_natural_frequency(E=None, I=None, rho=None, A=None, L=None, ends=None, 
     """
     given = {k: v for k, v in dict(E=E, I=I, rho=rho, A=A, L=L, ends=ends, n=n).items() if v is not None}
     return _P.solve("beam_natural_frequency", **given)
+
+def beam_shear_stress(V=None, Q=None, I=None, b=None):
+    """Transverse shear stress at a point of a beam section (V Q / I b). The transverse (horizontal) shear stress tau = V Q/(I b) and the shear flow q = V Q/I at a level of a beam section, from the shear force, the first moment Q of the area beyond that level about the neutral axis, the second moment I and the width b at that level.
+    Formula: \\tau = \\frac{V\\,Q}{I\\,b},\\quad q = \\frac{V\\,Q}{I},\\quad Q = A'\\bar{y}'
+    Inputs:
+        V: shear force at the section
+        Q: first moment about the neutral axis of the section area beyond the level considered (m^3)
+        I: second moment of area of the whole section about the neutral axis
+        b: width of the section at the level considered
+    Outputs: tau (transverse shear stress at the level (sign of V)), tau_MPa (transverse shear stress, MPa), q (shear flow V Q/I (N/m)), q_kN_per_m (shear flow, kN/m)
+    See also: help("beam_shear_stress")
+    """
+    given = {k: v for k, v in dict(V=V, Q=Q, I=I, b=b).items() if v is not None}
+    return _P.solve("beam_shear_stress", **given)
 
 def bearing_catalog_rating(FD=None, LD=None, n=None, R=None, kind=None, af=None, LR=None, x0=None, theta=None, b=None):
     """Required catalogue rating of a rolling bearing. The basic dynamic load rating C10 a ball or roller bearing needs for a design load, life and speed at a required reliability (three-parameter Weibull, application factor).
@@ -438,6 +466,20 @@ def fixed_fixed_beam_udl(L=None, w=None, E=None, I=None):
     given = {k: v for k, v in dict(L=L, w=w, E=E, I=I).items() if v is not None}
     return _P.solve("fixed_fixed_beam_udl", **given)
 
+def force_system_resultant(F=None, P=None, C=None, O=None):
+    """Equivalent force-couple system and single resultant of a force system. The resultant force R and the couple M_O at a point O equivalent to a system of forces (at their points of application) and couples in 3D or in a plane; whether it reduces to a single force, a wrench, a couple or nothing; the central axis (line of action of the single resultant) through its point nearest O, the pitch, and for a planar system where that line crosses the x and y axes.
+    Formula: \\mathbf R = \\sum\\mathbf F_i,\\quad \\mathbf M_O = \\sum(\\mathbf r_i - \\mathbf r_O)\\times\\mathbf F_i + \\sum\\mathbf C_j,\\quad \\mathbf r_{axis} = \\mathbf r_O + \\frac{\\mathbf R\\times\\mathbf M_O}{|\\mathbf R|^2}
+    Inputs:
+        F: forces, one row [Fx Fy Fz] per force, in N
+        P: points of application, one row [x y z] per force, in m
+        C: couple moments, one row [Mx My Mz] per couple, in N*m (optional) (optional)
+        O: reference point [x, y, z] in m (default the origin) (optional)
+    Outputs: Rx (x component of the resultant force), Ry (y component of the resultant force), Rz (z component of the resultant force), R (magnitude of the resultant force), MOx (x component of the couple at O), MOy (y component of the couple at O), MOz (z component of the couple at O), MO (magnitude of the couple at O), result_type (single force, wrench, couple or equilibrium), axis_x (x of the central axis's point nearest O (line of action of a single resultant)), axis_y (y of that point), axis_z (z of that point), pitch (pitch of the wrench R . M_O/|R|^2 (0 for a single force)), M_parallel (couple component along R (0 for a single force)), x_intercept (where the single resultant's line of action crosses the x axis (planar systems)), y_intercept (where it crosses the y axis (planar systems))
+    See also: help("force_system_resultant")
+    """
+    given = {k: v for k, v in dict(F=F, P=P, C=C, O=O).items() if v is not None}
+    return _P.solve("force_system_resultant", **given)
+
 def forced_vibration_amplitude(m=None, c=None, k=None, F0=None, omega=None):
     """Steady-state response to a harmonic force. The steady-state amplitude, phase lag and dynamic magnification factor of a damped spring-mass system driven by a harmonic force F0 cos(omega t).
     Formula: X = \\frac{F_0/k}{\\sqrt{(1-r^2)^2 + (2\\zeta r)^2}},\\quad \\tan\\phi = \\frac{2\\zeta r}{1-r^2}
@@ -468,6 +510,21 @@ def four_bar_linkage_position(a=None, b=None, c=None, d=None, theta2=None, branc
     """
     given = {k: v for k, v in dict(a=a, b=b, c=c, d=d, theta2=theta2, branch=branch).items() if v is not None}
     return _P.solve("four_bar_linkage_position", **given)
+
+def gear_train_speed_ratio(drivers=None, driven=None, n_in=None, T_in=None, eta=None):
+    """Simple and compound gear trains: ratio, output speed and torque. The velocity ratio, signed train value, output speed (and its direction) and output torque of a train of external spur gears, simple (idlers included) or compound, from the driving and driven tooth counts of each mesh.
+    Formula: e = \\frac{n_{out}}{n_{in}} = (-1)^k\\frac{\\prod N_{driver}}{\\prod N_{driven}},\\quad T_{out} = \\eta\\,T_{in}\\left|\\frac{n_{in}}{n_{out}}\\right|
+    Inputs:
+        drivers: teeth on the driving gear of each mesh, from the input shaft (a list)
+        driven: teeth on the driven gear of each mesh, in the same order (a list)
+        n_in: input speed (rpm or rad/s)
+        T_in: input torque (optional) (optional)
+        eta: overall efficiency of the train (default 1; 0.95 or 95%) (optional)
+    Outputs: velocity_ratio (velocity ratio n_in/|n_out| = product of driven teeth / product of driving teeth), train_value (signed train value n_out/n_in (negative: opposite direction)), n_out (output speed (signed, same sense as the input when positive)), n_out_rpm (output speed, rpm (signed)), meshes (number of meshes), T_out (output torque eta T_in x velocity ratio (with T_in))
+    See also: help("gear_train_speed_ratio")
+    """
+    given = {k: v for k, v in dict(drivers=drivers, driven=driven, n_in=n_in, T_in=T_in, eta=eta).items() if v is not None}
+    return _P.solve("gear_train_speed_ratio", **given)
 
 def generalized_hookes_law(sx=None, sy=None, sz=None, txy=None, tyz=None, tzx=None, E=None, nu=None):
     """Generalized Hooke's law: strains from a 3D stress state. The six strain components and the volumetric strain of an isotropic linear-elastic material under a general three-dimensional stress state.
@@ -676,6 +733,37 @@ def moment_of_a_force(Fx=None, Fy=None, x=None, y=None, x0=None, y0=None):
     """
     given = {k: v for k, v in dict(Fx=Fx, Fy=Fy, x=x, y=y, x0=x0, y0=y0).items() if v is not None}
     return _P.solve("moment_of_a_force", **given)
+
+def moment_of_force_3d(r=None, F=None, O=None, axis=None):
+    """Moment of a force about a point and about an axis (3D). The moment vector r x F of a force F applied at a point r about a point O in three dimensions, its magnitude, the perpendicular distance from O to the line of action, and (with an axis direction) the moment about the axis through O.
+    Formula: \\mathbf M_O = (\\mathbf r - \\mathbf r_O)\\times\\mathbf F,\\quad M_{axis} = \\hat{\\mathbf u}\\cdot\\mathbf M_O,\\quad d = \\frac{|\\mathbf M_O|}{|\\mathbf F|}
+    Inputs:
+        r: point of application [x, y, z] in m
+        F: force [Fx, Fy, Fz] in N
+        O: moment centre [x, y, z] in m (default the origin; the axis passes through it) (optional)
+        axis: direction of the axis [ux, uy, uz] (any length, not zero) (optional)
+    Outputs: Mx (x component of the moment about O), My (y component of the moment about O), Mz (z component of the moment about O), M (magnitude of the moment about O), d (perpendicular distance from O to the line of action), M_axis (moment about the axis through O (right-hand rule about the axis direction), when the axis is given)
+    See also: help("moment_of_force_3d")
+    """
+    given = {k: v for k, v in dict(r=r, F=F, O=O, axis=axis).items() if v is not None}
+    return _P.solve("moment_of_force_3d", **given)
+
+def pin_shear_and_bearing_stress(P=None, d=None, t=None, n_bolts=None, planes=None, tau_allow=None, sb_allow=None):
+    """Direct shear and bearing stress in pins, bolts and rivets. The average shear stress P/(n m pi d^2/4) in the bolts, pins or rivets of a joint (n fasteners, m shear planes each), the bearing stress P/(n d t) on the plate, and the safety factors against allowable stresses.
+    Formula: \\tau = \\frac{P}{n\\,m\\,\\pi d^2/4},\\quad \\sigma_b = \\frac{P}{n\\,d\\,t}
+    Inputs:
+        P: load carried by the joint
+        d: fastener (pin, bolt, rivet) diameter
+        t: thickness of the plate bearing on the fastener (optional; the critical plate) (optional)
+        n_bolts: number of fasteners sharing the load (default 1) (optional)
+        planes: shear planes per fastener: 1 single shear, 2 double shear (default 1) (optional)
+        tau_allow: allowable (or failure) shear stress of the fastener (optional) (optional)
+        sb_allow: allowable (or failure) bearing stress (optional; needs t) (optional)
+    Outputs: A_mm2 (area of one fastener's cross-section, mm^2), tau (average shear stress in the fasteners), tau_MPa (average shear stress, MPa), sigma_b (bearing stress on the plate (with t)), sigma_b_MPa (bearing stress, MPa (with t)), n_shear (safety factor in shear (with tau_allow)), n_bearing (safety factor in bearing (with t and sb_allow))
+    See also: help("pin_shear_and_bearing_stress")
+    """
+    given = {k: v for k, v in dict(P=P, d=d, t=t, n_bolts=n_bolts, planes=planes, tau_allow=tau_allow, sb_allow=sb_allow).items() if v is not None}
+    return _P.solve("pin_shear_and_bearing_stress", **given)
 
 def plane_stress_transformation(sx=None, sy=None, txy=None, theta=None):
     """Plane stress transformation to rotated axes. The normal and shear stresses on axes rotated counterclockwise by theta from x, for a plane state of stress.
@@ -1215,6 +1303,22 @@ def t_section_properties(bf=None, tf=None, h=None, tw=None):
     given = {k: v for k, v in dict(bf=bf, tf=tf, h=h, tw=tw).items() if v is not None}
     return _P.solve("t_section_properties", **given)
 
+def thermal_stress_restrained_bar(E=None, alpha=None, dT=None, L=None, A=None, gap=None):
+    """Thermal stress and force in a restrained bar (with an optional gap). The thermal strain, free expansion, stress and wall force of a bar heated or cooled between rigid supports, fully restrained or with a clearance (gap) that the expansion must close first.
+    Formula: \\sigma = -E\\,\\frac{\\alpha\\,\\Delta T\\,L - \\delta_{gap}}{L}\\ \\ (\\alpha\\Delta T L > \\delta_{gap}),\\quad F = \\sigma A
+    Inputs:
+        E: Young's modulus
+        alpha: coefficient of linear thermal expansion
+        dT: temperature change (positive = heating)
+        L: bar length (needed with a gap) (optional)
+        A: cross-sectional area (for the force) (optional)
+        gap: clearance between the bar end and the support before heating (default 0) (optional)
+    Outputs: eps_thermal (free thermal strain alpha dT), eps_mech (mechanical (stress-producing) strain), sigma (stress in the bar (negative = compression)), sigma_MPa (stress in the bar, MPa (negative = compression)), free_expansion_mm (free expansion alpha dT L, mm (with L)), force (axial force in the bar (negative = compression; with A)), force_kN (axial force, kN (with A))
+    See also: help("thermal_stress_restrained_bar")
+    """
+    given = {k: v for k, v in dict(E=E, alpha=alpha, dT=dT, L=L, A=A, gap=gap).items() if v is not None}
+    return _P.solve("thermal_stress_restrained_bar", **given)
+
 def thick_walled_cylinder(pi=None, po=None, a=None, b=None, r=None):
     """Thick-walled cylinder under pressure (Lame equations). Radial and hoop stresses at a radius, the hoop stresses at both surfaces, the maximum shear at the bore and the closed-end axial stress of a thick cylinder under internal and external pressure.
     Formula: \\sigma_{r,\\theta} = \\frac{p_ia^2 - p_ob^2}{b^2-a^2} \\mp \\frac{(p_i-p_o)a^2b^2}{(b^2-a^2)r^2}
@@ -1342,4 +1446,4 @@ def yield_criteria_safety_factor(Sy=None, sx=None, sy=None, sz=None, txy=None, t
     return _P.solve("yield_criteria_safety_factor", **given)
 
 
-__all__ = ["CapabilityId", "solve", "help", "angle_section_properties", "asme_elliptic_fatigue_safety_factor", "axial_bar_segments", "bar_fixed_at_both_ends", "beam_natural_frequency", "bearing_catalog_rating", "bearing_life_reliability", "belt_drive_power", "belt_friction_capstan", "bolt_preload_torque", "brittle_failure_mohr", "cantilever_point_load", "cantilever_triangular_load", "cantilever_udl", "channel_section_properties", "circular_section_properties", "combined_axial_and_bending_stress", "composite_section_properties", "continuous_beam_three_moment", "damped_sdof_parameters", "disc_clutch_torque", "dunkerley_critical_speed", "eccentric_bolt_group", "euler_buckling", "eurocode_fatigue_damage", "fatigue_life_mean_stress_correction", "fixed_fixed_beam_point_load", "fixed_fixed_beam_udl", "forced_vibration_amplitude", "four_bar_linkage_position", "generalized_hookes_law", "gerber_fatigue_safety_factor", "goodman_fatigue_safety_factor", "helical_compression_spring", "hollow_circular_section_properties", "hollow_rectangular_section_properties", "hollow_shaft_torsion", "i_section_properties", "johnson_column", "lewis_gear_bending_stress", "marin_endurance_limit", "mdof_spring_mass_chain", "miner_damage_sn_curve", "moment_of_a_force", "plane_stress_transformation", "planetary_gear_train", "polygon_section_properties", "power_screw_torque", "principal_stresses_2d", "principal_stresses_3d", "propped_cantilever_point_load", "propped_cantilever_udl", "rainflow_counting", "rainflow_fatigue_damage", "rayleigh_critical_speed", "rectangular_section_properties", "resultant_of_concurrent_forces", "rotating_disk_stresses", "rotating_unbalance_response", "sdof_free_response", "sdof_natural_frequency", "secant_column", "shaft_critical_speed_single_disk", "shaft_diameter_de_goodman", "shaft_fatigue_safety_factor", "shaft_power_transmission", "shaft_whirling_speeds", "shrink_fit_pressure", "simply_supported_beam_point_load", "simply_supported_beam_point_loads", "simply_supported_beam_udl", "slider_crank_kinematics", "sn_fatigue_life", "sn_fatigue_strength", "soderberg_fatigue_safety_factor", "solid_shaft_torsion", "spur_gear_contact_ratio", "statically_indeterminate_shaft", "stepped_shaft_twist", "strain_rosette", "t_section_properties", "thick_walled_cylinder", "thin_walled_pressure_vessel", "truss_member_forces", "two_cable_equilibrium", "two_rotor_torsional_vibration", "vibration_isolator_design", "vibration_transmissibility", "wahl_factor", "yield_criteria_safety_factor"]
+__all__ = ["CapabilityId", "solve", "help", "angle_section_properties", "asme_elliptic_fatigue_safety_factor", "axial_bar_segments", "bar_fixed_at_both_ends", "beam_bending_stress", "beam_natural_frequency", "beam_shear_stress", "bearing_catalog_rating", "bearing_life_reliability", "belt_drive_power", "belt_friction_capstan", "bolt_preload_torque", "brittle_failure_mohr", "cantilever_point_load", "cantilever_triangular_load", "cantilever_udl", "channel_section_properties", "circular_section_properties", "combined_axial_and_bending_stress", "composite_section_properties", "continuous_beam_three_moment", "damped_sdof_parameters", "disc_clutch_torque", "dunkerley_critical_speed", "eccentric_bolt_group", "euler_buckling", "eurocode_fatigue_damage", "fatigue_life_mean_stress_correction", "fixed_fixed_beam_point_load", "fixed_fixed_beam_udl", "force_system_resultant", "forced_vibration_amplitude", "four_bar_linkage_position", "gear_train_speed_ratio", "generalized_hookes_law", "gerber_fatigue_safety_factor", "goodman_fatigue_safety_factor", "helical_compression_spring", "hollow_circular_section_properties", "hollow_rectangular_section_properties", "hollow_shaft_torsion", "i_section_properties", "johnson_column", "lewis_gear_bending_stress", "marin_endurance_limit", "mdof_spring_mass_chain", "miner_damage_sn_curve", "moment_of_a_force", "moment_of_force_3d", "pin_shear_and_bearing_stress", "plane_stress_transformation", "planetary_gear_train", "polygon_section_properties", "power_screw_torque", "principal_stresses_2d", "principal_stresses_3d", "propped_cantilever_point_load", "propped_cantilever_udl", "rainflow_counting", "rainflow_fatigue_damage", "rayleigh_critical_speed", "rectangular_section_properties", "resultant_of_concurrent_forces", "rotating_disk_stresses", "rotating_unbalance_response", "sdof_free_response", "sdof_natural_frequency", "secant_column", "shaft_critical_speed_single_disk", "shaft_diameter_de_goodman", "shaft_fatigue_safety_factor", "shaft_power_transmission", "shaft_whirling_speeds", "shrink_fit_pressure", "simply_supported_beam_point_load", "simply_supported_beam_point_loads", "simply_supported_beam_udl", "slider_crank_kinematics", "sn_fatigue_life", "sn_fatigue_strength", "soderberg_fatigue_safety_factor", "solid_shaft_torsion", "spur_gear_contact_ratio", "statically_indeterminate_shaft", "stepped_shaft_twist", "strain_rosette", "t_section_properties", "thermal_stress_restrained_bar", "thick_walled_cylinder", "thin_walled_pressure_vessel", "truss_member_forces", "two_cable_equilibrium", "two_rotor_torsional_vibration", "vibration_isolator_design", "vibration_transmissibility", "wahl_factor", "yield_criteria_safety_factor"]

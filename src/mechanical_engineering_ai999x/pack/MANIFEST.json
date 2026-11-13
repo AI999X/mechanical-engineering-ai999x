@@ -1,5 +1,5 @@
 {
- "package": "1.5.0",
+ "package": "1.6.0",
  "pack": "1.0.1",
  "knowledge_db": null,
  "files": {
@@ -7,8 +7,8 @@
   "dictionary/terms.json": "3781eac9e78cc74a52dfbb7f7c6ecd5f218e2a208be5aad6dabd1094f82ddc60",
   "knowledge/relations.json": "d0932885ce119f8bfbb1dac9602a10118defc96ababd24c15ae5ec76841bb672",
   "knowledge/reference_cases.json": "7414a14e2c4202a7fae8cdd14e1a2ef7267f35a9665b0633001349c698d4e4e7",
-  "capabilities/procedures.py": "7fcfd8b1e983632eb43424f8c134ee709bfc93609dfedc2808233bfae89c8619",
-  "capabilities/procedures_certified.json": "bbb51647d8575a09baea55612532bd80dd87b25b3d2bbf8da4544b1fc50504cd",
+  "capabilities/procedures.py": "df0afa20277fb0b5e05d940eaa9b3c9b3565ba1886ca8d2894c957ef8b61e23b",
+  "capabilities/procedures_certified.json": "185449ba3640c9fa2dfe9a68d198fe0e6d773ec0882e18360f3cb44e8f39d139",
   "mechanical_engineering_knowledge_public.sqlite": "e3adc73cf7f1b4c6583b1ddd98ca79e7fb5e2769260a0058b850147514b323d6"
  },
  "engine": [

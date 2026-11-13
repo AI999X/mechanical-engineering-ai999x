@@ -5662,3 +5662,714 @@ _add("bolt_preload_torque",
                 {"q": "Bolt torque: K = 0.2, d = 12 mm, T = 60 N*m", "outputs": {"F_kN": 25.0}},
                 {"q": "Bolt torque: K = 0.2, d = 12 mm, F = 25 kN, T = 60 N*m", "outcome": "INVALID_INPUT"},
                 {"q": "Bolt torque: K = 0.2, F = 25 kN", "outcome": "NEEDS_INPUT"}])
+
+
+# ================================================================================================ core gaps (2026-11-12)
+# Stresses in beams at a point of a general section, thermal stress of a restrained bar, direct shear and bearing in
+# pinned connections, simple and compound gear trains.
+def beam_bending_stress(M, I, y, c=None):
+    _fin("M and y", M, y)
+    _pos("the second moment of area I", I)
+    s = -M * y / I
+    out = {"sigma": s, "sigma_MPa": s / 1e6}
+    if c is not None:
+        _pos("the extreme-fibre distance c", c)
+        if abs(y) > c * (1 + 1e-12):
+            raise ValueError("the point must lie inside the section: |y| must not exceed the extreme-fibre distance c")
+        out["sigma_max_MPa"] = abs(M) * c / I / 1e6
+        out["S"] = I / c
+    return _out(**out)
+
+
+def ref_beam_bending_stress(M, I, y, c=None):
+    """Equilibrium of a linear stress field sigma = a + k y over a reference rectangle with the same I (unit width,
+    depth (12 I)^(1/3)): the area integrals are taken by scipy quad, the two conditions (no axial force; the internal
+    moment about the neutral axis balances M, compression at +y for a sagging M) solved for a and k with numpy, and
+    the field evaluated at y (and at +-c)."""
+    import numpy as np
+    from scipy.integrate import quad
+    h = (12 * I) ** (1 / 3)
+    A0 = quad(lambda t: 1.0, -h / 2, h / 2, epsabs=0, epsrel=1e-13)[0]
+    A1 = quad(lambda t: t, -h / 2, h / 2, epsabs=0, epsrel=1e-13)[0]
+    A2 = quad(lambda t: t * t, -h / 2, h / 2, epsabs=0, epsrel=1e-13)[0]
+    a, k = np.linalg.solve(np.array([[A0, A1], [-A1, -A2]]), np.array([0.0, M]))
+    s = float(a + k * y)
+    out = {"sigma": s, "sigma_MPa": s / 1e6}
+    if c is not None:
+        out["sigma_max_MPa"] = max(abs(float(a + k * c)), abs(float(a - k * c))) / 1e6
+        out["S"] = A2 / c
+    return out
+
+
+def _rand_bending(rng):
+    I = _lu(rng, 1e-8, 1e-3)
+    c = _lu(rng, 0.01, 0.5)
+    x = {"M": _lu(rng, 50, 1e6) * rng.choice([1, -1]), "I": I, "y": c * rng.uniform(0.05, 1.0) * rng.choice([1, -1])}
+    if rng.random() < 0.5:
+        x["c"] = c
+    return x
+
+
+_add("beam_bending_stress",
+     name="Bending stress at a point of a beam section (flexure formula)", topic="stresses in beams / bending",
+     purpose="The normal bending stress sigma = -M y/I at a distance y from the neutral axis of any section, and with the extreme-fibre distance c the largest stress |M| c/I and the elastic section modulus I/c.",
+     inputs=[_phys("M", "bending_moment", "bending moment at the section (positive sagging: compression at the top)"),
+             _phys("I", "second_moment_of_area", "second moment of area about the neutral (centroidal) axis"),
+             _phys("y", "length", "distance of the point from the neutral axis (positive upward, negative below)"),
+             _phys("c", "length", "distance from the neutral axis to the extreme fibre (optional)", required=False)],
+     outputs=[_o("sigma", "stress", "bending stress at the point (tension positive)"), _o("sigma_MPa", "number", "bending stress at the point, MPa (tension positive)"),
+              _o("sigma_max_MPa", "number", "largest bending stress magnitude |M| c/I, MPa (with c)"), _o("S", "section_modulus", "elastic section modulus I/c (with c)")],
+     primary="sigma_MPa", conditions=["I > 0", "c > 0 and |y| <= c when c is given", "linear elastic, plane sections, bending about a principal centroidal axis"],
+     method="sigma = -M y/I (sagging M compresses the fibres above the neutral axis); sigma_max = |M| c/I; S = I/c",
+     latex=r"\sigma = -\frac{M\,y}{I},\quad \sigma_{\max} = \frac{|M|\,c}{I} = \frac{|M|}{S}",
+     run=beam_bending_stress,
+     parse=lambda q: _pairs(q, r"beam bending stress|bending stress(?: at a point)?|flexure formula", {"M": "M", "I": "I", "y": "y", "c": "c"}, phys={"M", "I", "y", "c"}),
+     reference=ref_beam_bending_stress,
+     wrong=_safe(lambda M, I, y, c=None: (lambda o: dict(o, sigma=_r(-o["sigma"]), sigma_MPa=_r(-o["sigma_MPa"])))(beam_bending_stress(M, I, y, c))),
+     random_inputs=_rand_bending,
+     templates=["Bending stress: M = 10 kN*m, I = 8e-6 m^4, y = 100 mm", "Bending stress: M = 10 kN*m, I = 8e-6 m^4, y = 100 mm, c = 150 mm"],
+     examples=[{"inputs": {"M": 10e3, "I": 8e-6, "y": 0.1}, "outputs": {"sigma_MPa": -125.0, "sigma": -125e6}},
+               {"inputs": {"M": 10e3, "I": 8e-6, "y": -0.1, "c": 0.15}, "outputs": {"sigma_MPa": 125.0, "sigma_max_MPa": 187.5, "S": 8e-6 / 0.15}},
+               {"inputs": {"M": -4e3, "I": 2e-6, "y": -0.05}, "outputs": {"sigma_MPa": -100.0}}],
+     questions=[{"q": "Bending stress: M = 10 kN*m, I = 8e-6 m^4, y = 100 mm", "outputs": {"sigma_MPa": -125.0}},
+                {"q": "Bending stress: M = 10 kN*m, I = 8e-6 m^4, y = -100 mm, c = 150 mm", "outputs": {"sigma_MPa": 125.0, "sigma_max_MPa": 187.5}},
+                {"q": "Bending stress: M = 10 kN*m, I = 8e-6 m^4, y = 200 mm, c = 150 mm", "outcome": "INVALID_INPUT"},
+                {"q": "Bending stress: M = 10 kN*m, I = 8e-6 m^4", "outcome": "NEEDS_INPUT"}])
+
+
+def beam_shear_stress(V, Q, I, b):
+    _fin("the shear force V", V)
+    _pos("I and the width b", I, b)
+    _nonneg("the first moment of area Q", Q)
+    q = V * Q / I
+    tau = q / b
+    return _out(tau=tau, tau_MPa=tau / 1e6, q=q, q_kN_per_m=q / 1e3)
+
+
+def ref_beam_shear_stress(V, Q, I, b):
+    """Equilibrium of a slice dx of the part beyond the cut, in exact rational arithmetic (sympy): the longitudinal
+    force on that part is F(x) = M(x) Q/I with M(x) = M0 + V x; the shear flow is dF/dx (sympy.diff) and the stress
+    the flow over the width. (A weaker reference: the same derivation, carried out symbolically.)"""
+    import sympy as sp
+    x, M0 = sp.symbols("x M0", real=True)
+    Vr, Qr, Ir, br = (sp.Rational(repr(v)) for v in (V, Q, I, b))
+    F = (M0 + Vr * x) * Qr / Ir
+    q = sp.diff(F, x)
+    tau = q / br
+    return {"tau": float(tau), "tau_MPa": float(tau / 10 ** 6), "q": float(q), "q_kN_per_m": float(q / 1000)}
+
+
+def _rand_shear(rng):
+    """A rectangular-section-like case: Q of the part beyond a cut at y1 of a b x h rectangle, I of the whole."""
+    bb, h = _lu(rng, 0.01, 0.4), _lu(rng, 0.02, 0.8)
+    y1 = rng.uniform(0.0, 0.45) * h
+    return {"V": _lu(rng, 100, 1e6) * rng.choice([1, -1]), "Q": bb / 2 * (h * h / 4 - y1 * y1), "I": bb * h ** 3 / 12, "b": bb}
+
+
+_add("beam_shear_stress",
+     name="Transverse shear stress at a point of a beam section (V Q / I b)", topic="stresses in beams / shear",
+     purpose="The transverse (horizontal) shear stress tau = V Q/(I b) and the shear flow q = V Q/I at a level of a beam section, from the shear force, the first moment Q of the area beyond that level about the neutral axis, the second moment I and the width b at that level.",
+     inputs=[_phys("V", "force", "shear force at the section"),
+             _phys("Q", "section_modulus", "first moment about the neutral axis of the section area beyond the level considered (m^3)"),
+             _phys("I", "second_moment_of_area", "second moment of area of the whole section about the neutral axis"),
+             _phys("b", "length", "width of the section at the level considered")],
+     outputs=[_o("tau", "shear_stress", "transverse shear stress at the level (sign of V)"), _o("tau_MPa", "number", "transverse shear stress, MPa"),
+              _o("q", "distributed_load", "shear flow V Q/I (N/m)"), _o("q_kN_per_m", "number", "shear flow, kN/m")],
+     primary="tau_MPa", conditions=["I > 0, b > 0, Q >= 0", "prismatic, linear elastic beam; shear stress uniform across the width b"],
+     method="q = V Q/I; tau = V Q/(I b) (Q = A' y' of the area beyond the level)",
+     latex=r"\tau = \frac{V\,Q}{I\,b},\quad q = \frac{V\,Q}{I},\quad Q = A'\bar{y}'",
+     run=beam_shear_stress,
+     parse=lambda q: _pairs(q, r"beam shear stress|transverse shear stress|shear stress in a beam", {"V": "V", "Q": "Q", "I": "I", "b": "b", "t": "b"}, phys={"V", "Q", "I", "b"}),
+     reference=ref_beam_shear_stress,
+     wrong=_safe(lambda V, Q, I, b: (lambda o: dict(o, tau=_r(o["q"]), tau_MPa=_r(o["q"] / 1e6)))(beam_shear_stress(V, Q, I, b))),
+     random_inputs=_rand_shear,
+     templates=["Beam shear stress: V = 30 kN, Q = 3.75e-4 m^3, I = 1e-4 m^4, b = 100 mm"],
+     examples=[{"inputs": {"V": 30e3, "Q": 3.75e-4, "I": 1e-4, "b": 0.1}, "outputs": {"tau_MPa": 1.125, "q": 112500.0}},
+               {"inputs": {"V": 20e3, "Q": 0.1 / 2 * (0.3 ** 2 / 4), "I": 0.1 * 0.3 ** 3 / 12, "b": 0.1}, "outputs": {"tau_MPa": 1.5 * 20e3 / (0.1 * 0.3) / 1e6}}],
+     questions=[{"q": "Beam shear stress: V = 30 kN, Q = 3.75e-4 m^3, I = 1e-4 m^4, b = 100 mm", "outputs": {"tau_MPa": 1.125}},
+                {"q": "Beam shear stress: V = 30 kN, Q = 3.75e-4 m^3, I = 1e-4 m^4, b = -100 mm", "outcome": "INVALID_INPUT"},
+                {"q": "Beam shear stress: V = 30 kN, Q = 3.75e-4 m^3, I = 1e-4 m^4", "outcome": "NEEDS_INPUT"}])
+
+
+def restrained_bar_thermal(E, alpha, dT, L=None, A=None, gap=0.0):
+    _pos("E and alpha", E, alpha)
+    _fin("the temperature change dT", dT)
+    _nonneg("the gap", gap)
+    if L is not None:
+        _pos("the length L", L)
+    if A is not None:
+        _pos("the area A", A)
+    if gap > 0 and L is None:
+        raise ValueError("the bar length L is needed when a gap is given")
+    eps_t = alpha * dT
+    if gap > 0:
+        closing = eps_t * L - gap
+        if closing > 0:
+            eps_m = -closing / L
+        else:
+            eps_m = 0.0
+    else:
+        eps_m = -eps_t
+    s = E * eps_m
+    out = {"eps_thermal": eps_t, "eps_mech": eps_m, "sigma": s, "sigma_MPa": s / 1e6}
+    if L is not None:
+        out["free_expansion_mm"] = eps_t * L * 1e3
+    if A is not None:
+        out["force"] = s * A
+        out["force_kN"] = s * A / 1e3
+    return _out(**out)
+
+
+def ref_restrained_bar_thermal(E, alpha, dT, L=None, A=None, gap=0.0):
+    """Compatibility re-solved numerically: the wall force R (compression positive) is the root of
+    alpha dT L - R L/(A E) - gap = 0 (scipy brentq on strains between -1 and 1) when the free expansion closes the
+    gap, else R = 0; a unit bar stands in for an L or A not given (the stress does not depend on them)."""
+    from scipy.optimize import brentq
+    LL = L if L is not None else 1.0
+    AA = A if A is not None else 1e-4
+    g = gap or 0.0
+    free = alpha * dT * LL
+    if g > 0 and free <= g:
+        R = 0.0
+    else:
+        R = brentq(lambda r: free - r * LL / (AA * E) - g, -AA * E, AA * E, xtol=1e-200, rtol=8.9e-16, maxiter=500)
+    s = -R / AA
+    out = {"eps_thermal": alpha * dT, "eps_mech": s / E, "sigma": s, "sigma_MPa": s / 1e6}
+    if L is not None:
+        out["free_expansion_mm"] = free * 1e3
+    if A is not None:
+        out["force"] = -R
+        out["force_kN"] = -R / 1e3
+    return out
+
+
+def _rand_thermal(rng):
+    x = {"E": rng.uniform(40e9, 220e9), "alpha": rng.uniform(5e-6, 25e-6), "dT": rng.uniform(10, 250) * rng.choice([1, 1, -1])}
+    if rng.random() < 0.8:
+        x["L"] = rng.uniform(0.2, 5.0)
+    if rng.random() < 0.6:
+        x["A"] = _lu(rng, 1e-5, 1e-2)
+    if "L" in x and x["dT"] > 0 and rng.random() < 0.5:
+        x["gap"] = x["alpha"] * x["dT"] * x["L"] * rng.uniform(0.1, 0.8)
+    return x
+
+
+_add("thermal_stress_restrained_bar",
+     name="Thermal stress and force in a restrained bar (with an optional gap)", topic="stress and strain / thermal stress",
+     purpose="The thermal strain, free expansion, stress and wall force of a bar heated or cooled between rigid supports, fully restrained or with a clearance (gap) that the expansion must close first.",
+     inputs=[_phys("E", "elastic_modulus", "Young's modulus"), _phys("alpha", "expansion_coefficient", "coefficient of linear thermal expansion"),
+             _phys("dT", "temperature_difference", "temperature change (positive = heating)"),
+             _phys("L", "length", "bar length (needed with a gap)", required=False), _phys("A", "area", "cross-sectional area (for the force)", required=False),
+             _phys("gap", "length", "clearance between the bar end and the support before heating (default 0)", required=False)],
+     outputs=[_o("eps_thermal", "number", "free thermal strain alpha dT"), _o("eps_mech", "number", "mechanical (stress-producing) strain"),
+              _o("sigma", "stress", "stress in the bar (negative = compression)"), _o("sigma_MPa", "number", "stress in the bar, MPa (negative = compression)"),
+              _o("free_expansion_mm", "number", "free expansion alpha dT L, mm (with L)"), _o("force", "force", "axial force in the bar (negative = compression; with A)"),
+              _o("force_kN", "number", "axial force, kN (with A)")],
+     primary="sigma_MPa", conditions=["E, alpha > 0", "gap >= 0; a gap needs L", "rigid supports, linear elastic, no buckling", "with a gap the bar touches only when heated enough to close it"],
+     method="fully restrained: sigma = -E alpha dT; with a gap: sigma = -E (alpha dT L - gap)/L if alpha dT L > gap, else 0; F = sigma A",
+     latex=r"\sigma = -E\,\frac{\alpha\,\Delta T\,L - \delta_{gap}}{L}\ \ (\alpha\Delta T L > \delta_{gap}),\quad F = \sigma A",
+     run=restrained_bar_thermal,
+     parse=lambda q: _pairs(q, r"restrained bar thermal stress|thermal stress in a restrained bar|thermal stress of a restrained bar",
+                            {"E": "E", "alpha": "alpha", "dT": "dT", "L": "L", "A": "A", "gap": "gap"}, phys={"E", "alpha", "dT", "L", "A", "gap"}),
+     reference=ref_restrained_bar_thermal,
+     wrong=_safe(lambda E, alpha, dT, L=None, A=None, gap=0.0: (lambda o: dict(o, sigma=_r(-o["sigma"]), sigma_MPa=_r(-o["sigma_MPa"]),
+                                                                              **({"force": _r(-o["force"]), "force_kN": _r(-o["force_kN"])} if "force" in o else {})))(
+         restrained_bar_thermal(E, alpha, dT, L, A, gap))),
+     random_inputs=_rand_thermal,
+     templates=["Restrained bar thermal stress: E = 200 GPa, alpha = 12e-6 1/K, dT = 50 K, L = 2 m, A = 500 mm^2",
+                "Restrained bar thermal stress: E = 200 GPa, alpha = 12e-6 1/K, dT = 50 K, L = 2 m, A = 500 mm^2, gap = 0.5 mm"],
+     examples=[{"inputs": {"E": 200e9, "alpha": 12e-6, "dT": 50.0, "L": 2.0, "A": 5e-4}, "outputs": {"sigma_MPa": -120.0, "force_kN": -60.0, "free_expansion_mm": 1.2}},
+               {"inputs": {"E": 200e9, "alpha": 12e-6, "dT": 50.0, "L": 2.0, "A": 5e-4, "gap": 0.0005}, "outputs": {"sigma_MPa": -70.0, "force_kN": -35.0, "eps_mech": -3.5e-4}},
+               {"inputs": {"E": 200e9, "alpha": 12e-6, "dT": 50.0, "L": 2.0, "gap": 0.0015}, "outputs": {"sigma_MPa": 0.0}}],
+     questions=[{"q": "Restrained bar thermal stress: E = 200 GPa, alpha = 12e-6 1/K, dT = 50 K, L = 2 m, A = 500 mm^2", "outputs": {"sigma_MPa": -120.0, "force_kN": -60.0}},
+                {"q": "Restrained bar thermal stress: E = 200 GPa, alpha = 12e-6 1/K, dT = 50 K, L = 2 m, A = 500 mm^2, gap = 0.5 mm", "outputs": {"sigma_MPa": -70.0}},
+                {"q": "Restrained bar thermal stress: E = 200 GPa, alpha = 12e-6 1/K, dT = 50 K, gap = 0.5 mm", "outcome": "INVALID_INPUT"},
+                {"q": "Restrained bar thermal stress: E = 200 GPa, dT = 50 K", "outcome": "NEEDS_INPUT"}])
+
+
+def pin_shear_bearing(P, d, t=None, n_bolts=1, planes=1, tau_allow=None, sb_allow=None):
+    _pos("the load P and the diameter d", P, d)
+    if not (n_bolts >= 1 and n_bolts <= 200 and n_bolts == math.floor(n_bolts)):
+        raise ValueError("the number of bolts must be a whole number from 1 to 200")
+    if not (planes >= 1 and planes <= 4 and planes == math.floor(planes)):
+        raise ValueError("the number of shear planes per bolt must be 1, 2, 3 or 4 (1 = single shear, 2 = double shear)")
+    A = math.pi * d * d / 4
+    tau = P / (n_bolts * planes * A)
+    out = {"A_mm2": A * 1e6, "tau": tau, "tau_MPa": tau / 1e6}
+    if tau_allow is not None:
+        _pos("the allowable shear stress", tau_allow)
+        out["n_shear"] = tau_allow / tau
+    if t is not None:
+        _pos("the plate thickness t", t)
+        sb = P / (n_bolts * d * t)
+        out["sigma_b"] = sb
+        out["sigma_b_MPa"] = sb / 1e6
+        if sb_allow is not None:
+            _pos("the allowable bearing stress", sb_allow)
+            out["n_bearing"] = sb_allow / sb
+    elif sb_allow is not None:
+        raise ValueError("the plate thickness t is needed for the bearing check")
+    return _out(**out)
+
+
+def ref_pin_shear_bearing(P, d, t=None, n_bolts=1, planes=1, tau_allow=None, sb_allow=None):
+    """The sheared area as the exact integral of the chord 2 sqrt(r^2 - x^2) across the bolt (sympy.integrate), the
+    bearing (projected) area as the integral of the thickness across the diameter; the load shared equally by all
+    shear planes of all bolts. (A weaker reference: the same definitions, integrated symbolically.)"""
+    import sympy as sp
+    x = sp.Symbol("x", real=True)
+    r = sp.Rational(repr(d)) / 2
+    A = sp.integrate(2 * sp.sqrt(r ** 2 - x ** 2), (x, -r, r))
+    tau = sp.Rational(repr(P)) / (n_bolts * planes * A)
+    out = {"A_mm2": float(A * 10 ** 6), "tau": float(tau), "tau_MPa": float(tau / 10 ** 6)}
+    if tau_allow is not None:
+        out["n_shear"] = float(sp.Rational(repr(tau_allow)) / tau)
+    if t is not None:
+        Ab = sp.integrate(sp.Rational(repr(t)), (x, -r, r))
+        sb = sp.Rational(repr(P)) / (n_bolts * Ab)
+        out["sigma_b"] = float(sb)
+        out["sigma_b_MPa"] = float(sb / 10 ** 6)
+        if sb_allow is not None:
+            out["n_bearing"] = float(sp.Rational(repr(sb_allow)) / sb)
+    return out
+
+
+def _rand_pin(rng):
+    x = {"P": _lu(rng, 500, 5e5), "d": rng.uniform(0.004, 0.04), "n_bolts": rng.randint(1, 8), "planes": rng.choice([1, 1, 2])}
+    if rng.random() < 0.7:
+        x["t"] = rng.uniform(0.003, 0.03)
+        if rng.random() < 0.5:
+            x["sb_allow"] = rng.uniform(150e6, 600e6)
+    if rng.random() < 0.5:
+        x["tau_allow"] = rng.uniform(60e6, 400e6)
+    return x
+
+
+_add("pin_shear_and_bearing_stress",
+     name="Direct shear and bearing stress in pins, bolts and rivets", topic="stress and strain / connections",
+     purpose="The average shear stress P/(n m pi d^2/4) in the bolts, pins or rivets of a joint (n fasteners, m shear planes each), the bearing stress P/(n d t) on the plate, and the safety factors against allowable stresses.",
+     inputs=[_phys("P", "force", "load carried by the joint"), _phys("d", "length", "fastener (pin, bolt, rivet) diameter"),
+             _phys("t", "length", "thickness of the plate bearing on the fastener (optional; the critical plate)", required=False),
+             _intin("n_bolts", "number of fasteners sharing the load (default 1)", lo=1, hi=200, required=False),
+             _intin("planes", "shear planes per fastener: 1 single shear, 2 double shear (default 1)", lo=1, hi=4, required=False),
+             _phys("tau_allow", "shear_stress", "allowable (or failure) shear stress of the fastener (optional)", required=False),
+             _phys("sb_allow", "stress", "allowable (or failure) bearing stress (optional; needs t)", required=False)],
+     outputs=[_o("A_mm2", "number", "area of one fastener's cross-section, mm^2"), _o("tau", "shear_stress", "average shear stress in the fasteners"),
+              _o("tau_MPa", "number", "average shear stress, MPa"), _o("sigma_b", "stress", "bearing stress on the plate (with t)"),
+              _o("sigma_b_MPa", "number", "bearing stress, MPa (with t)"), _o("n_shear", "number", "safety factor in shear (with tau_allow)"),
+              _o("n_bearing", "number", "safety factor in bearing (with t and sb_allow)")],
+     primary="tau_MPa", conditions=["P, d > 0", "whole numbers: 1 <= n_bolts <= 200, 1 <= planes <= 4", "the load is shared equally (average stresses)", "a bearing allowable needs t"],
+     method="tau = P/(n m pi d^2/4); sigma_b = P/(n d t); safety factors = allowable/actual",
+     latex=r"\tau = \frac{P}{n\,m\,\pi d^2/4},\quad \sigma_b = \frac{P}{n\,d\,t}",
+     run=pin_shear_bearing,
+     parse=lambda q: _pairs(q, r"(?:pin|bolt|rivet) shear and bearing(?: stress)?|direct shear and bearing(?: stress)?",
+                            {"P": "P", "d": "d", "t": "t", "n": "n_bolts", "n_bolts": "n_bolts", "bolts": "n_bolts", "planes": "planes", "m": "planes",
+                             "tau_allow": "tau_allow", "sb_allow": "sb_allow"},
+                            phys={"P", "d", "t", "tau_allow", "sb_allow"}),
+     reference=ref_pin_shear_bearing,
+     wrong=_safe(lambda P, d, t=None, n_bolts=1, planes=1, tau_allow=None, sb_allow=None: pin_shear_bearing(P, 2 * d, t, n_bolts, planes, tau_allow, sb_allow)),
+     random_inputs=_rand_pin,
+     templates=["Pin shear and bearing stress: P = 20 kN, d = 16 mm, t = 10 mm, planes = 2",
+                "Bolt shear and bearing stress: P = 20 kN, d = 16 mm, t = 10 mm, n = 1, planes = 2, tau_allow = 100 MPa, sb_allow = 250 MPa"],
+     examples=[{"inputs": {"P": 20e3, "d": 0.016, "t": 0.01, "planes": 2}, "outputs": {"tau_MPa": 20e3 / (2 * math.pi * 0.016 ** 2 / 4) / 1e6, "sigma_b_MPa": 125.0}},
+               {"inputs": {"P": 20e3, "d": 0.016, "t": 0.01, "n_bolts": 1, "planes": 2, "tau_allow": 100e6, "sb_allow": 250e6},
+                "outputs": {"n_shear": 100e6 / (20e3 / (2 * math.pi * 0.016 ** 2 / 4)), "n_bearing": 2.0}},
+               {"inputs": {"P": 10e3, "d": 0.01, "n_bolts": 4}, "outputs": {"tau_MPa": 10e3 / (4 * math.pi * 0.01 ** 2 / 4) / 1e6, "A_mm2": math.pi * 25}}],
+     questions=[{"q": "Pin shear and bearing stress: P = 20 kN, d = 16 mm, t = 10 mm, planes = 2", "outputs": {"tau_MPa": 20e3 / (2 * math.pi * 0.016 ** 2 / 4) / 1e6, "sigma_b_MPa": 125.0}},
+                {"q": "Rivet shear and bearing stress: P = 10 kN, d = 10 mm, n = 4", "outputs": {"tau_MPa": 10e3 / (math.pi * 0.01 ** 2) / 1e6}},
+                {"q": "Bolt shear and bearing stress: P = 20 kN, d = 16 mm, planes = 2, sb_allow = 250 MPa", "outcome": "INVALID_INPUT"},
+                {"q": "Bolt shear and bearing stress: P = 20 kN, t = 10 mm", "outcome": "NEEDS_INPUT"}])
+
+
+def gear_train(drivers, driven, n_in, T_in=None, eta=1.0):
+    k = len(drivers)
+    if k != len(driven) or k < 1 or k > 12:
+        raise ValueError("give one driving and one driven tooth count per mesh (1 to 12 meshes, equal-length lists)")
+    for N in list(drivers) + list(driven):
+        if not (math.isfinite(N) and N >= 1 and N == math.floor(N)):
+            raise ValueError("tooth counts must be whole numbers of at least 1")
+    _fin("the input speed", n_in)
+    if n_in == 0:
+        raise ValueError("the input speed must not be zero")
+    if not (math.isfinite(eta) and eta > 0 and eta <= 1):
+        raise ValueError("the overall efficiency must lie in (0, 1]")
+    num = 1.0
+    for N in drivers:
+        num = num * N
+    den = 1.0
+    for N in driven:
+        den = den * N
+    sign = 1.0 if k % 2 == 0 else -1.0
+    e = sign * num / den
+    n_out = e * n_in
+    out = {"velocity_ratio": den / num, "train_value": e, "n_out": n_out, "n_out_rpm": n_out * _RPM, "meshes": k}
+    if T_in is not None:
+        _pos("the input torque", T_in)
+        out["T_out"] = T_in * den / num * eta
+    return _out(**out)
+
+
+def ref_gear_train(drivers, driven, n_in, T_in=None, eta=1.0):
+    """Rolling at every mesh as a linear system (numpy): shaft j carries the driven gear of mesh j and the driver of
+    mesh j + 1; at each external mesh the pitch-line speeds are equal and opposite, w_j N_driver = -w_{j+1} N_driven
+    (radii in proportion to the tooth counts), with w_0 the input speed. The output torque from the power balance
+    T_out w_out = eta T_in w_in."""
+    import numpy as np
+    k = len(drivers)
+    A = np.zeros((k + 1, k + 1))
+    rhs = np.zeros(k + 1)
+    A[0, 0] = 1.0
+    rhs[0] = n_in
+    for j in range(k):
+        A[j + 1, j] = drivers[j]
+        A[j + 1, j + 1] = driven[j]
+    w = np.linalg.solve(A, rhs)
+    wo = float(w[k])
+    out = {"velocity_ratio": abs(n_in / wo), "train_value": wo / n_in, "n_out": wo, "n_out_rpm": wo * _RPM, "meshes": k}
+    if T_in is not None:
+        out["T_out"] = eta * T_in * abs(n_in) / abs(wo)
+    return out
+
+
+def _rand_gears(rng):
+    for _ in range(200):
+        k = rng.randint(1, 4)
+        drivers = [float(rng.randint(12, 40)) for _ in range(k)]
+        driven = [float(rng.randint(12, 100)) for _ in range(k)]
+        num, den = 1.0, 1.0
+        for a, b in zip(drivers, driven):
+            num, den = num * a, den * b
+        if abs(math.log(den / num)) > 0.2:
+            break
+    x = {"drivers": drivers, "driven": driven, "n_in": rng.uniform(50, 3600) / _RPM * rng.choice([1, -1])}
+    if rng.random() < 0.6:
+        x["T_in"] = _lu(rng, 1, 2000)
+        if rng.random() < 0.5:
+            x["eta"] = rng.uniform(0.8, 1.0)
+    return x
+
+
+_add("gear_train_speed_ratio",
+     name="Simple and compound gear trains: ratio, output speed and torque", topic="machine elements / gear trains",
+     purpose="The velocity ratio, signed train value, output speed (and its direction) and output torque of a train of external spur gears, simple (idlers included) or compound, from the driving and driven tooth counts of each mesh.",
+     inputs=[_vec("drivers", "teeth on the driving gear of each mesh, from the input shaft (a list)", lo=1, hi=12),
+             _vec("driven", "teeth on the driven gear of each mesh, in the same order (a list)", lo=1, hi=12),
+             _phys("n_in", "angular_frequency", "input speed (rpm or rad/s)"), _phys("T_in", "torque", "input torque (optional)", required=False),
+             _numin("eta", "overall efficiency of the train (default 1; 0.95 or 95%)", required=False)],
+     outputs=[_o("velocity_ratio", "number", "velocity ratio n_in/|n_out| = product of driven teeth / product of driving teeth"),
+              _o("train_value", "number", "signed train value n_out/n_in (negative: opposite direction)"),
+              _o("n_out", "angular_frequency", "output speed (signed, same sense as the input when positive)"), _o("n_out_rpm", "number", "output speed, rpm (signed)"),
+              _o("meshes", "integer", "number of meshes"), _o("T_out", "torque", "output torque eta T_in x velocity ratio (with T_in)")],
+     primary="n_out_rpm", conditions=["equal-length lists of whole tooth counts >= 1", "external spur gears only (each mesh reverses the direction)", "n_in != 0", "0 < eta <= 1"],
+     method="train value e = (-1)^k (product of driving teeth)/(product of driven teeth); n_out = e n_in; T_out = eta T_in |n_in/n_out|",
+     latex=r"e = \frac{n_{out}}{n_{in}} = (-1)^k\frac{\prod N_{driver}}{\prod N_{driven}},\quad T_{out} = \eta\,T_{in}\left|\frac{n_{in}}{n_{out}}\right|",
+     run=gear_train,
+     parse=lambda q: _pairs(q, r"(?:simple |compound )?gear train(?: ratio)?",
+                            {"drivers": "drivers", "driving": "drivers", "driven": "driven", "n_in": "n_in", "n": "n_in", "speed": "n_in",
+                             "T_in": "T_in", "T": "T_in", "eta": "eta", "efficiency": "eta"},
+                            phys={"n_in", "T_in"}, vectors={"drivers", "driven"}, num_units={"eta": ["%", "percent"]}),
+     reference=ref_gear_train,
+     wrong=_safe(lambda drivers, driven, n_in, T_in=None, eta=1.0: gear_train(driven, drivers, n_in, T_in, eta)),
+     random_inputs=_rand_gears,
+     templates=["Gear train: drivers = [20], driven = [60], n_in = 1200 rpm, T_in = 50 N*m",
+                "Compound gear train: drivers = [20, 15], driven = [60, 45], n_in = 1500 rpm, T_in = 20 N*m, eta = 0.95"],
+     examples=[{"inputs": {"drivers": [20.0], "driven": [60.0], "n_in": 1200 / _RPM, "T_in": 50.0}, "outputs": {"velocity_ratio": 3.0, "n_out_rpm": -400.0, "T_out": 150.0, "meshes": 1}},
+               {"inputs": {"drivers": "20, 15", "driven": "60, 45", "n_in": 1500 / _RPM, "T_in": 20.0, "eta": 0.95},
+                "outputs": {"velocity_ratio": 9.0, "n_out_rpm": 1500 / 9, "T_out": 171.0}},
+               {"inputs": {"drivers": "20, 35", "driven": "35, 50", "n_in": 1000 / _RPM}, "outputs": {"velocity_ratio": 2.5, "n_out_rpm": 400.0, "train_value": 0.4}}],
+     questions=[{"q": "Gear train: drivers = [20], driven = [60], n_in = 1200 rpm, T_in = 50 N*m", "outputs": {"n_out_rpm": -400.0, "T_out": 150.0}},
+                {"q": "Compound gear train: drivers = [20, 15], driven = [60, 45], n_in = 1500 rpm, T_in = 20 N*m, eta = 0.95", "outputs": {"velocity_ratio": 9.0, "T_out": 171.0}},
+                {"q": "Simple gear train: drivers = [20, 35], driven = [35, 50], n_in = 1000 rpm", "outputs": {"n_out_rpm": 400.0}},
+                {"q": "Gear train: drivers = [20, 15], driven = [60], n_in = 1500 rpm", "outcome": "INVALID_INPUT"},
+                {"q": "Gear train: drivers = [20], driven = [60]", "outcome": "NEEDS_INPUT"}])
+
+
+# ================================================================================================ 3-D moments and force systems (core gaps, 2026-11-12)
+# Vectors are lists [x, y, z] in a right-handed frame; lists carry no unit: positions in m, forces in N, couple
+# moments in N*m. A moment is r x F with r from the moment centre O (default the origin) to the point of application;
+# the moment about an axis is its component along the axis's direction (right-hand rule about that direction), the
+# axis passing through O. A force system reduces to a force R at O and a couple M_O; when R is not zero its central
+# axis (the line of action of the single resultant, or the wrench axis) passes through O + (R x M_O)/|R|^2, the point
+# of it nearest O. The system is a single force when R . M_O = 0 (to 1e-9 of |R||M_O|), otherwise a wrench of pitch
+# R . M_O/|R|^2; a planar system (every z, Fz and couple x, y component 0) also gets the line's axis crossings.
+def _cross3(a, b):
+    return [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]]
+
+
+def _dot3(a, b):
+    return a[0] * b[0] + a[1] * b[1] + a[2] * b[2]
+
+
+def _vec3(name, v):
+    if len(v) != 3:
+        raise ValueError(f"{name} must be a vector of three components [x, y, z]")
+    _fin(name, v[0], v[1], v[2])
+    return [float(v[0]), float(v[1]), float(v[2])]
+
+
+def moment_3d(r, F, O=None, axis=None):
+    r = _vec3("r", r)
+    F = _vec3("F", F)
+    o = [0.0, 0.0, 0.0] if O is None else _vec3("O", O)
+    Fm = math.sqrt(_dot3(F, F))
+    if Fm == 0:
+        raise ValueError("the force must not be zero")
+    a = [r[0] - o[0], r[1] - o[1], r[2] - o[2]]
+    sc = Fm * math.sqrt(_dot3(a, a))
+    M = _cross3(a, F)
+    M = [_snap(M[0], sc), _snap(M[1], sc), _snap(M[2], sc)]
+    Mm = math.sqrt(_dot3(M, M))
+    out = {"Mx": M[0], "My": M[1], "Mz": M[2], "M": Mm, "d": Mm / Fm}
+    if axis is not None:
+        u = _vec3("axis", axis)
+        un = math.sqrt(_dot3(u, u))
+        if un == 0:
+            raise ValueError("the axis direction must not be zero")
+        out["M_axis"] = _snap(_dot3(M, u) / un, sc)
+    return _out(**out)
+
+
+def ref_moment_3d(r, F, O=None, axis=None):
+    """Exact rational arithmetic (sympy): r x F by sympy's Matrix.cross; the distance as sympy.geometry's distance from
+    O to the 3-D line of action (Line3D); the moment about the axis as the determinant [u, r, F]/|u| (the scalar
+    triple product), not as a projection of the moment vector."""
+    import sympy as sp
+    from sympy.geometry import Line3D, Point3D
+    q = lambda v: sp.Rational(repr(float(v)))                      # noqa: E731
+    o = [0.0, 0.0, 0.0] if O is None else O
+    a = sp.Matrix([q(r[k]) - q(o[k]) for k in range(3)])
+    f = sp.Matrix([q(v) for v in F])
+    M = a.cross(f)
+    P0 = Point3D(*[q(v) for v in o])
+    A = Point3D(*[q(v) for v in r])
+    B = Point3D(*[q(r[k]) + q(F[k]) for k in range(3)])
+    out = {"Mx": float(M[0]), "My": float(M[1]), "Mz": float(M[2]), "M": float(sp.sqrt(M.dot(M))),
+           "d": float(Line3D(A, B).distance(P0))}
+    if axis is not None:
+        u = sp.Matrix([q(v) for v in axis])
+        out["M_axis"] = float(sp.Matrix.hstack(u, a, f).det() / sp.sqrt(u.dot(u)))
+    return out
+
+
+def _rand_moment_3d(rng):
+    x = {"r": [round(rng.uniform(-5, 5), 2) for _ in range(3)], "F": [round(rng.uniform(-500, 500), 1) for _ in range(3)]}
+    if rng.random() < 0.5:
+        x["O"] = [round(rng.uniform(-2, 2), 2) for _ in range(3)]
+    if rng.random() < 0.6:
+        x["axis"] = [float(rng.randint(-3, 3)) for _ in range(3)]
+        if x["axis"] == [0.0, 0.0, 0.0]:
+            x["axis"] = [0.0, 0.0, 1.0]
+    return x
+
+
+_add("moment_of_force_3d",
+     name="Moment of a force about a point and about an axis (3D)", topic="statics / moments",
+     purpose="The moment vector r x F of a force F applied at a point r about a point O in three dimensions, its magnitude, the perpendicular distance from O to the line of action, and (with an axis direction) the moment about the axis through O.",
+     inputs=[_vec("r", "point of application [x, y, z] in m", lo=3, hi=3), _vec("F", "force [Fx, Fy, Fz] in N", lo=3, hi=3),
+             _vec("O", "moment centre [x, y, z] in m (default the origin; the axis passes through it)", lo=3, hi=3, required=False),
+             _vec("axis", "direction of the axis [ux, uy, uz] (any length, not zero)", lo=3, hi=3, required=False)],
+     outputs=[_o("Mx", "torque", "x component of the moment about O"), _o("My", "torque", "y component of the moment about O"),
+              _o("Mz", "torque", "z component of the moment about O"), _o("M", "torque", "magnitude of the moment about O"),
+              _o("d", "length", "perpendicular distance from O to the line of action"),
+              _o("M_axis", "torque", "moment about the axis through O (right-hand rule about the axis direction), when the axis is given")],
+     primary="M", conditions=["three components per vector", "the force is not zero", "the axis direction is not zero"],
+     method="M_O = (r - O) x F; d = |M_O|/|F|; M_axis = u . M_O with u the unit axis direction",
+     latex=r"\mathbf M_O = (\mathbf r - \mathbf r_O)\times\mathbf F,\quad M_{axis} = \hat{\mathbf u}\cdot\mathbf M_O,\quad d = \frac{|\mathbf M_O|}{|\mathbf F|}",
+     run=moment_3d,
+     parse=lambda q: _pairs(q, r"moment of (?:a )?force (?:in 3-?d|in three dimensions|about an axis)|3-?d moment of (?:a )?force",
+                            {"r": "r", "F": "F", "O": "O", "axis": "axis", "u": "axis"}, vectors={"r", "F", "O", "axis"}),
+     reference=ref_moment_3d,
+     wrong=_safe(lambda r, F, O=None, axis=None: (lambda o: dict(o, Mx=-o["Mx"] + 0.0, My=-o["My"] + 0.0, Mz=-o["Mz"] + 0.0,
+                                                                   **({"M_axis": -o["M_axis"] + 0.0} if "M_axis" in o else {})))(moment_3d(r, F, O, axis))),   # F x r
+     random_inputs=_rand_moment_3d,
+     templates=["Moment of a force in 3D: r = [2, 3, 0], F = [10, -5, 20]",
+                "Moment of a force about an axis: r = [3, 1, 2], F = [0, 100, 0], O = [1, 1, 1], axis = [1, 1, 0]"],
+     examples=[{"inputs": {"r": [2.0, 3.0, 0.0], "F": [10.0, -5.0, 20.0]},
+                "outputs": {"Mx": 60.0, "My": -40.0, "Mz": -40.0, "M": math.sqrt(6800.0), "d": math.sqrt(6800.0 / 525.0)}},
+               {"inputs": {"r": [3.0, 1.0, 2.0], "F": [0.0, 100.0, 0.0], "O": [1.0, 1.0, 1.0], "axis": [1.0, 1.0, 0.0]},
+                "outputs": {"Mx": -100.0, "My": 0.0, "Mz": 200.0, "M_axis": -100.0 / math.sqrt(2.0)}},
+               {"inputs": {"r": [2.0, 3.0, 0.0], "F": [10.0, -5.0, 20.0], "axis": [0.0, 0.0, 1.0]}, "outputs": {"M_axis": -40.0}}],
+     questions=[{"q": "Moment of a force in 3D: r = [2, 3, 0], F = [10, -5, 20]", "outputs": {"Mx": 60.0, "My": -40.0, "Mz": -40.0}},
+                {"q": "Moment of a force about an axis: r = [3, 1, 2], F = [0, 100, 0], O = [1, 1, 1], axis = [1, 1, 0]",
+                 "outputs": {"M_axis": -100.0 / math.sqrt(2.0)}},
+                {"q": "Moment of a force in 3D: r = [2, 3, 0], F = [0, 0, 0]", "outcome": "INVALID_INPUT"},
+                {"q": "Moment of a force in 3D: r = [2, 3], F = [10, -5, 20]", "outcome": "INVALID_INPUT"},
+                {"q": "Moment of a force in 3D: r = [2, 3, 0]", "outcome": "NEEDS_INPUT"}])
+
+
+def _rows3(name, rows):
+    out = []
+    for row in rows:
+        out.append(_vec3(name, row))
+    return out
+
+
+def force_system(F, P, C=None, O=None):
+    Fs = _rows3("each force row of F", F)
+    Ps = _rows3("each point row of P", P)
+    if len(Fs) != len(Ps) or len(Fs) == 0:
+        raise ValueError("give one point of application (a row of P) for every force (a row of F)")
+    Cs = [] if C is None else _rows3("each couple row of C", C)
+    o = [0.0, 0.0, 0.0] if O is None else _vec3("O", O)
+    R = [0.0, 0.0, 0.0]
+    M = [0.0, 0.0, 0.0]
+    fsum, msum = 0.0, 0.0
+    for f, p in zip(Fs, Ps):
+        a = [p[0] - o[0], p[1] - o[1], p[2] - o[2]]
+        m = _cross3(a, f)
+        for k in range(3):
+            R[k] += f[k]
+            M[k] += m[k]
+        fsum += math.sqrt(_dot3(f, f))
+        msum += math.sqrt(_dot3(m, m))
+    for c in Cs:
+        for k in range(3):
+            M[k] += c[k]
+        msum += math.sqrt(_dot3(c, c))
+    if fsum == 0 and msum == 0:
+        raise ValueError("every force and couple is zero")
+    R = [_snap(R[0], fsum), _snap(R[1], fsum), _snap(R[2], fsum)]
+    M = [_snap(M[0], msum), _snap(M[1], msum), _snap(M[2], msum)]
+    Rm = math.sqrt(_dot3(R, R))
+    Mm = math.sqrt(_dot3(M, M))
+    out = {"Rx": R[0], "Ry": R[1], "Rz": R[2], "R": Rm, "MOx": M[0], "MOy": M[1], "MOz": M[2], "MO": Mm}
+    if Rm == 0:
+        out["result_type"] = "equilibrium" if Mm == 0 else "couple"
+        return _out(**out)
+    rm = _dot3(R, M)
+    if abs(rm) <= 1e-9 * Rm * Mm:
+        rm = 0.0
+    q = _cross3(R, M)
+    pt = [o[k] + q[k] / (Rm * Rm) for k in range(3)]
+    out["result_type"] = "single force" if rm == 0 else "wrench"
+    out["axis_x"] = pt[0]
+    out["axis_y"] = pt[1]
+    out["axis_z"] = pt[2]
+    out["pitch"] = rm / (Rm * Rm)
+    out["M_parallel"] = rm / Rm
+    planar = True
+    for f, p in zip(Fs, Ps):
+        if f[2] != 0 or p[2] != 0:
+            planar = False
+    for c in Cs:
+        if c[0] != 0 or c[1] != 0:
+            planar = False
+    if O is not None and o[2] != 0:
+        planar = False
+    if planar and rm == 0:
+        if R[1] != 0:
+            out["x_intercept"] = pt[0] - pt[1] * R[0] / R[1]
+        if R[0] != 0:
+            out["y_intercept"] = pt[1] - pt[0] * R[1] / R[0]
+    return _out(**out)
+
+
+def ref_force_system(F, P, C=None, O=None):
+    """numpy: R and M_O summed with numpy.cross; the central axis as the minimum-norm solution (numpy.linalg.lstsq)
+    of q x R = M_O - (M_O . R) R/|R|^2 for the offset q from O (the point nearest O on the axis), not the closed form
+    (R x M_O)/|R|^2; the crossings of a planar resultant from the line through that point along R."""
+    import numpy as np
+    Fa, Pa = np.array(F, float).reshape(-1, 3), np.array(P, float).reshape(-1, 3)
+    o = np.zeros(3) if O is None else np.array(O, float)
+    Ca = np.zeros((0, 3)) if C is None else np.array(C, float).reshape(-1, 3)
+    R = Fa.sum(axis=0)
+    M = np.cross(Pa - o, Fa).sum(axis=0) + Ca.sum(axis=0)
+    fsum = float(np.linalg.norm(Fa, axis=1).sum())
+    msum = float(np.linalg.norm(np.cross(Pa - o, Fa), axis=1).sum() + np.linalg.norm(Ca, axis=1).sum())
+    R = np.where(np.abs(R) <= 1e-12 * fsum, 0.0, R)
+    M = np.where(np.abs(M) <= 1e-12 * msum, 0.0, M)
+    Rm, Mm = float(np.linalg.norm(R)), float(np.linalg.norm(M))
+    out = {"Rx": float(R[0]), "Ry": float(R[1]), "Rz": float(R[2]), "R": Rm, "MOx": float(M[0]), "MOy": float(M[1]),
+           "MOz": float(M[2]), "MO": Mm}
+    if Rm == 0:
+        out["result_type"] = "equilibrium" if Mm == 0 else "couple"
+        return out
+    rm = float(R @ M)
+    if abs(rm) <= 1e-9 * Rm * Mm:
+        rm = 0.0
+    Mperp = M - rm / Rm ** 2 * R
+    Rx_ = np.array([[0.0, -R[2], R[1]], [R[2], 0.0, -R[0]], [-R[1], R[0], 0.0]])      # [R]x, so q x R = -[R]x q
+    qv = np.linalg.lstsq(-Rx_, Mperp, rcond=None)[0]
+    pt = o + qv
+    # the module's zero convention: a coordinate below 1e-12 of the positions' scale is 0 (lstsq left 1.2e-15 in the
+    # z of a planar system; box certification 2026-11-12)
+    pt = np.where(np.abs(pt) <= 1e-12 * max(1.0, float(np.abs(Pa).max()), float(np.abs(o).max())), 0.0, pt)
+    out.update({"result_type": "single force" if rm == 0 else "wrench", "axis_x": float(pt[0]), "axis_y": float(pt[1]),
+                "axis_z": float(pt[2]), "pitch": rm / Rm ** 2, "M_parallel": rm / Rm})
+    planar = bool(np.all(Fa[:, 2] == 0) and np.all(Pa[:, 2] == 0) and np.all(Ca[:, :2] == 0) and o[2] == 0)
+    if planar and rm == 0:
+        if R[1] != 0:
+            t = -pt[1] / R[1]                       # the line pt + t R meets y = 0
+            out["x_intercept"] = float(pt[0] + t * R[0])
+        if R[0] != 0:
+            t = -pt[0] / R[0]
+            out["y_intercept"] = float(pt[1] + t * R[1])
+    return out
+
+
+def _wrong_force_system(F, P, C=None, O=None):
+    """Moments taken as F x r (the order of the cross product reversed)."""
+    o = [0.0, 0.0, 0.0] if O is None else O
+    Pm = [[2 * o[k] - p[k] for k in range(3)] for p in P]      # r' - O = -(r - O): every force moment changes sign
+    return force_system(F, Pm, C, O)
+
+
+def _rand_force_system(rng):
+    n = rng.randint(2, 5)
+    planar = rng.random() < 0.5
+    F, P = [], []
+    for _ in range(n):
+        F.append([round(rng.uniform(-500, 500), 1), round(rng.uniform(-500, 500), 1), 0.0 if planar else round(rng.uniform(-500, 500), 1)])
+        P.append([round(rng.uniform(-3, 3), 2), round(rng.uniform(-3, 3), 2), 0.0 if planar else round(rng.uniform(-3, 3), 2)])
+    x = {"F": F, "P": P}
+    if rng.random() < 0.3:
+        x["C"] = [[0.0, 0.0, round(rng.uniform(-300, 300), 1)] if planar else [round(rng.uniform(-300, 300), 1) for _ in range(3)]]
+    if rng.random() < 0.4:
+        x["O"] = [round(rng.uniform(-1, 1), 2), round(rng.uniform(-1, 1), 2), 0.0 if planar else round(rng.uniform(-1, 1), 2)]
+    return x
+
+
+_add("force_system_resultant",
+     name="Equivalent force-couple system and single resultant of a force system", topic="statics / force systems",
+     purpose="The resultant force R and the couple M_O at a point O equivalent to a system of forces (at their points of application) and couples in 3D or in a plane; whether it reduces to a single force, a wrench, a couple or nothing; the central axis (line of action of the single resultant) through its point nearest O, the pitch, and for a planar system where that line crosses the x and y axes.",
+     inputs=[_mat("F", "forces, one row [Fx Fy Fz] per force, in N"), _mat("P", "points of application, one row [x y z] per force, in m"),
+             _mat("C", "couple moments, one row [Mx My Mz] per couple, in N*m (optional)", required=False),
+             _vec("O", "reference point [x, y, z] in m (default the origin)", lo=3, hi=3, required=False)],
+     outputs=[_o("Rx", "force", "x component of the resultant force"), _o("Ry", "force", "y component of the resultant force"),
+              _o("Rz", "force", "z component of the resultant force"), _o("R", "force", "magnitude of the resultant force"),
+              _o("MOx", "torque", "x component of the couple at O"), _o("MOy", "torque", "y component of the couple at O"),
+              _o("MOz", "torque", "z component of the couple at O"), _o("MO", "torque", "magnitude of the couple at O"),
+              _o("result_type", "text", "single force, wrench, couple or equilibrium"),
+              _o("axis_x", "length", "x of the central axis's point nearest O (line of action of a single resultant)"),
+              _o("axis_y", "length", "y of that point"), _o("axis_z", "length", "z of that point"),
+              _o("pitch", "length", "pitch of the wrench R . M_O/|R|^2 (0 for a single force)"),
+              _o("M_parallel", "torque", "couple component along R (0 for a single force)"),
+              _o("x_intercept", "length", "where the single resultant's line of action crosses the x axis (planar systems)"),
+              _o("y_intercept", "length", "where it crosses the y axis (planar systems)")],
+     primary="R", conditions=["one point of application per force; three components per row", "not every force and couple zero",
+                              "single force when R . M_O = 0 to 1e-9 of |R||M_O|"],
+     method="R = sum F_i; M_O = sum (r_i - O) x F_i + sum C_j; central axis through O + (R x M_O)/|R|^2; pitch = R . M_O/|R|^2",
+     latex=r"\mathbf R = \sum\mathbf F_i,\quad \mathbf M_O = \sum(\mathbf r_i - \mathbf r_O)\times\mathbf F_i + \sum\mathbf C_j,\quad \mathbf r_{axis} = \mathbf r_O + \frac{\mathbf R\times\mathbf M_O}{|\mathbf R|^2}",
+     run=force_system,
+     parse=lambda q: _pairs(q, r"force[- ]couple system|equivalent force system|single resultant(?: of (?:a )?force system)?|resultant of (?:a )?force system",
+                            {"F": "F", "forces": "F", "P": "P", "points": "P", "C": "C", "couples": "C", "O": "O"},
+                            matrices={"F", "P", "C"}, vectors={"O"}),
+     reference=ref_force_system,
+     wrong=_safe(_wrong_force_system),
+     random_inputs=_rand_force_system,
+     templates=["Single resultant of a force system: F = [0 -100 0; 0 -200 0; 50 0 0], P = [1 0 0; 3 0 0; 0 2 0]",
+                "Force-couple system: F = [0 0 10; 10 0 0], P = [1 0 0; 0 1 0], C = [0 0 5]"],
+     examples=[{"inputs": {"F": [[0.0, -100.0, 0.0], [0.0, -200.0, 0.0], [50.0, 0.0, 0.0]], "P": [[1.0, 0.0, 0.0], [3.0, 0.0, 0.0], [0.0, 2.0, 0.0]]},
+                "outputs": {"Rx": 50.0, "Ry": -300.0, "Rz": 0.0, "R": math.sqrt(92500.0), "MOz": -800.0, "result_type": "single force",
+                            "axis_x": 240000.0 / 92500.0, "axis_y": 40000.0 / 92500.0, "x_intercept": 800.0 / 300.0, "y_intercept": 16.0}},
+               {"inputs": {"F": [[0.0, 0.0, 10.0], [10.0, 0.0, 0.0]], "P": [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0]], "C": [[0.0, 0.0, 5.0]]},
+                "outputs": {"Rx": 10.0, "Rz": 10.0, "MOx": 0.0, "MOy": -10.0, "MOz": -5.0, "result_type": "wrench", "pitch": -0.25,
+                            "M_parallel": -50.0 / math.sqrt(200.0), "axis_x": 0.5, "axis_y": 0.25, "axis_z": -0.5}},
+               {"inputs": {"F": [[100.0, 0.0, 0.0], [-100.0, 0.0, 0.0]], "P": [[0.0, 1.0, 0.0], [0.0, 0.0, 0.0]]},
+                "outputs": {"R": 0.0, "MOz": -100.0, "result_type": "couple"}}],
+     questions=[{"q": "Single resultant of a force system: F = [0 -100 0; 0 -200 0; 50 0 0], P = [1 0 0; 3 0 0; 0 2 0]",
+                 "outputs": {"R": math.sqrt(92500.0), "x_intercept": 800.0 / 300.0, "result_type": "single force"}},
+                {"q": "Force-couple system: F = [0 0 10; 10 0 0], P = [1 0 0; 0 1 0], C = [0 0 5]",
+                 "outputs": {"MOy": -10.0, "MOz": -5.0, "pitch": -0.25, "result_type": "wrench"}},
+                {"q": "Force-couple system: F = [0 0 10; 10 0 0], P = [1 0 0], C = [0 0 5]", "outcome": "INVALID_INPUT"},
+                {"q": "Force-couple system: F = [0 0 10; 10 0 0]", "outcome": "NEEDS_INPUT"}])
