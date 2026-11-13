@@ -2776,9 +2776,9 @@ $$
 - **Assumes:** $10^{3}  \leq  N  \leq  10^{6}$; $0 < f < 1$, f Sut > Se
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Sf_MPa (fatigue strength at N cycles, MPa) against Sut (ultimate tensile strength) from 3](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/sn-fatigue-strength-curve)
+![Sf_MPa (fatigue strength at N cycles, MPa) against Se (endurance limit) from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/sn-fatigue-strength-curve)
 
-*Sf_MPa (fatigue strength at N cycles, MPa) against Sut (ultimate tensile strength) from 3.5000e+08 Pa to 1.0500e+09 Pa. One curve for each value of f (fatigue strength fraction at 10^3 cycles): 0.85, 0.74. Other inputs as in the worked example: Se = 300000000.0 Pa, N = 1000.0. 30 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, Sut = 7.0000e+08 Pa, Sf_MPa = 595.*
+*Sf_MPa (fatigue strength at N cycles, MPa) against Se (endurance limit) from 1.5000e+08 Pa to 4.5000e+08 Pa. One curve for each value of N (number of cycles (10^3 to 10^6)): 1e+06, 500000. Other inputs as in the worked example: Sut = 700000000.0 Pa, f = 0.85. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, Se = 3.0000e+08 Pa, Sf_MPa = 300.*
 
 ```python
 mechanical_engineering_ai999x.solve('sn_fatigue_strength', Sut=700000000.0, Se=300000000.0, f=0.85, N=1000.0)
@@ -3408,7 +3408,7 @@ $$
 
 ![L_hours (life at reliability R, hours) against F (equivalent radial load) from 2000 N to 6000 N](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/bearing-life-reliability-curve)
 
-*L_hours (life at reliability R, hours) against F (equivalent radial load) from 2000 N to 6000 N. One curve for each value of C (catalogue (basic dynamic) load rating): 30000 N, 15000 N, 60000 N. Other inputs as in the worked example: n = 157.07963267948963 rad/s, R = 0.9, kind = ball. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, F = 4000 N, L_hours = 4656.32.*
+*L_hours (life at reliability R, hours) against F (equivalent radial load) from 2000 N to 6000 N. One curve for each value of C (catalogue (basic dynamic) load rating): 30000 N, 15000 N, 60000 N. Other inputs as in the worked example: n = 157.07963267948966 rad/s, R = 0.95, kind = ball. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, F = 4000 N, L_hours = 2901.83.*
 
 ```python
 mechanical_engineering_ai999x.solve('bearing_life_reliability', C=30000.0, F=4000.0, n=157.07963267948963, R=0.9, kind='ball')
@@ -3649,7 +3649,7 @@ $$
 
 ![x (displacement at t) against k (stiffness) from 10 N/m to 1000 N/m on a logarithmic axis](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/sdof-free-response-curve)
 
-*x (displacement at t) against k (stiffness) from 10 N/m to 1000 N/m on a logarithmic axis. One curve for each value of v0 (initial velocity): 0 m/s, -0.5 m/s, 0.5 m/s. Other inputs as in the worked example: m = 1.0 kg, c = 2.0 kg/s, x0 = 0.01 m, t = 0.5 s. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, k = 100 N/m, x = 0.000985507 m.*
+*x (displacement at t) against k (stiffness) from 10 N/m to 1000 N/m on a logarithmic axis. One curve for each value of v0 (initial velocity): 0 m/s, -0.5 m/s, 0.5 m/s. Other inputs as in the worked example: m = 1.0 kg, c = 20.0 kg/s, x0 = 0.01 m, t = 0.1 s. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, k = 100 N/m, x = 0.00735759 m.*
 
 ```python
 mechanical_engineering_ai999x.solve('sdof_free_response', m=1.0, c=2.0, k=100.0, x0=0.01, v0=0.0, t=0.5)
