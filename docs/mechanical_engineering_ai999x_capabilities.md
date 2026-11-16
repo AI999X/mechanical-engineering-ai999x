@@ -3643,9 +3643,9 @@ $$
 - **Assumes:** linear viscous damping; no external force; zeta within $1e-9$ of 1 is treated as critical
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Free vibration of a spring–mass–damper (m = 1 kg, c = 2 N·s/m, k = 100 N/m) released from x0 = 10 mm with v0 = 0 m/s: the displacement at 201 instants up to 2](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/sdof-free-response-response)
+![Free vibration of a spring–mass–damper (m = 1 kg, c = 20 N·s/m, k = 100 N/m) released from x0 = 10 mm with v0 = 0 m/s: the displacement at 201 instants up to 2](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/sdof-free-response-response)
 
-*Free vibration of a spring–mass–damper (m = 1 kg, c = 2 N·s/m, k = 100 N/m) released from x0 = 10 mm with v0 = 0 m/s: the displacement at 201 instants up to 2.51327 s, each computed by the package. Marked: t = 0.5 s, x = 0.985507 mm, v = 0.0588697 m/s.*
+*Free vibration of a spring–mass–damper (m = 1 kg, c = 20 N·s/m, k = 100 N/m) released from x0 = 10 mm with v0 = 0 m/s: the displacement at 201 instants up to 2.51327 s, each computed by the package. Marked: t = 0.1 s, x = 7.35759 mm, v = -0.0367879 m/s.*
 
 ![x (displacement at t) against k (stiffness) from 10 N/m to 1000 N/m on a logarithmic axis](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/sdof-free-response-curve)
 
