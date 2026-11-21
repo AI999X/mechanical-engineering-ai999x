@@ -240,13 +240,9 @@ $$
 - **Assumes:** F and theta have the same length; magnitudes >= 0, at least one > 0; a zero resultant is reported with direction 0
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Concurrent forces F = 3, 4 at angles 0, 90° (from +x, counter-clockwise), drawn to one scale, their head-to-tail polygon and the resultant the model returned: R = 5 at 53](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/resultant-of-concurrent-forces-fbd)
+![Concurrent forces F = 3, 4 at angles 0, 90° (from +x, counter-clockwise), drawn to one scale, their head-to-tail polygon and the resultant the package returned: R = 5 at 53](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/resultant-of-concurrent-forces-fbd)
 
-*Concurrent forces F = 3, 4 at angles 0, 90° (from +x, counter-clockwise), drawn to one scale, their head-to-tail polygon and the resultant the model returned: R = 5 at 53.13° (Rx = 3, Ry = 4). The polygon closes on the resultant. Your inputs: F = 3, 4, theta = 0, 90.*
-
-![Every answer of one unit for your inputs: R (magnitude of the resultant) = 5; Rx (x component of the resultant) = 3; Ry (y component of the resultant) = 4](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/resultant-of-concurrent-forces-live-1)
-
-*Every answer of one unit for your inputs: R (magnitude of the resultant) = 5; Rx (x component of the resultant) = 3; Ry (y component of the resultant) = 4. Your inputs: F = 3, 4, theta = 0, 90.*
+*Concurrent forces F = 3, 4 at angles 0, 90° (from +x, counter-clockwise), drawn to one scale, their head-to-tail polygon and the resultant the package returned: R = 5 at 53.1301° (Rx = 3, Ry = 4). The polygon closes on the resultant.*
 
 ```python
 mechanical_engineering_ai999x.solve('resultant_of_concurrent_forces', F='3, 4', theta='0, 90')
@@ -293,15 +289,11 @@ $$
 
 ![Free-body diagram of a weight W = 500 N held by two cables rising at α = 30° (left) and β = 45° (right) above the horizontal](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/two-cable-equilibrium-fbd)
 
-*Free-body diagram of a weight W = 500 N held by two cables rising at α = 30° (left) and β = 45° (right) above the horizontal. The force arrows are drawn to one scale. Marked: the returned tensions T1 = 366 N and T2 = 448.3 N. Your inputs: W = 500 N, alpha = 30 deg, beta = 45 deg.*
+*Free-body diagram of a weight W = 500 N held by two cables rising at α = 30° (left) and β = 45° (right) above the horizontal. The force arrows are drawn to one scale. Marked: the returned tensions T1 = 366.025 N and T2 = 448.288 N.*
 
-![Tension in the left cable and tension in the right cable as W runs from 300 to 700 N, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/two-cable-equilibrium-live-1)
+![T1 (tension in the left cable) against alpha (angle of the left cable above the horizontal) from 0 rad to 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/two-cable-equilibrium-curve)
 
-*Tension in the left cable and tension in the right cable as W runs from 300 to 700 N, every other input as you entered it (41 solutions). Marked: your W = 500 N gives T1 = 366. Your inputs: W = 500 N, alpha = 30 deg, beta = 45 deg.*
-
-![Tension in the left cable and tension in the right cable as β runs from 27 to 63 deg, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/two-cable-equilibrium-live-2)
-
-*Tension in the left cable and tension in the right cable as β runs from 27 to 63 deg, every other input as you entered it (29 solutions). Marked: your β = 45 deg gives T1 = 366. Your inputs: W = 500 N, alpha = 30 deg, beta = 45 deg.*
+*T1 (tension in the left cable) against alpha (angle of the left cable above the horizontal) from 0 rad to 1.5708 rad. One curve for each value of W (weight held): 500 N, 250 N, 1000 N. Other inputs as in the worked example: beta = 0.7853981633974483 rad. 40 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, alpha = 0.523599 rad, T1 = 366.025 N.*
 
 ```python
 mechanical_engineering_ai999x.solve('two_cable_equilibrium', W=500.0, alpha=0.5235987755982988, beta=0.7853981633974483)
@@ -351,15 +343,11 @@ $$
 
 ![A force (Fx, Fy) = (100, 200) applied at (2, 1) and its moment about O = (0, 0); the dashed line is the line of action and the green segment the perpendicular from O to it](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/moment-of-a-force-fbd)
 
-*A force (Fx, Fy) = (100, 200) applied at (2, 1) and its moment about O = (0, 0); the dashed line is the line of action and the green segment the perpendicular from O to it. Marked: the returned moment M = 300 (counter-clockwise positive) and distance d = 1.342. Your inputs: Fx = 100 N, Fy = 200 N, x = 2 m, y = 1 m.*
+*A force (Fx, Fy) = (100, 200) applied at (2, 1) and its moment about O = (0, 0); the dashed line is the line of action and the green segment the perpendicular from O to it. Marked: the returned moment M = 300 (counter-clockwise positive) and distance d = 1.34164.*
 
-![Moment about the point (counterclockwise](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/moment-of-a-force-live-1)
+![M (moment about the point (counterclockwise positive)) against Fx (x component of the force) from 50 N to 150 N](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/moment-of-a-force-curve)
 
-*Moment about the point (counterclockwise... as Fy runs from 120 to 280 N, every other input as you entered it (41 solutions). Marked: your Fy = 200 N gives M = 300. Your inputs: Fx = 100 N, Fy = 200 N, x = 2 m, y = 1 m.*
-
-![Moment about the point (counterclockwise](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/moment-of-a-force-live-2)
-
-*Moment about the point (counterclockwise... as x runs from 1.2 to 2.8 m, every other input as you entered it (29 solutions). Marked: your x = 2 m gives M = 300. Your inputs: Fx = 100 N, Fy = 200 N, x = 2 m, y = 1 m.*
+*M (moment about the point (counterclockwise positive)) against Fx (x component of the force) from 50 N to 150 N. One curve for each value of Fy (y component of the force): 200 N, 100 N, 400 N. Other inputs as in the worked example: x = 2.0 m, y = 1.0 m. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, Fx = 100 N, M = 300 N*m.*
 
 ```python
 mechanical_engineering_ai999x.solve('moment_of_a_force', Fx=100.0, Fy=200.0, x=2.0, y=1.0)
@@ -411,17 +399,13 @@ $$
 - **Assumes:** $0 < a < L$; Euler-Bernoulli beam, linear elastic, prismatic
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Simply supported beam, span L = 6 m, point load P = 20 kN at a = 2 m, drawn to scale with its shear-force and bending-moment diagrams, derived by statics from the reactions the model returned](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/simply-supported-beam-point-load-beam.svg)
+![Simply supported beam, span L = 6 m, point load P = 20 kN at a = 2 m (E = 2](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/simply-supported-beam-point-load-beam)
 
-*Simply supported beam, span L = 6 m, point load P = 20 kN at a = 2 m, drawn to scale with its shear-force and bending-moment diagrams, derived by statics from the reactions the model returned. Marked: RA = 13.33 kN, RB = 6.667 kN, Mmax = 26.67 kN·m, maximum deflection 4.838 mm. In SI units: M_max = 2.667e+04 N*m. Your inputs: L = 6 m, P = 20 kN, a = 2 m, E = 200 GPa, I = 8e-5 m^4.*
+*Simply supported beam, span L = 6 m, point load P = 20 kN at a = 2 m (E = 2.0000e+11 Pa, I = 8.0000e-05 m⁴), drawn to scale with its shear-force and bending-moment diagrams, derived by statics from the reactions the package returned. Marked: RA = 13.3333 kN, RB = 6.66667 kN, Mmax = 26.6667 kN·m, maximum deflection 4.8385 mm at x = 2.73401 m.*
 
-![Maximum bending moment (under the load) as L runs from 3](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/simply-supported-beam-point-load-live-1)
+![M_max (maximum bending moment (under the load)) against L (span) from 3 m to 9 m](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/simply-supported-beam-point-load-curve)
 
-*Maximum bending moment (under the load) as L runs from 3.6 to 8.4 m, every other input as you entered it (41 solutions). Marked: your L = 6 m gives M_max = 2.667e+04. Your inputs: L = 6 m, P = 20 kN, a = 2 m, E = 200 GPa, I = 8e-5 m^4.*
-
-![Maximum bending moment (under the load) as a runs from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/simply-supported-beam-point-load-live-2)
-
-*Maximum bending moment (under the load) as a runs from 1.2 to 2.8 m, every other input as you entered it (29 solutions). Marked: your a = 2 m gives M_max = 2.667e+04. Your inputs: L = 6 m, P = 20 kN, a = 2 m, E = 200 GPa, I = 8e-5 m^4.*
+*M_max (maximum bending moment (under the load)) against L (span) from 3 m to 9 m. One curve for each value of P (point load (downward)): 20000 N, 10000 N, 40000 N. Other inputs as in the worked example: a = 2.0 m, E = 200000000000.0 Pa, I = 8e-05 m^4. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, L = 6 m, M_max = 26666.7 N*m.*
 
 ```python
 mechanical_engineering_ai999x.solve('simply_supported_beam_point_load', L=6.0, P=20000.0, a=2.0, E=200000000000.0, I=8e-05)
@@ -471,17 +455,13 @@ $$
 - **Assumes:** L, w, E, $I > 0$; Euler-Bernoulli beam, small deflections
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Simply supported beam, span L = 5 m, uniform load w = 10 kN/m, with its shear-force and bending-moment diagrams derived by statics from the returned reactions](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/simply-supported-beam-udl-beam)
+![Simply supported beam, span L = 5 m, uniform load w = 10 kN/m (E = 2](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/simply-supported-beam-udl-beam)
 
-*Simply supported beam, span L = 5 m, uniform load w = 10 kN/m, with its shear-force and bending-moment diagrams derived by statics from the returned reactions. Marked: RA = 25 kN, RB = 25 kN, Mmax = 31.25 kN·m, maximum deflection 10.17 mm at midspan. In SI units: M_max = 3.125e+04 N*m. Your inputs: L = 5 m, w = 10 kN/m, E = 200 GPa, I = 4e-5 m^4.*
+*Simply supported beam, span L = 5 m, uniform load w = 10 kN/m (E = 2.0000e+11 Pa, I = 4.0000e-05 m⁴), with its shear-force and bending-moment diagrams derived by statics from the returned reactions. Marked: RA = 25 kN, RB = 25 kN, Mmax = 31.25 kN·m, maximum deflection 10.1725 mm at midspan, end slope 0.373019°.*
 
-![Maximum bending moment (midspan) as L runs from 3 to 7 m, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/simply-supported-beam-udl-live-1)
+![M_max (maximum bending moment (midspan)) against L (span) from 2](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/simply-supported-beam-udl-curve)
 
-*Maximum bending moment (midspan) as L runs from 3 to 7 m, every other input as you entered it (41 solutions). Marked: your L = 5 m gives M_max = 3.125e+04. Your inputs: L = 5 m, w = 10 kN/m, E = 200 GPa, I = 4e-5 m^4.*
-
-![Maximum bending moment (midspan) as w runs from 6 to 14 kN/m, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/simply-supported-beam-udl-live-2)
-
-*Maximum bending moment (midspan) as w runs from 6 to 14 kN/m, every other input as you entered it (29 solutions). Marked: your w = 10 kN/m gives M_max = 3.125e+04. Your inputs: L = 5 m, w = 10 kN/m, E = 200 GPa, I = 4e-5 m^4.*
+*M_max (maximum bending moment (midspan)) against L (span) from 2.5 m to 7.5 m. One curve for each value of w (uniform load per unit length (downward)): 10000 N/m, 5000 N/m, 20000 N/m. Other inputs as in the worked example: E = 200000000000.0 Pa, I = 4e-05 m^4. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, L = 5 m, M_max = 31250 N*m.*
 
 ```python
 mechanical_engineering_ai999x.solve('simply_supported_beam_udl', L=5.0, w=10000.0, E=200000000000.0, I=4e-05)
@@ -524,17 +504,17 @@ $$
 - **Assumes:** $0  \leq  x_i  \leq  L$; $P_i > 0$ (downward); x and P of equal length
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Shear-force and bending-moment diagrams of a simply supported beam of span 8 m with point loads 10 kN at x = 2 m, 20 kN at x = 5 m, drawn from the reactions the model returned (RA = 15 kN, RB = 15 kN); marked: the maximum moment it returned, x = 5 m, M = 45 kN·m](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/simply-supported-beam-point-loads-beam)
+![Shear-force and bending-moment diagrams of a simply supported beam of span 8 m with point loads 10, 20 kN at x = 2, 5 m, drawn from the reactions the package returned (RA = 15 kN, RB = 15 kN); marked: the maximum moment it returned, x = 5 m, M = 45 kN·m](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/simply-supported-beam-point-loads-beam.svg)
 
-*Shear-force and bending-moment diagrams of a simply supported beam of span 8 m with point loads 10 kN at x = 2 m, 20 kN at x = 5 m, drawn from the reactions the model returned (RA = 15 kN, RB = 15 kN); marked: the maximum moment it returned, x = 5 m, M = 45 kN·m. Your inputs: L = 8 m, x = 2, 5, P = 10, 20.*
+*Shear-force and bending-moment diagrams of a simply supported beam of span 8 m with point loads 10, 20 kN at x = 2, 5 m, drawn from the reactions the package returned (RA = 15 kN, RB = 15 kN); marked: the maximum moment it returned, x = 5 m, M = 45 kN·m.*
 
-![Simply supported beam, span L = 8 m, point loads 10 kN at x = 2 m, 20 kN at x = 5 m, to scale, over its shear-force and bending-moment diagrams derived by statics from the returned reactions](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/simply-supported-beam-point-loads-beam-2)
+![Simply supported beam, span L = 8 m, point loads 10, 20 kN at x = 2, 5 m, to scale, over its shear-force and bending-moment diagrams derived by statics from the returned reactions](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/simply-supported-beam-point-loads-beam-2)
 
-*Simply supported beam, span L = 8 m, point loads 10 kN at x = 2 m, 20 kN at x = 5 m, to scale, over its shear-force and bending-moment diagrams derived by statics from the returned reactions. Marked: RA = 15 kN, RB = 15 kN, Mmax = 45 kN·m at x = 5 m. Your inputs: L = 8 m, x = 2, 5, P = 10, 20.*
+*Simply supported beam, span L = 8 m, point loads 10, 20 kN at x = 2, 5 m, to scale, over its shear-force and bending-moment diagrams derived by statics from the returned reactions. Marked: RA = 15 kN, RB = 15 kN, Mmax = 45 kN·m at x = 5 m, Vmax = 15 kN.*
 
-![M max as L runs from 5](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/simply-supported-beam-point-loads-live-1)
+![M_max (maximum bending moment in kN*m) against L (span) from 4 m to 12 m](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/simply-supported-beam-point-loads-curve)
 
-*M max as L runs from 5.12 to 11.2 m, every other input as you entered it (39 solutions). Marked: your L = 8 m gives M_max = 45. Your inputs: L = 8 m, x = 2, 5, P = 10, 20.*
+*M_max (maximum bending moment in kN*m) against L (span) from 4 m to 12 m. Other inputs as in the worked example: x = 2, 5, P = 10, 20. 27 points computed by mechanical-engineering-ai999x; marked: the worked example, L = 8 m, M_max = 45.*
 
 ```python
 mechanical_engineering_ai999x.solve('simply_supported_beam_point_loads', L=8.0, x='2, 5', P='10, 20')
@@ -584,21 +564,17 @@ $$
 - **Assumes:** $0 < a  \leq  L$; Euler-Bernoulli beam, small deflections
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Deflected shape of a cantilever of length L = 2 m under a tip load P = 5 kN: the deflection at each of 31 positions x is the tip deflection the model returns for the load placed at x (the reciprocal theorem)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/cantilever-point-load-beam)
+![Deflected shape of a cantilever (L = 2 m, E = 2](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/cantilever-point-load-beam.svg)
 
-*Deflected shape of a cantilever of length L = 2 m under a tip load P = 5 kN: the deflection at each of 31 positions x is the tip deflection the model returns for the load placed at x (the reciprocal theorem). Marked: x = 2 m, tip deflection = 8.333 mm. Your inputs: L = 2 m, P = 5 kN, E = 200 GPa, I = 8e-6 m^4.*
+*Deflected shape of a cantilever (L = 2 m, E = 2.0000e+11 Pa, I = 8.0000e-06 m⁴) under a tip load P = 5000 N: the deflection at each of 40 positions x is the tip deflection the package returns for the load placed at x (Maxwell's reciprocal theorem). Marked: x = 2 m, tip deflection = 8.33333 mm (downward); the wall and beam depth are drawn for orientation.*
 
-![Cantilever of length L = 2 m fixed at x = 0 carrying a point load P = 5 kN at x = 2 m, with its shear-force and bending-moment diagrams derived by statics from the returned support reaction and fixing moment](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/cantilever-point-load-beam-2)
+![Cantilever of length L = 2 m fixed at x = 0 carrying a point load P = 5 kN at the free end (E = 2](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/cantilever-point-load-beam-2)
 
-*Cantilever of length L = 2 m fixed at x = 0 carrying a point load P = 5 kN at x = 2 m, with its shear-force and bending-moment diagrams derived by statics from the returned support reaction and fixing moment. Marked: R = 5 kN, M = 10 kN·m at the wall, deflection under the load 8.333 mm. Your inputs: L = 2 m, P = 5 kN, E = 200 GPa, I = 8e-6 m^4.*
+*Cantilever of length L = 2 m fixed at x = 0 carrying a point load P = 5 kN at the free end (E = 2.0000e+11 Pa, I = 8.0000e-06 m⁴), with its shear-force and bending-moment diagrams derived by statics from the returned support reaction and fixing moment. Marked: R = 5 kN, M = 10 kN·m at the wall, tip deflection 8.33333 mm, tip slope 0.358099°.*
 
-![Deflection of the free end in mm as L runs from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/cantilever-point-load-live-1)
+![tip_deflection_mm (deflection of the free end in mm) against E (Young's modulus) from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/cantilever-point-load-curve)
 
-*Deflection of the free end in mm as L runs from 1.2 to 2.8 m, every other input as you entered it (41 solutions). Marked: your L = 2 m gives tip_deflection_mm = 8.333. Your inputs: L = 2 m, P = 5 kN, E = 200 GPa, I = 8e-6 m^4.*
-
-![Deflection of the free end in mm as E runs from 120 to 280 GPa, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/cantilever-point-load-live-2)
-
-*Deflection of the free end in mm as E runs from 120 to 280 GPa, every other input as you entered it (29 solutions). Marked: your E = 200 GPa gives tip_deflection_mm = 8.333. Your inputs: L = 2 m, P = 5 kN, E = 200 GPa, I = 8e-6 m^4.*
+*tip_deflection_mm (deflection of the free end in mm) against E (Young's modulus) from 1.0000e+11 Pa to 3.0000e+11 Pa. One curve for each value of L (length of the cantilever): 2 m, 1 m, 4 m. Other inputs as in the worked example: P = 5000.0 N, I = 8e-06 m^4. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, E = 2.0000e+11 Pa, tip_deflection_mm = 8.33333.*
 
 ```python
 mechanical_engineering_ai999x.solve('cantilever_point_load', L=2.0, P=5000.0, E=200000000000.0, I=8e-06)
@@ -646,17 +622,13 @@ $$
 - **Assumes:** L, w, E, $I > 0$; Euler-Bernoulli beam, small deflections
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Cantilever of length L = 3 m fixed at x = 0 carrying a uniform load w = 2 kN/m, with its shear-force and bending-moment diagrams derived by statics from the returned support reaction and fixing moment](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/cantilever-udl-beam)
+![Cantilever of length L = 3 m fixed at x = 0 carrying a uniform load w = 2 kN/m (E = 2](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/cantilever-udl-beam)
 
-*Cantilever of length L = 3 m fixed at x = 0 carrying a uniform load w = 2 kN/m, with its shear-force and bending-moment diagrams derived by statics from the returned support reaction and fixing moment. Marked: R = 6 kN, M = 9 kN·m at the wall, tip deflection 10.12 mm. Your inputs: L = 3 m, w = 2 kN/m, E = 200 GPa, I = 1e-5 m^4.*
+*Cantilever of length L = 3 m fixed at x = 0 carrying a uniform load w = 2 kN/m (E = 2.0000e+11 Pa, I = 1.0000e-05 m⁴), with its shear-force and bending-moment diagrams derived by statics from the returned support reaction and fixing moment. Marked: R = 6 kN, M = 9 kN·m at the wall, tip deflection 10.125 mm, tip slope 0.257831°.*
 
-![Deflection of the free end in mm as L runs from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/cantilever-udl-live-1)
+![tip_deflection_mm (deflection of the free end in mm) against L (length of the cantilever) from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/cantilever-udl-curve)
 
-*Deflection of the free end in mm as L runs from 1.8 to 4.2 m, every other input as you entered it (41 solutions). Marked: your L = 3 m gives tip_deflection_mm = 10.12. Your inputs: L = 3 m, w = 2 kN/m, E = 200 GPa, I = 1e-5 m^4.*
-
-![Deflection of the free end in mm as w runs from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/cantilever-udl-live-2)
-
-*Deflection of the free end in mm as w runs from 1.2 to 2.8 kN/m, every other input as you entered it (29 solutions). Marked: your w = 2 kN/m gives tip_deflection_mm = 10.12. Your inputs: L = 3 m, w = 2 kN/m, E = 200 GPa, I = 1e-5 m^4.*
+*tip_deflection_mm (deflection of the free end in mm) against L (length of the cantilever) from 1.5 m to 4.5 m. One curve for each value of w (uniform load per unit length (downward)): 2000 N/m, 1000 N/m, 4000 N/m. Other inputs as in the worked example: E = 200000000000.0 Pa, I = 1e-05 m^4. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, L = 3 m, tip_deflection_mm = 10.125.*
 
 ```python
 mechanical_engineering_ai999x.solve('cantilever_udl', L=3.0, w=2000.0, E=200000000000.0, I=1e-05)
@@ -698,17 +670,13 @@ $$
 - **Assumes:** L, w, E, $I > 0$; maximum intensity at the fixed end; Euler-Bernoulli beam
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Cantilever of length L = 3 m fixed at x = 0 carrying a triangular load falling from w = 6 kN/m at the support to zero at the free end, with its shear-force and bending-moment diagrams derived by statics from the returned support reaction and fixing moment](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/cantilever-triangular-load-beam)
+![Cantilever of length L = 3 m fixed at x = 0 carrying a triangular load falling from w = 6 kN/m at the support to zero at the free end (E = 2](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/cantilever-triangular-load-beam)
 
-*Cantilever of length L = 3 m fixed at x = 0 carrying a triangular load falling from w = 6 kN/m at the support to zero at the free end, with its shear-force and bending-moment diagrams derived by statics from the returned support reaction and fixing moment. Marked: R = 9 kN, M = 9 kN·m at the wall, tip deflection 4.05 mm. Your inputs: L = 3 m, w = 6 kN/m, E = 200 GPa, I = 2e-5 m^4.*
+*Cantilever of length L = 3 m fixed at x = 0 carrying a triangular load falling from w = 6 kN/m at the support to zero at the free end (E = 2.0000e+11 Pa, I = 2.0000e-05 m⁴), with its shear-force and bending-moment diagrams derived by statics from the returned support reaction and fixing moment. Marked: R = 9 kN, M = 9 kN·m at the wall, tip deflection 4.05 mm, tip slope 0.0966866°.*
 
-![Deflection of the free end in mm as L runs from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/cantilever-triangular-load-live-1)
+![tip_deflection_mm (deflection of the free end in mm) against L (length of the cantilever) from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/cantilever-triangular-load-curve)
 
-*Deflection of the free end in mm as L runs from 1.8 to 4.2 m, every other input as you entered it (41 solutions). Marked: your L = 3 m gives tip_deflection_mm = 4.05. Your inputs: L = 3 m, w = 6 kN/m, E = 200 GPa, I = 2e-5 m^4.*
-
-![Deflection of the free end in mm as E runs from 120 to 280 GPa, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/cantilever-triangular-load-live-2)
-
-*Deflection of the free end in mm as E runs from 120 to 280 GPa, every other input as you entered it (29 solutions). Marked: your E = 200 GPa gives tip_deflection_mm = 4.05. Your inputs: L = 3 m, w = 6 kN/m, E = 200 GPa, I = 2e-5 m^4.*
+*tip_deflection_mm (deflection of the free end in mm) against L (length of the cantilever) from 1.5 m to 4.5 m. One curve for each value of w (load intensity at the fixed end (downward)): 6000 N/m, 3000 N/m, 12000 N/m. Other inputs as in the worked example: E = 200000000000.0 Pa, I = 2e-05 m^4. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, L = 3 m, tip_deflection_mm = 4.05.*
 
 ```python
 mechanical_engineering_ai999x.solve('cantilever_triangular_load', L=3.0, w=6000.0, E=200000000000.0, I=2e-05)
@@ -753,15 +721,11 @@ $$
 
 ![Beam built in at both ends, span L = 6 m, uniform load w = 12 kN/m, with shear-force and bending-moment diagrams derived by statics from the returned reactions and end moments](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/fixed-fixed-beam-udl-beam)
 
-*Beam built in at both ends, span L = 6 m, uniform load w = 12 kN/m, with shear-force and bending-moment diagrams derived by statics from the returned reactions and end moments. Marked: RA = 36 kN, RB = 36 kN, end moments 36 kN·m (hogging), midspan moment 18 kN·m, maximum deflection 3.375 mm. In SI units: M_end = 3.6e+04 N*m. Your inputs: L = 6 m, w = 12 kN/m, E = 200 GPa, I = 6e-5 m^4.*
+*Beam built in at both ends, span L = 6 m, uniform load w = 12 kN/m, with shear-force and bending-moment diagrams derived by statics from the returned reactions and end moments. Marked: RA = RB = 36 kN, end moments 36 kN·m (hogging), midspan moment 18 kN·m, maximum deflection 3.375 mm.*
 
-![Hogging moment at each fixed end as L runs from 3](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/fixed-fixed-beam-udl-live-1)
+![M_end (hogging moment at each fixed end) against L (span) from 3 m to 9 m](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/fixed-fixed-beam-udl-curve)
 
-*Hogging moment at each fixed end as L runs from 3.6 to 8.4 m, every other input as you entered it (41 solutions). Marked: your L = 6 m gives M_end = 3.6e+04. Your inputs: L = 6 m, w = 12 kN/m, E = 200 GPa, I = 6e-5 m^4.*
-
-![Hogging moment at each fixed end as w runs from 7](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/fixed-fixed-beam-udl-live-2)
-
-*Hogging moment at each fixed end as w runs from 7.2 to 16.8 kN/m, every other input as you entered it (29 solutions). Marked: your w = 12 kN/m gives M_end = 3.6e+04. Your inputs: L = 6 m, w = 12 kN/m, E = 200 GPa, I = 6e-5 m^4.*
+*M_end (hogging moment at each fixed end) against L (span) from 3 m to 9 m. One curve for each value of w (uniform load per unit length (downward)): 12000 N/m, 6000 N/m, 24000 N/m. Other inputs as in the worked example: E = 200000000000.0 Pa, I = 6e-05 m^4. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, L = 6 m, M_end = 36000 N*m.*
 
 ```python
 mechanical_engineering_ai999x.solve('fixed_fixed_beam_udl', L=6.0, w=12000.0, E=200000000000.0, I=6e-05)
@@ -808,15 +772,11 @@ $$
 
 ![Beam built in at both ends, span L = 6 m, point load P = 30 kN at a = 2 m, with shear-force and bending-moment diagrams derived by statics from the returned reactions and fixing moments](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/fixed-fixed-beam-point-load-beam)
 
-*Beam built in at both ends, span L = 6 m, point load P = 30 kN at a = 2 m, with shear-force and bending-moment diagrams derived by statics from the returned reactions and fixing moments. Marked: RA = 22.22 kN, RB = 7.778 kN, MA = 26.67 kN·m, MB = 13.33 kN·m (hogging), M under the load = 17.78 kN·m. In SI units: MA = 2.667e+04 N*m. Your inputs: L = 6 m, P = 30 kN, a = 2 m, E = 200 GPa, I = 5e-5 m^4.*
+*Beam built in at both ends, span L = 6 m, point load P = 30 kN at a = 2 m, with shear-force and bending-moment diagrams derived by statics from the returned reactions and fixing moments. Marked: RA = 22.2222 kN, RB = 7.77778 kN, MA = 26.6667 kN·m, MB = 13.3333 kN·m (hogging), M under the load = 17.7778 kN·m, deflection there 2.37037 mm.*
 
-![Hogging moment at A as L runs from 3](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/fixed-fixed-beam-point-load-live-1)
+![MA (hogging moment at A) against a (distance of the load from end A) from 1 m to 3 m](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/fixed-fixed-beam-point-load-curve)
 
-*Hogging moment at A as L runs from 3.6 to 8.4 m, every other input as you entered it (41 solutions). Marked: your L = 6 m gives MA = 2.667e+04. Your inputs: L = 6 m, P = 30 kN, a = 2 m, E = 200 GPa, I = 5e-5 m^4.*
-
-![Hogging moment at A as a runs from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/fixed-fixed-beam-point-load-live-2)
-
-*Hogging moment at A as a runs from 1.2 to 2.8 m, every other input as you entered it (29 solutions). Marked: your a = 2 m gives MA = 2.667e+04. Your inputs: L = 6 m, P = 30 kN, a = 2 m, E = 200 GPa, I = 5e-5 m^4.*
+*MA (hogging moment at A) against a (distance of the load from end A) from 1 m to 3 m. One curve for each value of P (point load (downward)): 30000 N, 15000 N, 60000 N. Other inputs as in the worked example: L = 6.0 m, E = 200000000000.0 Pa, I = 5e-05 m^4. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, a = 2 m, MA = 26666.7 N*m.*
 
 ```python
 mechanical_engineering_ai999x.solve('fixed_fixed_beam_point_load', L=6.0, P=30000.0, a=2.0, E=200000000000.0, I=5e-05)
@@ -863,15 +823,11 @@ $$
 
 ![Propped cantilever (fixed at x = 0, roller at x = 8 m) under a uniform load w = 10 kN/m, with shear-force and bending-moment diagrams derived by statics from the returned reactions](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/propped-cantilever-udl-beam)
 
-*Propped cantilever (fixed at x = 0, roller at x = 8 m) under a uniform load w = 10 kN/m, with shear-force and bending-moment diagrams derived by statics from the returned reactions. Marked: RA = 50 kN, RB = 30 kN, MA = 80 kN·m (hogging), largest span moment 45 kN·m at x = 5 m, maximum deflection 11.09 mm. In SI units: MA = 8e+04 N*m. Your inputs: L = 8 m, w = 10 kN/m, E = 200 GPa, I = 1e-4 m^4.*
+*Propped cantilever (fixed at x = 0, roller at x = 8 m) under a uniform load w = 10 kN/m, with shear-force and bending-moment diagrams derived by statics from the returned reactions. Marked: RA = 50 kN, RB = 30 kN, MA = 80 kN·m (hogging), largest span moment 45 kN·m at x = 5 m, maximum deflection 11.0922 mm at x = 4.62772 m.*
 
-![Hogging moment at A and largest sagging moment in the span as L runs from 4](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/propped-cantilever-udl-live-1)
+![MA (hogging moment at A) against L (span) from 4 m to 12 m](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/propped-cantilever-udl-curve)
 
-*Hogging moment at A and largest sagging moment in the span as L runs from 4.8 to 11.2 m, every other input as you entered it (41 solutions). Marked: your L = 8 m gives MA = 8e+04. Your inputs: L = 8 m, w = 10 kN/m, E = 200 GPa, I = 1e-4 m^4.*
-
-![Maximum deflection in mm as E runs from 120 to 280 GPa, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/propped-cantilever-udl-live-2)
-
-*Maximum deflection in mm as E runs from 120 to 280 GPa, every other input as you entered it (29 solutions). Marked: your E = 200 GPa gives max_deflection_mm = 11.09. Your inputs: L = 8 m, w = 10 kN/m, E = 200 GPa, I = 1e-4 m^4.*
+*MA (hogging moment at A) against L (span) from 4 m to 12 m. One curve for each value of w (uniform load per unit length (downward)): 10000 N/m, 5000 N/m, 20000 N/m. Other inputs as in the worked example: E = 200000000000.0 Pa, I = 0.0001 m^4. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, L = 8 m, MA = 80000 N*m.*
 
 ```python
 mechanical_engineering_ai999x.solve('propped_cantilever_udl', L=8.0, w=10000.0, E=200000000000.0, I=0.0001)
@@ -916,15 +872,11 @@ $$
 
 ![Propped cantilever (fixed at A, x = 0; roller at B, x = 4 m) with a point load P = 16 kN at a = 2 m, with shear-force and bending-moment diagrams derived by statics from the returned reactions](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/propped-cantilever-point-load-beam)
 
-*Propped cantilever (fixed at A, x = 0; roller at B, x = 4 m) with a point load P = 16 kN at a = 2 m, with shear-force and bending-moment diagrams derived by statics from the returned reactions. Marked: RA = 11 kN, RB = 5 kN, MA = 12 kN·m (hogging), M under the load = 10 kN·m, deflection there 2.333 mm. In SI units: RB = 5000 N. Your inputs: L = 4 m, P = 16 kN, a = 2 m, E = 200 GPa, I = 2e-5 m^4.*
+*Propped cantilever (fixed at A, x = 0; roller at B, x = 4 m) with a point load P = 16 kN at a = 2 m, with shear-force and bending-moment diagrams derived by statics from the returned reactions. Marked: RA = 11 kN, RB = 5 kN, MA = 12 kN·m (hogging), M under the load = 10 kN·m, deflection there 2.33333 mm.*
 
-![Reaction at the prop B and reaction at the fixed end A as L runs from 2](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/propped-cantilever-point-load-live-1)
+![RB (reaction at the prop B) against L (span) from 2 m to 6 m](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/propped-cantilever-point-load-curve)
 
-*Reaction at the prop B and reaction at the fixed end A as L runs from 2.4 to 5.6 m, every other input as you entered it (41 solutions). Marked: your L = 4 m gives RB = 5000. Your inputs: L = 4 m, P = 16 kN, a = 2 m, E = 200 GPa, I = 2e-5 m^4.*
-
-![Reaction at the prop B and reaction at the fixed end A as a runs from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/propped-cantilever-point-load-live-2)
-
-*Reaction at the prop B and reaction at the fixed end A as a runs from 1.2 to 2.8 m, every other input as you entered it (29 solutions). Marked: your a = 2 m gives RB = 5000. Your inputs: L = 4 m, P = 16 kN, a = 2 m, E = 200 GPa, I = 2e-5 m^4.*
+*RB (reaction at the prop B) against L (span) from 2 m to 6 m. One curve for each value of P (point load (downward)): 16000 N, 8000 N, 32000 N. Other inputs as in the worked example: a = 2.0 m, E = 200000000000.0 Pa, I = 2e-05 m^4. 30 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, L = 4 m, RB = 5000 N.*
 
 ```python
 mechanical_engineering_ai999x.solve('propped_cantilever_point_load', L=4.0, P=16000.0, a=2.0, E=200000000000.0, I=2e-05)
@@ -967,17 +919,13 @@ $$
 - **Assumes:** b, $h > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Rectangular section b = 100 mm by h = 200 mm drawn to scale with its centroid and centroidal axes (at mid-width and mid-depth)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/rectangular-section-properties-section)
+![Rectangular section b = 100 mm × h = 200 mm drawn to scale with its centroid and centroidal axes (at mid-width and mid-depth)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/rectangular-section-properties-section)
 
-*Rectangular section b = 100 mm by h = 200 mm drawn to scale with its centroid and centroidal axes (at mid-width and mid-depth). Marked: the returned A = 20000 mm², Ix = 6.667e+07 mm⁴, Iy = 1.667e+07 mm⁴, Zx = 666667 mm³, Zy = 333333 mm³, rx = 57.74 mm, ry = 28.87 mm, J = 8.333e+07 mm⁴. In SI units: Ix = 6.667e-05 m^4. Your inputs: b = 100 mm, h = 200 mm.*
+*Rectangular section b = 100 mm × h = 200 mm drawn to scale with its centroid and centroidal axes (at mid-width and mid-depth). Marked: the returned A = 20000 mm², Ix = 6.667e+07 mm⁴, Iy = 1.667e+07 mm⁴, Zx = 6.667e+05 mm³, Zy = 3.333e+05 mm³, rx = 57.735 mm, ry = 28.8675 mm, J = 8.333e+07 mm⁴.*
 
-![Second moment of area about the horizontal](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/rectangular-section-properties-live-1)
+![Ix (second moment of area about the horizontal centroidal axis) against h (depth (vertical)) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/rectangular-section-properties-curve)
 
-*Second moment of area about the horizontal... as b runs from 60 to 140 mm, every other input as you entered it (41 solutions). Marked: your b = 100 mm gives Ix = 6.667e-05. Your inputs: b = 100 mm, h = 200 mm.*
-
-![Second moment of area about the horizontal](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/rectangular-section-properties-live-2)
-
-*Second moment of area about the horizontal... as h runs from 120 to 280 mm, every other input as you entered it (29 solutions). Marked: your h = 200 mm gives Ix = 6.667e-05. Your inputs: b = 100 mm, h = 200 mm.*
+*Ix (second moment of area about the horizontal centroidal axis) against h (depth (vertical)) from 0.1 m to 0.3 m. One curve for each value of b (width (horizontal)): 0.1 m, 0.05 m, 0.2 m. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, h = 0.2 m, Ix = 6.6667e-05 m^4.*
 
 ```python
 mechanical_engineering_ai999x.solve('rectangular_section_properties', b=0.1, h=0.2)
@@ -1020,15 +968,11 @@ $$
 
 ![Solid circular section of diameter d = 50 mm drawn to scale with its centroid](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/circular-section-properties-section)
 
-*Solid circular section of diameter d = 50 mm drawn to scale with its centroid. Marked: the returned A = 1963 mm², I = 306796 mm⁴, J = 613592 mm⁴, Z = 12272 mm³, Zp = 20833 mm³, r = 12.5 mm. In SI units: I = 3.068e-07 m^4. Your inputs: d = 50 mm.*
+*Solid circular section of diameter d = 50 mm drawn to scale with its centroid. Marked: the returned A = 1963.5 mm², I = 3.068e+05 mm⁴, J = 6.136e+05 mm⁴, Z = 1.227e+04 mm³, Zp = 2.083e+04 mm³, radius of gyration r = 12.5 mm.*
 
-![Second moment of area about a diameter as d runs from 30 to 70 mm, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/circular-section-properties-live-1)
+![I (second moment of area about a diameter) against d (diameter) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/circular-section-properties-curve)
 
-*Second moment of area about a diameter as d runs from 30 to 70 mm, every other input as you entered it (41 solutions). Marked: your d = 50 mm gives I = 3.068e-07. Your inputs: d = 50 mm.*
-
-![Every answer of one unit for your inputs: I (second moment of area about a diameter) = 3](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/circular-section-properties-live-2)
-
-*Every answer of one unit for your inputs: I (second moment of area about a diameter) = 3.068e-07; J (polar second moment of area (torsion constant of a circle)) = 6.136e-07. Your inputs: d = 50 mm.*
+*I (second moment of area about a diameter) against d (diameter) from 0.025 m to 0.075 m. Outputs with the same unit drawn together: J (polar second moment of area (torsion constant of a circle)). 31 points computed by mechanical-engineering-ai999x; marked: the worked example, d = 0.05 m, I = 3.0680e-07 m^4.*
 
 ```python
 mechanical_engineering_ai999x.solve('circular_section_properties', d=0.05)
@@ -1071,15 +1015,11 @@ $$
 
 ![Tube section, outer diameter D = 60 mm, inner diameter d = 40 mm, to scale](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/hollow-circular-section-properties-section)
 
-*Tube section, outer diameter D = 60 mm, inner diameter d = 40 mm, to scale. Marked: the returned A = 1571 mm², I = 510509 mm⁴, J = 1.021e+06 mm⁴, Z = 17017 mm³, Zp = 25333 mm³, r = 18.03 mm. In SI units: I = 5.105e-07 m^4. Your inputs: D = 60 mm, d = 40 mm.*
+*Tube section, outer diameter D = 60 mm, inner diameter d = 40 mm, to scale. Marked: the returned A = 1570.8 mm², I = 5.105e+05 mm⁴, J = 1.021e+06 mm⁴, Z = 1.702e+04 mm³, Zp = 2.533e+04 mm³, r = 18.0278 mm.*
 
-![Second moment of area about a diameter as D runs from 40](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/hollow-circular-section-properties-live-1)
+![I (second moment of area about a diameter) against D (outer diameter) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/hollow-circular-section-properties-curve)
 
-*Second moment of area about a diameter as D runs from 40.8 to 84 mm, every other input as you entered it (37 solutions). Marked: your D = 60 mm gives I = 5.105e-07. Your inputs: D = 60 mm, d = 40 mm.*
-
-![Second moment of area about a diameter as d runs from 24 to 56 mm, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/hollow-circular-section-properties-live-2)
-
-*Second moment of area about a diameter as d runs from 24 to 56 mm, every other input as you entered it (29 solutions). Marked: your d = 40 mm gives I = 5.105e-07. Your inputs: D = 60 mm, d = 40 mm.*
+*I (second moment of area about a diameter) against D (outer diameter) from 0.03 m to 0.09 m. One curve for each value of d (inner diameter): 0.04 m, 0.02 m. 25 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, D = 0.06 m, I = 5.1051e-07 m^4.*
 
 ```python
 mechanical_engineering_ai999x.solve('hollow_circular_section_properties', D=0.06, d=0.04)
@@ -1124,17 +1064,13 @@ $$
 - **Assumes:** B, H, $t > 0$; 2t < min(B, H); square corners (no corner radii)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Hollow rectangular section B = 100 mm by H = 200 mm, wall t = 10 mm, to scale with its centroid](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/hollow-rectangular-section-properties-section)
+![Hollow rectangular section B = 100 mm × H = 200 mm, wall t = 10 mm, to scale with its centroid](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/hollow-rectangular-section-properties-section)
 
-*Hollow rectangular section B = 100 mm by H = 200 mm, wall t = 10 mm, to scale with its centroid. Marked: the returned A = 5600 mm², Ix = 2.779e+07 mm⁴, Iy = 8.987e+06 mm⁴, Zx = 277867 mm³, Zy = 179733 mm³, Zpx = 352000 mm³, rx = 70.44 mm, ry = 40.06 mm. In SI units: Ix = 2.779e-05 m^4. Your inputs: B = 100 mm, H = 200 mm, t = 10 mm.*
+*Hollow rectangular section B = 100 mm × H = 200 mm, wall t = 10 mm, to scale with its centroid. Marked: the returned A = 5600 mm², Ix = 2.779e+07 mm⁴, Iy = 8.987e+06 mm⁴, Zx = 2.779e+05 mm³, Zy = 1.797e+05 mm³, Zpx = 3.52e+05 mm³, rx = 70.4408 mm, ry = 40.0595 mm.*
 
-![Second moment of area about the horizontal](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/hollow-rectangular-section-properties-live-1)
+![Ix (second moment of area about the horizontal centroidal axis) against t (wall thickness) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/hollow-rectangular-section-properties-curve)
 
-*Second moment of area about the horizontal... as H runs from 120 to 280 mm, every other input as you entered it (41 solutions). Marked: your H = 200 mm gives Ix = 2.779e-05. Your inputs: B = 100 mm, H = 200 mm, t = 10 mm.*
-
-![Second moment of area about the horizontal](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/hollow-rectangular-section-properties-live-2)
-
-*Second moment of area about the horizontal... as B runs from 60 to 140 mm, every other input as you entered it (29 solutions). Marked: your B = 100 mm gives Ix = 2.779e-05. Your inputs: B = 100 mm, H = 200 mm, t = 10 mm.*
+*Ix (second moment of area about the horizontal centroidal axis) against t (wall thickness) from 0.001 m to 0.1 m on a logarithmic axis. One curve for each value of H (outer depth): 0.2 m, 0.1 m, 0.4 m. Other inputs as in the worked example: B = 0.1 m. 34 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, t = 0.01 m, Ix = 2.7787e-05 m^4.*
 
 ```python
 mechanical_engineering_ai999x.solve('hollow_rectangular_section_properties', B=0.1, H=0.2, t=0.01)
@@ -1182,17 +1118,13 @@ $$
 - **Assumes:** 2 $tf < h$; $tw < b$; no root fillets
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![I-section (flanges b = 150 mm by tf = 12 mm, overall depth h = 300 mm, web tw = 8 mm) drawn to scale with its centroid at mid-depth](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/i-section-properties-section)
+![I-section (flanges b = 150 mm × tf = 12 mm, overall depth h = 300 mm, web tw = 8 mm) drawn to scale with its centroid at mid-depth](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/i-section-properties-section)
 
-*I-section (flanges b = 150 mm by tf = 12 mm, overall depth h = 300 mm, web tw = 8 mm) drawn to scale with its centroid at mid-depth. Marked: the returned A = 5808 mm², Ix = 8.871e+07 mm⁴, Iy = 6.762e+06 mm⁴, Zx = 591395 mm³, Zpx = 670752 mm³, rx = 123.6 mm, ry = 34.12 mm, shape factor 1.134. In SI units: Ix = 8.871e-05 m^4. Your inputs: b = 150 mm, h = 300 mm, tf = 12 mm, tw = 8 mm.*
+*I-section (flanges b = 150 mm × tf = 12 mm, overall depth h = 300 mm, web tw = 8 mm) drawn to scale with its centroid at mid-depth. Marked: the returned A = 5808 mm², Ix = 8.871e+07 mm⁴, Iy = 6.762e+06 mm⁴, Zx = 5.914e+05 mm³, Zpx = 6.708e+05 mm³, rx = 123.586 mm, ry = 34.1206 mm, shape factor 1.13419.*
 
-![Second moment of area about the horizontal](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/i-section-properties-live-1)
+![Ix (second moment of area about the horizontal centroidal axis) against tf (flange thickness) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/i-section-properties-curve)
 
-*Second moment of area about the horizontal... as b runs from 90 to 210 mm, every other input as you entered it (41 solutions). Marked: your b = 150 mm gives Ix = 8.871e-05. Your inputs: b = 150 mm, h = 300 mm, tf = 12 mm, tw = 8 mm.*
-
-![Second moment of area about the horizontal](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/i-section-properties-live-2)
-
-*Second moment of area about the horizontal... as h runs from 180 to 420 mm, every other input as you entered it (29 solutions). Marked: your h = 300 mm gives Ix = 8.871e-05. Your inputs: b = 150 mm, h = 300 mm, tf = 12 mm, tw = 8 mm.*
+*Ix (second moment of area about the horizontal centroidal axis) against tf (flange thickness) from 0.0012 m to 0.12 m on a logarithmic axis. One curve for each value of h (overall depth): 0.3 m, 0.15 m, 0.6 m. Other inputs as in the worked example: b = 0.15 m, tw = 0.008 m. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, tf = 0.012 m, Ix = 8.8709e-05 m^4.*
 
 ```python
 mechanical_engineering_ai999x.solve('i_section_properties', b=0.15, h=0.3, tf=0.012, tw=0.008)
@@ -1238,17 +1170,13 @@ $$
 - **Assumes:** $tf < h$; $tw  \leq  bf$; no fillets
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![T-section (flange 120 mm by 20 mm, overall depth h = 150 mm, stem 15 mm) drawn to scale; the centroid is placed at the returned ȳ = 106](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/t-section-properties-section)
+![T-section (flange 120 mm × 20 mm, overall depth h = 150 mm, stem 15 mm) drawn to scale; the centroid is placed at the returned ȳ = 106](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/t-section-properties-section)
 
-*T-section (flange 120 mm by 20 mm, overall depth h = 150 mm, stem 15 mm) drawn to scale; the centroid is placed at the returned ȳ = 106.4 mm above the bottom of the stem. Marked: A = 4350 mm², ȳ = 106.4 mm, Ix = 8.878e+06 mm⁴, Iy = 2.917e+06 mm⁴, Z_top = 203527 mm³, Z_bottom = 83456 mm³, rx = 45.18 mm, ry = 25.89 mm. In SI units: Ix = 8.878e-06 m^4. Your inputs: bf = 120 mm, tf = 20 mm, h = 150 mm, tw = 15 mm.*
+*T-section (flange 120 mm × 20 mm, overall depth h = 150 mm, stem 15 mm) drawn to scale; the centroid is placed at the returned ȳ = 106.379 mm above the bottom of the stem. Marked: A = 4350 mm², Ix = 8.878e+06 mm⁴, Iy = 2.917e+06 mm⁴, Z_top = 2.035e+05 mm³, Z_bottom = 8.346e+04 mm³.*
 
-![Second moment about the horizontal](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/t-section-properties-live-1)
+![Ix (second moment about the horizontal centroidal axis) against tf (flange thickness) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/t-section-properties-curve)
 
-*Second moment about the horizontal... as h runs from 90 to 210 mm, every other input as you entered it (41 solutions). Marked: your h = 150 mm gives Ix = 8.878e-06. Your inputs: bf = 120 mm, tf = 20 mm, h = 150 mm, tw = 15 mm.*
-
-![Second moment about the horizontal](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/t-section-properties-live-2)
-
-*Second moment about the horizontal... as bf runs from 72 to 168 mm, every other input as you entered it (29 solutions). Marked: your bf = 120 mm gives Ix = 8.878e-06. Your inputs: bf = 120 mm, tf = 20 mm, h = 150 mm, tw = 15 mm.*
+*Ix (second moment about the horizontal centroidal axis) against tf (flange thickness) from 0.002 m to 0.2 m on a logarithmic axis. One curve for each value of h (overall depth): 0.15 m, 0.075 m, 0.3 m. Other inputs as in the worked example: bf = 0.12 m, tw = 0.015 m. 38 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, tf = 0.02 m, Ix = 8.8780e-06 m^4.*
 
 ```python
 mechanical_engineering_ai999x.solve('t_section_properties', bf=0.12, tf=0.02, h=0.15, tw=0.015)
@@ -1294,17 +1222,13 @@ $$
 - **Assumes:** 2 $tf < h$; $tw < b$; square corners, no taper
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Channel section (flanges b = 80 mm by tf = 10 mm, depth h = 200 mm, web tw = 7 mm) to scale; the centroid is placed at the returned x̄ = 23](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/channel-section-properties-section)
+![Channel section (flanges b = 80 mm × tf = 10 mm, depth h = 200 mm, web tw = 7 mm) to scale; the centroid is placed at the returned x̄ = 23](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/channel-section-properties-section)
 
-*Channel section (flanges b = 80 mm by tf = 10 mm, depth h = 200 mm, web tw = 7 mm) to scale; the centroid is placed at the returned x̄ = 23.92 mm from the back of the web, at mid-depth. Marked: A = 2860 mm², x̄ = 23.92 mm, Ix = 1.786e+07 mm⁴, Iy = 1.798e+06 mm⁴, Zx = 178553 mm³, Zy,min = 32054 mm³, rx = 79.01 mm, ry = 25.07 mm. In SI units: Iy = 1.798e-06 m^4. Your inputs: b = 80 mm, h = 200 mm, tf = 10 mm, tw = 7 mm.*
+*Channel section (flanges b = 80 mm × tf = 10 mm, depth h = 200 mm, web tw = 7 mm) to scale; the centroid is placed at the returned x̄ = 23.9196 mm from the back of the web, at mid-depth. Marked: A = 2860 mm², Ix = 1.786e+07 mm⁴, Iy = 1.798e+06 mm⁴, Zx = 1.786e+05 mm³, Zy,min = 3.205e+04 mm³, rx = 79.0134 mm, ry = 25.0704 mm.*
 
-![Second moment about the vertical centroidal axis as b runs from 48 to 112 mm, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/channel-section-properties-live-1)
+![Iy (second moment about the vertical centroidal axis) against tw (web thickness) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/channel-section-properties-curve)
 
-*Second moment about the vertical centroidal axis as b runs from 48 to 112 mm, every other input as you entered it (41 solutions). Marked: your b = 80 mm gives Iy = 1.798e-06. Your inputs: b = 80 mm, h = 200 mm, tf = 10 mm, tw = 7 mm.*
-
-![Second moment about the vertical centroidal axis as h runs from 120 to 280 mm, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/channel-section-properties-live-2)
-
-*Second moment about the vertical centroidal axis as h runs from 120 to 280 mm, every other input as you entered it (29 solutions). Marked: your h = 200 mm gives Iy = 1.798e-06. Your inputs: b = 80 mm, h = 200 mm, tf = 10 mm, tw = 7 mm.*
+*Iy (second moment about the vertical centroidal axis) against tw (web thickness) from 0.0007 m to 0.07 m on a logarithmic axis. One curve for each value of b (flange width (including the web)): 0.08 m, 0.04 m, 0.16 m. Other inputs as in the worked example: h = 0.2 m, tf = 0.01 m. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, tw = 0.007 m, Iy = 1.7976e-06 m^4.*
 
 ```python
 mechanical_engineering_ai999x.solve('channel_section_properties', b=0.08, h=0.2, tf=0.01, tw=0.007)
@@ -1350,17 +1274,13 @@ $$
 - **Assumes:** $t < b$ and $t < h$; square corners, no root radius
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Angle section, legs b = 100 mm and h = 150 mm, thickness t = 10 mm, drawn to scale with the returned centroid (x̄ = 23](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/angle-section-properties-section)
+![Angle section, legs b = 100 mm and h = 100 mm, thickness t = 10 mm, drawn to scale with the returned centroid (x̄ = 28](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/angle-section-properties-section)
 
-*Angle section, legs b = 100 mm and h = 150 mm, thickness t = 10 mm, drawn to scale with the returned centroid (x̄ = 23.75 mm, ȳ = 48.75 mm from the heel), the centroidal x and y axes and the principal axes 1 and 2 at the returned angle θp = 23.98°. Marked: A = 2400 mm², x̄ = 23.75 mm, ȳ = 48.75 mm, Ix = 5.576e+06 mm⁴, Iy = 2.026e+06 mm⁴, Ixy = -1.969e+06 mm⁴, I1 = 6.452e+06 mm⁴, I2 = 1.15e+06 mm⁴, θp = 23.98°. In SI units: I2 = 1.15e-06 m^4. Your inputs: b = 100 mm, h = 150 mm, t = 10 mm.*
+*Angle section, legs b = 100 mm and h = 100 mm, thickness t = 10 mm, drawn to scale with the returned centroid (x̄ = 28.6842 mm, ȳ = 28.6842 mm from the heel), the centroidal x–y axes and the principal axes 1–2 at the returned angle θp = 45°. Marked: A = 1900 mm², Ix = 1.8e+06 mm⁴, Iy = 1.8e+06 mm⁴, Ixy = -1.066e+06 mm⁴, I1 = 2.866e+06 mm⁴, I2 = 7.343e+05 mm⁴, r_min = 19.6583 mm.*
 
-![Minor principal second moment as b runs from 60 to 140 mm, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/angle-section-properties-live-1)
+![I2 (minor principal second moment) against b (horizontal leg length) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/angle-section-properties-curve)
 
-*Minor principal second moment as b runs from 60 to 140 mm, every other input as you entered it (41 solutions). Marked: your b = 100 mm gives I2 = 1.15e-06. Your inputs: b = 100 mm, h = 150 mm, t = 10 mm.*
-
-![Minor principal second moment as h runs from 90 to 210 mm, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/angle-section-properties-live-2)
-
-*Minor principal second moment as h runs from 90 to 210 mm, every other input as you entered it (29 solutions). Marked: your h = 150 mm gives I2 = 1.15e-06. Your inputs: b = 100 mm, h = 150 mm, t = 10 mm.*
+*I2 (minor principal second moment) against b (horizontal leg length) from 0.01 m to 1 m on a logarithmic axis. One curve for each value of t (thickness (both legs)): 0.01 m, 0.005 m, 0.02 m. Other inputs as in the worked example: h = 0.1 m. 40 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, b = 0.1 m, I2 = 7.3425e-07 m^4.*
 
 ```python
 mechanical_engineering_ai999x.solve('angle_section_properties', b=0.1, h=0.1, t=0.01)
@@ -1403,17 +1323,9 @@ $$
 - **Assumes:** rectangles do not overlap (touching is allowed); 1 to 20 rectangles, all dimensions in mm
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Composite section of 2 rectangles (width, height, centre x, centre y: 200 20 0 10; 20 300 0 170) drawn to scale and numbered, with the returned centroid (x̄ = 0, ȳ = 106) and centroidal axes](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/composite-section-properties-section)
+![Composite section of 2 rectangles (width, height, centre x, centre y in mm: 200 20 0 10; 20 300 0 170) drawn to scale and numbered, with the returned centroid (x̄ = 0 mm, ȳ = 106 mm) and centroidal axes](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/composite-section-properties-section)
 
-*Composite section of 2 rectangles (width, height, centre x, centre y: 200 20 0 10; 20 300 0 170) drawn to scale and numbered, with the returned centroid (x̄ = 0, ȳ = 106) and centroidal axes. Marked: A = 10000, x̄ = 0, ȳ = 106, Ix = 1.066e+08, Iy = 1.353e+07, Ixy = 0, I1 = 1.066e+08, I2 = 1.353e+07 (units of the dimensions). Your inputs: rects = 200 20 0 10; 20 300 0 170.*
-
-![Ixy as rects[1,3] runs from -1 to 1, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/composite-section-properties-live-1)
-
-*Ixy as rects[1,3] runs from -1 to 1, every other input as you entered it (41 solutions). Marked: your rects[1,3] = 0 gives Ixy = 0. Your inputs: rects = 200 20 0 10; 20 300 0 170.*
-
-![Ix as rects[1,1] runs from 50 to 350, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/composite-section-properties-live-2)
-
-*Ix as rects[1,1] runs from 50 to 350, every other input as you entered it (29 solutions). Marked: your rects[1,1] = 200 gives Ix = 1.066e+08. Your inputs: rects = 200 20 0 10; 20 300 0 170.*
+*Composite section of 2 rectangles (width, height, centre x, centre y in mm: 200 20 0 10; 20 300 0 170) drawn to scale and numbered, with the returned centroid (x̄ = 0 mm, ȳ = 106 mm) and centroidal axes. Marked: A = 10000 mm², Ix = 1.0657e+08 mm⁴, Iy = 1.3533e+07 mm⁴, Ixy = 0 mm⁴, I1 = 1.0657e+08 mm⁴, I2 = 1.3533e+07 mm⁴.*
 
 ```python
 mechanical_engineering_ai999x.solve('composite_section_properties', rects='200 20 0 10; 20 300 0 170')
@@ -1458,19 +1370,7 @@ $$
 
 ![Polygon section with vertices 0 0; 100 0; 100 200; 0 200 (numbered in order), drawn to scale with the returned centroid (x̄ = 50, ȳ = 100) and centroidal axes](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/polygon-section-properties-section)
 
-*Polygon section with vertices 0 0; 100 0; 100 200; 0 200 (numbered in order), drawn to scale with the returned centroid (x̄ = 50, ȳ = 100) and centroidal axes. Marked: A = 20000, x̄ = 50, ȳ = 100, Ix = 6.667e+07, Iy = 1.667e+07, Ixy = 0, I1 = 6.667e+07, I2 = 1.667e+07 (units of the vertex coordinates). Your inputs: vertices = 0 0; 100 0; 100 200; 0 200.*
-
-![Ix as vertices[1,1] runs from -1 to 1, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/polygon-section-properties-live-1)
-
-*Ix as vertices[1,1] runs from -1 to 1, every other input as you entered it (41 solutions). Marked: your vertices[1,1] = 0 gives Ix = 6.667e+07. Your inputs: vertices = 0 0; 100 0; 100 200; 0 200.*
-
-![The 4 rows of vertices as points (first column across, second up)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/polygon-section-properties-live-2)
-
-*The 4 rows of vertices as points (first column across, second up). Your inputs: vertices = 0 0; 100 0; 100 200; 0 200.*
-
-![Ix as vertices[1,2] runs from -1 to 1, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/polygon-section-properties-live-3)
-
-*Ix as vertices[1,2] runs from -1 to 1, every other input as you entered it (29 solutions). Marked: your vertices[1,2] = 0 gives Ix = 6.667e+07. Your inputs: vertices = 0 0; 100 0; 100 200; 0 200.*
+*Polygon section with vertices 0 0; 100 0; 100 200; 0 200 (numbered in order), drawn to scale with the returned centroid (x̄ = 50, ȳ = 100) and centroidal axes. Marked: A = 20000, Ix = 6.6667e+07, Iy = 1.6667e+07, Ixy = 0, I1 = 6.6667e+07, I2 = 1.6667e+07 (units of the vertex coordinates).*
 
 ```python
 mechanical_engineering_ai999x.solve('polygon_section_properties', vertices='0 0; 100 0; 100 200; 0 200')
@@ -1518,17 +1418,13 @@ $$
 - **Assumes:** T, d, L, $G > 0$; linear elastic, circular section, uniform torque
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Shear stress across the shaft section (shaded: material; outer diameter 50 mm) under the stated torque, linear in the radius between the returned surface values](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/solid-shaft-torsion-profile)
+![Shear stress across the shaft section (shaded: material; outer diameter 50 mm) under T = 1200 N·m, linear in the radius between the returned surface values](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/solid-shaft-torsion-profile)
 
-*Shear stress across the shaft section (shaded: material; outer diameter 50 mm) under the stated torque, linear in the radius between the returned surface values. Marked: τmax = 48.89 MPa; also returned: twist 2.101°. Your inputs: T = 1.2 kN*m, d = 50 mm, L = 1.5 m, G = 80 GPa.*
+*Shear stress across the shaft section (shaded: material; outer diameter 50 mm) under T = 1200 N·m, linear in the radius between the returned surface values. Marked: τmax = 48.8924 MPa; also returned: twist 2.101° over L = 1.5 m (G = 8.0000e+10 Pa), J = 6.1359e-07 m⁴.*
 
-![Maximum shear stress (outer surface) in MPa as d runs from 30 to 70 mm, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/solid-shaft-torsion-live-1)
+![tau_max_MPa (maximum shear stress (outer surface) in MPa) against d (diameter) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/solid-shaft-torsion-curve)
 
-*Maximum shear stress (outer surface) in MPa as d runs from 30 to 70 mm, every other input as you entered it (41 solutions). Marked: your d = 50 mm gives τ_max_MPa = 48.89. Your inputs: T = 1.2 kN*m, d = 50 mm, L = 1.5 m, G = 80 GPa.*
-
-![Maximum shear stress (outer surface) in MPa as T runs from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/solid-shaft-torsion-live-2)
-
-*Maximum shear stress (outer surface) in MPa as T runs from 0.72 to 1.68 kN*m, every other input as you entered it (29 solutions). Marked: your T = 1.2 kN*m gives τ_max_MPa = 48.89. Your inputs: T = 1.2 kN*m, d = 50 mm, L = 1.5 m, G = 80 GPa.*
+*tau_max_MPa (maximum shear stress (outer surface) in MPa) against d (diameter) from 0.025 m to 0.075 m. One curve for each value of T (applied torque): 1200 N*m, 600 N*m, 2400 N*m. Other inputs as in the worked example: L = 1.5 m, G = 80000000000.0 Pa. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, d = 0.05 m, tau_max_MPa = 48.8924.*
 
 ```python
 mechanical_engineering_ai999x.solve('solid_shaft_torsion', T=1200.0, d=0.05, L=1.5, G=80000000000.0)
@@ -1572,17 +1468,13 @@ $$
 - **Assumes:** $D > d > 0$; linear elastic
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Shear stress across the tube section (shaded: material; outer diameter 60 mm, inner 40 mm) under the stated torque, linear in the radius between the returned surface values](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/hollow-shaft-torsion-profile)
+![Shear stress across the tube section (shaded: material; outer diameter 60 mm, inner 40 mm) under T = 2000 N·m, linear in the radius between the returned surface values](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/hollow-shaft-torsion-profile)
 
-*Shear stress across the tube section (shaded: material; outer diameter 60 mm, inner 40 mm) under the stated torque, linear in the radius between the returned surface values. Marked: τmax = 58.76 MPa, τ at the bore = 39.18 MPa; also returned: twist 2.806°. Your inputs: T = 2 kN*m, D = 60 mm, d = 40 mm, L = 2 m, G = 80 GPa.*
+*Shear stress across the tube section (shaded: material; outer diameter 60 mm, inner 40 mm) under T = 2000 N·m, linear in the radius between the returned surface values. Marked: τmax = 58.7649 MPa, τ at the bore = 39.1766 MPa; also returned: twist 2.80582° over L = 2 m (G = 8.0000e+10 Pa), J = 1.0210e-06 m⁴.*
 
-![Maximum shear stress (outer surface) in MPa as d runs from 24 to 56 mm, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/hollow-shaft-torsion-live-1)
+![tau_max_MPa (maximum shear stress (outer surface) in MPa) against D (outer diameter) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/hollow-shaft-torsion-curve)
 
-*Maximum shear stress (outer surface) in MPa as d runs from 24 to 56 mm, every other input as you entered it (41 solutions). Marked: your d = 40 mm gives τ_max_MPa = 58.76. Your inputs: T = 2 kN*m, D = 60 mm, d = 40 mm, L = 2 m, G = 80 GPa.*
-
-![Maximum shear stress (outer surface) in MPa as D runs from 41](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/hollow-shaft-torsion-live-2)
-
-*Maximum shear stress (outer surface) in MPa as D runs from 41.14 to 84 mm, every other input as you entered it (26 solutions). Marked: your D = 60 mm gives τ_max_MPa = 58.76. Your inputs: T = 2 kN*m, D = 60 mm, d = 40 mm, L = 2 m, G = 80 GPa.*
+*tau_max_MPa (maximum shear stress (outer surface) in MPa) against D (outer diameter) from 0.03 m to 0.09 m. One curve for each value of T (applied torque): 2000 N*m, 1000 N*m, 4000 N*m. Other inputs as in the worked example: d = 0.04 m, L = 2.0 m, G = 80000000000.0 Pa. 25 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, D = 0.06 m, tau_max_MPa = 58.7649.*
 
 ```python
 mechanical_engineering_ai999x.solve('hollow_shaft_torsion', T=2000.0, D=0.06, d=0.04, L=2.0, G=80000000000.0)
@@ -1622,13 +1514,9 @@ $$
 - **Assumes:** P, n, tau_allow > 0; pure torsion (no bending), solid circular shaft
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Minimum solid-shaft diameter in mm as P runs from 30 to 70 kW, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/shaft-power-transmission-live-1)
+![d_min_mm (minimum solid-shaft diameter in mm) against n (rotational speed (rpm or rad/s)) from 78](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/shaft-power-transmission-curve)
 
-*Minimum solid-shaft diameter in mm as P runs from 30 to 70 kW, every other input as you entered it (41 solutions). Marked: your P = 50 kW gives d_min_mm = 34.35. Your inputs: P = 50 kW, n = 1500 rpm, tau_allow = 40 MPa.*
-
-![Minimum solid-shaft diameter in mm as n runs from 900 to 2100 rpm, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/shaft-power-transmission-live-2)
-
-*Minimum solid-shaft diameter in mm as n runs from 900 to 2100 rpm, every other input as you entered it (29 solutions). Marked: your n = 1500 rpm gives d_min_mm = 34.35. Your inputs: P = 50 kW, n = 1500 rpm, tau_allow = 40 MPa.*
+*d_min_mm (minimum solid-shaft diameter in mm) against n (rotational speed (rpm or rad/s)) from 78.5398 rad/s to 235.619 rad/s. One curve for each value of P (transmitted power): 50000 W, 25000 W, 100000 W. Other inputs as in the worked example: tau_allow = 40000000.0 Pa. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, n = 157.08 rad/s, d_min_mm = 34.3495.*
 
 ```python
 mechanical_engineering_ai999x.solve('shaft_power_transmission', P=50000.0, n=157.07963267948966, tau_allow=40000000.0)
@@ -1669,17 +1557,13 @@ $$
 - **Assumes:** equal-length lists; the same torque in every segment; stress concentrations at the steps not included
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![A stepped solid shaft (lengths 400, 600 mm, diameters 40, 30 mm, diameters drawn enlarged) fixed at the left and carrying a torque T = 500 N·m](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/stepped-shaft-twist-shaft)
+![A stepped solid shaft (lengths 400, 600 mm, diameters 40, 30 mm, diameters drawn 2× enlarged, G = 8](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/stepped-shaft-twist-shaft)
 
-*A stepped solid shaft (lengths 400, 600 mm, diameters 40, 30 mm, diameters drawn enlarged) fixed at the left and carrying a torque T = 500 N·m. Marked: the returned total angle of twist 3.272° and largest shear stress 94.31 MPa. Your inputs: T = 500 N*m, lengths = 400, 600, diameters = 40, 30, G = 80000000000 Pa.*
+*A stepped solid shaft (lengths 400, 600 mm, diameters 40, 30 mm, diameters drawn 2× enlarged, G = 8.0000e+10 Pa) fixed at the left and carrying a torque T = 500 N·m. Marked: the returned total angle of twist 3.27183° and largest shear stress 94.314 MPa (in the smallest segment).*
 
-![Total angle of twist in degrees as T runs from 300 to 700 N*m, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/stepped-shaft-twist-live-1)
+![twist_deg (total angle of twist in degrees) against G (shear modulus) from 4](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/stepped-shaft-twist-curve)
 
-*Total angle of twist in degrees as T runs from 300 to 700 N*m, every other input as you entered it (41 solutions). Marked: your T = 500 N*m gives twist_deg = 3.272. Your inputs: T = 500 N*m, lengths = 400, 600, diameters = 40, 30, G = 80000000000 Pa.*
-
-![Total angle of twist in degrees as G runs from 4](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/stepped-shaft-twist-live-2)
-
-*Total angle of twist in degrees as G runs from 4.8e+10 to 1.12e+11 Pa, every other input as you entered it (29 solutions). Marked: your G = 8e+10 Pa gives twist_deg = 3.272. Your inputs: T = 500 N*m, lengths = 400, 600, diameters = 40, 30, G = 80000000000 Pa.*
+*twist_deg (total angle of twist in degrees) against G (shear modulus) from 4.0000e+10 Pa to 1.2000e+11 Pa. One curve for each value of T (torque carried by every segment): 500 N*m, 250 N*m, 1000 N*m. Other inputs as in the worked example: lengths = 400, 600, diameters = 40, 30. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, G = 8.0000e+10 Pa, twist_deg = 3.27183.*
 
 ```python
 mechanical_engineering_ai999x.solve('stepped_shaft_twist', T=500.0, lengths='400, 600', diameters='40, 30', G=80000000000.0)
@@ -1724,17 +1608,13 @@ $$
 - **Assumes:** both ends fully fixed; solid circular parts of one material
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![A shaft built in at both ends with a torque T0 = 1 kN·m applied a = 600 mm from end A (b = 900 mm from end B; diameters 50 mm and 40 mm), lengths to scale, diameters enlarged](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/statically-indeterminate-shaft-shaft)
+![A shaft built in at both ends with a torque T0 = 1000 N·m applied a = 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/statically-indeterminate-shaft-shaft)
 
-*A shaft built in at both ends with a torque T0 = 1 kN·m applied a = 600 mm from end A (b = 900 mm from end B; diameters 50 mm and 40 mm), lengths to scale, diameters enlarged. Marked: the returned reaction torques TA = 785.5 N·m and TB = 214.5 N·m, shear stresses τ1 = 32 MPa and τ2 = 17.07 MPa, rotation at the load 0.5501°. Your inputs: T0 = 1 kN*m, a = 0.6 m, b = 0.9 m, d1 = 50 mm, d2 = 40 mm, G = 80 GPa.*
+*A shaft built in at both ends with a torque T0 = 1000 N·m applied a = 0.5 m from end A (b = 1.5 m from end B; diameters 50 and 50 mm, G = 8.0000e+10 Pa), lengths to scale, diameters drawn 4× enlarged. Marked: the returned reaction torques TA = 750 N·m and TB = 250 N·m, shear stresses τ1 = 30.5577 MPa and τ2 = 10.1859 MPa, rotation of the loaded section 0.437708°.*
 
-![Reaction torque at A and reaction torque at B as d2 runs from 24 to 56 mm, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/statically-indeterminate-shaft-live-1)
+![TA (reaction torque at A) against d1 (diameter of part 1) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/statically-indeterminate-shaft-curve)
 
-*Reaction torque at A and reaction torque at B as d2 runs from 24 to 56 mm, every other input as you entered it (41 solutions). Marked: your d2 = 40 mm gives TA = 785.5. Your inputs: T0 = 1 kN*m, a = 0.6 m, b = 0.9 m, d1 = 50 mm, d2 = 40 mm, G = 80 GPa.*
-
-![Reaction torque at A and reaction torque at B as d1 runs from 30 to 70 mm, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/statically-indeterminate-shaft-live-2)
-
-*Reaction torque at A and reaction torque at B as d1 runs from 30 to 70 mm, every other input as you entered it (29 solutions). Marked: your d1 = 50 mm gives TA = 785.5. Your inputs: T0 = 1 kN*m, a = 0.6 m, b = 0.9 m, d1 = 50 mm, d2 = 40 mm, G = 80 GPa.*
+*TA (reaction torque at A) against d1 (diameter of part 1) from 0.005 m to 0.5 m on a logarithmic axis. One curve for each value of T0 (torque applied between the ends): 1000 N*m, 500 N*m, 2000 N*m. Other inputs as in the worked example: a = 0.5 m, b = 1.5 m, d2 = 0.05 m, G = 80000000000.0 Pa. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, d1 = 0.05 m, TA = 750 N*m.*
 
 ```python
 mechanical_engineering_ai999x.solve('statically_indeterminate_shaft', T0=1000.0, a=0.5, b=1.5, d1=0.05, d2=0.05, G=80000000000.0)
@@ -1775,21 +1655,13 @@ $$
 - **Assumes:** equal-length lists; left end fixed, right end free; linear elastic, no buckling
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![A stepped bar fixed at its left end: segment lengths 300, 500 mm, areas 400, 200 mm², axial loads -20, 30 kN at the far end of each segment (positive pulling away from the support); lengths to scale, heights growing with area](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/axial-bar-segments-bar)
+![A stepped bar fixed at its left end: segment lengths 300, 500 mm, areas 400, 200 mm², axial loads -20, 30 kN at the far end of each segment (positive pulling away from the support), E = 2](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/axial-bar-segments-bar)
 
-*A stepped bar fixed at its left end: segment lengths 300, 500 mm, areas 400, 200 mm², axial loads -20, 30 kN at the far end of each segment (positive pulling away from the support); lengths to scale, heights growing with area. Below: the internal axial force of each segment as returned (10, 30 kN), stresses 25, 150 MPa; total elongation 0.4125 mm. Your inputs: lengths = 300, 500, areas = 400, 200, loads = -20, 30, E = 200000000000 Pa.*
+*A stepped bar fixed at its left end: segment lengths 300, 500 mm, areas 400, 200 mm², axial loads -20, 30 kN at the far end of each segment (positive pulling away from the support), E = 2.0000e+11 Pa; lengths to scale, heights growing with area. Below: the internal axial force of each segment as returned. Marked: N = 10, 30 kN, σ = 25, 150 MPa, total elongation 0.4125 mm.*
 
-![Total elongation of the bar in mm (negative](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/axial-bar-segments-live-1)
+![elongation_mm (total elongation of the bar in mm (negative = shortening)) against E (Young's modulus (all segments)) from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/axial-bar-segments-curve)
 
-*Total elongation of the bar in mm (negative... as E runs from 1.2e+11 to 2.8e+11 Pa, every other input as you entered it (41 solutions). Marked: your E = 2e+11 Pa gives elongation_mm = 0.4125. Your inputs: lengths = 300, 500, areas = 400, 200, loads = -20, 30, E = 200000000000 Pa.*
-
-![Each vector drawn from the origin: N_kN = (10, 30), stress_MPa = (25, 150) (answers drawn bold)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/axial-bar-segments-live-2)
-
-*Each vector drawn from the origin: N_kN = (10, 30), stress_MPa = (25, 150) (answers drawn bold). Your inputs: lengths = 300, 500, areas = 400, 200, loads = -20, 30, E = 200000000000 Pa.*
-
-![Every entry of N_kN as computed for your inputs (2 entries: 10, 30)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/axial-bar-segments-live-3)
-
-*Every entry of N_kN as computed for your inputs (2 entries: 10, 30). Your inputs: lengths = 300, 500, areas = 400, 200, loads = -20, 30, E = 200000000000 Pa.*
+*elongation_mm (total elongation of the bar in mm (negative = shortening)) against E (Young's modulus (all segments)) from 1.0000e+11 Pa to 3.0000e+11 Pa. Other inputs as in the worked example: lengths = 300, 500, areas = 400, 200, loads = -20, 30. 31 points computed by mechanical-engineering-ai999x; marked: the worked example, E = 2.0000e+11 Pa, elongation_mm = 0.4125.*
 
 ```python
 mechanical_engineering_ai999x.solve('axial_bar_segments', lengths='300, 500', areas='400, 200', loads='-20, 30', E=200000000000.0)
@@ -1835,17 +1707,13 @@ $$
 - **Assumes:** rigid supports, no gap; linear elastic, no buckling of the compressed part
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![A two-part bar held between rigid walls (part 1: L = 300 mm, A = 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/bar-fixed-at-both-ends-bar)
+![A two-part bar held between rigid walls (part 1: L = 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/bar-fixed-at-both-ends-bar)
 
-*A two-part bar held between rigid walls (part 1: L = 300 mm, A = 0.0006 m²; part 2: L = 500 mm, A = 0.0004 m²) with an axial load P = 60 kN at the joint, towards B. Marked: the returned reactions RA = 52.63 kN and RB = 7.368 kN, stresses 87.72 MPa and -18.42 MPa, joint displacement 0.1316 mm. In SI units: RA = 5.263e+04 N. Your inputs: P = 60 kN, L1 = 0.3 m, A1 = 600 mm^2, E1 = 200 GPa, L2 = 0.5 m, A2 = 400 mm^2, E2 = 70 GPa.*
+*A two-part bar held between rigid walls (part 1: L = 0.4 m, A = 0.0005 m², E = 2.0000e+11 Pa; part 2: L = 0.4 m, A = 0.0005 m², E = 2.0000e+11 Pa) with an axial load P = 60 kN at the joint, towards B. Marked: the returned reactions RA = 30 kN and RB = 30 kN (both acting towards A on the bar), stresses 60 MPa and -60 MPa, joint displacement 0.12 mm.*
 
-![Reaction at A and reaction at B as P runs from 36 to 84 kN, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/bar-fixed-at-both-ends-live-1)
+![RA (reaction at A) against P (axial load at the joint (towards end B)) from 30000 N to 90000 N](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/bar-fixed-at-both-ends-curve)
 
-*Reaction at A and reaction at B as P runs from 36 to 84 kN, every other input as you entered it (41 solutions). Marked: your P = 60 kN gives RA = 52.63 kN. Your inputs: P = 60 kN, L1 = 0.3 m, A1 = 600 mm^2, E1 = 200 GPa, L2 = 0.5 m, A2 = 400 mm^2, E2 = 70 GPa.*
-
-![Reaction at A and reaction at B as L1 runs from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/bar-fixed-at-both-ends-live-2)
-
-*Reaction at A and reaction at B as L1 runs from 0.18 to 0.42 m, every other input as you entered it (29 solutions). Marked: your L1 = 0.3 m gives RA = 52.63 kN. Your inputs: P = 60 kN, L1 = 0.3 m, A1 = 600 mm^2, E1 = 200 GPa, L2 = 0.5 m, A2 = 400 mm^2, E2 = 70 GPa.*
+*RA (reaction at A) against P (axial load at the joint (towards end B)) from 30000 N to 90000 N. One curve for each value of L1 (length of part 1 (end A to the joint)): 0.4 m, 0.2 m, 0.8 m. Other inputs as in the worked example: A1 = 0.0005 m^2, E1 = 200000000000.0 Pa, L2 = 0.4 m, A2 = 0.0005 m^2, E2 = 200000000000.0 Pa. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, P = 60000 N, RA = 30000 N.*
 
 ```python
 mechanical_engineering_ai999x.solve('bar_fixed_at_both_ends', P=60000.0, L1=0.4, A1=0.0005, E1=200000000000.0, L2=0.4, A2=0.0005, E2=200000000000.0)
@@ -1885,17 +1753,13 @@ $$
 - **Assumes:** plane stress; tension positive, theta counterclockwise
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Mohr's circle of the plane stress state σx = 80 MPa, σy = -40 MPa, τxy = 25 MPa (traced by the model's stress transformation at 37 planes; principal stresses from the model: σ1 = 85 MPa, σ2 = -45 MPa)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/plane-stress-transformation-mohr)
+![Mohr's circle of the plane stress state σx = 80 MPa, σy = -40 MPa, τxy = 25 MPa (principal stresses from the package: σ1 = 85 MPa, σ2 = -45 MPa)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/plane-stress-transformation-mohr)
 
-*Mohr's circle of the plane stress state σx = 80 MPa, σy = -40 MPa, τxy = 25 MPa (traced by the model's stress transformation at 37 planes; principal stresses from the model: σ1 = 85 MPa, σ2 = -45 MPa). The dashed diameter joins the x and y faces; the solid diameter is the element rotated by θ = 30°, whose stresses the model returned: σx′ = 71.65 MPa, σy′ = -31.65 MPa, τx′y′ = -39.46 MPa. Your inputs: sx = 80 MPa, sy = -40 MPa, txy = 25 MPa, theta = 30 deg.*
+*Mohr's circle of the plane stress state σx = 80 MPa, σy = -40 MPa, τxy = 25 MPa (principal stresses from the package: σ1 = 85 MPa, σ2 = -45 MPa). The dashed diameter joins the x and y faces; the solid diameter is the element rotated by θ = 30°, whose stresses the package returned: σx′ = 71.6506 MPa, σy′ = -31.6506 MPa, τx′y′ = -39.4615 MPa (plotted as (σx′, τx′y′) and (σy′, −τx′y′)).*
 
-![Sigma_x' in MPa as θ runs from 18 to 42 deg, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/plane-stress-transformation-live-1)
+![sx_t_MPa (sigma_x' in MPa) against theta (rotation of the axes, counterclockwise from x) from 0 rad to 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/plane-stress-transformation-curve)
 
-*Sigma_x' in MPa as θ runs from 18 to 42 deg, every other input as you entered it (41 solutions). Marked: your θ = 30 deg gives sx_t_MPa = 71.65. Your inputs: sx = 80 MPa, sy = -40 MPa, txy = 25 MPa, theta = 30 deg.*
-
-![Sigma_x' in MPa as sy runs from -56 to -24 MPa, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/plane-stress-transformation-live-2)
-
-*Sigma_x' in MPa as sy runs from -56 to -24 MPa, every other input as you entered it (29 solutions). Marked: your sy = -40 MPa gives sx_t_MPa = 71.65. Your inputs: sx = 80 MPa, sy = -40 MPa, txy = 25 MPa, theta = 30 deg.*
+*sx_t_MPa (sigma_x' in MPa) against theta (rotation of the axes, counterclockwise from x) from 0 rad to 1.5708 rad. One curve for each value of sx (normal stress sigma_x): 8.0000e+07 Pa, 4.0000e+07 Pa, 1.6000e+08 Pa. Other inputs as in the worked example: sy = -40000000.0 Pa, txy = 25000000.0 Pa. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, theta = 0.523599 rad, sx_t_MPa = 71.6506.*
 
 ```python
 mechanical_engineering_ai999x.solve('plane_stress_transformation', sx=80000000.0, sy=-40000000.0, txy=25000000.0, theta=0.5235987755982988)
@@ -1938,21 +1802,17 @@ $$
 - **Assumes:** plane stress $(sigma_z = 0)$; tension positive
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The stress element (σx = 50 MPa, σy = -10 MPa, τxy = 40 MPa) and the principal element rotated by the returned θp = 26](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/principal-stresses-2d-element.svg)
+![Mohr's circle for σx = 50 MPa, σy = -10 MPa, τxy = 40 MPa: the normal and shear stress on planes rotated by 0–180° (73 states computed by the package's stress transformation) trace the circle; the principal stresses it returned are σ1 = 70 MPa and σ2 = -30 MPa at θp = 26](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/principal-stresses-2d-mohr.svg)
 
-*The stress element (σx = 50 MPa, σy = -10 MPa, τxy = 40 MPa) and the principal element rotated by the returned θp = 26.57°, with the returned principal stresses σ1 = 70 MPa and σ2 = -30 MPa on its faces (arrows outward = tension, lengths to one scale). Your inputs: sx = 50 MPa, sy = -10 MPa, txy = 40 MPa.*
+*Mohr's circle for σx = 50 MPa, σy = -10 MPa, τxy = 40 MPa: the normal and shear stress on planes rotated by 0–180° (73 states computed by the package's stress transformation) trace the circle; the principal stresses it returned are σ1 = 70 MPa and σ2 = -30 MPa at θp = 26.5651°; marked: centre σ = 20 MPa, τmax = 50 MPa.*
 
-![Mohr's circle for σx = 50 MPa, σy = -10 MPa, τxy = 40 MPa: the normal and shear stress on planes rotated by 0 to 180° (37 states computed by the model's stress transformation) trace the circle; the principal stresses it returned are σ1 = 70 MPa and σ2 = -30 MPa at θp = 26](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/principal-stresses-2d-mohr)
+![The stress element (σx = 50 MPa, σy = -10 MPa, τxy = 40 MPa) and the principal element rotated by the returned θp = 26](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/principal-stresses-2d-element)
 
-*Mohr's circle for σx = 50 MPa, σy = -10 MPa, τxy = 40 MPa: the normal and shear stress on planes rotated by 0 to 180° (37 states computed by the model's stress transformation) trace the circle; the principal stresses it returned are σ1 = 70 MPa and σ2 = -30 MPa at θp = 26.57°; marked: the centre's τmax = 50 MPa. Your inputs: sx = 50 MPa, sy = -10 MPa, txy = 40 MPa.*
+*The stress element (σx = 50 MPa, σy = -10 MPa, τxy = 40 MPa) and the principal element rotated by the returned θp = 26.5651°, with the returned principal stresses σ1 = 70 MPa and σ2 = -30 MPa on its faces (arrows outward = tension). Also returned: in-plane τmax = 50 MPa, absolute τmax = 50 MPa, von Mises stress 88.8819 MPa.*
 
-![Larger in-plane principal stress, MPa as txy runs from 24 to 56 MPa, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/principal-stresses-2d-live-1)
+![s1_MPa (larger in-plane principal stress, MPa) against txy (shear stress tau_xy) from 4e+06 Pa to 4](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/principal-stresses-2d-curve)
 
-*Larger in-plane principal stress, MPa as txy runs from 24 to 56 MPa, every other input as you entered it (41 solutions). Marked: your txy = 40 MPa gives s1_MPa = 70. Your inputs: sx = 50 MPa, sy = -10 MPa, txy = 40 MPa.*
-
-![Larger in-plane principal stress, MPa as sx runs from 30 to 70 MPa, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/principal-stresses-2d-live-2)
-
-*Larger in-plane principal stress, MPa as sx runs from 30 to 70 MPa, every other input as you entered it (29 solutions). Marked: your sx = 50 MPa gives s1_MPa = 70. Your inputs: sx = 50 MPa, sy = -10 MPa, txy = 40 MPa.*
+*s1_MPa (larger in-plane principal stress, MPa) against txy (shear stress tau_xy) from 4e+06 Pa to 4.0000e+08 Pa on a logarithmic axis. One curve for each value of sx (normal stress sigma_x): 5.0000e+07 Pa, 2.5000e+07 Pa, 1.0000e+08 Pa. Other inputs as in the worked example: sy = -10000000.0 Pa. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, txy = 4.0000e+07 Pa, s1_MPa = 70.*
 
 ```python
 mechanical_engineering_ai999x.solve('principal_stresses_2d', sx=50000000.0, sy=-10000000.0, txy=40000000.0)
@@ -2004,17 +1864,13 @@ $$
 - **Assumes:** symmetric stress tensor; tension positive
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The three Mohr's circles of the 3-D stress state, drawn through the returned principal stresses σ1 = 78](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/principal-stresses-3d-mohr)
+![The three Mohr's circles of the 3-D stress state σx = 100, σy = 0, σz = 0, τxy = 0, τyz = 0, τzx = 0 MPa, drawn through the returned principal stresses σ1 = 100, σ2 = 0, σ3 = 0 MPa (circles of zero radius are points)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/principal-stresses-3d-mohr)
 
-*The three Mohr's circles of the 3-D stress state, drawn through the returned principal stresses σ1 = 78.06, σ2 = 6.569, σ3 = -14.63 MPa (circles of zero radius are points). Marked: τmax = 46.34 MPa; also returned: von Mises 84.11 MPa. Your inputs: sx = 60 MPa, sy = 20 MPa, sz = -10 MPa, txy = 30 MPa, tyz = 0 MPa, tzx = 15 MPa.*
+*The three Mohr's circles of the 3-D stress state σx = 100, σy = 0, σz = 0, τxy = 0, τyz = 0, τzx = 0 MPa, drawn through the returned principal stresses σ1 = 100, σ2 = 0, σ3 = 0 MPa (circles of zero radius are points). Marked: τmax = 50 MPa; also returned: von Mises 100 MPa, hydrostatic 33.3333 MPa, octahedral shear 47.1405 MPa.*
 
-![Largest principal stress, MPa as txy runs from 18 to 42 MPa, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/principal-stresses-3d-live-1)
+![s1_MPa (largest principal stress, MPa) against sx (sigma_x) from 5](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/principal-stresses-3d-curve)
 
-*Largest principal stress, MPa as txy runs from 18 to 42 MPa, every other input as you entered it (41 solutions). Marked: your txy = 30 MPa gives s1_MPa = 78.06. Your inputs: sx = 60 MPa, sy = 20 MPa, sz = -10 MPa, txy = 30 MPa, tyz = 0 MPa, tzx = 15 MPa.*
-
-![Largest principal stress, MPa as sy runs from 12 to 28 MPa, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/principal-stresses-3d-live-2)
-
-*Largest principal stress, MPa as sy runs from 12 to 28 MPa, every other input as you entered it (29 solutions). Marked: your sy = 20 MPa gives s1_MPa = 78.06. Your inputs: sx = 60 MPa, sy = 20 MPa, sz = -10 MPa, txy = 30 MPa, tyz = 0 MPa, tzx = 15 MPa.*
+*s1_MPa (largest principal stress, MPa) against sx (sigma_x) from 5.0000e+07 Pa to 1.5000e+08 Pa. Other inputs as in the worked example: sy = 0.0 Pa, sz = 0.0 Pa, txy = 0.0 Pa, tyz = 0.0 Pa, tzx = 0.0 Pa. 31 points computed by mechanical-engineering-ai999x; marked: the worked example, sx = 1.0000e+08 Pa, s1_MPa = 100.*
 
 ```python
 mechanical_engineering_ai999x.solve('principal_stresses_3d', sx=100000000.0, sy=0.0, sz=0.0, txy=0.0, tyz=0.0, tzx=0.0)
@@ -2064,17 +1920,13 @@ $$
 - **Assumes:** $Sy > 0$; not a purely hydrostatic stress; ductile, isotropic material
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Yield envelopes for Sy = 350 MPa in the principal-stress plane (plane stress): each point is where the model's safety factor along a proportional load line equals 1 (72 directions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/yield-criteria-safety-factor-envelope)
+![Yield envelopes for Sy = 350 MPa in the principal-stress plane (plane stress): each point is where the package's safety factor along a proportional load line equals 1 (96 directions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/yield-criteria-safety-factor-envelope)
 
-*Yield envelopes for Sy = 350 MPa in the principal-stress plane (plane stress): each point is where the model's safety factor along a proportional load line equals 1 (72 directions). Marked: the stress state at its principal stresses σ1 = 140, σ2 = -60 MPa (from the model's principal-stress capability), with safety factors n = 1.969 (von Mises) and 1.75 (Tresca). Your inputs: Sy = 350 MPa, sx = 120 MPa, sy = -40 MPa, txy = 60 MPa.*
+*Yield envelopes for Sy = 350 MPa in the principal-stress plane (plane stress): each point is where the package's safety factor along a proportional load line equals 1 (96 directions). Marked: the stress state σx = 120, σy = -40, τxy = 60 MPa at its principal stresses σ1 = 140, σ2 = -60 MPa (package), with the returned von Mises stress 177.764 MPa (n = 1.9689) and Tresca stress 200 MPa (n = 1.75).*
 
-![Safety factor by distortion energy as Sy runs from 210 to 490 MPa, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/yield-criteria-safety-factor-live-1)
+![n_von_mises (safety factor by distortion energy) against txy (tau_xy (default 0)) from 6e+06 Pa to 6](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/yield-criteria-safety-factor-curve)
 
-*Safety factor by distortion energy as Sy runs from 210 to 490 MPa, every other input as you entered it (41 solutions). Marked: your Sy = 350 MPa gives n_von_mises = 1.969. Your inputs: Sy = 350 MPa, sx = 120 MPa, sy = -40 MPa, txy = 60 MPa.*
-
-![Safety factor by distortion energy as sx runs from 72 to 168 MPa, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/yield-criteria-safety-factor-live-2)
-
-*Safety factor by distortion energy as sx runs from 72 to 168 MPa, every other input as you entered it (29 solutions). Marked: your sx = 120 MPa gives n_von_mises = 1.969. Your inputs: Sy = 350 MPa, sx = 120 MPa, sy = -40 MPa, txy = 60 MPa.*
+*n_von_mises (safety factor by distortion energy) against txy (tau_xy (default 0)) from 6e+06 Pa to 6.0000e+08 Pa on a logarithmic axis. One curve for each value of Sy (yield strength): 3.5000e+08 Pa, 1.7500e+08 Pa, 7.0000e+08 Pa. Other inputs as in the worked example: sx = 120000000.0 Pa, sy = -40000000.0 Pa. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, txy = 6.0000e+07 Pa, n_von_mises = 1.9689.*
 
 ```python
 mechanical_engineering_ai999x.solve('yield_criteria_safety_factor', Sy=350000000.0, sx=120000000.0, sy=-40000000.0, txy=60000000.0)
@@ -2115,17 +1967,13 @@ $$
 - **Assumes:** plane stress (third principal stress zero); Sut, Suc > 0 (Suc given as a magnitude); proportional loading
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Failure envelopes of a brittle material (Sut = 210 MPa, Suc = 750 MPa) in the σA, σB plane: each envelope point is the stress state at which the model's safety factor along a proportional load line equals 1 (72 directions)](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/brittle-failure-mohr-envelope.svg)
+![Failure envelopes of a brittle material (Sut = 210 MPa, Suc = 750 MPa) in the σA–σB plane: each envelope point is the stress state at which the package's safety factor along a proportional load line equals 1 (49 directions, mirrored about σA = σB)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/brittle-failure-mohr-envelope)
 
-*Failure envelopes of a brittle material (Sut = 210 MPa, Suc = 750 MPa) in the σA, σB plane: each envelope point is the stress state at which the model's safety factor along a proportional load line equals 1 (72 directions). Marked: the operating point σA = 90 MPa, σB = -50 MPa, its load line, and the returned Coulomb-Mohr safety factor n = 2.019. Your inputs: sA = 90 MPa, sB = -50 MPa, Sut = 210 MPa, Suc = 750 MPa.*
+*Failure envelopes of a brittle material (Sut = 210 MPa, Suc = 750 MPa) in the σA–σB plane: each envelope point is the stress state at which the package's safety factor along a proportional load line equals 1 (49 directions, mirrored about σA = σB). Marked: the operating point σA = 90 MPa, σB = -50 MPa and its load line; returned n = 2.33333 (maximum normal), 2.01923 (Coulomb–Mohr), 2.33333 (modified Mohr).*
 
-![Safety factor, brittle Coulomb-Mohr as sA runs from 54 to 126 MPa, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/brittle-failure-mohr-live-1)
+![n_coulomb_mohr (safety factor, brittle Coulomb-Mohr) against sA (first in-plane principal stress) from 9e+06 Pa to 9](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/brittle-failure-mohr-curve)
 
-*Safety factor, brittle Coulomb-Mohr as sA runs from 54 to 126 MPa, every other input as you entered it (41 solutions). Marked: your sA = 90 MPa gives n_coulomb_mohr = 2.019. Your inputs: sA = 90 MPa, sB = -50 MPa, Sut = 210 MPa, Suc = 750 MPa.*
-
-![Safety factor, brittle Coulomb-Mohr as Sut runs from 126 to 294 MPa, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/brittle-failure-mohr-live-2)
-
-*Safety factor, brittle Coulomb-Mohr as Sut runs from 126 to 294 MPa, every other input as you entered it (29 solutions). Marked: your Sut = 210 MPa gives n_coulomb_mohr = 2.019. Your inputs: sA = 90 MPa, sB = -50 MPa, Sut = 210 MPa, Suc = 750 MPa.*
+*n_coulomb_mohr (safety factor, brittle Coulomb-Mohr) against sA (first in-plane principal stress) from 9e+06 Pa to 9.0000e+08 Pa on a logarithmic axis. One curve for each value of Sut (ultimate tensile strength): 2.1000e+08 Pa, 1.0500e+08 Pa, 4.2000e+08 Pa. Other inputs as in the worked example: sB = -50000000.0 Pa, Suc = 750000000.0 Pa. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, sA = 9.0000e+07 Pa, n_coulomb_mohr = 2.01923.*
 
 ```python
 mechanical_engineering_ai999x.solve('brittle_failure_mohr', sA=90000000.0, sB=-50000000.0, Sut=210000000.0, Suc=750000000.0)
@@ -2178,21 +2026,13 @@ $$
 - **Assumes:** gauge angles measured counterclockwise from gauge a; plane stress, linear elastic isotropic; $0  \leq  \nu < 0.5$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Mohr's circle of strain from the rosette readings: the returned εx = 400, εy = -100, γxy = 300 µε give the x and y points (ε, ±γ/2); the circle passes through the returned principal strains ε1 = 441](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/strain-rosette-mohr)
+![Mohr's circle of strain from a rectangular rosette reading εa = 400](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/strain-rosette-mohr)
 
-*Mohr's circle of strain from the rosette readings: the returned εx = 400, εy = -100, γxy = 300 µε give the x and y points (ε, ±γ/2); the circle passes through the returned principal strains ε1 = 441.5 and ε2 = -141.5 µε at θp = 15.48°. Your inputs: ea = 400, eb = 300, ec = -100, E = 200000000000 Pa, nu = 0.3, layout = rectangular.*
+*Mohr's circle of strain from a rectangular rosette reading εa = 400.0, εb = 300.0, εc = -100.0 µε: the returned εx = 400, εy = -100, γxy = 300 µε give the x and y points (ε, ±γ/2); the circle passes through the returned principal strains ε1 = 441.548 and ε2 = -141.548 µε at θp = 15.4819°. Also returned (E = 2.0000e+11 Pa, ν = 0.3): σ1 = 87.7106 MPa, σ2 = -1.99633 MPa.*
 
-![Larger principal strain, microstrain as ea runs from 100 to 700, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/strain-rosette-live-1)
+![e1 (larger principal strain, microstrain) against eb (strain of gauge b (45 or 60 degrees), microstrain) from 30 to 3000 on a logarithmic axis](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/strain-rosette-curve)
 
-*Larger principal strain, microstrain as ea runs from 100 to 700, every other input as you entered it (41 solutions). Marked: your ea = 400 gives e1 = 441.5. Your inputs: ea = 400, eb = 300, ec = -100, E = 200000000000 Pa, nu = 0.3, layout = rectangular.*
-
-![Larger principal strain, microstrain for every choice of layout, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/strain-rosette-live-2)
-
-*Larger principal strain, microstrain for every choice of layout, every other input as you entered it (highlighted: your choice). rectangular: 441.5; delta: 505.5. Your inputs: ea = 400, eb = 300, ec = -100, E = 200000000000 Pa, nu = 0.3, layout = rectangular.*
-
-![Larger principal strain, microstrain as eb runs from 75 to 525, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/strain-rosette-live-3)
-
-*Larger principal strain, microstrain as eb runs from 75 to 525, every other input as you entered it (29 solutions). Marked: your eb = 300 gives e1 = 441.5. Your inputs: ea = 400, eb = 300, ec = -100, E = 200000000000 Pa, nu = 0.3, layout = rectangular.*
+*e1 (larger principal strain, microstrain) against eb (strain of gauge b (45 or 60 degrees), microstrain) from 30 to 3000 on a logarithmic axis. One curve for each value of ea (strain of gauge a (at 0 degrees), microstrain): 400, 200, 800. Other inputs as in the worked example: ec = -100.0, E = 200000000000.0 Pa, nu = 0.3, layout = rectangular. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, eb = 300, e1 = 441.548.*
 
 ```python
 mechanical_engineering_ai999x.solve('strain_rosette', ea=400.0, eb=300.0, ec=-100.0, E=200000000000.0, nu=0.3, layout='rectangular')
@@ -2241,13 +2081,9 @@ $$
 - **Assumes:** isotropic, linear elastic; $-1 < \nu < 0.5$; small strains
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Eps_x, microstrain as sy runs from 30 to 70 MPa, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/generalized-hookes-law-live-1)
+![ex (eps_x, microstrain) against E (Young's modulus) from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/generalized-hookes-law-curve)
 
-*Eps_x, microstrain as sy runs from 30 to 70 MPa, every other input as you entered it (41 solutions). Marked: your sy = 50 MPa gives ex = 425. Your inputs: sx = 100 MPa, sy = 50 MPa, sz = 0 MPa, txy = 30 MPa, tyz = 0 MPa, tzx = 0 MPa, E = 200 GPa, nu = 0.3.*
-
-![Gamma_yz, microstrain as tyz runs from -1 to 1 MPa, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/generalized-hookes-law-live-2)
-
-*Gamma_yz, microstrain as tyz runs from -1 to 1 MPa, every other input as you entered it (29 solutions). Marked: your tyz = 0 MPa gives gyz = 0. Your inputs: sx = 100 MPa, sy = 50 MPa, sz = 0 MPa, txy = 30 MPa, tyz = 0 MPa, tzx = 0 MPa, E = 200 GPa, nu = 0.3.*
+*ex (eps_x, microstrain) against E (Young's modulus) from 1.0000e+11 Pa to 3.0000e+11 Pa. One curve for each value of sx (sigma_x): 1.0000e+08 Pa, 5.0000e+07 Pa, 2.0000e+08 Pa. Other inputs as in the worked example: sy = 50000000.0 Pa, sz = 0.0 Pa, txy = 30000000.0 Pa, tyz = 0.0 Pa, tzx = 0.0 Pa, nu = 0.3. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, E = 2.0000e+11 Pa, ex = 425.*
 
 ```python
 mechanical_engineering_ai999x.solve('generalized_hookes_law', sx=100000000.0, sy=50000000.0, sz=0.0, txy=30000000.0, tyz=0.0, tzx=0.0, E=200000000000.0, nu=0.3)
@@ -2291,19 +2127,11 @@ $$
 
 ![A thin-walled cylinder (radius 500 mm, wall 10 mm, pressure 2 MPa) and a wall element with the returned stresses drawn to one scale: hoop 100 MPa, longitudinal 50 MPa; also returned: in-plane shear 25 MPa, absolute shear 50 MPa](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/thin-walled-pressure-vessel-element)
 
-*A thin-walled cylinder (radius 500 mm, wall 10 mm, pressure 2 MPa) and a wall element with the returned stresses drawn to one scale: hoop 100 MPa, longitudinal 50 MPa; also returned: in-plane shear 25 MPa, absolute shear 50 MPa. Your inputs: p = 2000000 Pa, r = 0.5 m, t = 0.01 m, shape = cylinder.*
+*A thin-walled cylinder (radius 500 mm, wall 10 mm, pressure 2 MPa) and a wall element with the returned stresses drawn to one scale: hoop 100 MPa, longitudinal 50 MPa; also returned: in-plane shear 25 MPa, absolute shear 50 MPa.*
 
-![Hoop (circumferential) stress, MPa as t runs from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/thin-walled-pressure-vessel-live-1)
+![hoop_MPa (hoop (circumferential) stress, MPa) against t (wall thickness) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/thin-walled-pressure-vessel-curve)
 
-*Hoop (circumferential) stress, MPa as t runs from 0.006 to 0.014 m, every other input as you entered it (41 solutions). Marked: your t = 0.01 m gives hoop_MPa = 100. Your inputs: p = 2000000 Pa, r = 0.5 m, t = 0.01 m, shape = cylinder.*
-
-![Hoop (circumferential) stress, MPa for every choice of shape, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/thin-walled-pressure-vessel-live-2)
-
-*Hoop (circumferential) stress, MPa for every choice of shape, every other input as you entered it (highlighted: your choice). cylinder: 100; sphere: 50. Your inputs: p = 2000000 Pa, r = 0.5 m, t = 0.01 m, shape = cylinder.*
-
-![Hoop (circumferential) stress, MPa as p runs from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/thin-walled-pressure-vessel-live-3)
-
-*Hoop (circumferential) stress, MPa as p runs from 1.2e+06 to 2.8e+06 Pa, every other input as you entered it (29 solutions). Marked: your p = 2e+06 Pa gives hoop_MPa = 100. Your inputs: p = 2000000 Pa, r = 0.5 m, t = 0.01 m, shape = cylinder.*
+*hoop_MPa (hoop (circumferential) stress, MPa) against t (wall thickness) from 0.005 m to 0.015 m. One curve for each value of p (internal gauge pressure): 2e+06 Pa, 1e+06 Pa, 4e+06 Pa. Other inputs as in the worked example: r = 0.5 m, shape = cylinder. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, t = 0.01 m, hoop_MPa = 100.*
 
 ```python
 mechanical_engineering_ai999x.solve('thin_walled_pressure_vessel', p=2000000.0, r=0.5, t=0.01, shape='cylinder')
@@ -2353,17 +2181,13 @@ $$
 - **Assumes:** $a < b$; pressures >= 0, not both zero; $a  \leq  r  \leq  b$; linear elastic
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Lamé stresses through the wall of a thick cylinder (inner radius 50 mm, outer 100 mm): hoop and radial stress at 41 radii, each computed by the model](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/thick-walled-cylinder-profile)
+![Lamé stresses through the wall of a thick cylinder (inner radius 50 mm, outer 100 mm, internal pressure 100 MPa, external 0 MPa): hoop and radial stress at 41 radii, each computed by the package](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/thick-walled-cylinder-profile)
 
-*Lamé stresses through the wall of a thick cylinder (inner radius 50 mm, outer 100 mm): hoop and radial stress at 41 radii, each computed by the model. Marked: hoop stress 166.7 MPa at the bore and 66.67 MPa at the outside, axial stress with closed ends 33.33 MPa. Your inputs: pi = 100 MPa, po = 0 MPa, a = 50 mm, b = 100 mm.*
+*Lamé stresses through the wall of a thick cylinder (inner radius 50 mm, outer 100 mm, internal pressure 100 MPa, external 0 MPa): hoop and radial stress at 41 radii, each computed by the package. Marked: hoop stress 166.667 MPa at the bore and 66.6667 MPa at the outside, axial stress with closed ends 33.3333 MPa, largest shear at the bore 133.333 MPa.*
 
-![Hoop stress at the bore, MPa as b runs from 60 to 140 mm, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/thick-walled-cylinder-live-1)
+![st_inner_MPa (hoop stress at the bore, MPa) against b (outer radius) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/thick-walled-cylinder-curve)
 
-*Hoop stress at the bore, MPa as b runs from 60 to 140 mm, every other input as you entered it (41 solutions). Marked: your b = 100 mm gives st_inner_MPa = 166.7. Your inputs: pi = 100 MPa, po = 0 MPa, a = 50 mm, b = 100 mm.*
-
-![Hoop stress at the bore, MPa as a runs from 30 to 70 mm, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/thick-walled-cylinder-live-2)
-
-*Hoop stress at the bore, MPa as a runs from 30 to 70 mm, every other input as you entered it (29 solutions). Marked: your a = 50 mm gives st_inner_MPa = 166.7. Your inputs: pi = 100 MPa, po = 0 MPa, a = 50 mm, b = 100 mm.*
+*st_inner_MPa (hoop stress at the bore, MPa) against b (outer radius) from 0.05 m to 0.15 m. One curve for each value of pi (internal pressure): 1.0000e+08 Pa, 5.0000e+07 Pa, 2.0000e+08 Pa. Other inputs as in the worked example: po = 0.0 Pa, a = 0.05 m. 30 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, b = 0.1 m, st_inner_MPa = 166.667.*
 
 ```python
 mechanical_engineering_ai999x.solve('thick_walled_cylinder', pi=100000000.0, po=0.0, a=0.05, b=0.1)
@@ -2405,13 +2229,9 @@ $$
 - **Assumes:** $ri < R < ro$; both parts of the same material; plane stress, elastic, long hub
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Interface pressure, MPa as ro runs from 30 to 70 mm, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/shrink-fit-pressure-live-1)
+![p_MPa (interface pressure, MPa) against R (nominal interface radius) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/shrink-fit-pressure-curve)
 
-*Interface pressure, MPa as ro runs from 30 to 70 mm, every other input as you entered it (41 solutions). Marked: your ro = 50 mm gives p_MPa = 62.1. Your inputs: delta = 0.02 mm, R = 25 mm, ro = 50 mm, E = 207 GPa.*
-
-![Interface pressure, MPa as R runs from 15 to 35 mm, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/shrink-fit-pressure-live-2)
-
-*Interface pressure, MPa as R runs from 15 to 35 mm, every other input as you entered it (29 solutions). Marked: your R = 25 mm gives p_MPa = 62.1. Your inputs: delta = 0.02 mm, R = 25 mm, ro = 50 mm, E = 207 GPa.*
+*p_MPa (interface pressure, MPa) against R (nominal interface radius) from 0.0125 m to 0.0375 m. One curve for each value of delta (radial interference (shaft radius minus hub bore radius)): 2.0000e-05 m, 1.0000e-05 m, 4.0000e-05 m. Other inputs as in the worked example: ro = 0.05 m, E = 207000000000.0 Pa. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, R = 0.025 m, p_MPa = 62.1.*
 
 ```python
 mechanical_engineering_ai999x.solve('shrink_fit_pressure', delta=2e-05, R=0.025, ro=0.05, E=207000000000.0)
@@ -2454,13 +2274,9 @@ $$
 - **Assumes:** thin disk of uniform thickness, plane stress; free inner and outer edges; $0  \leq  \nu < 0.5$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Largest hoop stress (at the bore, or the](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/rotating-disk-stresses-live-1)
+![hoop_max_MPa (largest hoop stress (at the bore, or the centre of a solid disk), MPa) against ri (radius of the central hole (default 0: solid)) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/rotating-disk-stresses-curve)
 
-*Largest hoop stress (at the bore, or the... as ro runs from 150 to 350 mm, every other input as you entered it (41 solutions). Marked: your ro = 250 mm gives hoop_max_MPa = 40.03. Your inputs: rho = 7800 kg/m^3, omega = 3000 rpm, nu = 0.3, ro = 250 mm, ri = 50 mm.*
-
-![Largest hoop stress (at the bore, or the](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/rotating-disk-stresses-live-2)
-
-*Largest hoop stress (at the bore, or the... as ω runs from 1800 to 4200 rpm, every other input as you entered it (29 solutions). Marked: your ω = 3000 rpm gives hoop_max_MPa = 40.03. Your inputs: rho = 7800 kg/m^3, omega = 3000 rpm, nu = 0.3, ro = 250 mm, ri = 50 mm.*
+*hoop_max_MPa (largest hoop stress (at the bore, or the centre of a solid disk), MPa) against ri (radius of the central hole (default 0: solid)) from 0.005 m to 0.5 m on a logarithmic axis. One curve for each value of omega (angular speed (rpm or rad/s)): 314.159 rad/s, 157.08 rad/s, 628.319 rad/s. Other inputs as in the worked example: rho = 7800.0 kg/m^3, nu = 0.3, ro = 0.25 m. 34 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, ri = 0.05 m, hoop_max_MPa = 40.0311.*
 
 ```python
 mechanical_engineering_ai999x.solve('rotating_disk_stresses', rho=7800.0, omega=314.1592653589793, nu=0.3, ro=0.25, ri=0.05)
@@ -2510,21 +2326,13 @@ $$
 - **Assumes:** ideal straight elastic column, centric load; theoretical K: 1, 2, 0.5, 0.6992 (fixed-pinned, from tan x = x); valid only below the proportional limit
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![A column of length L = 4 m with pinned-pinned ends](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/euler-buckling-column.svg)
+![A column of length L = 4 m with pinned-pinned ends (E = 2](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/euler-buckling-column)
 
-*A column of length L = 4 m with pinned-pinned ends. Marked: the returned effective length factor K = 1, effective length 4 m and critical buckling load Pcr = 987 kN. In SI units: P_cr = 9.87e+05 N. Your inputs: E = 200000000000 Pa, I = 8e-06 m^4, L = 4 m, ends = pinned-pinned.*
+*A column of length L = 4 m with pinned-pinned ends (E = 2.0000e+11 Pa, I = 8.0000e-06 m⁴). Marked: the returned effective length factor K = 1, effective length 4 m and critical buckling load Pcr = 986.96 kN.*
 
-![Critical buckling load as L runs from 2](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/euler-buckling-live-1)
+![P_cr (critical buckling load) against L (column length) from 2 m to 6 m](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/euler-buckling-curve)
 
-*Critical buckling load as L runs from 2.4 to 5.6 m, every other input as you entered it (41 solutions). Marked: your L = 4 m gives P_cr = 987 kN. Your inputs: E = 200000000000 Pa, I = 8e-06 m^4, L = 4 m, ends = pinned-pinned.*
-
-![Critical buckling load for every choice of ends, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/euler-buckling-live-2)
-
-*Critical buckling load for every choice of ends, every other input as you entered it (highlighted: your choice). pinned-pinned: 9.87e+05; fixed-free: 2.467e+05; fixed-fixed: 3.948e+06; fixed-pinned: 2.019e+06. Your inputs: E = 200000000000 Pa, I = 8e-06 m^4, L = 4 m, ends = pinned-pinned.*
-
-![Critical buckling load as E runs from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/euler-buckling-live-3)
-
-*Critical buckling load as E runs from 1.2e+11 to 2.8e+11 Pa, every other input as you entered it (29 solutions). Marked: your E = 2e+11 Pa gives P_cr = 987 kN. Your inputs: E = 200000000000 Pa, I = 8e-06 m^4, L = 4 m, ends = pinned-pinned.*
+*P_cr (critical buckling load) against L (column length) from 2 m to 6 m. One curve for each value of E (Young's modulus): 2.0000e+11 Pa, 1.0000e+11 Pa, 4.0000e+11 Pa. Other inputs as in the worked example: I = 8e-06 m^4, ends = pinned-pinned. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, L = 4 m, P_cr = 986960 N.*
 
 ```python
 mechanical_engineering_ai999x.solve('euler_buckling', E=200000000000.0, I=8e-06, L=4.0, ends='pinned-pinned')
@@ -2575,17 +2383,13 @@ $$
 - **Assumes:** centric load; theoretical effective length factors
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Critical stress, MPa as L runs from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/johnson-column-live-1)
+![Critical stress against slenderness for Sy = 250 MPa, E = 2](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/johnson-column-curve)
 
-*Critical stress, MPa as L runs from 0.9 to 2.1 m, every other input as you entered it (41 solutions). Marked: your L = 1.5 m gives σ_cr_MPa = 205.5. Your inputs: Sy = 250000000 Pa, E = 200000000000 Pa, L = 1.5 m, r = 0.02 m, ends = pinned-pinned.*
+*Critical stress against slenderness for Sy = 250 MPa, E = 2.0000e+11 Pa (pinned-pinned, r = 0.02 m): 60 column lengths, each computed by the package, coloured by the regime it returned (Johnson parabola below the transition, Euler hyperbola above). Marked: the worked example L = 1.5 m, slenderness 75, σcr = 205.474 MPa, and the returned transition slenderness 125.664.*
 
-![Critical stress, MPa for every choice of ends, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/johnson-column-live-2)
+![Johnson or Euler (regime) over Sy (yield strength) from 2](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/johnson-column-decision)
 
-*Critical stress, MPa for every choice of ends, every other input as you entered it (highlighted: your choice). pinned-pinned: 205.5; fixed-free: 87.73; fixed-fixed: 238.9; fixed-pinned: 228.2. Your inputs: Sy = 250000000 Pa, E = 200000000000 Pa, L = 1.5 m, r = 0.02 m, ends = pinned-pinned.*
-
-![Johnson or Euler for 25 5 x 5 combinations of L and r around your inputs (the other inputs as entered); the ring marks your inputs, which give Johnson](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/johnson-column-live-3)
-
-*Johnson or Euler for 25 5 x 5 combinations of L and r around your inputs (the other inputs as entered); the ring marks your inputs, which give Johnson. Blank cells admit no answer. Your inputs: Sy = 250000000 Pa, E = 200000000000 Pa, L = 1.5 m, r = 0.02 m, ends = pinned-pinned.*
+*Johnson or Euler (regime) over Sy (yield strength) from 2.5000e+07 Pa to 2.5000e+09 Pa and E (Young's modulus) from 2.0000e+10 Pa to 2.0000e+12 Pa (logarithmic axes): each of the 31 × 21 cells is one run of mechanical-engineering-ai999x, coloured by the verdict it returned, Euler: 200 cells, Johnson: 451 cells. Other inputs as in the worked example: L = 1.5 m, r = 0.02 m, ends = pinned-pinned. Marked: the worked example, Sy = 2.5000e+08 Pa, E = 2.0000e+11 Pa → Johnson.*
 
 ```python
 mechanical_engineering_ai999x.solve('johnson_column', Sy=250000000.0, E=200000000000.0, L=1.5, r=0.02, ends='pinned-pinned')
@@ -2635,17 +2439,13 @@ $$
 - **Assumes:** pinned ends, equal eccentricities on the same side; P below the Euler load; elastic
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Maximum compressive stress against I from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/secant-column-curve-2)
+![A pinned column (L = 3 m, A = 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/secant-column-curve)
 
-*Maximum compressive stress against I from 1.2e-06 to 0.00012 m⁴ on a logarithmic axis, one curve for each load P (200 kN, half and twice it), 41 points each computed by the model (loads past buckling are left out). Marked: I = 1.2e-05 m⁴, σmax = 63.77 MPa. Your inputs: P = 200 kN, e = 10 mm, L = 3 m, A = 4000 mm^2, I = 1.2e-5 m^4, c = 75 mm, E = 200 GPa.*
+*A pinned column (L = 3 m, A = 0.004 m², I = 1.2000e-05 m⁴, c = 0.075 m, E = 2.0000e+11 Pa) loaded with eccentricity e = 10 mm: the largest stress and the midspan deflection for 45 loads up to 0.9 Pcr, each computed by the package (the secant formula grows without bound towards Pcr; dashed: P/A). Marked: the worked example P = 200 kN (P/Pcr = 0.0759909): σmax = 63.771 MPa, deflection 1.01679 mm, M = 2203.36 N·m.*
 
-![Maximum compressive stress (magnitude), MPa as L runs from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/secant-column-live-1)
+![sigma_max_MPa (maximum compressive stress (magnitude), MPa) against I (second moment of area in the bending plane) from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/secant-column-curve-2)
 
-*Maximum compressive stress (magnitude), MPa as L runs from 1.8 to 4.2 m, every other input as you entered it (41 solutions). Marked: your L = 3 m gives σ_max_MPa = 63.77. Your inputs: P = 200 kN, e = 10 mm, L = 3 m, A = 4000 mm^2, I = 1.2e-5 m^4, c = 75 mm, E = 200 GPa.*
-
-![Maximum compressive stress (magnitude), MPa as I runs from 7](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/secant-column-live-2)
-
-*Maximum compressive stress (magnitude), MPa as I runs from 7.2e-06 to 1.68e-05 m^4, every other input as you entered it (29 solutions). Marked: your I = 1.2e-05 m^4 gives σ_max_MPa = 63.77. Your inputs: P = 200 kN, e = 10 mm, L = 3 m, A = 4000 mm^2, I = 1.2e-5 m^4, c = 75 mm, E = 200 GPa.*
+*sigma_max_MPa (maximum compressive stress (magnitude), MPa) against I (second moment of area in the bending plane) from 1.2000e-06 m^4 to 0.00012 m^4 on a logarithmic axis. One curve for each value of P (compressive load): 200000 N, 100000 N, 400000 N. Other inputs as in the worked example: e = 0.01 m, L = 3.0 m, A = 0.004 m^2, c = 0.075 m, E = 200000000000.0 Pa. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, I = 1.2000e-05 m^4, sigma_max_MPa = 63.771.*
 
 ```python
 mechanical_engineering_ai999x.solve('secant_column', P=200000.0, e=0.01, L=3.0, A=0.004, I=1.2e-05, c=0.075, E=200000000000.0)
@@ -2688,21 +2488,13 @@ $$
 - **Assumes:** linear elastic, plane sections; moments about the centroidal axes
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Rectangular section b = 100 mm by h = 200 mm under the stated axial force and bending moments](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/combined-axial-and-bending-stress-section)
+![Rectangular section b = 100 mm × h = 200 mm under N = -50 kN, Mx = 8 kN·m, My = 2 kN·m](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/combined-axial-and-bending-stress-section)
 
-*Rectangular section b = 100 mm by h = 200 mm under the stated axial force and bending moments. Marked: the corner stresses the model returned (15.5, 3.5, -20.5, -8.5 MPa at (+x,+y), (-x,+y), (-x,-y), (+x,-y); tension in the first colour), σmax = 15.5 MPa, σmin = -20.5 MPa, axial part -2.5 MPa; the neutral axis joins the points of zero stress on the plane through the corner values. Your inputs: b = 100 mm, h = 200 mm, N = -50 kN, Mx = 8 kN*m, My = 2 kN*m.*
+*Rectangular section b = 100 mm × h = 200 mm under N = -50 kN, Mx = 8 kN·m, My = 2 kN·m. Marked: the corner stresses the package returned (15.5, 3.5, -20.5, -8.5 MPa at (+x,+y), (−x,+y), (−x,−y), (+x,−y); tension dots in the first colour), σmax = 15.5 MPa, σmin = -20.5 MPa, axial part -2.5 MPa; the neutral axis is interpolated linearly between the corner values.*
 
-![Largest (most tensile) stress, MPa as h runs from 120 to 280 mm, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/combined-axial-and-bending-stress-live-1)
+![sigma_max_MPa (largest (most tensile) stress, MPa) against b (width (along x)) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/combined-axial-and-bending-stress-curve)
 
-*Largest (most tensile) stress, MPa as h runs from 120 to 280 mm, every other input as you entered it (41 solutions). Marked: your h = 200 mm gives σ_max_MPa = 15.5. Your inputs: b = 100 mm, h = 200 mm, N = -50 kN, Mx = 8 kN*m, My = 2 kN*m.*
-
-![Every entry of sigma_corners_MPa as computed for your inputs (4 entries: 15](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/combined-axial-and-bending-stress-live-2)
-
-*Every entry of sigma_corners_MPa as computed for your inputs (4 entries: 15.5, 3.5, -20.5, -8.5). Your inputs: b = 100 mm, h = 200 mm, N = -50 kN, Mx = 8 kN*m, My = 2 kN*m.*
-
-![Largest (most tensile) stress, MPa as b runs from 60 to 140 mm, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/combined-axial-and-bending-stress-live-3)
-
-*Largest (most tensile) stress, MPa as b runs from 60 to 140 mm, every other input as you entered it (29 solutions). Marked: your b = 100 mm gives σ_max_MPa = 15.5. Your inputs: b = 100 mm, h = 200 mm, N = -50 kN, Mx = 8 kN*m, My = 2 kN*m.*
+*sigma_max_MPa (largest (most tensile) stress, MPa) against b (width (along x)) from 0.01 m to 1 m on a logarithmic axis. One curve for each value of h (depth (along y)): 0.2 m, 0.1 m, 0.4 m. Other inputs as in the worked example: N = -50000.0 N, Mx = 8000.0 N*m, My = 2000.0 N*m. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, b = 0.1 m, sigma_max_MPa = 15.5.*
 
 ```python
 mechanical_engineering_ai999x.solve('combined_axial_and_bending_stress', b=0.1, h=0.2, N=-50000.0, Mx=8000.0, My=2000.0)
@@ -2743,21 +2535,13 @@ $$
 - **Assumes:** identical bolts, rigid plate, elastic method; 2 to 40 bolts, not all at one point
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Bolt group (4 bolts at 0 0; 0 100; 100 0; 100 100 mm, numbered) under a load P = 20 kN whose line of action is e = 250 mm from the group centroid (the mean bolt position, marked)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/eccentric-bolt-group-schematic)
+![Bolt group (bolts at 0 0; 0 100; 100 0; 100 100 mm, numbered) under a vertical load P = 20 kN whose line of action is e = 250 mm to the right of the group centroid (the mean bolt position, marked)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/eccentric-bolt-group-schematic)
 
-*Bolt group (4 bolts at 0 0; 0 100; 100 0; 100 100 mm, numbered) under a load P = 20 kN whose line of action is e = 250 mm from the group centroid (the mean bolt position, marked). Marked: the returned most-loaded bolt 3 with 21.51 kN, direct shear 5 kN per bolt, polar sum 20000 mm². Your inputs: bolts = 0 0; 0 100; 100 0; 100 100, P = 20000 N, e = 0.25 m.*
+*Bolt group (bolts at 0 0; 0 100; 100 0; 100 100 mm, numbered) under a vertical load P = 20 kN whose line of action is e = 250 mm to the right of the group centroid (the mean bolt position, marked). Marked: the returned most-loaded bolt 3 with 21.5058 kN, direct shear 5 kN per bolt, polar sum 20000 mm².*
 
-![Largest resultant bolt force, kN as P runs from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/eccentric-bolt-group-live-1)
+![max_bolt_force_kN (largest resultant bolt force, kN) against P (vertical load (downward)) from 10000 N to 30000 N](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/eccentric-bolt-group-curve)
 
-*Largest resultant bolt force, kN as P runs from 1.2e+04 to 2.8e+04 N, every other input as you entered it (41 solutions). Marked: your P = 2e+04 N gives max_bolt_force_kN = 21.51. Your inputs: bolts = 0 0; 0 100; 100 0; 100 100, P = 20000 N, e = 0.25 m.*
-
-![The 4 rows of bolts as points (first column across, second up)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/eccentric-bolt-group-live-2)
-
-*The 4 rows of bolts as points (first column across, second up). Your inputs: bolts = 0 0; 0 100; 100 0; 100 100, P = 20000 N, e = 0.25 m.*
-
-![Largest resultant bolt force, kN as e runs from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/eccentric-bolt-group-live-3)
-
-*Largest resultant bolt force, kN as e runs from 0.15 to 0.35 m, every other input as you entered it (29 solutions). Marked: your e = 0.25 m gives max_bolt_force_kN = 21.51. Your inputs: bolts = 0 0; 0 100; 100 0; 100 100, P = 20000 N, e = 0.25 m.*
+*max_bolt_force_kN (largest resultant bolt force, kN) against P (vertical load (downward)) from 10000 N to 30000 N. One curve for each value of e (horizontal distance of the load line from the bolt-group centroid (positive to the right)): 0.25 m, 0.125 m, 0.5 m. Other inputs as in the worked example: bolts = 0 0; 0 100; 100 0; 100 100. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, P = 20000 N, max_bolt_force_kN = 21.5058.*
 
 ```python
 mechanical_engineering_ai999x.solve('eccentric_bolt_group', bolts='0 0; 0 100; 100 0; 100 100', P=20000.0, e=0.25)
@@ -2799,21 +2583,17 @@ $$
 - **Assumes:** $sm  \geq  0$ (compressive means not covered); sm < Sut; proportional loading (the load line through the origin)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Goodman fatigue diagram for Se = 250 MPa, Sut = 700 MPa, Sy = 500 MPa: each line is traced by the model's safety factor along 31 proportional load lines (each point where n = 1)](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/goodman-fatigue-safety-factor-fatigue.svg)
+![Fatigue failure envelopes for Se = 250 MPa, Sut = 700 MPa, Sy = 500 MPa: each point is the stress state at which the package's safety factor along a load line equals 1 (47 load lines per criterion)](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/goodman-fatigue-safety-factor-fatigue.svg)
 
-*Goodman fatigue diagram for Se = 250 MPa, Sut = 700 MPa, Sy = 500 MPa: each line is traced by the model's safety factor along 31 proportional load lines (each point where n = 1). Marked: the operating point σm = 80 MPa, σa = 120 MPa, its load line to the Goodman line, and the returned safety factor n = 1.683. Your inputs: sa = 120000000 Pa, sm = 80000000 Pa, Se = 250000000 Pa, Sut = 700000000 Pa, Sy = 500000000 Pa.*
+*Fatigue failure envelopes for Se = 250 MPa, Sut = 700 MPa, Sy = 500 MPa: each point is the stress state at which the package's safety factor along a load line equals 1 (47 load lines per criterion). Marked: the operating point σm = 80 MPa, σa = 120 MPa, Goodman safety factor n = 1.68269.*
 
-![Goodman fatigue diagram for Se = 250 MPa, Sut = 700 MPa: each line is traced by the model's safety factor along 31 proportional load lines (each point where n = 1)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/goodman-fatigue-safety-factor-fatigue-2)
+![modified Goodman fatigue diagram for Se = 250 MPa, Sut = 700 MPa, Sy = 500 MPa: the line is traced by the package's safety factor along 41 proportional load lines (each point where n = 1)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/goodman-fatigue-safety-factor-fatigue-2)
 
-*Goodman fatigue diagram for Se = 250 MPa, Sut = 700 MPa: each line is traced by the model's safety factor along 31 proportional load lines (each point where n = 1). Marked: the operating point σm = 80 MPa, σa = 120 MPa, its load line to the Goodman line, and the returned safety factor n = 1.683. Your inputs: sa = 120000000 Pa, sm = 80000000 Pa, Se = 250000000 Pa, Sut = 700000000 Pa, Sy = 500000000 Pa.*
+*modified Goodman fatigue diagram for Se = 250 MPa, Sut = 700 MPa, Sy = 500 MPa: the line is traced by the package's safety factor along 41 proportional load lines (each point where n = 1). Marked: the operating point σm = 80 MPa, σa = 120 MPa, its load line to the modified Goodman line, and the returned safety factor n = 1.68269 (equivalent fully reversed stress 135.484 MPa), yield safety factor 2.5.*
 
-![Fatigue safety factor (Goodman, proportional](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/goodman-fatigue-safety-factor-live-1)
+![n_fatigue (fatigue safety factor (Goodman, proportional loading)) against sa (alternating stress amplitude) from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/goodman-fatigue-safety-factor-curve)
 
-*Fatigue safety factor (Goodman, proportional... as sa runs from 7.2e+07 to 1.68e+08 Pa, every other input as you entered it (41 solutions). Marked: your sa = 1.2e+08 Pa gives n_fatigue = 1.683. Your inputs: sa = 120000000 Pa, sm = 80000000 Pa, Se = 250000000 Pa, Sut = 700000000 Pa, Sy = 500000000 Pa.*
-
-![Langer first-cycle yield factor Sy/(sa + sm)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/goodman-fatigue-safety-factor-live-2)
-
-*Langer first-cycle yield factor Sy/(sa + sm)... as Sy runs from 3e+08 to 7e+08 Pa, every other input as you entered it (29 solutions). Marked: your Sy = 5e+08 Pa gives n_yield = 2.5. Your inputs: sa = 120000000 Pa, sm = 80000000 Pa, Se = 250000000 Pa, Sut = 700000000 Pa, Sy = 500000000 Pa.*
+*n_fatigue (fatigue safety factor (Goodman, proportional loading)) against sa (alternating stress amplitude) from 1.2000e+07 Pa to 1.2000e+09 Pa on a logarithmic axis. One curve for each value of Se (fully corrected endurance limit): 2.5000e+08 Pa, 1.2500e+08 Pa, 5.0000e+08 Pa. Other inputs as in the worked example: sm = 80000000.0 Pa, Sut = 700000000.0 Pa, Sy = 500000000.0 Pa. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, sa = 1.2000e+08 Pa, n_fatigue = 1.68269.*
 
 ```python
 mechanical_engineering_ai999x.solve('goodman_fatigue_safety_factor', sa=120000000.0, sm=80000000.0, Se=250000000.0, Sut=700000000.0, Sy=500000000.0)
@@ -2853,17 +2633,13 @@ $$
 - **Assumes:** $sm  \geq  0$; $sm < Sy$; proportional loading
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Soderberg fatigue diagram for Se = 220 MPa, Sy = 450 MPa: each line is traced by the model's safety factor along 31 proportional load lines (each point where n = 1)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/soderberg-fatigue-safety-factor-fatigue)
+![Soderberg fatigue diagram for Se = 220 MPa, Sy = 450 MPa: the line is traced by the package's safety factor along 41 proportional load lines (each point where n = 1)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/soderberg-fatigue-safety-factor-fatigue)
 
-*Soderberg fatigue diagram for Se = 220 MPa, Sy = 450 MPa: each line is traced by the model's safety factor along 31 proportional load lines (each point where n = 1). Marked: the operating point σm = 60 MPa, σa = 100 MPa, its load line to the Soderberg line, and the returned safety factor n = 1.701. Your inputs: sa = 100 MPa, sm = 60 MPa, Se = 220 MPa, Sy = 450 MPa.*
+*Soderberg fatigue diagram for Se = 220 MPa, Sy = 450 MPa: the line is traced by the package's safety factor along 41 proportional load lines (each point where n = 1). Marked: the operating point σm = 60 MPa, σa = 100 MPa, its load line to the Soderberg line, and the returned safety factor n = 1.70103 (equivalent fully reversed stress 115.385 MPa).*
 
-![Fatigue safety factor as sa runs from 60 to 140 MPa, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/soderberg-fatigue-safety-factor-live-1)
+![n_fatigue (fatigue safety factor (Soderberg)) against sa (alternating stress amplitude) from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/soderberg-fatigue-safety-factor-curve)
 
-*Fatigue safety factor as sa runs from 60 to 140 MPa, every other input as you entered it (41 solutions). Marked: your sa = 100 MPa gives n_fatigue = 1.701. Your inputs: sa = 100 MPa, sm = 60 MPa, Se = 220 MPa, Sy = 450 MPa.*
-
-![Fatigue safety factor as Se runs from 132 to 308 MPa, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/soderberg-fatigue-safety-factor-live-2)
-
-*Fatigue safety factor as Se runs from 132 to 308 MPa, every other input as you entered it (29 solutions). Marked: your Se = 220 MPa gives n_fatigue = 1.701. Your inputs: sa = 100 MPa, sm = 60 MPa, Se = 220 MPa, Sy = 450 MPa.*
+*n_fatigue (fatigue safety factor (Soderberg)) against sa (alternating stress amplitude) from 1.0000e+07 Pa to 1.0000e+09 Pa on a logarithmic axis. One curve for each value of Se (fully corrected endurance limit): 2.2000e+08 Pa, 1.1000e+08 Pa, 4.4000e+08 Pa. Other inputs as in the worked example: sm = 60000000.0 Pa, Sy = 450000000.0 Pa. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, sa = 1.0000e+08 Pa, n_fatigue = 1.70103.*
 
 ```python
 mechanical_engineering_ai999x.solve('soderberg_fatigue_safety_factor', sa=100000000.0, sm=60000000.0, Se=220000000.0, Sy=450000000.0)
@@ -2906,17 +2682,9 @@ $$
 - **Assumes:** $-0.2 < b < 0$; Morrow/Goodman: $sm < sf$'; SWT/Walker: sigma_max > 0; goodman here uses sf' as the strength (Morrow form)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Cycles to failure as b runs from -0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/fatigue-life-mean-stress-correction-live-1)
+![Nf (cycles to failure) against sm (mean stress) from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/fatigue-life-mean-stress-correction-curve)
 
-*Cycles to failure as b runs from -0.1575 to -0.02587, every other input as you entered it (40 solutions). Marked: your b = -0.09 gives Nf = 4.948e+05. Your inputs: sa = 300000000 Pa, sm = 100000000 Pa, sf = 1200000000 Pa, b = -0.09, method = swt.*
-
-![Cycles to failure for every choice of method, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/fatigue-life-mean-stress-correction-live-2)
-
-*Cycles to failure for every choice of method, every other input as you entered it (highlighted: your choice). morrow: 9.304e+05; goodman: 9.304e+05; swt: 4.948e+05; walker: no answer. Your inputs: sa = 300000000 Pa, sm = 100000000 Pa, sf = 1200000000 Pa, b = -0.09, method = swt.*
-
-![Cycles to failure as sf runs from 7](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/fatigue-life-mean-stress-correction-live-3)
-
-*Cycles to failure as sf runs from 7.2e+08 to 1.68e+09 Pa, every other input as you entered it (29 solutions). Marked: your sf = 1.2e+09 Pa gives Nf = 4.948e+05. Your inputs: sa = 300000000 Pa, sm = 100000000 Pa, sf = 1200000000 Pa, b = -0.09, method = swt.*
+*Nf (cycles to failure) against sm (mean stress) from 1.0000e+07 Pa to 1.0000e+09 Pa on a logarithmic axis. One curve for each value of sf (fatigue strength coefficient sf' (Morrow and Goodman use it as the strength)): 1.2000e+09 Pa, 6.0000e+08 Pa, 2.4000e+09 Pa. Other inputs as in the worked example: sa = 300000000.0 Pa, b = -0.09, method = swt. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, sm = 1.0000e+08 Pa, Nf = 494791.*
 
 ```python
 mechanical_engineering_ai999x.solve('fatigue_life_mean_stress_correction', sa=300000000.0, sm=100000000.0, sf=1200000000.0, b=-0.09, method='swt')
@@ -2963,17 +2731,13 @@ $$
 - **Assumes:** $Se < sa < f$ Sut; $0 < f < 1$; fully reversed loading
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![S-N line for Sut = 700 MPa, Se = 300 MPa, f = 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/sn-fatigue-life-sn)
+![S–N line for Sut = 700 MPa, Se = 300 MPa, f = 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/sn-fatigue-life-sn)
 
-*S-N line for Sut = 700 MPa, Se = 300 MPa, f = 0.85: the life the model returns at 31 alternating stresses between Se and f·Sut (log-log axes). Marked: the alternating stress σa = 400 MPa and the returned life N = 5.491e+04 cycles. Your inputs: Sut = 700 MPa, Se = 300 MPa, f = 0.85, sa = 400 MPa.*
+*S–N line for Sut = 700 MPa, Se = 300 MPa, f = 0.85: the fatigue strength at 31 lives between 10³ and 10⁶ cycles, computed by the package's fatigue-strength capability (log–log axes). Marked: the alternating stress σa = 400 MPa and the returned life N = 54912.6 cycles (a = 1180.08 MPa, b = -0.0991319).*
 
-![Cycles to failure as sa runs from 304 to 560 MPa, every other input as you entered it (33 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/sn-fatigue-life-live-1)
+![N (cycles to failure) against sa (fully reversed stress amplitude) from 2](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/sn-fatigue-life-curve)
 
-*Cycles to failure as sa runs from 304 to 560 MPa, every other input as you entered it (33 solutions). Marked: your sa = 400 MPa gives N = 5.491e+04. Your inputs: Sut = 700 MPa, Se = 300 MPa, f = 0.85, sa = 400 MPa.*
-
-![Cycles to failure as Se runs from 180 to 394](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/sn-fatigue-life-live-2)
-
-*Cycles to failure as Se runs from 180 to 394.3 MPa, every other input as you entered it (26 solutions). Marked: your Se = 300 MPa gives N = 5.491e+04. Your inputs: Sut = 700 MPa, Se = 300 MPa, f = 0.85, sa = 400 MPa.*
+*N (cycles to failure) against sa (fully reversed stress amplitude) from 2.0000e+08 Pa to 6.0000e+08 Pa. One curve for each value of Sut (ultimate tensile strength): 7.0000e+08 Pa, 1.4000e+09 Pa. Other inputs as in the worked example: Se = 300000000.0 Pa, f = 0.85. 22 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, sa = 4.0000e+08 Pa, N = 54912.6.*
 
 ```python
 mechanical_engineering_ai999x.solve('sn_fatigue_life', Sut=700000000.0, Se=300000000.0, f=0.85, sa=400000000.0)
@@ -3012,13 +2776,9 @@ $$
 - **Assumes:** $10^{3}  \leq  N  \leq  10^{6}$; $0 < f < 1$, f Sut > Se
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Fatigue strength at N cycles, MPa as Se runs from 180 to 420 MPa, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/sn-fatigue-strength-live-1)
+![Sf_MPa (fatigue strength at N cycles, MPa) against Se (endurance limit) from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/sn-fatigue-strength-curve)
 
-*Fatigue strength at N cycles, MPa as Se runs from 180 to 420 MPa, every other input as you entered it (41 solutions). Marked: your Se = 300 MPa gives Sf_MPa = 403.7. Your inputs: Sut = 700 MPa, Se = 300 MPa, f = 0.85, N = 50000.*
-
-![Fatigue strength at N cycles, MPa as Sut runs from 420 to 980 MPa, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/sn-fatigue-strength-live-2)
-
-*Fatigue strength at N cycles, MPa as Sut runs from 420 to 980 MPa, every other input as you entered it (29 solutions). Marked: your Sut = 700 MPa gives Sf_MPa = 403.7. Your inputs: Sut = 700 MPa, Se = 300 MPa, f = 0.85, N = 50000.*
+*Sf_MPa (fatigue strength at N cycles, MPa) against Se (endurance limit) from 1.5000e+08 Pa to 4.5000e+08 Pa. One curve for each value of N (number of cycles (10^3 to 10^6)): 1e+06, 500000. Other inputs as in the worked example: Sut = 700000000.0 Pa, f = 0.85. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, Se = 3.0000e+08 Pa, Sf_MPa = 300.*
 
 ```python
 mechanical_engineering_ai999x.solve('sn_fatigue_strength', Sut=700000000.0, Se=300000000.0, f=0.85, N=1000.0)
@@ -3064,13 +2824,9 @@ $$
 - **Assumes:** linear damage accumulation (Palmgren-Miner); a single-slope curve without endurance limit
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Miner damage sum D as ranges[1] runs from 45 to 135, every other input as you entered it (31 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/miner-damage-sn-curve-live-1)
+![damage (Miner damage sum D) against Sc (reference stress range of the curve at Nc cycles, MPa) from 45 to 135](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/miner-damage-sn-curve-curve)
 
-*Miner damage sum D as ranges[1] runs from 45 to 135, every other input as you entered it (31 solutions). Marked: your ranges[1] = 90 gives damage = 0.5. Your inputs: ranges = 90, counts = 1000000, Sc = 90, m = 3.*
-
-![Miner damage sum D as Sc runs from 22](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/miner-damage-sn-curve-live-2)
-
-*Miner damage sum D as Sc runs from 22.5 to 157.5, every other input as you entered it (29 solutions). Marked: your Sc = 90 gives damage = 0.5. Your inputs: ranges = 90, counts = 1000000, Sc = 90, m = 3.*
+*damage (Miner damage sum D) against Sc (reference stress range of the curve at Nc cycles, MPa) from 45 to 135. Other inputs as in the worked example: ranges = 90, counts = 1000000, m = 3.0. 31 points computed by mechanical-engineering-ai999x; marked: the worked example, Sc = 90, damage = 0.5.*
 
 ```python
 mechanical_engineering_ai999x.solve('miner_damage_sn_curve', ranges='90', counts='1000000', Sc=90.0, m=3.0)
@@ -3111,13 +2867,9 @@ $$
 - **Assumes:** partial safety factors not applied $(gamma_Mf = gamma_Ff = 1)$; at least one range above the cut-off
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Miner damage sum as ranges[1] runs from 45 to 135, every other input as you entered it (31 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/eurocode-fatigue-damage-live-1)
+![damage (Miner damage sum) against dsc (detail category: stress range at 2e6 cycles, MPa) from 45 to 135](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/eurocode-fatigue-damage-curve)
 
-*Miner damage sum as ranges[1] runs from 45 to 135, every other input as you entered it (31 solutions). Marked: your ranges[1] = 90 gives damage = 0.5. Your inputs: ranges = 90, counts = 1000000, dsc = 90.*
-
-![Miner damage sum as dsc runs from 22](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/eurocode-fatigue-damage-live-2)
-
-*Miner damage sum as dsc runs from 22.5 to 157.5, every other input as you entered it (29 solutions). Marked: your dsc = 90 gives damage = 0.5. Your inputs: ranges = 90, counts = 1000000, dsc = 90.*
+*damage (Miner damage sum) against dsc (detail category: stress range at 2e6 cycles, MPa) from 45 to 135. Other inputs as in the worked example: ranges = 90, counts = 1000000. 31 points computed by mechanical-engineering-ai999x; marked: the worked example, dsc = 90, damage = 0.5.*
 
 ```python
 mechanical_engineering_ai999x.solve('eurocode_fatigue_damage', ranges='90', counts='1000000', dsc=90.0)
@@ -3156,21 +2908,9 @@ $$
 - **Assumes:** at least 3 points, not constant; ASTM $E1049-85$: the first and last points are reversals, the residue counts as half cycles; ranges equal to 12 significant digits are merged
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Rainflow counting of the load history 0, 5, -3, 4, -2, 6, -4, 1, 0 (top)](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/rainflow-counting-histogram.svg)
+![Rainflow counting of the load history 0, 5, -3, 4, -2, 6, -4, 1, 0 (top)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/rainflow-counting-histogram)
 
-*Rainflow counting of the load history 0, 5, -3, 4, -2, 6, -4, 1, 0 (top). Bottom: the ranges and cycle counts the model returned (half cycles count 0.5): ranges 10, 9, 8, 6, 5, 1 with counts 0.5, 0.5, 0.5, 1, 1, 0.5; total 4 cycles. Your inputs: history = 0, 5, -3, 4, -2, 6, -4, 1, 0.*
-
-![Largest range as history[6] runs from 1 to 11, every other input as you entered it (11 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/rainflow-counting-live-1)
-
-*Largest range as history[6] runs from 1 to 11, every other input as you entered it (11 solutions). Marked: your history[6] = 6 gives max_range = 10. Your inputs: history = 0, 5, -3, 4, -2, 6, -4, 1, 0.*
-
-![Every entry of ranges as computed for your inputs (6 entries: 10, 9, 8, 6, 5, 1)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/rainflow-counting-live-2)
-
-*Every entry of ranges as computed for your inputs (6 entries: 10, 9, 8, 6, 5, 1). Your inputs: history = 0, 5, -3, 4, -2, 6, -4, 1, 0.*
-
-![Largest range as history[2] runs from 1 to 9, every other input as you entered it (9 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/rainflow-counting-live-3)
-
-*Largest range as history[2] runs from 1 to 9, every other input as you entered it (9 solutions). Marked: your history[2] = 5 gives max_range = 10. Your inputs: history = 0, 5, -3, 4, -2, 6, -4, 1, 0.*
+*Rainflow counting of the load history 0, 5, -3, 4, -2, 6, -4, 1, 0 (top). Bottom: the ranges and cycle counts the package returned (half cycles count 0.5): ranges 10, 9, 8, 6, 5, 1 with counts 0.5, 0.5, 0.5, 1, 1, 0.5; total 4 cycles, largest range 10.*
 
 ```python
 mechanical_engineering_ai999x.solve('rainflow_counting', history='0, 5, -3, 4, -2, 6, -4, 1, 0')
@@ -3211,13 +2951,9 @@ $$
 - **Assumes:** ASTM $E1049-85$ rainflow counting, half cycles weighted 0.5; no mean-stress correction; single-slope S-N curve, no endurance limit
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Damage of one pass of the history as history[2] runs from 45 to 135, every other input as you entered it (31 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/rainflow-fatigue-damage-live-1)
+![damage (damage of one pass of the history) against Sc (reference stress range at Nc cycles, MPa) from 45 to 135](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/rainflow-fatigue-damage-curve)
 
-*Damage of one pass of the history as history[2] runs from 45 to 135, every other input as you entered it (31 solutions). Marked: your history[2] = 90 gives damage = 5e-07. Your inputs: history = 0, 90, 0, Sc = 90, m = 3.*
-
-![Damage of one pass of the history as Sc runs from 22](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/rainflow-fatigue-damage-live-2)
-
-*Damage of one pass of the history as Sc runs from 22.5 to 157.5, every other input as you entered it (29 solutions). Marked: your Sc = 90 gives damage = 5e-07. Your inputs: history = 0, 90, 0, Sc = 90, m = 3.*
+*damage (damage of one pass of the history) against Sc (reference stress range at Nc cycles, MPa) from 45 to 135. Other inputs as in the worked example: history = 0, 90, 0, m = 3.0. 31 points computed by mechanical-engineering-ai999x; marked: the worked example, Sc = 90, damage = 5.0000e-07.*
 
 ```python
 mechanical_engineering_ai999x.solve('rainflow_fatigue_damage', history='0, 90, 0', Sc=90.0, m=3.0)
@@ -3265,13 +3001,9 @@ $$
 - **Assumes:** solid round shaft, no axial load; Kf, Kfs >= 1; an alternating moment or torque present
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Fatigue safety factor as d runs from 24 to 56 mm, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/shaft-fatigue-safety-factor-live-1)
+![n_fatigue (fatigue safety factor (DE-Goodman)) against d (shaft diameter) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/shaft-fatigue-safety-factor-curve)
 
-*Fatigue safety factor as d runs from 24 to 56 mm, every other input as you entered it (41 solutions). Marked: your d = 40 mm gives n_fatigue = 4.063. Your inputs: d = 40 mm, Ma = 150 N*m, Mm = 0 N*m, Ta = 0 N*m, Tm = 200 N*m, Kf = 1.6, Kfs = 1.4, Se = 200 MPa.*
-
-![Fatigue safety factor as Ma runs from 90 to 210 N*m, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/shaft-fatigue-safety-factor-live-2)
-
-*Fatigue safety factor as Ma runs from 90 to 210 N*m, every other input as you entered it (29 solutions). Marked: your Ma = 150 N*m gives n_fatigue = 4.063. Your inputs: d = 40 mm, Ma = 150 N*m, Mm = 0 N*m, Ta = 0 N*m, Tm = 200 N*m, Kf = 1.6, Kfs = 1.4, Se = 200 MPa.*
+*n_fatigue (fatigue safety factor (DE-Goodman)) against d (shaft diameter) from 0.02 m to 0.06 m. One curve for each value of Ma (alternating bending moment): 150 N*m, 75 N*m, 300 N*m. Other inputs as in the worked example: Mm = 0.0 N*m, Ta = 0.0 N*m, Tm = 200.0 N*m, Kf = 1.6, Kfs = 1.4, Se = 200000000.0 Pa, Sut = 700000000.0 Pa. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, d = 0.04 m, n_fatigue = 4.06308.*
 
 ```python
 mechanical_engineering_ai999x.solve('shaft_fatigue_safety_factor', d=0.04, Ma=150.0, Mm=0.0, Ta=0.0, Tm=200.0, Kf=1.6, Kfs=1.4, Se=200000000.0, Sut=700000000.0)
@@ -3315,13 +3047,9 @@ $$
 - **Assumes:** solid round shaft; the stress-concentration factors for the final size are assumed known; $n  \geq  1$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Required diameter, mm as Se runs from 120 to 280 MPa, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/shaft-diameter-de-goodman-live-1)
+![d_mm (required diameter, mm) against Ma (alternating bending moment) from 15 N*m to 1500 N*m on a logarithmic axis](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/shaft-diameter-de-goodman-curve)
 
-*Required diameter, mm as Se runs from 120 to 280 MPa, every other input as you entered it (41 solutions). Marked: your Se = 200 MPa gives d_mm = 28.69. Your inputs: n = 1.5, Ma = 150 N*m, Mm = 0 N*m, Ta = 0 N*m, Tm = 200 N*m, Kf = 1.6, Kfs = 1.4, Se = 200 MPa.*
-
-![Required diameter, mm as Ma runs from 90 to 210 N*m, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/shaft-diameter-de-goodman-live-2)
-
-*Required diameter, mm as Ma runs from 90 to 210 N*m, every other input as you entered it (29 solutions). Marked: your Ma = 150 N*m gives d_mm = 28.69. Your inputs: n = 1.5, Ma = 150 N*m, Mm = 0 N*m, Ta = 0 N*m, Tm = 200 N*m, Kf = 1.6, Kfs = 1.4, Se = 200 MPa.*
+*d_mm (required diameter, mm) against Ma (alternating bending moment) from 15 N*m to 1500 N*m on a logarithmic axis. One curve for each value of Se (fully corrected endurance limit): 2.0000e+08 Pa, 1.0000e+08 Pa, 4.0000e+08 Pa. Other inputs as in the worked example: n = 1.5, Mm = 0.0 N*m, Ta = 0.0 N*m, Tm = 200.0 N*m, Kf = 1.6, Kfs = 1.4, Sut = 700000000.0 Pa. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, Ma = 150 N*m, d_mm = 28.6949.*
 
 ```python
 mechanical_engineering_ai999x.solve('shaft_diameter_de_goodman', n=1.5, Ma=150.0, Mm=0.0, Ta=0.0, Tm=200.0, Kf=1.6, Kfs=1.4, Se=200000000.0, Sut=700000000.0)
@@ -3364,15 +3092,11 @@ $$
 
 ![A rope or belt wrapped θ = 180° round a drum with friction coefficient μ = 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/belt-friction-capstan-fbd)
 
-*A rope or belt wrapped θ = 180° round a drum with friction coefficient μ = 0.3 and slack-side tension T2 = 200 N. Marked: the returned largest tight-side tension T1 = 513.3 N, the ratio T1/T2 = 2.566 and the friction force 313.3 N. Your inputs: T2 = 200 N, mu = 0.3, theta = 180 deg.*
+*A rope or belt wrapped θ = 180° round a drum with friction coefficient μ = 0.3 and slack-side tension T2 = 200 N. Marked: the returned largest tight-side tension T1 = 513.266 N, the ratio T1/T2 = 2.56633 and the friction force 313.266 N.*
 
-![Tight-side tension at impending slip as μ runs from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/belt-friction-capstan-live-1)
+![T1 (tight-side tension at impending slip) against mu (coefficient of friction) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/belt-friction-capstan-curve)
 
-*Tight-side tension at impending slip as μ runs from 0.075 to 0.525, every other input as you entered it (41 solutions). Marked: your μ = 0.3 gives T1 = 513.3. Your inputs: T2 = 200 N, mu = 0.3, theta = 180 deg.*
-
-![Tight-side tension at impending slip as θ runs from 108 to 252 deg, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/belt-friction-capstan-live-2)
-
-*Tight-side tension at impending slip as θ runs from 108 to 252 deg, every other input as you entered it (29 solutions). Marked: your θ = 180 deg gives T1 = 513.3. Your inputs: T2 = 200 N, mu = 0.3, theta = 180 deg.*
+*T1 (tight-side tension at impending slip) against mu (coefficient of friction) from 0.02 to 0.98. One curve for each value of T2 (slack-side tension): 200 N, 100 N, 400 N. Other inputs as in the worked example: theta = 3.141592653589793 rad. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, mu = 0.3, T1 = 513.266 N.*
 
 ```python
 mechanical_engineering_ai999x.solve('belt_friction_capstan', T2=200.0, mu=0.3, theta=3.141592653589793)
@@ -3421,17 +3145,13 @@ $$
 - **Assumes:** impending slip on the smaller pulley; m $v^{2} < T_{1}$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![A belt on its pulley (wrap angle θ = 160°, μ = 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/belt-drive-power-fbd)
+![A belt on its smaller pulley (wrap angle θ = 160°, μ = 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/belt-drive-power-fbd)
 
-*A belt on its pulley (wrap angle θ = 160°, μ = 0.3, belt speed 20 m/s) at the allowable tight-side tension T1 = 1.2 kN. Marked: the returned slack-side tension T2 = 610 N, centrifugal tension Tc = 160 N and transmitted power P = 11.8 kW. In SI units: P = 1.18e+04 W. Your inputs: T1 = 1.2 kN, m = 0.4 kg/m, v = 20 m/s, mu = 0.3, theta = 160 deg.*
+*A belt on its smaller pulley (wrap angle θ = 160°, μ = 0.3, belt mass 0.4 kg/m, speed 20.0 m/s) at the allowable tight-side tension T1 = 1200 N. Marked: the returned slack-side tension T2 = 609.987 N, centrifugal tension Tc = 160 N and transmitted power P = 11.8003 kW.*
 
-![Transmitted power as v runs from 12 to 28 m/s, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/belt-drive-power-live-1)
+![P (transmitted power) against mu (coefficient of friction) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/belt-drive-power-curve)
 
-*Transmitted power as v runs from 12 to 28 m/s, every other input as you entered it (41 solutions). Marked: your v = 20 m/s gives P = 11.8 kW. Your inputs: T1 = 1.2 kN, m = 0.4 kg/m, v = 20 m/s, mu = 0.3, theta = 160 deg.*
-
-![Transmitted power as T1 runs from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/belt-drive-power-live-2)
-
-*Transmitted power as T1 runs from 0.72 to 1.68 kN, every other input as you entered it (29 solutions). Marked: your T1 = 1.2 kN gives P = 11.8 kW. Your inputs: T1 = 1.2 kN, m = 0.4 kg/m, v = 20 m/s, mu = 0.3, theta = 160 deg.*
+*P (transmitted power) against mu (coefficient of friction) from 0.02 to 0.98. One curve for each value of T1 (allowable tight-side tension): 1200 N, 600 N, 2400 N. Other inputs as in the worked example: m = 0.4 kg/m, v = 20.0 m/s, theta = 2.792526803190927 rad. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, mu = 0.3, P = 11800.3 W.*
 
 ```python
 mechanical_engineering_ai999x.solve('belt_drive_power', T1=1200.0, m=0.4, v=20.0, mu=0.3, theta=2.792526803190927)
@@ -3476,17 +3196,13 @@ $$
 - **Assumes:** $\alpha < 45$ degrees; thread friction taken as f/cos(alpha); single thrust collar
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Torque to raise the load and torque to lower the load as l runs from 7](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/power-screw-torque-live-1)
+![yes if the thread alone holds the load (self_locking) over dm (mean thread diameter) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/power-screw-torque-decision)
 
-*Torque to raise the load and torque to lower the load as l runs from 7.2 to 16.8 mm, every other input as you entered it (41 solutions). Marked: your l = 12 mm gives T_raise = 30.35. Shaded by yes if the thread alone holds the load: yes, no. Your inputs: F = 6.4 kN, dm = 30 mm, l = 12 mm, f = 0.08, fc = 0.08, dc = 40 mm.*
+*yes if the thread alone holds the load (self_locking) over dm (mean thread diameter) from 0.003 m to 0.3 m and l (lead) from 0.0012 m to 0.12 m (logarithmic axes): each of the 31 × 21 cells is one run of mechanical-engineering-ai999x, coloured by the verdict it returned, no: 389 cells, yes: 261 cells; blank cells: inputs the capability refuses. Other inputs as in the worked example: F = 6400.0 N, f = 0.08, fc = 0.08, dc = 0.04 m. Marked: the worked example, dm = 0.03 m, l = 0.012 m → no.*
 
-![Yes if the thread alone holds the load for 25 5 x 5 combinations of l and fc around your inputs (the other inputs as entered); the ring marks your inputs, which give no](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/power-screw-torque-live-2)
+![T_raise (torque to raise the load) against l (lead) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/power-screw-torque-curve)
 
-*Yes if the thread alone holds the load for 25 5 x 5 combinations of l and fc around your inputs (the other inputs as entered); the ring marks your inputs, which give no. Blank cells admit no answer. Your inputs: F = 6.4 kN, dm = 30 mm, l = 12 mm, f = 0.08, fc = 0.08, dc = 40 mm.*
-
-![Torque to raise the load and torque to lower the load as fc runs from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/power-screw-torque-live-3)
-
-*Torque to raise the load and torque to lower the load as fc runs from 0.02 to 0.14, every other input as you entered it (25 solutions). Marked: your fc = 0.08 gives T_raise = 30.35. Your inputs: F = 6.4 kN, dm = 30 mm, l = 12 mm, f = 0.08, fc = 0.08, dc = 40 mm.*
+*T_raise (torque to raise the load) against l (lead) from 0.0012 m to 0.12 m on a logarithmic axis. One curve for each value of F (axial load): 6400 N, 3200 N, 12800 N. Other inputs as in the worked example: dm = 0.03 m, f = 0.08, fc = 0.08, dc = 0.04 m. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, l = 0.012 m, T_raise = 30.3479 N*m.*
 
 ```python
 mechanical_engineering_ai999x.solve('power_screw_torque', F=6400.0, dm=0.03, l=0.012, f=0.08, fc=0.08, dc=0.04)
@@ -3528,17 +3244,9 @@ $$
 - **Assumes:** $d < D$; the same force on every pair
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Torque capacity as D runs from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/disc-clutch-torque-live-1)
+![T (torque capacity) against F (axial actuating force) from 2000 N to 6000 N](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/disc-clutch-torque-curve)
 
-*Torque capacity as D runs from 0.12 to 0.28 m, every other input as you entered it (41 solutions). Marked: your D = 0.2 m gives T = 90. Your inputs: F = 4000 N, f = 0.3, D = 0.2 m, d = 0.1 m, model = uniform wear.*
-
-![Torque capacity for every choice of model, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/disc-clutch-torque-live-2)
-
-*Torque capacity for every choice of model, every other input as you entered it (highlighted: your choice). uniform wear: 90; uniform pressure: 93.33. Your inputs: F = 4000 N, f = 0.3, D = 0.2 m, d = 0.1 m, model = uniform wear.*
-
-![Torque capacity as F runs from 2400 to 5600 N, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/disc-clutch-torque-live-3)
-
-*Torque capacity as F runs from 2400 to 5600 N, every other input as you entered it (29 solutions). Marked: your F = 4000 N gives T = 90. Your inputs: F = 4000 N, f = 0.3, D = 0.2 m, d = 0.1 m, model = uniform wear.*
+*T (torque capacity) against F (axial actuating force) from 2000 N to 6000 N. One curve for each value of D (outer diameter of the friction face): 0.2 m, 0.4 m. Other inputs as in the worked example: f = 0.3, d = 0.1 m, model = uniform wear. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, F = 4000 N, T = 90 N*m.*
 
 ```python
 mechanical_engineering_ai999x.solve('disc_clutch_torque', F=4000.0, f=0.3, D=0.2, d=0.1, model='uniform wear')
@@ -3588,17 +3296,13 @@ $$
 - **Assumes:** exactly two of the three speeds given; $Nr > Ns$, Nr - Ns even; same sign convention for every speed
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![A simple planetary train with a 20-tooth sun and a 80-tooth ring (pitch circles to scale; the carrier arms in green; three planets drawn, their number does not change the speeds)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/planetary-gear-train-gears)
+![A simple planetary train with a 20-tooth sun and an 80-tooth ring (pitch circles to scale; the carrier arms in green; three planets drawn, their number does not change the speeds)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/planetary-gear-train-gears)
 
-*A simple planetary train with a 20-tooth sun and a 80-tooth ring (pitch circles to scale; the carrier arms in green; three planets drawn, their number does not change the speeds). Marked: the returned speeds sun 1200 rpm, ring 0 rpm, carrier 240 rpm, planet -400 rpm (30 teeth). Your inputs: Ns = 20, Nr = 80, ws = 1200 rpm, wr = 0 rpm.*
+*A simple planetary train with a 20-tooth sun and an 80-tooth ring (pitch circles to scale; the carrier arms in green; three planets drawn, their number does not change the speeds). Given: sun 125.664 rad/s, ring 0 rad/s. Marked: the returned speeds sun 1200 rpm, ring 0 rpm, carrier 240 rpm, planet -400 rpm (absolute) and the planet tooth number 30.*
 
-![Carrier speed, rpm as Ns runs from 2 to 40, every other input as you entered it (20 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/planetary-gear-train-live-1)
+![wc_rpm (carrier speed, rpm) against Ns (teeth on the sun) from 1 to 40](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/planetary-gear-train-curve)
 
-*Carrier speed, rpm as Ns runs from 2 to 40, every other input as you entered it (20 solutions). Values in this range where the inputs admit no answer (19 of 39) are left out. Marked: your Ns = 20 gives wc_rpm = 240. Your inputs: Ns = 20, Nr = 80, ws = 1200 rpm, wr = 0 rpm.*
-
-![Carrier speed, rpm as ws runs from 720 to 1680 rpm, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/planetary-gear-train-live-2)
-
-*Carrier speed, rpm as ws runs from 720 to 1680 rpm, every other input as you entered it (29 solutions). Marked: your ws = 1200 rpm gives wc_rpm = 240. Your inputs: Ns = 20, Nr = 80, ws = 1200 rpm, wr = 0 rpm.*
+*wc_rpm (carrier speed, rpm) against Ns (teeth on the sun) from 1 to 40. One curve for each value of ws (sun speed (signed; rpm or rad/s)): 125.664 rad/s, 62.8319 rad/s, 251.327 rad/s. Other inputs as in the worked example: Nr = 80, wr = 0.0 rad/s. 20 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, Ns = 20, wc_rpm = 240.*
 
 ```python
 mechanical_engineering_ai999x.solve('planetary_gear_train', Ns=20, Nr=80, ws=125.66370614359171, wr=0.0)
@@ -3648,17 +3352,13 @@ $$
 - **Assumes:** standard full-depth teeth: addendum = 1 module; standard centre distance; no interference (refused otherwise); 10 <= pressure angle <= 30 degrees
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![A spur-gear pair, N1 = 20 and N2 = 50 teeth, module 4 mm, pressure angle 20°, drawn to scale (pitch circles dashed, tooth outlines schematic, addendum of one module)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/spur-gear-contact-ratio-gears)
+![A spur-gear pair, N1 = 20 and N2 = 50 teeth, module 4 mm, pressure angle 20°, drawn to scale (pitch circles dashed, tooth outlines schematic, full-depth addendum of one module)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/spur-gear-contact-ratio-gears)
 
-*A spur-gear pair, N1 = 20 and N2 = 50 teeth, module 4 mm, pressure angle 20°, drawn to scale (pitch circles dashed, tooth outlines schematic, addendum of one module). The solid segment on the line of action is the path of contact between the two addendum circles; its length agrees with the returned Z = 19.55 mm. Marked: contact ratio 1.656, base pitch 11.81 mm, centre distance 140 mm. Your inputs: N1 = 20, N2 = 50, m = 4 mm, phi = 20 deg.*
+*A spur-gear pair, N1 = 20 and N2 = 50 teeth, module 4 mm, pressure angle 20°, drawn to scale (pitch circles dashed, tooth outlines schematic, full-depth addendum of one module). The solid segment on the line of action is the path of contact between the two addendum circles; its length agrees with the returned Z = 19.552 mm. Marked: d1 = 80 mm, d2 = 200 mm, centre distance 140 mm, base pitch 11.8085 mm, contact ratio 1.65576.*
 
-![Base pitch, mm as m runs from 2](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/spur-gear-contact-ratio-live-1)
+![contact_ratio (contact ratio Z / p_b) against N1 (teeth on the pinion) from 1 to 40](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/spur-gear-contact-ratio-curve)
 
-*Base pitch, mm as m runs from 2.4 to 5.6 mm, every other input as you entered it (41 solutions). Marked: your m = 4 mm gives pb_mm = 11.81. Your inputs: N1 = 20, N2 = 50, m = 4 mm, phi = 20 deg.*
-
-![Contact ratio as N2 runs from 30 to 70, every other input as you entered it (21 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/spur-gear-contact-ratio-live-2)
-
-*Contact ratio as N2 runs from 30 to 70, every other input as you entered it (21 solutions). Marked: your N2 = 50 gives contact_ratio = 1.656. Your inputs: N1 = 20, N2 = 50, m = 4 mm, phi = 20 deg.*
+*contact_ratio (contact ratio Z / p_b) against N1 (teeth on the pinion) from 1 to 40. One curve for each value of phi (pressure angle): 0.349066 rad, 0.392699 rad. Other inputs as in the worked example: N2 = 50, m = 0.004 m. 9 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, N1 = 20, contact_ratio = 1.65576.*
 
 ```python
 mechanical_engineering_ai999x.solve('spur_gear_contact_ratio', N1=20, N2=50, m=0.004, phi=0.3490658503988659)
@@ -3706,17 +3406,9 @@ $$
 - **Assumes:** $0 < R < 1$; Weibull parameters of the catalogue (defaults: $x_{0} = 0.02$, $\theta = 4.459$, b = 1.483); constant load and speed
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Life at reliability R, hours as F runs from 2400 to 5600 N, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/bearing-life-reliability-live-1)
+![L_hours (life at reliability R, hours) against F (equivalent radial load) from 2000 N to 6000 N](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/bearing-life-reliability-curve)
 
-*Life at reliability R, hours as F runs from 2400 to 5600 N, every other input as you entered it (41 solutions). Marked: your F = 4000 N gives L_hours = 4656. Your inputs: C = 30000 N, F = 4000 N, n = 157.07963267948963 rad/s, R = 0.9, kind = ball.*
-
-![Life at reliability R, hours for every choice of kind, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/bearing-life-reliability-live-2)
-
-*Life at reliability R, hours for every choice of kind, every other input as you entered it (highlighted: your choice). ball: 4656; roller: 9114. Your inputs: C = 30000 N, F = 4000 N, n = 157.07963267948963 rad/s, R = 0.9, kind = ball.*
-
-![Life at reliability R, hours as C runs from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/bearing-life-reliability-live-3)
-
-*Life at reliability R, hours as C runs from 1.8e+04 to 4.2e+04 N, every other input as you entered it (29 solutions). Marked: your C = 3e+04 N gives L_hours = 4656. Your inputs: C = 30000 N, F = 4000 N, n = 157.07963267948963 rad/s, R = 0.9, kind = ball.*
+*L_hours (life at reliability R, hours) against F (equivalent radial load) from 2000 N to 6000 N. One curve for each value of C (catalogue (basic dynamic) load rating): 30000 N, 15000 N, 60000 N. Other inputs as in the worked example: n = 157.07963267948966 rad/s, R = 0.95, kind = ball. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, F = 4000 N, L_hours = 2901.83.*
 
 ```python
 mechanical_engineering_ai999x.solve('bearing_life_reliability', C=30000.0, F=4000.0, n=157.07963267948963, R=0.9, kind='ball')
@@ -3764,17 +3456,9 @@ $$
 - **Assumes:** $0 < R < 1$; Weibull defaults $x_{0} = 0.02$, $\theta = 4.459$, $b = 1.483$ and $LR = 1e6$ revolutions unless given
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Required catalogue rating as R runs from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/bearing-catalog-rating-live-1)
+![C10 (required catalogue rating) against R (required reliability) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/bearing-catalog-rating-curve)
 
-*Required catalogue rating as R runs from 0.2475 to 0.99, every other input as you entered it (21 solutions). Marked: your R = 0.99 gives C10 = 34.57 kN. Your inputs: FD = 1800 N, LD = 108000000 s, n = 52.35987755982988 rad/s, R = 0.99, kind = ball, af = 1.2.*
-
-![Required catalogue rating for every choice of kind, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/bearing-catalog-rating-live-2)
-
-*Required catalogue rating for every choice of kind, every other input as you entered it (highlighted: your choice). ball: 3.457e+04; roller: 2.62e+04. Your inputs: FD = 1800 N, LD = 108000000 s, n = 52.35987755982988 rad/s, R = 0.99, kind = ball, af = 1.2.*
-
-![Required catalogue rating as FD runs from 1080 to 2520 N, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/bearing-catalog-rating-live-3)
-
-*Required catalogue rating as FD runs from 1080 to 2520 N, every other input as you entered it (29 solutions). Marked: your FD = 1800 N gives C10 = 34.57 kN. Your inputs: FD = 1800 N, LD = 108000000 s, n = 52.35987755982988 rad/s, R = 0.99, kind = ball, af = 1.2.*
+*C10 (required catalogue rating) against R (required reliability) from 0.02 to 0.98. One curve for each value of FD (design (equivalent radial) load): 1800 N, 900 N, 3600 N. Other inputs as in the worked example: LD = 108000000.0 s, n = 52.35987755982988 rad/s, kind = ball, af = 1.2. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, R = 0.99, C10 = 34567.2 N.*
 
 ```python
 mechanical_engineering_ai999x.solve('bearing_catalog_rating', FD=1800.0, LD=108000000.0, n=52.35987755982988, R=0.99, kind='ball', af=1.2)
@@ -3817,13 +3501,9 @@ $$
 - **Assumes:** $C > 2$; close-coiled (small helix angle); curvature (Wahl) correction not included
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Spring rate as d runs from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/helical-compression-spring-live-1)
+![k (spring rate) against D (mean coil diameter) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/helical-compression-spring-curve)
 
-*Spring rate as d runs from 1.8 to 4.2 mm, every other input as you entered it (41 solutions). Marked: your d = 3 mm gives k = 5786. Your inputs: d = 3 mm, D = 24 mm, Na = 10, G = 79 GPa, F = 100 N.*
-
-![Spring rate as D runs from 14](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/helical-compression-spring-live-2)
-
-*Spring rate as D runs from 14.4 to 33.6 mm, every other input as you entered it (29 solutions). Marked: your D = 24 mm gives k = 5786. Your inputs: d = 3 mm, D = 24 mm, Na = 10, G = 79 GPa, F = 100 N.*
+*k (spring rate) against D (mean coil diameter) from 0.012 m to 0.036 m. One curve for each value of d (wire diameter): 0.003 m, 0.0015 m, 0.006 m. Other inputs as in the worked example: Na = 10.0, G = 79000000000.0 Pa, F = 100.0 N. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, D = 0.024 m, k = 5786.13 N/m.*
 
 ```python
 mechanical_engineering_ai999x.solve('helical_compression_spring', d=0.003, D=0.024, Na=10.0, G=79000000000.0, F=100.0)
@@ -3865,15 +3545,11 @@ $$
 
 ![A mass m = 20 kg on a spring k = 8000 N/m](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/sdof-natural-frequency-schematic)
 
-*A mass m = 20 kg on a spring k = 8000 N/m. Marked: the returned natural frequency ωn = 20 rad/s (fn = 3.183 Hz), period 0.3142 s and static deflection 24.52 mm under its own weight. Your inputs: m = 20 kg, k = 8 kN/m.*
+*A mass m = 20 kg on a spring k = 8000 N/m. Marked: the returned natural frequency ωn = 20 rad/s (fn = 3.1831 Hz), period 0.314159 s and static deflection 24.5166 mm under its own weight.*
 
-![Natural circular frequency as k runs from 4](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/sdof-natural-frequency-live-1)
+![omega_n (natural circular frequency) against m (mass) from 10 kg to 30 kg](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/sdof-natural-frequency-curve)
 
-*Natural circular frequency as k runs from 4.8 to 11.2 kN/m, every other input as you entered it (41 solutions). Marked: your k = 8 kN/m gives ω_n = 20. Your inputs: m = 20 kg, k = 8 kN/m.*
-
-![Natural circular frequency as m runs from 12 to 28 kg, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/sdof-natural-frequency-live-2)
-
-*Natural circular frequency as m runs from 12 to 28 kg, every other input as you entered it (29 solutions). Marked: your m = 20 kg gives ω_n = 20. Your inputs: m = 20 kg, k = 8 kN/m.*
+*omega_n (natural circular frequency) against m (mass) from 10 kg to 30 kg. One curve for each value of k (spring stiffness): 8000 N/m, 4000 N/m, 16000 N/m. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, m = 20 kg, omega_n = 20 rad/s.*
 
 ```python
 mechanical_engineering_ai999x.solve('sdof_natural_frequency', m=20.0, k=8000.0)
@@ -3918,21 +3594,13 @@ $$
 - **Assumes:** m, $k > 0$, $c  \geq  0$; linear viscous damping
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Underdamped, critically damped or overdamped over c from 4 to 400 N·s/m and m from 1 kg to 100 kg (logarithmic axes; k as given): each of the 221 cells is one run of the model, coloured by the regime it returned](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/damped-sdof-parameters-decision)
+![A damped single-degree-of-freedom system m = 10 kg, c = 40 N·s/m, k = 4000 N/m and its free decay from x0 = 10 mm (an initial displacement chosen for the drawing; 201 instants computed by the package's free-response capability)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/damped-sdof-parameters-response)
 
-*Underdamped, critically damped or overdamped over c from 4 to 400 N·s/m and m from 1 kg to 100 kg (logarithmic axes; k as given): each of the 221 cells is one run of the model, coloured by the regime it returned. Marked: the inputs given (underdamped). In SI units: zeta = 0.1. Your inputs: m = 10 kg, c = 40 N*s/m, k = 4000 N/m.*
+*A damped single-degree-of-freedom system m = 10 kg, c = 40 N·s/m, k = 4000 N/m and its free decay from x0 = 10 mm (an initial displacement chosen for the drawing; 201 instants computed by the package's free-response capability). Marked: the returned ωn = 20 rad/s, ζ = 0.1, ωd = 19.8997 rad/s, logarithmic decrement 0.631484, critical damping 400 N·s/m, regime: underdamped.*
 
-![A damped single-degree-of-freedom system m = 10 kg, c = 40 N·s/m, k = 4000 N/m and its free decay from x0 = 10 mm (an initial displacement chosen for the drawing; 121 instants computed by the model's free-response capability)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/damped-sdof-parameters-response)
+![underdamped, critically damped or overdamped (regime) over c (viscous damping coefficient (N*s/m)) from 4 kg/s to 400 kg/s and m (mass) from 1 kg to 100 kg (logarithmic axes): each of the 31 × 21 cells is one run of mechanical-engineering-ai999x, coloured by the verdict it returned, critically damped: 1 cells, overdamped: 46 cells, underdamped: 604 cells](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/damped-sdof-parameters-decision)
 
-*A damped single-degree-of-freedom system m = 10 kg, c = 40 N·s/m, k = 4000 N/m and its free decay from x0 = 10 mm (an initial displacement chosen for the drawing; 121 instants computed by the model's free-response capability). Marked: the returned ωn = 20 rad/s, ζ = 0.1, ωd = 19.9 rad/s, δ = 0.6315 (underdamped). Your inputs: m = 10 kg, c = 40 N*s/m, k = 4000 N/m.*
-
-![Damping ratio c/c_c as c runs from 24 to 56 N*s/m, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/damped-sdof-parameters-live-1)
-
-*Damping ratio c/c_c as c runs from 24 to 56 N*s/m, every other input as you entered it (41 solutions). Marked: your c = 40 N*s/m gives ζ = 0.1. Your inputs: m = 10 kg, c = 40 N*s/m, k = 4000 N/m.*
-
-![Damping ratio c/c_c as k runs from 2400 to 5600 N/m, every other input as you entered it (27 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/damped-sdof-parameters-live-2)
-
-*Damping ratio c/c_c as k runs from 2400 to 5600 N/m, every other input as you entered it (27 solutions). Marked: your k = 4000 N/m gives ζ = 0.1. Your inputs: m = 10 kg, c = 40 N*s/m, k = 4000 N/m.*
+*underdamped, critically damped or overdamped (regime) over c (viscous damping coefficient (N*s/m)) from 4 kg/s to 400 kg/s and m (mass) from 1 kg to 100 kg (logarithmic axes): each of the 31 × 21 cells is one run of mechanical-engineering-ai999x, coloured by the verdict it returned, critically damped: 1 cells, overdamped: 46 cells, underdamped: 604 cells. Other inputs as in the worked example: k = 4000.0 N/m. Marked: the worked example, c = 40 kg/s, m = 10 kg → underdamped.*
 
 ```python
 mechanical_engineering_ai999x.solve('damped_sdof_parameters', m=10.0, c=40.0, k=4000.0)
@@ -3975,17 +3643,13 @@ $$
 - **Assumes:** linear viscous damping; no external force; zeta within $1e-9$ of 1 is treated as critical
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Free vibration of a spring-mass-damper (m = 1 kg, c = 2 N·s/m, k = 100 N/m) released from the stated x0 and v0: the displacement at 121 instants up to 3](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/sdof-free-response-response)
+![Free vibration of a spring–mass–damper (m = 1 kg, c = 20 N·s/m, k = 100 N/m) released from x0 = 10 mm with v0 = 0 m/s: the displacement at 201 instants up to 2](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/sdof-free-response-response)
 
-*Free vibration of a spring-mass-damper (m = 1 kg, c = 2 N·s/m, k = 100 N/m) released from the stated x0 and v0: the displacement at 121 instants up to 3.157 s, each computed by the model. Marked: t = 500 ms, x = 0.9855 mm, v = 0.05887 m/s. In SI units: x = 0.0009855 m. Your inputs: m = 1 kg, c = 2 N*s/m, k = 100 N/m, x0 = 10 mm, v0 = 0 m/s, t = 0.5 s.*
+*Free vibration of a spring–mass–damper (m = 1 kg, c = 20 N·s/m, k = 100 N/m) released from x0 = 10 mm with v0 = 0 m/s: the displacement at 201 instants up to 2.51327 s, each computed by the package. Marked: t = 0.1 s, x = 7.35759 mm, v = -0.0367879 m/s.*
 
-![Displacement at t as m runs from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/sdof-free-response-live-1)
+![x (displacement at t) against k (stiffness) from 10 N/m to 1000 N/m on a logarithmic axis](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/sdof-free-response-curve)
 
-*Displacement at t as m runs from 0.6 to 1.4 kg, every other input as you entered it (41 solutions). Marked: your m = 1 kg gives x = 0.9855 mm. Your inputs: m = 1 kg, c = 2 N*s/m, k = 100 N/m, x0 = 10 mm, v0 = 0 m/s, t = 0.5 s.*
-
-![Displacement at t as k runs from 60 to 140 N/m, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/sdof-free-response-live-2)
-
-*Displacement at t as k runs from 60 to 140 N/m, every other input as you entered it (29 solutions). Marked: your k = 100 N/m gives x = 0.9855 mm. Your inputs: m = 1 kg, c = 2 N*s/m, k = 100 N/m, x0 = 10 mm, v0 = 0 m/s, t = 0.5 s.*
+*x (displacement at t) against k (stiffness) from 10 N/m to 1000 N/m on a logarithmic axis. One curve for each value of v0 (initial velocity): 0 m/s, -0.5 m/s, 0.5 m/s. Other inputs as in the worked example: m = 1.0 kg, c = 20.0 kg/s, x0 = 0.01 m, t = 0.1 s. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, k = 100 N/m, x = 0.00735759 m.*
 
 ```python
 mechanical_engineering_ai999x.solve('sdof_free_response', m=1.0, c=2.0, k=100.0, x0=0.01, v0=0.0, t=0.5)
@@ -4034,17 +3698,13 @@ $$
 - **Assumes:** steady state (transient decayed); not undamped resonance
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Steady-state magnification of a forced spring-mass-damper (natural frequency 20 rad/s from the returned frequency ratio) for four damping coefficients, 60 forcing frequencies each computed by the model; marked: ω = 15 rad/s, c = 40 N·s/m, magnification = 2](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/forced-vibration-amplitude-response)
+![Steady-state magnification of a forced spring–mass–damper (m = 10 kg, k = 4000 N/m, natural frequency 20 rad/s) for four damping coefficients, 120 forcing frequencies each computed by the package; marked: ω = 20 rad/s, c = 40 N·s/m, magnification = 5](https://huggingface.co/AI999X/mechanical-engineering-ai999x/resolve/main/figures/forced-vibration-amplitude-response.svg)
 
-*Steady-state magnification of a forced spring-mass-damper (natural frequency 20 rad/s from the returned frequency ratio) for four damping coefficients, 60 forcing frequencies each computed by the model; marked: ω = 15 rad/s, c = 40 N·s/m, magnification = 2.162. In SI units: X = 0.05405 m. Your inputs: m = 10 kg, c = 40 N*s/m, k = 4000 N/m, F0 = 100 N, omega = 15 rad/s.*
+*Steady-state magnification of a forced spring–mass–damper (m = 10 kg, k = 4000 N/m, natural frequency 20 rad/s) for four damping coefficients, 120 forcing frequencies each computed by the package; marked: ω = 20 rad/s, c = 40 N·s/m, magnification = 5.*
 
-![Steady-state amplitude as ω runs from 9 to 21 rad/s, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/forced-vibration-amplitude-live-1)
+![X (steady-state amplitude) against m (mass) from 1 kg to 100 kg on a logarithmic axis](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/forced-vibration-amplitude-curve)
 
-*Steady-state amplitude as ω runs from 9 to 21 rad/s, every other input as you entered it (41 solutions). Marked: your ω = 15 rad/s gives X = 54.05 mm. Your inputs: m = 10 kg, c = 40 N*s/m, k = 4000 N/m, F0 = 100 N, omega = 15 rad/s.*
-
-![Steady-state amplitude as k runs from 2400 to 5600 N/m, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/forced-vibration-amplitude-live-2)
-
-*Steady-state amplitude as k runs from 2400 to 5600 N/m, every other input as you entered it (29 solutions). Marked: your k = 4000 N/m gives X = 54.05 mm. Your inputs: m = 10 kg, c = 40 N*s/m, k = 4000 N/m, F0 = 100 N, omega = 15 rad/s.*
+*X (steady-state amplitude) against m (mass) from 1 kg to 100 kg on a logarithmic axis. One curve for each value of c (damping coefficient): 40 kg/s, 20 kg/s, 80 kg/s. Other inputs as in the worked example: k = 4000.0 N/m, F0 = 100.0 N, omega = 20.0 rad/s. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, m = 10 kg, X = 0.125 m.*
 
 ```python
 mechanical_engineering_ai999x.solve('forced_vibration_amplitude', m=10.0, c=40.0, k=4000.0, F0=100.0, omega=20.0)
@@ -4082,13 +3742,9 @@ $$
 - **Assumes:** $\zeta  \geq  0$, $r > 0$; not undamped resonance (r = 1 with zeta = 0)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Transmissibility as r runs from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/vibration-transmissibility-live-1)
+![TR (transmissibility) against r (frequency ratio omega/omega_n) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/vibration-transmissibility-curve)
 
-*Transmissibility as r runs from 0.625 to 4.375, every other input as you entered it (41 solutions). Marked: your r = 2.5 gives TR = 0.212. Your inputs: zeta = 0.1, r = 2.5.*
-
-![Transmissibility as ζ runs from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/vibration-transmissibility-live-2)
-
-*Transmissibility as ζ runs from 0.025 to 0.175, every other input as you entered it (29 solutions). Marked: your ζ = 0.1 gives TR = 0.212. Your inputs: zeta = 0.1, r = 2.5.*
+*TR (transmissibility) against r (frequency ratio omega/omega_n) from 0.2 to 20 on a logarithmic axis, logarithmic output axis. One curve for each value of zeta (damping ratio): 0, 0.5. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, r = 2, TR = 0.333333.*
 
 ```python
 mechanical_engineering_ai999x.solve('vibration_transmissibility', zeta=0.0, r=2.0)
@@ -4137,13 +3793,9 @@ $$
 - **Assumes:** vertical motion only, steady state; $mu < M$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Amplitude of the machine as ω runs from 720 to 1680 rpm, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/rotating-unbalance-response-live-1)
+![X (amplitude of the machine) against omega (rotational speed) from 10 rad/s to 1000 rad/s on a logarithmic axis, logarithmic output axis](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/rotating-unbalance-response-curve)
 
-*Amplitude of the machine as ω runs from 720 to 1680 rpm, every other input as you entered it (41 solutions). Marked: your ω = 1200 rpm gives X = 0.3329 mm. Your inputs: M = 100 kg, mu = 0.5 kg, e = 50 mm, k = 400 kN/m, c = 1 kN*s/m, omega = 1200 rpm.*
-
-![Amplitude of the machine as M runs from 60 to 140 kg, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/rotating-unbalance-response-live-2)
-
-*Amplitude of the machine as M runs from 60 to 140 kg, every other input as you entered it (29 solutions). Marked: your M = 100 kg gives X = 0.3329 mm. Your inputs: M = 100 kg, mu = 0.5 kg, e = 50 mm, k = 400 kN/m, c = 1 kN*s/m, omega = 1200 rpm.*
+*X (amplitude of the machine) against omega (rotational speed) from 10 rad/s to 1000 rad/s on a logarithmic axis, logarithmic output axis. One curve for each value of mu (unbalanced mass): 0.5 kg, 0.25 kg, 1 kg. Other inputs as in the worked example: M = 100.0 kg, e = 0.05 m, k = 400000.0 N/m, c = 0.0 kg/s. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, omega = 100 rad/s, X = 0.000416667 m.*
 
 ```python
 mechanical_engineering_ai999x.solve('rotating_unbalance_response', M=100.0, mu=0.5, e=0.05, k=400000.0, c=0.0, omega=100.0)
@@ -4184,13 +3836,9 @@ $$
 - **Assumes:** undamped isolator; $0 < TR < 1$ (isolation region $r > sqrt$(2))
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Required total stiffness as ω runs from 900 to 2100 rpm, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/vibration-isolator-design-live-1)
+![k (required total stiffness) against TR (target transmissibility (0 < TR < 1, e](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/vibration-isolator-design-curve)
 
-*Required total stiffness as ω runs from 900 to 2100 rpm, every other input as you entered it (41 solutions). Marked: your ω = 1500 rpm gives k = 4.486e+05. Your inputs: m = 200 kg, omega = 1500 rpm, TR = 0.1.*
-
-![Required total stiffness as m runs from 120 to 280 kg, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/vibration-isolator-design-live-2)
-
-*Required total stiffness as m runs from 120 to 280 kg, every other input as you entered it (29 solutions). Marked: your m = 200 kg gives k = 4.486e+05. Your inputs: m = 200 kg, omega = 1500 rpm, TR = 0.1.*
+*k (required total stiffness) against TR (target transmissibility (0 < TR < 1, e.g. 0.1 or 10%)) from 0.01 to 1 on a logarithmic axis. One curve for each value of omega (forcing frequency (rad/s or rpm)): 157.08 rad/s, 78.5398 rad/s, 314.159 rad/s. Other inputs as in the worked example: m = 200.0 kg. 40 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, TR = 0.1, k = 448618 N/m.*
 
 ```python
 mechanical_engineering_ai999x.solve('vibration_isolator_design', m=200.0, omega=157.07963267948966, TR=0.1)
@@ -4235,15 +3883,11 @@ $$
 
 ![Two rotors (J1 = 2 kg·m², J2 = 6 kg·m²) joined by a shaft of length 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/two-rotor-torsional-vibration-mode)
 
-*Two rotors (J1 = 2 kg·m², J2 = 6 kg·m²) joined by a shaft of length 1.2 m. The mode line joins rotor 1 (amplitude 1) to the returned amplitude ratio -0.3333 at rotor 2. Marked: the returned node 900 mm from rotor 1; natural frequency ω = 141.4 rad/s (f = 22.51 Hz). Your inputs: J1 = 2 kg*m^2, J2 = 6 kg*m^2, kt = 30 kN*m/rad, L = 1.2 m.*
+*Two rotors (J1 = 2 kg·m², J2 = 6 kg·m²) joined by a shaft of length 1.2 m and torsional stiffness 30000 N·m/rad. The mode line joins rotor 1 (amplitude 1) to the returned amplitude ratio -0.333333 at rotor 2. Marked: the returned node 0.9 m from rotor 1; natural frequency ω = 141.421 rad/s (f = 22.5079 Hz).*
 
-![Torsional natural frequency as J2 runs from 3](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/two-rotor-torsional-vibration-live-1)
+![omega (torsional natural frequency) against J1 (mass moment of inertia of rotor 1) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/two-rotor-torsional-vibration-curve)
 
-*Torsional natural frequency as J2 runs from 3.6 to 8.4 kg*m^2, every other input as you entered it (41 solutions). Marked: your J2 = 6 kg*m^2 gives ω = 141.4. Your inputs: J1 = 2 kg*m^2, J2 = 6 kg*m^2, kt = 30 kN*m/rad, L = 1.2 m.*
-
-![Distance of the node from rotor 1 (with L) as L runs from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/two-rotor-torsional-vibration-live-2)
-
-*Distance of the node from rotor 1 (with L) as L runs from 0.72 to 1.68 m, every other input as you entered it (29 solutions). Marked: your L = 1.2 m gives node_from_rotor1 = 0.9. Your inputs: J1 = 2 kg*m^2, J2 = 6 kg*m^2, kt = 30 kN*m/rad, L = 1.2 m.*
+*omega (torsional natural frequency) against J1 (mass moment of inertia of rotor 1) from 0.2 kg*m^2 to 20 kg*m^2 on a logarithmic axis. One curve for each value of kt (torsional stiffness of the shaft (N*m/rad)): 30000 N*m/rad, 15000 N*m/rad, 60000 N*m/rad. Other inputs as in the worked example: J2 = 6.0 kg*m^2, L = 1.2 m. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, J1 = 2 kg*m^2, omega = 141.421 rad/s.*
 
 ```python
 mechanical_engineering_ai999x.solve('two_rotor_torsional_vibration', J1=2.0, J2=6.0, kt=30000.0, L=1.2)
@@ -4283,13 +3927,9 @@ $$
 - **Assumes:** 1 to 12 masses; linear springs, no damping; springs: n (fixed-free) or $n + 1$ (fixed-fixed)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Spring-mass chain (fixed-free): masses 2, 1 kg, springs 2000, 1000 N/m (the wall spring first)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/mdof-spring-mass-chain-schematic)
+![Spring–mass chain (fixed-free): masses 2, 1 kg, springs 2000, 1000 N/m (the wall spring first)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/mdof-spring-mass-chain-schematic)
 
-*Spring-mass chain (fixed-free): masses 2, 1 kg, springs 2000, 1000 N/m (the wall spring first). Arrows: the first mode shape the model returned (0.5, 1, largest entry 1). Marked: the returned natural frequencies 3.559, 7.118 Hz. Your inputs: masses = 2, 1, springs = 2000, 1000, ends = fixed-free.*
-
-![Every entry of omega as computed for your inputs (2 entries: 22](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/mdof-spring-mass-chain-live-1)
-
-*Every entry of omega as computed for your inputs (2 entries: 22.36, 44.72). Your inputs: masses = 2, 1, springs = 2000, 1000, ends = fixed-free.*
+*Spring–mass chain (fixed-free): masses 2, 1 kg, springs 2000, 1000 N/m (the wall spring first). Arrows: the first mode shape the package returned (0.5, 1, largest entry 1). Marked: the returned natural frequencies 3.55881, 7.11763 Hz (ω = 22.3607, 44.7214 rad/s).*
 
 ```python
 mechanical_engineering_ai999x.solve('mdof_spring_mass_chain', masses='2, 1', springs='2000, 1000', ends='fixed-free')
@@ -4337,17 +3977,13 @@ $$
 - **Assumes:** simple (short) bearings, uniform massless shaft; gyroscopic effects neglected; $0 < a < L$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Simply supported shaft, bearing span L = 1 m, carrying a disk of 50 kg at 400 mm from the left bearing, drawn to scale](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/shaft-critical-speed-single-disk-schematic)
+![Simply supported shaft, bearing span L = 1 m (E = 2](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/shaft-critical-speed-single-disk-schematic)
 
-*Simply supported shaft, bearing span L = 1 m, carrying a disk of 50 kg at 400 mm from the left bearing, drawn to scale. Marked: the returned stiffness k = 2.083e+06 N/m at the disk, ωcr = 204.1 rad/s (1949 rpm), static deflection 0.2354 mm. Your inputs: m = 50 kg, E = 200 GPa, I = 2e-7 m^4, L = 1 m, a = 0.4 m.*
+*Simply supported shaft, bearing span L = 1 m (E = 2.0000e+11 Pa, I = 2.0000e-07 m⁴), carrying disks of 50 kg at 0.5 m from the left bearing, drawn to scale along the span (disk heights grow with mass). Marked: k = 1.92e+06 N/m at the disk; ωcr = 196 rad/s (1871 rpm); static deflection 0.2554 mm.*
 
-![Critical speed as L runs from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/shaft-critical-speed-single-disk-live-1)
+![omega_cr (critical speed) against a (distance of the disk from the left bearing) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/shaft-critical-speed-single-disk-curve)
 
-*Critical speed as L runs from 0.6 to 1.4 m, every other input as you entered it (41 solutions). Marked: your L = 1 m gives ω_cr = 204.1. Your inputs: m = 50 kg, E = 200 GPa, I = 2e-7 m^4, L = 1 m, a = 0.4 m.*
-
-![Critical speed as a runs from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/shaft-critical-speed-single-disk-live-2)
-
-*Critical speed as a runs from 0.24 to 0.56 m, every other input as you entered it (29 solutions). Marked: your a = 0.4 m gives ω_cr = 204.1. Your inputs: m = 50 kg, E = 200 GPa, I = 2e-7 m^4, L = 1 m, a = 0.4 m.*
+*omega_cr (critical speed) against a (distance of the disk from the left bearing) from 0.25 m to 0.75 m. One curve for each value of L (bearing span): 1 m, 0.5 m, 2 m. Other inputs as in the worked example: m = 50.0 kg, E = 200000000000.0 Pa, I = 2e-07 m^4. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, a = 0.5 m, omega_cr = 195.959 rad/s.*
 
 ```python
 mechanical_engineering_ai999x.solve('shaft_critical_speed_single_disk', m=50.0, E=200000000000.0, I=2e-07, L=1.0, a=0.5)
@@ -4389,17 +4025,13 @@ $$
 - **Assumes:** simply supported uniform massless shaft; disks at distinct positions inside the span; $g = 9.80665$ $m/s^{2}$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Simply supported shaft, bearing span L = 1 m, carrying disks of 50 kg at 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/rayleigh-critical-speed-schematic)
+![Simply supported shaft, bearing span L = 1 m (E = 2](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/rayleigh-critical-speed-schematic)
 
-*Simply supported shaft, bearing span L = 1 m, carrying disks of 50 kg at 0.5 m from the left bearing, drawn to scale (disk heights grow with mass). Marked: the returned critical speed ωcr = 196 rad/s (1871 rpm) and the static deflections under the disks, 0.2554 mm. Your inputs: masses = 50, positions = 0.5, L = 1 m, E = 200000000000 Pa, I = 2e-07 m^4.*
+*Simply supported shaft, bearing span L = 1 m (E = 2.0000e+11 Pa, I = 2.0000e-07 m⁴), carrying disks of 50 kg at 0.5 m from the left bearing, drawn to scale along the span (disk heights grow with mass). Marked: ωcr = 196 rad/s (1871 rpm); static deflections under the disks (returned).*
 
-![First critical speed (Rayleigh, an upper bound) as L runs from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/rayleigh-critical-speed-live-1)
+![omega_cr (first critical speed (Rayleigh, an upper bound)) against L (bearing span) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/rayleigh-critical-speed-curve)
 
-*First critical speed (Rayleigh, an upper bound) as L runs from 0.6 to 1.4 m, every other input as you entered it (41 solutions). Marked: your L = 1 m gives ω_cr = 196. Your inputs: masses = 50, positions = 0.5, L = 1 m, E = 200000000000 Pa, I = 2e-07 m^4.*
-
-![First critical speed (Rayleigh, an upper bound) as masses[1] runs from 25 to 75, every other input as you entered it (27 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/rayleigh-critical-speed-live-2)
-
-*First critical speed (Rayleigh, an upper bound) as masses[1] runs from 25 to 75, every other input as you entered it (27 solutions). Marked: your masses[1] = 50 gives ω_cr = 196. Your inputs: masses = 50, positions = 0.5, L = 1 m, E = 200000000000 Pa, I = 2e-07 m^4.*
+*omega_cr (first critical speed (Rayleigh, an upper bound)) against L (bearing span) from 0.5 m to 1.5 m. One curve for each value of E (Young's modulus): 2.0000e+11 Pa, 1.0000e+11 Pa, 4.0000e+11 Pa. Other inputs as in the worked example: masses = 50, positions = 0.5, I = 2e-07 m^4. 30 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, L = 1 m, omega_cr = 195.959 rad/s.*
 
 ```python
 mechanical_engineering_ai999x.solve('rayleigh_critical_speed', masses='50', positions='0.5', L=1.0, E=200000000000.0, I=2e-07)
@@ -4440,17 +4072,13 @@ $$
 - **Assumes:** simply supported uniform massless shaft; disks at distinct positions inside the span
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Simply supported shaft, bearing span L = 1 m, carrying disks of 50 kg at 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/dunkerley-critical-speed-schematic)
+![Simply supported shaft, bearing span L = 1 m (E = 2](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/dunkerley-critical-speed-schematic)
 
-*Simply supported shaft, bearing span L = 1 m, carrying disks of 50 kg at 0.5 m from the left bearing, drawn to scale along the span (disk heights grow with mass). Marked: the returned critical speed ωcr = 196 rad/s (1871 rpm). Your inputs: masses = 50, positions = 0.5, L = 1 m, E = 200000000000 Pa, I = 2e-07 m^4.*
+*Simply supported shaft, bearing span L = 1 m (E = 2.0000e+11 Pa, I = 2.0000e-07 m⁴), carrying disks of 50 kg at 0.5 m from the left bearing, drawn to scale along the span (disk heights grow with mass). Marked: ωcr = 196 rad/s (1871 rpm).*
 
-![First critical speed (Dunkerley, a lower bound) as L runs from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/dunkerley-critical-speed-live-1)
+![omega_cr (first critical speed (Dunkerley, a lower bound)) against L (bearing span) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/dunkerley-critical-speed-curve)
 
-*First critical speed (Dunkerley, a lower bound) as L runs from 0.6 to 1.4 m, every other input as you entered it (41 solutions). Marked: your L = 1 m gives ω_cr = 196. Your inputs: masses = 50, positions = 0.5, L = 1 m, E = 200000000000 Pa, I = 2e-07 m^4.*
-
-![First critical speed (Dunkerley, a lower bound) as masses[1] runs from 25 to 75, every other input as you entered it (27 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/dunkerley-critical-speed-live-2)
-
-*First critical speed (Dunkerley, a lower bound) as masses[1] runs from 25 to 75, every other input as you entered it (27 solutions). Marked: your masses[1] = 50 gives ω_cr = 196. Your inputs: masses = 50, positions = 0.5, L = 1 m, E = 200000000000 Pa, I = 2e-07 m^4.*
+*omega_cr (first critical speed (Dunkerley, a lower bound)) against L (bearing span) from 0.5 m to 1.5 m. One curve for each value of E (Young's modulus): 2.0000e+11 Pa, 1.0000e+11 Pa, 4.0000e+11 Pa. Other inputs as in the worked example: masses = 50, positions = 0.5, I = 2e-07 m^4. 30 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, L = 1 m, omega_cr = 195.959 rad/s.*
 
 ```python
 mechanical_engineering_ai999x.solve('dunkerley_critical_speed', masses='50', positions='0.5', L=1.0, E=200000000000.0, I=2e-07)
@@ -4490,17 +4118,9 @@ $$
 - **Assumes:** simply supported uniform massless shaft, point-mass disks (no rotary inertia or gyroscopics); distinct positions
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Simply supported shaft, bearing span L = 1 m, carrying disks of 50 kg at 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/shaft-whirling-speeds-schematic)
+![Simply supported shaft, bearing span L = 1 m (E = 2](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/shaft-whirling-speeds-schematic)
 
-*Simply supported shaft, bearing span L = 1 m, carrying disks of 50 kg at 0.5 m from the left bearing, drawn to scale (disk heights grow with mass). Marked: the returned whirling speeds 196 rad/s (1871 rpm). Your inputs: masses = 50, positions = 0.5, L = 1 m, E = 200000000000 Pa, I = 2e-07 m^4.*
-
-![Critical speeds in rad/s, ascending, entry 1 as L runs from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/shaft-whirling-speeds-live-1)
-
-*Critical speeds in rad/s, ascending, entry 1 as L runs from 0.6 to 1.4 m, every other input as you entered it (41 solutions). Marked: your L = 1 m gives ω[1] = 196. Your inputs: masses = 50, positions = 0.5, L = 1 m, E = 200000000000 Pa, I = 2e-07 m^4.*
-
-![Critical speeds in rad/s, ascending, entry 1 as E runs from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/shaft-whirling-speeds-live-2)
-
-*Critical speeds in rad/s, ascending, entry 1 as E runs from 1.2e+11 to 2.8e+11 Pa, every other input as you entered it (29 solutions). Marked: your E = 2e+11 Pa gives ω[1] = 196. Your inputs: masses = 50, positions = 0.5, L = 1 m, E = 200000000000 Pa, I = 2e-07 m^4.*
+*Simply supported shaft, bearing span L = 1 m (E = 2.0000e+11 Pa, I = 2.0000e-07 m⁴), carrying disks of 50 kg at 0.5 m from the left bearing, drawn to scale along the span (disk heights grow with mass). Marked: critical speeds: 196 rad/s; = 1871 rpm.*
 
 ```python
 mechanical_engineering_ai999x.solve('shaft_whirling_speeds', masses='50', positions='0.5', L=1.0, E=200000000000.0, I=2e-07)
@@ -4543,17 +4163,9 @@ $$
 - **Assumes:** slender uniform beam, no shear deformation or rotary inertia; mode 1 to 6
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Natural circular frequency as L runs from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/beam-natural-frequency-live-1)
+![omega (natural circular frequency) against L (length) from 1 m to 3 m](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/beam-natural-frequency-curve)
 
-*Natural circular frequency as L runs from 1.2 to 2.8 m, every other input as you entered it (41 solutions). Marked: your L = 2 m gives ω = 39.38. Your inputs: E = 200000000000 Pa, I = 1e-08 m^4, rho = 7850 kg/m^3, A = 0.001 m^2, L = 2 m, ends = simply-supported.*
-
-![Natural circular frequency for every choice of ends, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/beam-natural-frequency-live-2)
-
-*Natural circular frequency for every choice of ends, every other input as you entered it (highlighted: your choice). simply-supported: 39.38; cantilever: 14.03; fixed-fixed: 89.28; fixed-pinned: 61.53; free-free: 89.28. Your inputs: E = 200000000000 Pa, I = 1e-08 m^4, rho = 7850 kg/m^3, A = 0.001 m^2, L = 2 m, ends = simply-supported.*
-
-![Natural circular frequency as ρ runs from 4710 to 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/beam-natural-frequency-live-3)
-
-*Natural circular frequency as ρ runs from 4710 to 1.099e+04 kg/m^3, every other input as you entered it (29 solutions). Marked: your ρ = 7850 kg/m^3 gives ω = 39.38. Your inputs: E = 200000000000 Pa, I = 1e-08 m^4, rho = 7850 kg/m^3, A = 0.001 m^2, L = 2 m, ends = simply-supported.*
+*omega (natural circular frequency) against L (length) from 1 m to 3 m. One curve for each value of E (Young's modulus): 2.0000e+11 Pa, 1.0000e+11 Pa, 4.0000e+11 Pa. Other inputs as in the worked example: I = 1e-08 m^4, rho = 7850.0 kg/m^3, A = 0.001 m^2, ends = simply-supported. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, L = 2 m, omega = 39.384 rad/s.*
 
 ```python
 mechanical_engineering_ai999x.solve('beam_natural_frequency', E=200000000000.0, I=1e-08, rho=7850.0, A=0.001, L=2.0, ends='simply-supported')
@@ -4603,21 +4215,9 @@ $$
 - **Assumes:** pin-jointed, loads at the joints; statically determinate: members + 3 = 2 x nodes, geometrically stable; roller on a horizontal surface
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Plane truss with joints at 0 0; 4 0; 2 3 m, members 1-2, 2-3, 3-1, a pin at joint 1 and a roller at joint 2, drawn to scale](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/truss-member-forces-truss)
+![Plane truss with joints at 0 0; 4 0; 2 3 m, members 1-2, 2-3, 3-1, a pin at joint 1 and a roller at joint 2, loaded at 3 0 -10 (joint, Fx, Fy in kN), drawn to scale](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/truss-member-forces-truss)
 
-*Plane truss with joints at 0 0; 4 0; 2 3 m, members 1-2, 2-3, 3-1, a pin at joint 1 and a roller at joint 2, drawn to scale. Each member is labelled with the force the model returned (kN, positive = tension) and coloured by tension or compression. Marked: reactions at the pin 0 kN across and 5 kN up, at the roller 5 kN up. Your inputs: nodes = 0 0; 4 0; 2 3, members = 1-2, 2-3, 3-1, pin = 1, roller = 2, loads = 3 0 -10.*
-
-![Vertical reaction at the pin, kN as pin runs from 1 to 3, every other input as you entered it (2 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/truss-member-forces-live-1)
-
-*Vertical reaction at the pin, kN as pin runs from 1 to 3, every other input as you entered it (2 solutions). Values in this range where the inputs admit no answer (1 of 3) are left out. Marked: your pin = 1 gives pin_Ry_kN = 5. Your inputs: nodes = 0 0; 4 0; 2 3, members = 1-2, 2-3, 3-1, pin = 1, roller = 2, loads = 3 0 -10.*
-
-![The 3 edges as given, drawn with the nodes on a circle](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/truss-member-forces-live-2)
-
-*The 3 edges as given, drawn with the nodes on a circle. Ringed: nodes named in the inputs (1, 2). Under each node: its forces_kN. Your inputs: nodes = 0 0; 4 0; 2 3, members = 1-2, 2-3, 3-1, pin = 1, roller = 2, loads = 3 0 -10.*
-
-![Every entry of forces_kN as computed for your inputs (3 entries: 3](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/truss-member-forces-live-3)
-
-*Every entry of forces_kN as computed for your inputs (3 entries: 3.333, -6.009, -6.009). Your inputs: nodes = 0 0; 4 0; 2 3, members = 1-2, 2-3, 3-1, pin = 1, roller = 2, loads = 3 0 -10.*
+*Plane truss with joints at 0 0; 4 0; 2 3 m, members 1-2, 2-3, 3-1, a pin at joint 1 and a roller at joint 2, loaded at 3 0 -10 (joint, Fx, Fy in kN), drawn to scale. Each member is labelled with the force the package returned (kN, positive = tension) and coloured by tension or compression. Marked: reactions Rx = 0 kN, Ry = 5 kN at the pin and 5 kN at the roller; largest tension 3.33333 kN, largest compression 6.00925 kN.*
 
 ```python
 mechanical_engineering_ai999x.solve('truss_member_forces', nodes='0 0; 4 0; 2 3', members='1-2, 2-3, 3-1', pin=1, roller=2, loads='3 0 -10')
@@ -4657,11 +4257,7 @@ $$
 
 ![Continuous beam over 3 supports, spans 6, 6 m, uniform loads 10, 10 kN/m per span, with shear-force and bending-moment diagrams derived by statics from the returned reactions](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/continuous-beam-three-moment-beam)
 
-*Continuous beam over 3 supports, spans 6, 6 m, uniform loads 10, 10 kN/m per span, with shear-force and bending-moment diagrams derived by statics from the returned reactions. Marked: reactions 22.5, 75, 22.5 kN and support moments 0, -45, 0 kN·m (three-moment equation). Your inputs: spans = 6, 6, w = 10, 10.*
-
-![Every entry of support_moments_kNm as computed for your inputs (3 entries: 0, -45, 0)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/continuous-beam-three-moment-live-1)
-
-*Every entry of support_moments_kNm as computed for your inputs (3 entries: 0, -45, 0). Your inputs: spans = 6, 6, w = 10, 10.*
+*Continuous beam over 3 supports, spans 6, 6 m, uniform loads 10, 10 kN/m per span, with shear-force and bending-moment diagrams derived by statics from the returned reactions. Marked: reactions 22.5, 75, 22.5 kN and support moments 0, -45, 0 kN·m (three-moment equation).*
 
 ```python
 mechanical_engineering_ai999x.solve('continuous_beam_three_moment', spans='6, 6', w='10, 10')
@@ -4703,17 +4299,13 @@ $$
 - **Assumes:** in-line (zero offset); $l > r$; constant crank speed
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![In-line slider-crank, crank r = 50 mm, connecting rod l = 200 mm, drawn to scale at θ = 60°](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/slider-crank-kinematics-mechanism)
+![In-line slider-crank, crank r = 50 mm, connecting rod l = 200 mm, crank speed 100 rad/s, drawn to scale at θ = 60° (an angle chosen for the drawing; the worked example is at top dead centre)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/slider-crank-kinematics-mechanism)
 
-*In-line slider-crank, crank r = 50 mm, connecting rod l = 200 mm, drawn to scale at θ = 60°. Marked: the model's slider position x = 220.3 mm, velocity -15.35 m/s, acceleration -1851 m/s² and rod angle 12.5°. In SI units: x = 0.2203 m. Your inputs: r = 50 mm, l = 200 mm, theta = 60 deg, omega = 3000 rpm.*
+*In-line slider-crank, crank r = 50 mm, connecting rod l = 200 mm, crank speed 100 rad/s, drawn to scale at θ = 60° (an angle chosen for the drawing; the worked example is at top dead centre). Marked: the returned slider position x = 220.256 mm, velocity -4.88454 m/s, acceleration -187.556 m/s² and rod angle 12.5039°.*
 
-![Distance of the slider pin from the crank centre as θ runs from 36 to 84 deg, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/slider-crank-kinematics-live-1)
+![x (distance of the slider pin from the crank centre) against l (connecting rod length) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/slider-crank-kinematics-curve)
 
-*Distance of the slider pin from the crank centre as θ runs from 36 to 84 deg, every other input as you entered it (41 solutions). Marked: your θ = 60 deg gives x = 0.2203. Your inputs: r = 50 mm, l = 200 mm, theta = 60 deg, omega = 3000 rpm.*
-
-![Slider acceleration as ω runs from 1800 to 4200 rpm, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/slider-crank-kinematics-live-2)
-
-*Slider acceleration as ω runs from 1800 to 4200 rpm, every other input as you entered it (29 solutions). Marked: your ω = 3000 rpm gives a = -1851. Your inputs: r = 50 mm, l = 200 mm, theta = 60 deg, omega = 3000 rpm.*
+*x (distance of the slider pin from the crank centre) against l (connecting rod length) from 0.1 m to 0.3 m. One curve for each value of r (crank radius): 0.05 m, 0.025 m, 0.1 m. Other inputs as in the worked example: theta = 0.0 rad, omega = 100.0 rad/s. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, l = 0.2 m, x = 0.25 m.*
 
 ```python
 mechanical_engineering_ai999x.solve('slider_crank_kinematics', r=0.05, l=0.2, theta=0.0, omega=100.0)
@@ -4756,21 +4348,13 @@ $$
 - **Assumes:** ground pivots at (0, 0) and (d, 0); open branch: the rocker pivot lies to the right of the directed coupler; refused when the linkage cannot close
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Four-bar linkage with crank a = 2, coupler b = 7, rocker c = 9 and ground link d = 6 at crank angle θ2 = 30°, drawn to scale from the returned angles (the loop closes)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/four-bar-linkage-position-mechanism)
+![Four-bar linkage with crank a = 2, coupler b = 7, rocker c = 9 and ground link d = 6 at crank angle θ2 = 30° (open branch), drawn to scale from the returned angles (the loop closes)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/four-bar-linkage-position-mechanism)
 
-*Four-bar linkage with crank a = 2, coupler b = 7, rocker c = 9 and ground link d = 6 at crank angle θ2 = 30°, drawn to scale from the returned angles (the loop closes). Marked: θ3 = 88.84°, θ4 = 117.3°, transmission angle μ = 28.45°. Your inputs: a = 2 m, b = 7 m, c = 9 m, d = 6 m, theta2 = 0.5235987755982988 rad, branch = open.*
+*Four-bar linkage with crank a = 2, coupler b = 7, rocker c = 9 and ground link d = 6 at crank angle θ2 = 30° (open branch), drawn to scale from the returned angles (the loop closes). Marked: θ3 = 88.8372°, θ4 = 117.286°, transmission angle μ = 28.4488°.*
 
-![Output rocker angle, degrees in [-180, 180) as d runs from 3](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/four-bar-linkage-position-live-1)
+![theta4_deg (output rocker angle, degrees in [-180, 180)) against d (ground link length) from 3 m to 9 m](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/four-bar-linkage-position-curve)
 
-*Output rocker angle, degrees in [-180, 180) as d runs from 3.6 to 8.4 m, every other input as you entered it (41 solutions). Marked: your d = 6 m gives theta4_deg = 117.3. Your inputs: a = 2 m, b = 7 m, c = 9 m, d = 6 m, theta2 = 0.5235987755982988 rad, branch = open.*
-
-![Output rocker angle, degrees in [-180, 180) for every choice of branch, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/four-bar-linkage-position-live-2)
-
-*Output rocker angle, degrees in [-180, 180) for every choice of branch, every other input as you entered it (highlighted: your choice). open: 117.3; crossed: -143.7. Your inputs: a = 2 m, b = 7 m, c = 9 m, d = 6 m, theta2 = 0.5235987755982988 rad, branch = open.*
-
-![Output rocker angle, degrees in [-180, 180) as c runs from 5](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/four-bar-linkage-position-live-3)
-
-*Output rocker angle, degrees in [-180, 180) as c runs from 5.4 to 11.31 m, every other input as you entered it (24 solutions). Marked: your c = 9 m gives theta4_deg = 117.3. Your inputs: a = 2 m, b = 7 m, c = 9 m, d = 6 m, theta2 = 0.5235987755982988 rad, branch = open.*
+*theta4_deg (output rocker angle, degrees in [-180, 180)) against d (ground link length) from 3 m to 9 m. One curve for each value of a (input crank length): 2 m, 1 m, 4 m. Other inputs as in the worked example: b = 7.0 m, c = 9.0 m, theta2 = 0.5235987755982988 rad, branch = open. 28 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, d = 6 m, theta4_deg = 117.286.*
 
 ```python
 mechanical_engineering_ai999x.solve('four_bar_linkage_position', a=2.0, b=7.0, c=9.0, d=6.0, theta2=0.5235987755982988, branch='open')
@@ -4815,17 +4399,13 @@ $$
 - **Assumes:** $sm  \geq  0$ (compressive means not covered); sm < Sut; proportional loading
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Gerber fatigue diagram for Se = 250 MPa, Sut = 700 MPa: each line is traced by the model's safety factor along 31 proportional load lines (each point where n = 1)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/gerber-fatigue-safety-factor-fatigue)
+![Gerber fatigue diagram for Se = 250 MPa, Sut = 700 MPa: the line is traced by the package's safety factor along 41 proportional load lines (each point where n = 1)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/gerber-fatigue-safety-factor-fatigue)
 
-*Gerber fatigue diagram for Se = 250 MPa, Sut = 700 MPa: each line is traced by the model's safety factor along 31 proportional load lines (each point where n = 1). Marked: the operating point σm = 80 MPa, σa = 120 MPa, its load line to the Gerber line, and the returned safety factor n = 1.977. Your inputs: sa = 120 MPa, sm = 80 MPa, Se = 250 MPa, Sut = 700 MPa.*
+*Gerber fatigue diagram for Se = 250 MPa, Sut = 700 MPa: the line is traced by the package's safety factor along 41 proportional load lines (each point where n = 1). Marked: the operating point σm = 80 MPa, σa = 120 MPa, its load line to the Gerber line, and the returned safety factor n = 1.97698 (equivalent fully reversed stress 121.588 MPa).*
 
-![Fatigue safety factor (Gerber, proportional](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/gerber-fatigue-safety-factor-live-1)
+![n_fatigue (fatigue safety factor (Gerber, proportional loading)) against sa (alternating stress amplitude) from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/gerber-fatigue-safety-factor-curve)
 
-*Fatigue safety factor (Gerber, proportional... as sa runs from 72 to 168 MPa, every other input as you entered it (41 solutions). Marked: your sa = 120 MPa gives n_fatigue = 1.977. Your inputs: sa = 120 MPa, sm = 80 MPa, Se = 250 MPa, Sut = 700 MPa.*
-
-![Fatigue safety factor (Gerber, proportional](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/gerber-fatigue-safety-factor-live-2)
-
-*Fatigue safety factor (Gerber, proportional... as Se runs from 150 to 350 MPa, every other input as you entered it (29 solutions). Marked: your Se = 250 MPa gives n_fatigue = 1.977. Your inputs: sa = 120 MPa, sm = 80 MPa, Se = 250 MPa, Sut = 700 MPa.*
+*n_fatigue (fatigue safety factor (Gerber, proportional loading)) against sa (alternating stress amplitude) from 1.2000e+07 Pa to 1.2000e+09 Pa on a logarithmic axis. One curve for each value of Se (fully corrected endurance limit): 2.5000e+08 Pa, 1.2500e+08 Pa, 5.0000e+08 Pa. Other inputs as in the worked example: sm = 80000000.0 Pa, Sut = 700000000.0 Pa. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, sa = 1.2000e+08 Pa, n_fatigue = 1.97698.*
 
 ```python
 mechanical_engineering_ai999x.solve('gerber_fatigue_safety_factor', sa=120000000.0, sm=80000000.0, Se=250000000.0, Sut=700000000.0)
@@ -4871,17 +4451,13 @@ $$
 - **Assumes:** $sm  \geq  0$; $sm < Sy$; proportional loading
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![ASME-elliptic fatigue diagram for Se = 220 MPa, Sy = 450 MPa: each line is traced by the model's safety factor along 31 proportional load lines (each point where n = 1)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/asme-elliptic-fatigue-safety-factor-fatigue)
+![ASME elliptic fatigue diagram for Se = 220 MPa, Sy = 450 MPa: the line is traced by the package's safety factor along 41 proportional load lines (each point where n = 1)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/asme-elliptic-fatigue-safety-factor-fatigue)
 
-*ASME-elliptic fatigue diagram for Se = 220 MPa, Sy = 450 MPa: each line is traced by the model's safety factor along 31 proportional load lines (each point where n = 1). Marked: the operating point σm = 60 MPa, σa = 100 MPa, its load line to the ASME-elliptic line, and the returned safety factor n = 2.111. Your inputs: sa = 100 MPa, sm = 60 MPa, Se = 220 MPa, Sy = 450 MPa.*
+*ASME elliptic fatigue diagram for Se = 220 MPa, Sy = 450 MPa: the line is traced by the package's safety factor along 41 proportional load lines (each point where n = 1). Marked: the operating point σm = 60 MPa, σa = 100 MPa, its load line to the ASME elliptic line, and the returned safety factor n = 2.11105 (equivalent fully reversed stress 100.901 MPa).*
 
-![Fatigue safety factor (ASME-elliptic](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/asme-elliptic-fatigue-safety-factor-live-1)
+![n_fatigue (fatigue safety factor (ASME-elliptic, proportional loading)) against sa (alternating stress amplitude) from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/asme-elliptic-fatigue-safety-factor-curve)
 
-*Fatigue safety factor (ASME-elliptic... as sa runs from 60 to 140 MPa, every other input as you entered it (41 solutions). Marked: your sa = 100 MPa gives n_fatigue = 2.111. Your inputs: sa = 100 MPa, sm = 60 MPa, Se = 220 MPa, Sy = 450 MPa.*
-
-![Fatigue safety factor (ASME-elliptic](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/asme-elliptic-fatigue-safety-factor-live-2)
-
-*Fatigue safety factor (ASME-elliptic... as Se runs from 132 to 308 MPa, every other input as you entered it (29 solutions). Marked: your Se = 220 MPa gives n_fatigue = 2.111. Your inputs: sa = 100 MPa, sm = 60 MPa, Se = 220 MPa, Sy = 450 MPa.*
+*n_fatigue (fatigue safety factor (ASME-elliptic, proportional loading)) against sa (alternating stress amplitude) from 1.0000e+07 Pa to 1.0000e+09 Pa on a logarithmic axis. One curve for each value of Se (fully corrected endurance limit): 2.2000e+08 Pa, 1.1000e+08 Pa, 4.4000e+08 Pa. Other inputs as in the worked example: sm = 60000000.0 Pa, Sy = 450000000.0 Pa. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, sa = 1.0000e+08 Pa, n_fatigue = 2.11105.*
 
 ```python
 mechanical_engineering_ai999x.solve('asme_elliptic_fatigue_safety_factor', sa=100000000.0, sm=60000000.0, Se=220000000.0, Sy=450000000.0)
@@ -4928,13 +4504,9 @@ $$
 - **Assumes:** Wt, F, $m > 0$; $0 < Y  \leq  1$; $Kv  \geq  1$; load at the tip, one tooth in contact
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Tooth bending stress, MPa as Wt runs from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/lewis-gear-bending-stress-live-1)
+![sigma_MPa (tooth bending stress, MPa) against F (face width) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/lewis-gear-bending-stress-curve)
 
-*Tooth bending stress, MPa as Wt runs from 1.5 to 3.5 kN, every other input as you entered it (41 solutions). Marked: your Wt = 2.5 kN gives σ_MPa = 48.52. Your inputs: Wt = 2.5 kN, F = 40 mm, m = 4 mm, Y = 0.322.*
-
-![Tooth bending stress, MPa as F runs from 24 to 56 mm, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/lewis-gear-bending-stress-live-2)
-
-*Tooth bending stress, MPa as F runs from 24 to 56 mm, every other input as you entered it (29 solutions). Marked: your F = 40 mm gives σ_MPa = 48.52. Your inputs: Wt = 2.5 kN, F = 40 mm, m = 4 mm, Y = 0.322.*
+*sigma_MPa (tooth bending stress, MPa) against F (face width) from 0.02 m to 0.06 m. One curve for each value of Wt (transmitted (tangential) load): 2500 N, 1250 N, 5000 N. Other inputs as in the worked example: m = 0.004 m, Y = 0.322. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, F = 0.04 m, sigma_MPa = 48.5248.*
 
 ```python
 mechanical_engineering_ai999x.solve('lewis_gear_bending_stress', Wt=2500.0, F=0.04, m=0.004, Y=0.322)
@@ -4982,17 +4554,13 @@ $$
 - **Assumes:** $C = D/d > 2$; round wire, close-coiled
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Wahl factor over d from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/wahl-factor-field)
+![K_wahl (Wahl factor) against d (wire diameter) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/wahl-factor-curve)
 
-*Wahl factor over d from 0.3 mm to 30 mm and D from 2.4 mm to 240 mm (logarithmic axes): each of the 235 cells is one run of the model, shaded by its value (blank where the spring index is refused). Marked: d = 3 mm, D = 24 mm, K = 1.184. Your inputs: d = 3 mm, D = 24 mm.*
+*K_wahl (Wahl factor) against d (wire diameter) from 0.0003 m to 0.03 m on a logarithmic axis. One curve for each value of D (mean coil diameter): 0.024 m, 0.012 m, 0.048 m. 33 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, d = 0.003 m, K_wahl = 1.18402.*
 
-![Wahl factor as D runs from 14](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/wahl-factor-live-1)
+![K_wahl (Wahl factor) over d (wire diameter) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/wahl-factor-field)
 
-*Wahl factor as D runs from 14.4 to 33.6 mm, every other input as you entered it (41 solutions). Marked: your D = 24 mm gives K_wahl = 1.184. Your inputs: d = 3 mm, D = 24 mm.*
-
-![Wahl factor as d runs from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/wahl-factor-live-2)
-
-*Wahl factor as d runs from 1.8 to 4.2 mm, every other input as you entered it (29 solutions). Marked: your d = 3 mm gives K_wahl = 1.184. Your inputs: d = 3 mm, D = 24 mm.*
+*K_wahl (Wahl factor) over d (wire diameter) from 0.0003 m to 0.03 m and D (mean coil diameter) from 0.0024 m to 0.24 m (logarithmic axes): each of the 21 × 15 cells is one run of mechanical-engineering-ai999x, shaded by its value (light 1.00171 to dark 2.04898); iso-lines at K_wahl = 1.2, 1.4, 1.6; blank cells: inputs the capability refuses. Marked: the worked example, d = 0.003 m, D = 0.024 m, K_wahl = 1.18402.*
 
 ```python
 mechanical_engineering_ai999x.solve('wahl_factor', d=0.003, D=0.024)
@@ -5046,17 +4614,9 @@ $$
 - **Assumes:** steels (Se' = 0.5 Sut, at most 700 MPa); size factor for $2.79  \leq  d  \leq  254$ mm (rotating round sections); $0.5  \leq  R < 1$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Corrected endurance limit, MPa as Sut runs from 4](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/marin-endurance-limit-live-1)
+![Se_MPa (corrected endurance limit, MPa) against Sut (ultimate tensile strength) from 6](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/marin-endurance-limit-curve)
 
-*Corrected endurance limit, MPa as Sut runs from 4.14e+08 to 9.66e+08 Pa, every other input as you entered it (41 solutions). Marked: your Sut = 6.9e+08 Pa gives Se_MPa = 191.7. Your inputs: Sut = 690000000 Pa, surface = machined, load = bending, d = 0.032 m, R = 0.99.*
-
-![Corrected endurance limit, MPa for every choice of surface, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/marin-endurance-limit-live-2)
-
-*Corrected endurance limit, MPa for every choice of surface, every other input as you entered it (highlighted: your choice). ground: 217.8; machined: 191.7; cold-drawn: 191.7; hot-rolled: 127; as-forged: 97.87. Your inputs: Sut = 690000000 Pa, surface = machined, load = bending, d = 0.032 m, R = 0.99.*
-
-![Corrected endurance limit, MPa as R runs from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/marin-endurance-limit-live-3)
-
-*Corrected endurance limit, MPa as R runs from 0.5127 to 0.99, every other input as you entered it (26 solutions). Marked: your R = 0.99 gives Se_MPa = 191.7. Your inputs: Sut = 690000000 Pa, surface = machined, load = bending, d = 0.032 m, R = 0.99.*
+*Se_MPa (corrected endurance limit, MPa) against Sut (ultimate tensile strength) from 6.9000e+07 Pa to 6.9000e+09 Pa on a logarithmic axis. One curve for each value of d (diameter (needed for bending and torsion, 2.79-254 mm)): 0.032 m, 0.016 m, 0.064 m. Other inputs as in the worked example: surface = machined, load = bending, R = 0.99. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, Sut = 6.9000e+08 Pa, Se_MPa = 191.707.*
 
 ```python
 mechanical_engineering_ai999x.solve('marin_endurance_limit', Sut=690000000.0, surface='machined', load='bending', d=0.032, R=0.99)
@@ -5104,13 +4664,9 @@ $$
 - **Assumes:** $0.05  \leq  K  \leq  0.5$; exactly one of F and T
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Tightening torque as K runs from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/bolt-preload-torque-live-1)
+![T (tightening torque) against K (nut (torque) factor (about 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/bolt-preload-torque-curve)
 
-*Tightening torque as K runs from 0.05 to 0.35, every other input as you entered it (41 solutions). Marked: your K = 0.2 gives T = 60. Your inputs: K = 0.2, d = 12 mm, F = 25 kN.*
-
-![Tightening torque as d runs from 7](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/bolt-preload-torque-live-2)
-
-*Tightening torque as d runs from 7.2 to 16.8 mm, every other input as you entered it (29 solutions). Marked: your d = 12 mm gives T = 60. Your inputs: K = 0.2, d = 12 mm, F = 25 kN.*
+*T (tightening torque) against K (nut (torque) factor (about 0.2 for unlubricated steel)) from 0.1 to 0.3. One curve for each value of d (nominal bolt diameter): 0.012 m, 0.006 m, 0.024 m. Other inputs as in the worked example: F = 25000.0 N. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, K = 0.2, T = 60 N*m.*
 
 ```python
 mechanical_engineering_ai999x.solve('bolt_preload_torque', K=0.2, d=0.012, F=25000.0)
@@ -5159,13 +4715,9 @@ $$
 - **Assumes:** $I > 0$; $c > 0$ and |y| <= c when c is given; linear elastic, plane sections, bending about a principal centroidal axis
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Bending stress at the point, MPa (tension](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/beam-bending-stress-live-1)
+![sigma_MPa (bending stress at the point, MPa (tension positive)) against I (second moment of area about the neutral (centroidal) axis) from 8](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/beam-bending-stress-curve)
 
-*Bending stress at the point, MPa (tension... as M runs from 6 to 14 kN*m, every other input as you entered it (41 solutions). Marked: your M = 10 kN*m gives σ_MPa = -125. Your inputs: M = 10 kN*m, I = 8e-6 m^4, y = 100 mm.*
-
-![Bending stress at the point, MPa (tension](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/beam-bending-stress-live-2)
-
-*Bending stress at the point, MPa (tension... as y runs from 60 to 140 mm, every other input as you entered it (29 solutions). Marked: your y = 100 mm gives σ_MPa = -125. Your inputs: M = 10 kN*m, I = 8e-6 m^4, y = 100 mm.*
+*sigma_MPa (bending stress at the point, MPa (tension positive)) against I (second moment of area about the neutral (centroidal) axis) from 8.0000e-07 m^4 to 8.0000e-05 m^4 on a logarithmic axis. One curve for each value of M (bending moment at the section (positive sagging: compression at the top)): 10000 N*m, 5000 N*m, 20000 N*m. Other inputs as in the worked example: y = 0.1 m. 41 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, I = 8.0000e-06 m^4, sigma_MPa = -125.*
 
 ```python
 mechanical_engineering_ai999x.solve('beam_bending_stress', M=10000.0, I=8e-06, y=0.1)
@@ -5219,13 +4771,9 @@ $$
 - **Assumes:** $I > 0$, $b > 0$, $Q  \geq  0$; prismatic, linear elastic beam; shear stress uniform across the width b
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Transverse shear stress, MPa as V runs from 18 to 42 kN, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/beam-shear-stress-live-1)
+![tau_MPa (transverse shear stress, MPa) against I (second moment of area of the whole section about the neutral axis) from 5](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/beam-shear-stress-curve)
 
-*Transverse shear stress, MPa as V runs from 18 to 42 kN, every other input as you entered it (41 solutions). Marked: your V = 30 kN gives τ_MPa = 1.125. Your inputs: V = 30 kN, Q = 3.75e-4 m^3, I = 1e-4 m^4, b = 100 mm.*
-
-![Transverse shear stress, MPa as Q runs from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/beam-shear-stress-live-2)
-
-*Transverse shear stress, MPa as Q runs from 0.000225 to 0.000525 m^3, every other input as you entered it (29 solutions). Marked: your Q = 0.000375 m^3 gives τ_MPa = 1.125. Your inputs: V = 30 kN, Q = 3.75e-4 m^3, I = 1e-4 m^4, b = 100 mm.*
+*tau_MPa (transverse shear stress, MPa) against I (second moment of area of the whole section about the neutral axis) from 5.0000e-05 m^4 to 0.00015 m^4. One curve for each value of V (shear force at the section): 30000 N, 15000 N, 60000 N. Other inputs as in the worked example: Q = 0.000375 m^3, b = 0.1 m. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, I = 0.0001 m^4, tau_MPa = 1.125.*
 
 ```python
 mechanical_engineering_ai999x.solve('beam_shear_stress', V=30000.0, Q=0.000375, I=0.0001, b=0.1)
@@ -5278,13 +4826,9 @@ $$
 - **Assumes:** E, $\alpha > 0$; gap >= 0; a gap needs L; rigid supports, linear elastic, no buckling; with a gap the bar touches only when heated enough to close it
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Stress in the bar, MPa as E runs from 120 to 280 GPa, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/thermal-stress-restrained-bar-live-1)
+![sigma_MPa (stress in the bar, MPa (negative = compression)) against E (Young's modulus) from 1](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/thermal-stress-restrained-bar-curve)
 
-*Stress in the bar, MPa as E runs from 120 to 280 GPa, every other input as you entered it (41 solutions). Marked: your E = 200 GPa gives σ_MPa = -120. Your inputs: E = 200 GPa, alpha = 12e-6 1/K, dT = 50 K, L = 2 m, A = 500 mm^2.*
-
-![Stress in the bar, MPa as α runs from 7](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/thermal-stress-restrained-bar-live-2)
-
-*Stress in the bar, MPa as α runs from 7.2e-06 to 1.68e-05 1/K, every other input as you entered it (29 solutions). Marked: your α = 1.2e-05 1/K gives σ_MPa = -120. Your inputs: E = 200 GPa, alpha = 12e-6 1/K, dT = 50 K, L = 2 m, A = 500 mm^2.*
+*sigma_MPa (stress in the bar, MPa (negative = compression)) against E (Young's modulus) from 1.0000e+11 Pa to 3.0000e+11 Pa. One curve for each value of alpha (coefficient of linear thermal expansion): 1.2000e-05 1/K, 6.0000e-06 1/K, 2.4000e-05 1/K. Other inputs as in the worked example: dT = 50.0 K, L = 2.0 m, A = 0.0005 m^2. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, E = 2.0000e+11 Pa, sigma_MPa = -120.*
 
 ```python
 mechanical_engineering_ai999x.solve('thermal_stress_restrained_bar', E=200000000000.0, alpha=1.2e-05, dT=50.0, L=2.0, A=0.0005)
@@ -5344,13 +4888,9 @@ $$
 - **Assumes:** P, $d > 0$; whole numbers: 1 <= n_bolts <= 200, 1 <= planes <= 4; the load is shared equally (average stresses); a bearing allowable needs t
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Average shear stress, MPa as d runs from 9](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/pin-shear-and-bearing-stress-live-1)
+![tau_MPa (average shear stress, MPa) against d (fastener (pin, bolt, rivet) diameter) from 0](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/pin-shear-and-bearing-stress-curve)
 
-*Average shear stress, MPa as d runs from 9.6 to 22.4 mm, every other input as you entered it (41 solutions). Marked: your d = 16 mm gives τ_MPa = 49.74. Your inputs: P = 20 kN, d = 16 mm, t = 10 mm, planes = 2.*
-
-![Average shear stress, MPa as planes runs from 1 to 4, every other input as you entered it (4 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/pin-shear-and-bearing-stress-live-2)
-
-*Average shear stress, MPa as planes runs from 1 to 4, every other input as you entered it (4 solutions). Marked: your planes = 2 gives τ_MPa = 49.74. Your inputs: P = 20 kN, d = 16 mm, t = 10 mm, planes = 2.*
+*tau_MPa (average shear stress, MPa) against d (fastener (pin, bolt, rivet) diameter) from 0.008 m to 0.024 m. One curve for each value of P (load carried by the joint): 20000 N, 10000 N, 40000 N. Other inputs as in the worked example: t = 0.01 m, planes = 2. 31 points per curve computed by mechanical-engineering-ai999x; marked: the worked example, d = 0.016 m, tau_MPa = 49.7359.*
 
 ```python
 mechanical_engineering_ai999x.solve('pin_shear_and_bearing_stress', P=20000.0, d=0.016, t=0.01, planes=2)
@@ -5407,13 +4947,9 @@ $$
 - **Assumes:** equal-length lists of whole tooth counts >= 1; external spur gears only (each mesh reverses the direction); $n_in  \neq  0$; $0 < \eta  \leq  1$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Output speed, rpm as driven[1] runs from 30 to 90, every other input as you entered it (31 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/gear-train-speed-ratio-live-1)
+![n_out_rpm (output speed, rpm (signed)) against n_in (input speed (rpm or rad/s)) from 62](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/gear-train-speed-ratio-curve)
 
-*Output speed, rpm as driven[1] runs from 30 to 90, every other input as you entered it (31 solutions). Marked: your driven[1] = 60 gives n_out_rpm = -400. Your inputs: drivers = 20, driven = 60, n_in = 125.66370614359171 rad/s, T_in = 50 N*m.*
-
-![Output speed, rpm as n_in runs from 75](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/gear-train-speed-ratio-live-2)
-
-*Output speed, rpm as n_in runs from 75.4 to 175.9 rad/s, every other input as you entered it (29 solutions). Marked: your n_in = 125.7 rad/s gives n_out_rpm = -400. Your inputs: drivers = 20, driven = 60, n_in = 125.66370614359171 rad/s, T_in = 50 N*m.*
+*n_out_rpm (output speed, rpm (signed)) against n_in (input speed (rpm or rad/s)) from 62.8319 rad/s to 188.496 rad/s. Other inputs as in the worked example: drivers = [20.0], driven = [60.0], T_in = 50.0 N*m. 31 points computed by mechanical-engineering-ai999x; marked: the worked example, n_in = 125.664 rad/s, n_out_rpm = -400.*
 
 ```python
 mechanical_engineering_ai999x.solve('gear_train_speed_ratio', drivers=[20.0], driven=[60.0], n_in=125.66370614359171, T_in=50.0)
@@ -5470,9 +5006,9 @@ $$
 - **Assumes:** three components per vector; the force is not zero; the axis direction is not zero
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Every answer of one unit for your inputs: Mx (x component of the moment about O) = 60; My (y component of the moment about O) = -40; Mz (z component of the moment about O) = -40; M (magnitude of the moment about O) = 82](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/moment-of-force-3d-live-1)
+![M (magnitude of the moment about O) as value 3 of r (point of application [x, y, z] in m) moves from 0 to 4](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/moment-of-force-3d-sensitivity)
 
-*Every answer of one unit for your inputs: Mx (x component of the moment about O) = 60; My (y component of the moment about O) = -40; Mz (z component of the moment about O) = -40; M (magnitude of the moment about O) = 82.46. Your inputs: r = 2, 3, 0, F = 10, -5, 20.*
+*M (magnitude of the moment about O) as value 3 of r (point of application [x, y, z] in m) moves from 0 to 4.5, the other values as given ([2.0, 3.0, 0.0]); 41 runs of mechanical-engineering-ai999x. Other inputs: F = [10.0, -5.0, 20.0]. Marked: the worked example, r[3] = 0, M = 82.4621 N*m.*
 
 ```python
 mechanical_engineering_ai999x.solve('moment_of_force_3d', r=[2.0, 3.0, 0.0], F=[10.0, -5.0, 20.0])
@@ -5539,13 +5075,9 @@ $$
 - **Assumes:** one point of application per force; three components per row; not every force and couple zero; single force when R . $M_O = 0$ to $1e-9$ of |R||M_O|
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Magnitude of the resultant force as F[1,3] runs from -1 to 1, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/force-system-resultant-live-1)
+![The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): F (input); P (input)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/force-system-resultant-matrix)
 
-*Magnitude of the resultant force as F[1,3] runs from -1 to 1, every other input as you entered it (41 solutions). Marked: your F[1,3] = 0 gives R = 304.1. Shaded by single force, wrench, couple or equilibrium: wrench, single force. Your inputs: F = 0 -100 0; 0 -200 0; 50 0 0, P = 1 0 0; 3 0 0; 0 2 0.*
-
-![Pitch as P[1,3] runs from -1 to 1, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=mechanical-engineering-ai999x/force-system-resultant-live-2)
-
-*Pitch as P[1,3] runs from -1 to 1, every other input as you entered it (29 solutions). Marked: your P[1,3] = 0 gives pitch = 0 mm. Shaded by single force, wrench, couple or equilibrium: wrench, single force. Your inputs: F = 0 -100 0; 0 -200 0; 50 0 0, P = 1 0 0; 3 0 0; 0 2 0.*
+*The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): F (input); P (input). Returned with them by mechanical-engineering-ai999x: Rx = 50 N, Ry = -300 N, Rz = 0 N, R = 304.138 N, MOx = 0 N*m, MOy = 0 N*m, MOz = -800 N*m, MO = 800 N*m, axis_x = 2.59459 m, axis_y = 0.432432 m, axis_z = 0 m, pitch = 0 m, M_parallel = 0 N*m, x_intercept = 2.66667 m, y_intercept = 16 m.*
 
 ```python
 mechanical_engineering_ai999x.solve('force_system_resultant', F=[[0.0, -100.0, 0.0], [0.0, -200.0, 0.0], [50.0, 0.0, 0.0]], P=[[1.0, 0.0, 0.0], [3.0, 0.0, 0.0], [0.0, 2.0, 0.0]])
